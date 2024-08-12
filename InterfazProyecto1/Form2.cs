@@ -21,7 +21,7 @@ namespace InterfazProyecto1
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //elprimooo
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
