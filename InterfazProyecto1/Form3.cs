@@ -19,9 +19,52 @@ namespace InterfazProyecto1
             InitializeComponent();
         }
 
+        string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
+
+        public void Login()
+        {
+            string query = "SELECT * FROM tb_user WHERE Nombre_usuario='" + tbNombre.Text + "' AND Contraseña_usuario='" + tbContraseña.Text + "'";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
+            MySqlCommand commandDataBase = new MySqlCommand(query, databaseConnection);
+
+            commandDataBase.CommandTimeout = 60;
+
+            MySqlDataReader reader;
+
+            try
+            {
+                databaseConnection.Open();
+
+                reader = commandDataBase.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        MessageBox.Show("Login form2");
+                        Form2 form2 = new Form2();
+
+                        form2.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    
+                }
+            }
+            catch
+            {
+
+            }
+        }
+        
+
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            Login();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
