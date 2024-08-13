@@ -44,10 +44,15 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
+            this.PanelVentana = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.Ventana = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.PanelVentana.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -181,6 +186,7 @@ namespace InterfazProyecto1
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.btnMinimizarVentana);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.btnCerrarVentana);
@@ -225,11 +231,47 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.TabIndex = 0;
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             // 
+            // PanelVentana
+            // 
+            this.PanelVentana.Controls.Add(this.Ventana);
+            this.PanelVentana.Controls.Add(this.button5);
+            this.PanelVentana.Location = new System.Drawing.Point(199, 47);
+            this.PanelVentana.Name = "PanelVentana";
+            this.PanelVentana.Size = new System.Drawing.Size(495, 455);
+            this.PanelVentana.TabIndex = 10;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(36, 73);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(0, 0);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // Ventana
+            // 
+            this.Ventana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(175)))));
+            this.Ventana.Location = new System.Drawing.Point(3, 3);
+            this.Ventana.Name = "Ventana";
+            this.Ventana.Size = new System.Drawing.Size(488, 448);
+            this.Ventana.TabIndex = 1;
+            this.Ventana.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel2.Location = new System.Drawing.Point(0, 37);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(701, 5);
+            this.panel2.TabIndex = 3;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 510);
+            this.Controls.Add(this.PanelVentana);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -242,6 +284,7 @@ namespace InterfazProyecto1
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.PanelVentana.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -261,5 +304,9 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarVentana;
+        private System.Windows.Forms.Panel PanelVentana;
+        private System.Windows.Forms.Panel Ventana;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel2;
     }
 }
