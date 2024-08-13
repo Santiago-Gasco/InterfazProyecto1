@@ -228,7 +228,7 @@ namespace InterfazProyecto1
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(393, 120);
+            this.button5.Location = new System.Drawing.Point(372, 119);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 10;
