@@ -44,8 +44,6 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -227,31 +225,11 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.TabIndex = 0;
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(372, 119);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(324, 217);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 510);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -283,7 +261,5 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
     }
 }
