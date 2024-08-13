@@ -41,13 +41,13 @@ namespace InterfazProyecto1
             this.btnMenu = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.PanelVentana = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.Ventana = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -195,6 +195,14 @@ namespace InterfazProyecto1
             this.panel7.Size = new System.Drawing.Size(702, 40);
             this.panel7.TabIndex = 9;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel2.Location = new System.Drawing.Point(0, 37);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(701, 5);
+            this.panel2.TabIndex = 3;
+            // 
             // btnMinimizarVentana
             // 
             this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
@@ -240,6 +248,15 @@ namespace InterfazProyecto1
             this.PanelVentana.Size = new System.Drawing.Size(495, 455);
             this.PanelVentana.TabIndex = 10;
             // 
+            // Ventana
+            // 
+            this.Ventana.BackColor = System.Drawing.Color.White;
+            this.Ventana.Location = new System.Drawing.Point(3, 3);
+            this.Ventana.Name = "Ventana";
+            this.Ventana.Size = new System.Drawing.Size(488, 448);
+            this.Ventana.TabIndex = 1;
+            this.Ventana.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(36, 73);
@@ -248,23 +265,6 @@ namespace InterfazProyecto1
             this.button5.TabIndex = 0;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // Ventana
-            // 
-            this.Ventana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(175)))));
-            this.Ventana.Location = new System.Drawing.Point(3, 3);
-            this.Ventana.Name = "Ventana";
-            this.Ventana.Size = new System.Drawing.Size(488, 448);
-            this.Ventana.TabIndex = 1;
-            this.Ventana.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel2.Location = new System.Drawing.Point(0, 37);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 5);
-            this.panel2.TabIndex = 3;
             // 
             // Form2
             // 
