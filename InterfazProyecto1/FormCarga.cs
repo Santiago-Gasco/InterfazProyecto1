@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
-    public partial class Form1 : Form
+    public partial class FormCarga : Form
     {
-        public Form1()
+        public FormCarga()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace InterfazProyecto1
             if (panel1.Width >= 801)
             {
                 timer1.Stop();
-                Form3 login = new Form3();
+                FormLogin login = new FormLogin();
                 login.Show();
                 this.Hide();
             }

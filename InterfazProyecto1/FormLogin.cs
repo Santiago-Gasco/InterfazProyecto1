@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace InterfazProyecto1
 {
-    public partial class Form3 : Form
+    public partial class FormLogin : Form
     {
-        public Form3()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace InterfazProyecto1
                     while (reader.Read())
                     {
                         MessageBox.Show("Login form2");
-                        Form2 form2 = new Form2();
+                        FormCarga form2 = new FormCarga();
 
                         form2.Show();
                         this.Hide();
@@ -79,7 +79,7 @@ namespace InterfazProyecto1
                 tbNombre.ForeColor = Color.FromArgb(0, 255, 0);
                 tbContraseña.ForeColor = Color.FromArgb(0, 255, 0);
                 await Task.Delay(300);
-                Form2 ventanaPrincipal = new Form2();
+                FormCarga ventanaPrincipal = new FormCarga();
                 ventanaPrincipal.Show();
                 this.Hide();
             }

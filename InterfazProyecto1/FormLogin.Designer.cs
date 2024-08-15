@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazProyecto1
 {
-    partial class Form3
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace InterfazProyecto1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
@@ -65,9 +65,9 @@ namespace InterfazProyecto1
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.btnIniciarSesion);
-            this.panel2.Location = new System.Drawing.Point(-1, 29);
+            this.panel2.Location = new System.Drawing.Point(-1, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 335);
+            this.panel2.Size = new System.Drawing.Size(339, 332);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -75,7 +75,7 @@ namespace InterfazProyecto1
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(113, 13);
+            this.pictureBox4.Location = new System.Drawing.Point(114, 21);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(115, 115);
             this.pictureBox4.TabIndex = 7;
@@ -88,7 +88,7 @@ namespace InterfazProyecto1
             this.tbNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNombre.ForeColor = System.Drawing.Color.Black;
-            this.tbNombre.Location = new System.Drawing.Point(61, 150);
+            this.tbNombre.Location = new System.Drawing.Point(62, 158);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tbNombre.Size = new System.Drawing.Size(204, 19);
@@ -102,7 +102,7 @@ namespace InterfazProyecto1
             this.tbContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContraseña.ForeColor = System.Drawing.Color.Black;
-            this.tbContraseña.Location = new System.Drawing.Point(61, 193);
+            this.tbContraseña.Location = new System.Drawing.Point(62, 201);
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(204, 19);
             this.tbContraseña.TabIndex = 0;
@@ -112,7 +112,7 @@ namespace InterfazProyecto1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(31, 145);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 153);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 0;
@@ -122,7 +122,7 @@ namespace InterfazProyecto1
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 188);
+            this.pictureBox2.Location = new System.Drawing.Point(32, 196);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.TabIndex = 1;
@@ -132,7 +132,7 @@ namespace InterfazProyecto1
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel12.Location = new System.Drawing.Point(31, 214);
+            this.panel12.Location = new System.Drawing.Point(32, 222);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(275, 3);
             this.panel12.TabIndex = 10;
@@ -140,7 +140,7 @@ namespace InterfazProyecto1
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel11.Location = new System.Drawing.Point(31, 171);
+            this.panel11.Location = new System.Drawing.Point(32, 179);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(275, 3);
             this.panel11.TabIndex = 9;
@@ -224,17 +224,17 @@ namespace InterfazProyecto1
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // Form3
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(336, 363);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form3";
+            this.Name = "FormLogin";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel2.ResumeLayout(false);

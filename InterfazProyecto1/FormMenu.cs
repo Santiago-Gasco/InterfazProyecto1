@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
-    public partial class Form2 : Form
+    public partial class FormMenu : Form
     {
         bool expandirMenu; //aaa
 
-        public Form2()
+        public FormMenu()
         {
             InitializeComponent();
         }

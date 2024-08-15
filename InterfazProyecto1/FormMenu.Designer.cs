@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazProyecto1
 {
-    partial class Form2
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace InterfazProyecto1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -266,7 +266,7 @@ namespace InterfazProyecto1
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,7 +276,7 @@ namespace InterfazProyecto1
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "FormMenu";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel3.ResumeLayout(false);
