@@ -19,52 +19,108 @@ namespace InterfazProyecto1
             InitializeComponent();
         }
 
-        string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
+        private string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
 
         public void Login()
         {
-            string query = "SELECT * FROM tb_user WHERE Nombre_usuario='" + tbNombre.Text + "' AND Contraseña_usuario='" + tbContraseña.Text + "'";
+            string query = "SELECT * FROM tb_usuario WHERE Nombre=@nombre AND Contraseña=@contraseña";
 
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-
-            MySqlCommand commandDataBase = new MySqlCommand(query, databaseConnection);
-
-            commandDataBase.CommandTimeout = 60;
-
-            MySqlDataReader reader;
-
-            try
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
-                databaseConnection.Open();
-
-                reader = commandDataBase.ExecuteReader();
-
-                if (reader.HasRows)
+                try
                 {
-                    while (reader.Read())
+                    databaseConnection.Open(); // Abre la conexión
+                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
                     {
-                        MessageBox.Show("Login form2");
-                        FormCarga form2 = new FormCarga();
+                        commandDatabase.CommandTimeout = 60;
+                        commandDatabase.Parameters.AddWithValue("@nombre", tbNombre.Text);
+                        commandDatabase.Parameters.AddWithValue("@contraseña", tbContraseña.Text);
 
-                        form2.Show();
-                        this.Hide();
+                        using (MySqlDataReader reader = commandDatabase.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                MessageBox.Show("Logeado exitosamente!");
+                                FormMenu formMenu = new FormMenu();
+                                formMenu.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario o contraseña incorrectos");
+                            }
+                        }
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    
+                    MessageBox.Show("Error inesperado: " + ex.Message);
                 }
             }
-            catch
-            {
+        }
 
+        /*
+        public void ListarUsuarios()
+        {
+            string query = "SELECT * FROM tb_usuario";
+
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    databaseConnection.Open();
+                    MessageBox.Show("Connected to the database successfully!");
+
+                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
+                    {
+                        commandDatabase.CommandTimeout = 60;
+
+                        using (MySqlDataReader reader = commandDatabase.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                StringBuilder sb = new StringBuilder();
+                                while (reader.Read())
+                                {
+                                    try
+                                    {
+                                        // Verifica si las columnas existen antes de leer
+                                        var id = reader["ID_Usuario"].ToString();
+                                        var nombre = reader["Nombre"].ToString();
+                                        var contraseña = reader["Contraseña"].ToString();
+
+                                        sb.AppendLine($"ID_Usuario: {id}, Nombre: {nombre}, Contraseña: {contraseña}");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Error al leer datos: " + ex.Message + "\n" + ex.StackTrace);
+                                    }
+                                }
+                                MessageBox.Show(sb.ToString(), "Lista de Usuarios");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontraron usuarios.");
+                            }
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error de MySQL: " + ex.Message + "\n" + ex.StackTrace);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error general: " + ex.Message + "\n" + ex.StackTrace);
+                }
             }
         }
-        
+        */
 
-        private void Form3_Load(object sender, EventArgs e)
+
+        private void FormLogin_Load(object sender, EventArgs e)
         {
-            Login();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -74,42 +130,7 @@ namespace InterfazProyecto1
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (tbNombre.Text == "admin" && tbContraseña.Text == "admin")
-            {
-                tbNombre.ForeColor = Color.FromArgb(0, 255, 0);
-                tbContraseña.ForeColor = Color.FromArgb(0, 255, 0);
-                await Task.Delay(300);
-                FormCarga ventanaPrincipal = new FormCarga();
-                ventanaPrincipal.Show();
-                this.Hide();
-            }
-            else
-            {
-                if (tbNombre.Text != "admin" && tbContraseña.Text != "admin")
-                {
-                    tbNombre.ForeColor = Color.FromArgb(255, 0, 0);
-                    tbContraseña.ForeColor = Color.FromArgb(255, 0, 0);
-                    await Task.Delay(1000);
-                    tbNombre.ForeColor = Color.FromArgb(0, 0, 0);
-                    tbContraseña.ForeColor = Color.FromArgb(0, 0, 0);
-                }
-                else if (tbNombre.Text != "admin")
-                {
-                    tbContraseña.ForeColor = Color.FromArgb(0, 255, 0);
-                    tbNombre.ForeColor = Color.FromArgb(255, 0, 0);
-                    await Task.Delay(1000);
-                    tbContraseña.ForeColor = Color.FromArgb(0, 0, 0);
-                    tbNombre.ForeColor = Color.FromArgb(0, 0, 0);
-                }
-                else if (tbContraseña.Text != "admin")
-                {
-                    tbNombre.ForeColor = Color.FromArgb(0, 255, 0);
-                    tbContraseña.ForeColor = Color.FromArgb(255, 0, 0);
-                    await Task.Delay(1000);
-                    tbNombre.ForeColor = Color.FromArgb(0, 0, 0);
-                    tbContraseña.ForeColor = Color.FromArgb(0, 0, 0);
-                }
-            }
+            Login();
         }
 
         private void tbNombre_TextChanged(object sender, EventArgs e)
