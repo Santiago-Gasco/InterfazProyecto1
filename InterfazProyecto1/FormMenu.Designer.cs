@@ -200,7 +200,7 @@ namespace InterfazProyecto1
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
             this.panel2.Location = new System.Drawing.Point(0, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 5);
+            this.panel2.Size = new System.Drawing.Size(707, 10);
             this.panel2.TabIndex = 3;
             // 
             // btnMinimizarVentana
@@ -214,6 +214,7 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
             this.btnMinimizarVentana.TabIndex = 2;
             this.btnMinimizarVentana.UseVisualStyleBackColor = false;
+            this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
             // 
             // label1
             // 
@@ -238,6 +239,7 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
             this.btnCerrarVentana.TabIndex = 0;
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
+            this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
             // PanelVentana
             // 

@@ -211,6 +211,7 @@ namespace InterfazProyecto1
             this.btnRegistrarse.TabIndex = 5;
             this.btnRegistrarse.Text = "Iniciar sesion";
             this.btnRegistrarse.UseVisualStyleBackColor = false;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // FormRegistro
             // 

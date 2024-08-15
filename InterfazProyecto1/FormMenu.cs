@@ -72,5 +72,15 @@ namespace InterfazProyecto1
         {
 
         }
+
+        private void btnCerrarVentana_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizarVentana_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
