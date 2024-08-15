@@ -12,7 +12,7 @@ namespace InterfazProyecto1
 {
     public partial class Form2 : Form
     {
-        bool expandirMenu;
+        bool expandirMenu; //aaa
 
         public Form2()
         {
