@@ -16,7 +16,7 @@ namespace InterfazProyecto1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormRegistro());
+            Application.Run(new FormAltaAtleta());
         }
     }
 }

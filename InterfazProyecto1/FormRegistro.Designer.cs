@@ -44,6 +44,8 @@ namespace InterfazProyecto1
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRegistrarse = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -80,6 +82,8 @@ namespace InterfazProyecto1
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel7.Controls.Add(this.panel4);
+            this.panel7.Controls.Add(this.panel1);
             this.panel7.Controls.Add(this.btnMinimizarVentana);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.btnCerrarVentana);
@@ -213,6 +217,22 @@ namespace InterfazProyecto1
             this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel4.Location = new System.Drawing.Point(265, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(74, 10);
+            this.panel4.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(1, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 10);
+            this.panel1.TabIndex = 5;
+            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,5 +272,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnRegistrarse;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

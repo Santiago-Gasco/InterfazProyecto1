@@ -46,6 +46,8 @@ namespace InterfazProyecto1
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,6 +173,8 @@ namespace InterfazProyecto1
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel7.Controls.Add(this.panel1);
+            this.panel7.Controls.Add(this.panel4);
             this.panel7.Controls.Add(this.btnMinimizarVentana);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.btnCerrarVentana);
@@ -224,6 +228,22 @@ namespace InterfazProyecto1
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel4.Location = new System.Drawing.Point(265, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(74, 10);
+            this.panel4.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(1, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 10);
+            this.panel1.TabIndex = 11;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +284,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

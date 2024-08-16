@@ -32,112 +32,112 @@ namespace InterfazProyecto1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnListarAtleta = new System.Windows.Forms.Button();
+            this.btnEditarAtleta = new System.Windows.Forms.Button();
+            this.btnBorarAtleta = new System.Windows.Forms.Button();
+            this.btnAgregarAtleta = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.PanelVentana = new System.Windows.Forms.Panel();
+            this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.Ventana = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.PanelVentana.SuspendLayout();
+            this.Ventana.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnListarAtleta);
             this.panel3.Location = new System.Drawing.Point(3, 109);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(189, 361);
             this.panel3.TabIndex = 7;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button4
+            // btnListarAtleta
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(9, 159);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 46);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "           Listar Atleta";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnListarAtleta.BackColor = System.Drawing.Color.Transparent;
+            this.btnListarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnListarAtleta.FlatAppearance.BorderSize = 0;
+            this.btnListarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarAtleta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnListarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnListarAtleta.Image")));
+            this.btnListarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarAtleta.Location = new System.Drawing.Point(9, 13);
+            this.btnListarAtleta.Name = "btnListarAtleta";
+            this.btnListarAtleta.Size = new System.Drawing.Size(177, 46);
+            this.btnListarAtleta.TabIndex = 4;
+            this.btnListarAtleta.Text = "           Listar Atleta";
+            this.btnListarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarAtleta.UseVisualStyleBackColor = false;
+            this.btnListarAtleta.Click += new System.EventHandler(this.btnListarAtleta_Click);
             // 
-            // button3
+            // btnEditarAtleta
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(9, 107);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 46);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "           Editar Atleta";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnEditarAtleta.BackColor = System.Drawing.Color.DimGray;
+            this.btnEditarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEditarAtleta.FlatAppearance.BorderSize = 0;
+            this.btnEditarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarAtleta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEditarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarAtleta.Image")));
+            this.btnEditarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarAtleta.Location = new System.Drawing.Point(89, 411);
+            this.btnEditarAtleta.Name = "btnEditarAtleta";
+            this.btnEditarAtleta.Size = new System.Drawing.Size(37, 43);
+            this.btnEditarAtleta.TabIndex = 3;
+            this.btnEditarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarAtleta.UseVisualStyleBackColor = false;
+            this.btnEditarAtleta.Click += new System.EventHandler(this.btnEditarAtleta_Click);
             // 
-            // button2
+            // btnBorarAtleta
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(9, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 46);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "           Borrar Atleta";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnBorarAtleta.BackColor = System.Drawing.Color.DimGray;
+            this.btnBorarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBorarAtleta.FlatAppearance.BorderSize = 0;
+            this.btnBorarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorarAtleta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBorarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnBorarAtleta.Image")));
+            this.btnBorarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorarAtleta.Location = new System.Drawing.Point(46, 411);
+            this.btnBorarAtleta.Name = "btnBorarAtleta";
+            this.btnBorarAtleta.Size = new System.Drawing.Size(37, 43);
+            this.btnBorarAtleta.TabIndex = 2;
+            this.btnBorarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorarAtleta.UseVisualStyleBackColor = false;
+            this.btnBorarAtleta.Click += new System.EventHandler(this.btnBorarAtleta_Click);
             // 
-            // button1
+            // btnAgregarAtleta
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(9, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 46);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "           Agregar Atleta";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAgregarAtleta.BackColor = System.Drawing.Color.DimGray;
+            this.btnAgregarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAgregarAtleta.FlatAppearance.BorderSize = 0;
+            this.btnAgregarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAtleta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAtleta.Image")));
+            this.btnAgregarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarAtleta.Location = new System.Drawing.Point(3, 411);
+            this.btnAgregarAtleta.Name = "btnAgregarAtleta";
+            this.btnAgregarAtleta.Size = new System.Drawing.Size(37, 43);
+            this.btnAgregarAtleta.TabIndex = 1;
+            this.btnAgregarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarAtleta.UseVisualStyleBackColor = false;
+            this.btnAgregarAtleta.Click += new System.EventHandler(this.btnAgregarAtleta_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -146,6 +146,8 @@ namespace InterfazProyecto1
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 40);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(192, 470);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(63, 470);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 470);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -178,29 +180,38 @@ namespace InterfazProyecto1
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // timer1
+            // timerMenu
             // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerMenu.Interval = 10;
+            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel7.Controls.Add(this.panel4);
             this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.btnMinimizarVentana);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.btnCerrarVentana);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(702, 40);
+            this.panel7.Size = new System.Drawing.Size(1071, 40);
             this.panel7.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel4.Location = new System.Drawing.Point(977, 37);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(74, 10);
+            this.panel4.TabIndex = 4;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
             this.panel2.Location = new System.Drawing.Point(0, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(707, 10);
+            this.panel2.Size = new System.Drawing.Size(977, 10);
             this.panel2.TabIndex = 3;
             // 
             // btnMinimizarVentana
@@ -209,7 +220,7 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
             this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
-            this.btnMinimizarVentana.Location = new System.Drawing.Point(638, 3);
+            this.btnMinimizarVentana.Location = new System.Drawing.Point(983, 3);
             this.btnMinimizarVentana.Name = "btnMinimizarVentana";
             this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
             this.btnMinimizarVentana.TabIndex = 2;
@@ -234,59 +245,62 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
             this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
-            this.btnCerrarVentana.Location = new System.Drawing.Point(668, 3);
+            this.btnCerrarVentana.Location = new System.Drawing.Point(1013, 3);
             this.btnCerrarVentana.Name = "btnCerrarVentana";
             this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
             this.btnCerrarVentana.TabIndex = 0;
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
-            // PanelVentana
+            // timerDataGridView
             // 
-            this.PanelVentana.Controls.Add(this.Ventana);
-            this.PanelVentana.Controls.Add(this.button5);
-            this.PanelVentana.Location = new System.Drawing.Point(199, 47);
-            this.PanelVentana.Name = "PanelVentana";
-            this.PanelVentana.Size = new System.Drawing.Size(495, 455);
-            this.PanelVentana.TabIndex = 10;
+            this.timerDataGridView.Interval = 10;
+            this.timerDataGridView.Tick += new System.EventHandler(this.timerDataGridView_Tick);
             // 
             // Ventana
             // 
             this.Ventana.BackColor = System.Drawing.Color.White;
-            this.Ventana.Location = new System.Drawing.Point(3, 3);
+            this.Ventana.Controls.Add(this.btnEditarAtleta);
+            this.Ventana.Controls.Add(this.btnAgregarAtleta);
+            this.Ventana.Controls.Add(this.btnBorarAtleta);
+            this.Ventana.Controls.Add(this.dataGridViewAtletas);
+            this.Ventana.Location = new System.Drawing.Point(195, 46);
+            this.Ventana.MaximumSize = new System.Drawing.Size(992, 460);
+            this.Ventana.MinimumSize = new System.Drawing.Size(847, 460);
             this.Ventana.Name = "Ventana";
-            this.Ventana.Size = new System.Drawing.Size(488, 448);
+            this.Ventana.Size = new System.Drawing.Size(849, 460);
             this.Ventana.TabIndex = 1;
             this.Ventana.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // button5
+            // dataGridViewAtletas
             // 
-            this.button5.Location = new System.Drawing.Point(36, 73);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(0, 0);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAtletas.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewAtletas.Name = "dataGridViewAtletas";
+            this.dataGridViewAtletas.Size = new System.Drawing.Size(843, 402);
+            this.dataGridViewAtletas.TabIndex = 0;
+            this.dataGridViewAtletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAtletas_CellContentClick);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 510);
-            this.Controls.Add(this.PanelVentana);
+            this.ClientSize = new System.Drawing.Size(1047, 510);
+            this.Controls.Add(this.Ventana);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMenu";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.PanelVentana.ResumeLayout(false);
+            this.Ventana.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,21 +308,22 @@ namespace InterfazProyecto1
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnListarAtleta;
+        private System.Windows.Forms.Button btnEditarAtleta;
+        private System.Windows.Forms.Button btnBorarAtleta;
+        private System.Windows.Forms.Button btnAgregarAtleta;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerMenu;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.Panel PanelVentana;
-        private System.Windows.Forms.Panel Ventana;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Timer timerDataGridView;
+        private System.Windows.Forms.Panel Ventana;
+        private System.Windows.Forms.DataGridView dataGridViewAtletas;
     }
 }
