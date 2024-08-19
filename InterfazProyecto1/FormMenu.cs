@@ -77,7 +77,7 @@ namespace InterfazProyecto1
             }
         }
 
-        private void ListarAtletas()
+        public void ListarAtletas()
         {
             string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta";
 
@@ -155,7 +155,8 @@ namespace InterfazProyecto1
 
         private void btnAgregarAtleta_Click(object sender, EventArgs e)
         {
-
+            FormAltaAtleta formAltaAtleta = new FormAltaAtleta(this);
+            formAltaAtleta.Show();
         }
 
         private void btnBorarAtleta_Click(object sender, EventArgs e)
@@ -171,6 +172,11 @@ namespace InterfazProyecto1
         private void btnListarAtleta_Click(object sender, EventArgs e)
         {
             dataGridViewAtletas.Show();
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            ListarAtletas();
         }
     }
 }

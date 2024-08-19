@@ -39,7 +39,7 @@ namespace InterfazProyecto1
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbGenero = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -53,14 +53,21 @@ namespace InterfazProyecto1
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbCedula = new System.Windows.Forms.TextBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.tbApellido = new System.Windows.Forms.TextBox();
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.tbEscuela = new System.Windows.Forms.TextBox();
+            this.btnAltaAtleta = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numEdad = new System.Windows.Forms.NumericUpDown();
+            this.numFederado = new System.Windows.Forms.NumericUpDown();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFederado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel7
@@ -79,9 +86,9 @@ namespace InterfazProyecto1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel1.Location = new System.Drawing.Point(1, 33);
+            this.panel1.Location = new System.Drawing.Point(-6, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 10);
+            this.panel1.Size = new System.Drawing.Size(272, 10);
             this.panel1.TabIndex = 11;
             // 
             // panel4
@@ -89,7 +96,7 @@ namespace InterfazProyecto1
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
             this.panel4.Location = new System.Drawing.Point(265, 33);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(74, 10);
+            this.panel4.Size = new System.Drawing.Size(83, 10);
             this.panel4.TabIndex = 12;
             // 
             // btnMinimizarVentana
@@ -133,7 +140,7 @@ namespace InterfazProyecto1
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel3.Location = new System.Drawing.Point(186, 116);
+            this.panel3.Location = new System.Drawing.Point(186, 121);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(127, 3);
             this.panel3.TabIndex = 15;
@@ -141,7 +148,7 @@ namespace InterfazProyecto1
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel5.Location = new System.Drawing.Point(186, 150);
+            this.panel5.Location = new System.Drawing.Point(186, 155);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(127, 3);
             this.panel5.TabIndex = 15;
@@ -149,31 +156,31 @@ namespace InterfazProyecto1
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel6.Location = new System.Drawing.Point(186, 186);
+            this.panel6.Location = new System.Drawing.Point(186, 221);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(127, 3);
             this.panel6.TabIndex = 15;
             // 
-            // comboBox4
+            // cbGenero
             // 
-            this.comboBox4.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbGenero.AutoCompleteCustomSource.AddRange(new string[] {
             "Hombre",
             "Mujer"});
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGenero.FormattingEnabled = true;
+            this.cbGenero.Items.AddRange(new object[] {
             "Hombre",
             "Mujer"});
-            this.comboBox4.Location = new System.Drawing.Point(186, 160);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(127, 26);
-            this.comboBox4.TabIndex = 14;
+            this.cbGenero.Location = new System.Drawing.Point(186, 195);
+            this.cbGenero.Name = "cbGenero";
+            this.cbGenero.Size = new System.Drawing.Size(127, 26);
+            this.cbGenero.TabIndex = 14;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel8.Location = new System.Drawing.Point(186, 221);
+            this.panel8.Location = new System.Drawing.Point(186, 256);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(127, 3);
             this.panel8.TabIndex = 15;
@@ -181,7 +188,7 @@ namespace InterfazProyecto1
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel9.Location = new System.Drawing.Point(186, 256);
+            this.panel9.Location = new System.Drawing.Point(186, 291);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(127, 3);
             this.panel9.TabIndex = 15;
@@ -189,7 +196,7 @@ namespace InterfazProyecto1
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel10.Location = new System.Drawing.Point(186, 293);
+            this.panel10.Location = new System.Drawing.Point(186, 328);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(127, 3);
             this.panel10.TabIndex = 15;
@@ -199,7 +206,7 @@ namespace InterfazProyecto1
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label4.Location = new System.Drawing.Point(14, 120);
+            this.label4.Location = new System.Drawing.Point(14, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 13;
@@ -232,7 +239,7 @@ namespace InterfazProyecto1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label6.Location = new System.Drawing.Point(14, 190);
+            this.label6.Location = new System.Drawing.Point(14, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(155, 20);
             this.label6.TabIndex = 13;
@@ -254,7 +261,7 @@ namespace InterfazProyecto1
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label7.Location = new System.Drawing.Point(14, 227);
+            this.label7.Location = new System.Drawing.Point(14, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 20);
             this.label7.TabIndex = 13;
@@ -265,7 +272,7 @@ namespace InterfazProyecto1
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label5.Location = new System.Drawing.Point(14, 155);
+            this.label5.Location = new System.Drawing.Point(14, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 20);
             this.label5.TabIndex = 13;
@@ -273,6 +280,7 @@ namespace InterfazProyecto1
             // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.label8);
             this.panel11.Controls.Add(this.label5);
             this.panel11.Controls.Add(this.label7);
             this.panel11.Controls.Add(this.labelNombre);
@@ -282,7 +290,7 @@ namespace InterfazProyecto1
             this.panel11.Controls.Add(this.label4);
             this.panel11.Location = new System.Drawing.Point(3, 49);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(171, 271);
+            this.panel11.Size = new System.Drawing.Size(171, 293);
             this.panel11.TabIndex = 16;
             // 
             // panel12
@@ -290,97 +298,174 @@ namespace InterfazProyecto1
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
             this.panel12.Location = new System.Drawing.Point(176, 49);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(4, 272);
+            this.panel12.Size = new System.Drawing.Size(4, 290);
             this.panel12.TabIndex = 17;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel2.Location = new System.Drawing.Point(186, 79);
+            this.panel2.Location = new System.Drawing.Point(186, 82);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(127, 3);
             this.panel2.TabIndex = 12;
             // 
-            // textBox1
+            // tbCedula
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(186, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 24);
-            this.textBox1.TabIndex = 19;
+            this.tbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCedula.Location = new System.Drawing.Point(186, 58);
+            this.tbCedula.Name = "tbCedula";
+            this.tbCedula.Size = new System.Drawing.Size(127, 24);
+            this.tbCedula.TabIndex = 19;
             // 
-            // textBox2
+            // tbNombre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(186, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 24);
-            this.textBox2.TabIndex = 20;
+            this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombre.Location = new System.Drawing.Point(186, 97);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(127, 24);
+            this.tbNombre.TabIndex = 20;
             // 
-            // textBox3
+            // tbApellido
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(186, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 24);
-            this.textBox3.TabIndex = 21;
+            this.tbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbApellido.Location = new System.Drawing.Point(186, 131);
+            this.tbApellido.Name = "tbApellido";
+            this.tbApellido.Size = new System.Drawing.Size(127, 24);
+            this.tbApellido.TabIndex = 21;
             // 
-            // dateTimePicker1
+            // dateFechaNacimiento
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(186, 197);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 24);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dateFechaNacimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFechaNacimiento.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(186, 232);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(127, 24);
+            this.dateFechaNacimiento.TabIndex = 22;
             // 
-            // textBox4
+            // tbEscuela
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(186, 232);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(127, 24);
-            this.textBox4.TabIndex = 23;
+            this.tbEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEscuela.Location = new System.Drawing.Point(186, 304);
+            this.tbEscuela.Name = "tbEscuela";
+            this.tbEscuela.Size = new System.Drawing.Size(127, 24);
+            this.tbEscuela.TabIndex = 24;
             // 
-            // textBox5
+            // btnAltaAtleta
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(186, 269);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(127, 24);
-            this.textBox5.TabIndex = 24;
+            this.btnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnAltaAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAltaAtleta.FlatAppearance.BorderSize = 0;
+            this.btnAltaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaAtleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaAtleta.ForeColor = System.Drawing.Color.White;
+            this.btnAltaAtleta.Location = new System.Drawing.Point(101, 348);
+            this.btnAltaAtleta.Name = "btnAltaAtleta";
+            this.btnAltaAtleta.Size = new System.Drawing.Size(147, 33);
+            this.btnAltaAtleta.TabIndex = 25;
+            this.btnAltaAtleta.Text = "Crear Atleta";
+            this.btnAltaAtleta.UseVisualStyleBackColor = false;
+            this.btnAltaAtleta.Click += new System.EventHandler(this.btnAltaAtleta_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel13.Location = new System.Drawing.Point(101, 378);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(147, 3);
+            this.panel13.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.label8.Location = new System.Drawing.Point(14, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Edad";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // numEdad
+            // 
+            this.numEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numEdad.Location = new System.Drawing.Point(186, 164);
+            this.numEdad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numEdad.Name = "numEdad";
+            this.numEdad.Size = new System.Drawing.Size(127, 24);
+            this.numEdad.TabIndex = 27;
+            this.numEdad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numFederado
+            // 
+            this.numFederado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numFederado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numFederado.Location = new System.Drawing.Point(186, 267);
+            this.numFederado.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.numFederado.Name = "numFederado";
+            this.numFederado.Size = new System.Drawing.Size(127, 24);
+            this.numFederado.TabIndex = 28;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel14.Location = new System.Drawing.Point(186, 186);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(127, 3);
+            this.panel14.TabIndex = 16;
             // 
             // FormAltaAtleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 332);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(342, 403);
+            this.Controls.Add(this.panel14);
+            this.Controls.Add(this.numFederado);
+            this.Controls.Add(this.numEdad);
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.btnAltaAtleta);
+            this.Controls.Add(this.tbEscuela);
+            this.Controls.Add(this.dateFechaNacimiento);
+            this.Controls.Add(this.tbApellido);
+            this.Controls.Add(this.tbNombre);
+            this.Controls.Add(this.tbCedula);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cbGenero);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAltaAtleta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAltaAtleta";
+            this.Load += new System.EventHandler(this.FormAltaAtleta_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFederado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +482,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbGenero;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
@@ -411,11 +496,16 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbCedula;
+        private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.TextBox tbApellido;
+        private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
+        private System.Windows.Forms.TextBox tbEscuela;
+        private System.Windows.Forms.Button btnAltaAtleta;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numEdad;
+        private System.Windows.Forms.NumericUpDown numFederado;
+        private System.Windows.Forms.Panel panel14;
     }
 }

@@ -197,6 +197,19 @@
   <metadata name="timerDataGridView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
+  <data name="btnRefrescar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAGmSURBVFhH7ZZLKwVhHIfPUQobC7dyiVyysvE9TpJSWLAS
+        WVicxMbi7HwAJVlZkFI2bku+BGtlJxYUkcvr+c/7m2zMmXfqbGieejLzn99vzMy5vYWcnCw453pwDU/x
+        Fl/wCa80W8R2xWsHJ+3GffzANCyzg62qWz9Cu9mgN4F2l8Yr7uEk9mEjNuMIzuAZxhf5gGM6R0R0wizQ
+        WcKvqO3cIXbpUCJkBvHSCvCOc34z4wWQH8dPuaxxEOTrsIJGfAPhF0C2A++jlnNljTNDd8OfwqNxOmS3
+        fMWdaBSMer+iSHXI1eM12ptpSONg6CSiSDpk7TUc1W5OTs7fxz7S9tHWbjqEE1EkGCrDaF9q9uVWr3F1
+        CCaiSBDEi2g/0camxumoEFPRODN0V/0p3B22aZyO70TEP6XrWNThIMiX0fr2+Esah0EhZhZtUWFc4IAi
+        iZDpxSMrgK0l5nUoHN/1rzd/ShivDexuznEa+7EBm7Q9hQf4hsYjRkuyzPj+zxuOzRbcxvhpVMMyu9ip
+        eu3gpK24gPYUbFlui9RnvMFjXMHa/+Ocf0yh8A37GNODnuz5TgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEA/QAAAAEAIAAoFAQAFgAAACgAAAD9AAAAAAIAAAEAIAAAAAAAAPQDAAAAAAAAAAAAAAAAAAAA

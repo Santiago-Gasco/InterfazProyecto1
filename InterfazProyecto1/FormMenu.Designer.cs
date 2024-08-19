@@ -49,6 +49,7 @@ namespace InterfazProyecto1
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.Ventana = new System.Windows.Forms.Panel();
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,7 +79,7 @@ namespace InterfazProyecto1
             this.btnListarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListarAtleta.Location = new System.Drawing.Point(9, 13);
             this.btnListarAtleta.Name = "btnListarAtleta";
-            this.btnListarAtleta.Size = new System.Drawing.Size(177, 46);
+            this.btnListarAtleta.Size = new System.Drawing.Size(161, 46);
             this.btnListarAtleta.TabIndex = 4;
             this.btnListarAtleta.Text = "           Listar Atleta";
             this.btnListarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,8 +95,7 @@ namespace InterfazProyecto1
             this.btnEditarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAtleta.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEditarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarAtleta.Image")));
-            this.btnEditarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarAtleta.Location = new System.Drawing.Point(89, 411);
+            this.btnEditarAtleta.Location = new System.Drawing.Point(133, 411);
             this.btnEditarAtleta.Name = "btnEditarAtleta";
             this.btnEditarAtleta.Size = new System.Drawing.Size(37, 43);
             this.btnEditarAtleta.TabIndex = 3;
@@ -112,8 +112,7 @@ namespace InterfazProyecto1
             this.btnBorarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorarAtleta.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBorarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnBorarAtleta.Image")));
-            this.btnBorarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorarAtleta.Location = new System.Drawing.Point(46, 411);
+            this.btnBorarAtleta.Location = new System.Drawing.Point(90, 411);
             this.btnBorarAtleta.Name = "btnBorarAtleta";
             this.btnBorarAtleta.Size = new System.Drawing.Size(37, 43);
             this.btnBorarAtleta.TabIndex = 2;
@@ -130,8 +129,7 @@ namespace InterfazProyecto1
             this.btnAgregarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarAtleta.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAgregarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAtleta.Image")));
-            this.btnAgregarAtleta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarAtleta.Location = new System.Drawing.Point(3, 411);
+            this.btnAgregarAtleta.Location = new System.Drawing.Point(47, 411);
             this.btnAgregarAtleta.Name = "btnAgregarAtleta";
             this.btnAgregarAtleta.Size = new System.Drawing.Size(37, 43);
             this.btnAgregarAtleta.TabIndex = 1;
@@ -173,7 +171,7 @@ namespace InterfazProyecto1
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenu.Location = new System.Drawing.Point(12, 22);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(177, 46);
+            this.btnMenu.Size = new System.Drawing.Size(161, 46);
             this.btnMenu.TabIndex = 5;
             this.btnMenu.Text = "           Menu";
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,6 +258,7 @@ namespace InterfazProyecto1
             // Ventana
             // 
             this.Ventana.BackColor = System.Drawing.Color.White;
+            this.Ventana.Controls.Add(this.btnRefrescar);
             this.Ventana.Controls.Add(this.btnEditarAtleta);
             this.Ventana.Controls.Add(this.btnAgregarAtleta);
             this.Ventana.Controls.Add(this.btnBorarAtleta);
@@ -280,6 +279,23 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas.Size = new System.Drawing.Size(843, 402);
             this.dataGridViewAtletas.TabIndex = 0;
             this.dataGridViewAtletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAtletas_CellContentClick);
+            // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.BackColor = System.Drawing.Color.DimGray;
+            this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRefrescar.FlatAppearance.BorderSize = 0;
+            this.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefrescar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefrescar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
+            this.btnRefrescar.Location = new System.Drawing.Point(4, 411);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(37, 43);
+            this.btnRefrescar.TabIndex = 4;
+            this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefrescar.UseVisualStyleBackColor = false;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // FormMenu
             // 
@@ -325,5 +341,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Timer timerDataGridView;
         private System.Windows.Forms.Panel Ventana;
         private System.Windows.Forms.DataGridView dataGridViewAtletas;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }
