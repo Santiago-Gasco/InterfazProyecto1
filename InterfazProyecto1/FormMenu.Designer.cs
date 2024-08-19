@@ -50,6 +50,10 @@ namespace InterfazProyecto1
             this.Ventana = new System.Windows.Forms.Panel();
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.btnRefrescar = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -193,7 +197,7 @@ namespace InterfazProyecto1
             this.panel7.Controls.Add(this.btnCerrarVentana);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1071, 40);
+            this.panel7.Size = new System.Drawing.Size(1054, 40);
             this.panel7.TabIndex = 9;
             // 
             // panel4
@@ -258,6 +262,10 @@ namespace InterfazProyecto1
             // Ventana
             // 
             this.Ventana.BackColor = System.Drawing.Color.White;
+            this.Ventana.Controls.Add(this.panel9);
+            this.Ventana.Controls.Add(this.panel8);
+            this.Ventana.Controls.Add(this.panel6);
+            this.Ventana.Controls.Add(this.panel5);
             this.Ventana.Controls.Add(this.btnRefrescar);
             this.Ventana.Controls.Add(this.btnEditarAtleta);
             this.Ventana.Controls.Add(this.btnAgregarAtleta);
@@ -296,6 +304,38 @@ namespace InterfazProyecto1
             this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefrescar.UseVisualStyleBackColor = false;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel5.Location = new System.Drawing.Point(4, 451);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(37, 3);
+            this.panel5.TabIndex = 5;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel6.Location = new System.Drawing.Point(47, 451);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(37, 3);
+            this.panel6.TabIndex = 6;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel8.Location = new System.Drawing.Point(90, 451);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(37, 3);
+            this.panel8.TabIndex = 7;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel9.Location = new System.Drawing.Point(133, 451);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(37, 3);
+            this.panel9.TabIndex = 8;
             // 
             // FormMenu
             // 
@@ -342,5 +382,9 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel Ventana;
         private System.Windows.Forms.DataGridView dataGridViewAtletas;
         private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel6;
     }
 }
