@@ -54,12 +54,15 @@ namespace InterfazProyecto1
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.Ventana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -337,6 +340,28 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas.TabIndex = 0;
             this.dataGridViewAtletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAtletas_CellContentClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(908, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 96);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "           Creado por:\r\n\r\n       Santiago Gasco\r\n         Lucas Mujica\r\n         " +
+    " Tomas Peña\r\n      Nahuel Rodriguez";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(921, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 118);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +370,8 @@ namespace InterfazProyecto1
             this.Controls.Add(this.Ventana);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMenu";
@@ -357,7 +384,9 @@ namespace InterfazProyecto1
             this.panel7.PerformLayout();
             this.Ventana.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -386,5 +415,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
