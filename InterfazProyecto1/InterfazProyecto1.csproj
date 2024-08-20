@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfiguracion.Designer.cs">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBajaAtleta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormConfiguracion.resx">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBajaAtleta.resx">
       <DependentUpon>FormBajaAtleta.cs</DependentUpon>
     </EmbeddedResource>

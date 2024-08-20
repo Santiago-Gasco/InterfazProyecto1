@@ -56,6 +56,7 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,6 +68,7 @@ namespace InterfazProyecto1
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnConfiguracion);
             this.panel3.Controls.Add(this.btnListarAtleta);
             this.panel3.Location = new System.Drawing.Point(3, 109);
             this.panel3.Name = "panel3";
@@ -362,6 +364,24 @@ namespace InterfazProyecto1
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
+            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracion.Location = new System.Drawing.Point(12, 303);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(161, 46);
+            this.btnConfiguracion.TabIndex = 5;
+            this.btnConfiguracion.Text = "           Configuracion";
+            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracion.UseVisualStyleBackColor = false;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,5 +437,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnConfiguracion;
     }
 }
