@@ -13,7 +13,7 @@ namespace InterfazProyecto1
 {
     public partial class FormMenu : Form
     {
-        string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
+        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
         bool menuExpandido = true;
         bool dataGridViewExpandido;
 
