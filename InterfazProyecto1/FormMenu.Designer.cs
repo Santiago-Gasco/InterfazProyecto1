@@ -48,12 +48,12 @@ namespace InterfazProyecto1
             this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.Ventana = new System.Windows.Forms.Panel();
-            this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
-            this.btnRefrescar = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -279,14 +279,37 @@ namespace InterfazProyecto1
             this.Ventana.TabIndex = 1;
             this.Ventana.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // dataGridViewAtletas
+            // panel9
             // 
-            this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAtletas.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewAtletas.Name = "dataGridViewAtletas";
-            this.dataGridViewAtletas.Size = new System.Drawing.Size(843, 402);
-            this.dataGridViewAtletas.TabIndex = 0;
-            this.dataGridViewAtletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAtletas_CellContentClick);
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel9.Location = new System.Drawing.Point(133, 451);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(37, 3);
+            this.panel9.TabIndex = 8;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel8.Location = new System.Drawing.Point(90, 451);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(37, 3);
+            this.panel8.TabIndex = 7;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel6.Location = new System.Drawing.Point(47, 451);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(37, 3);
+            this.panel6.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel5.Location = new System.Drawing.Point(4, 451);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(37, 3);
+            this.panel5.TabIndex = 5;
             // 
             // btnRefrescar
             // 
@@ -305,37 +328,14 @@ namespace InterfazProyecto1
             this.btnRefrescar.UseVisualStyleBackColor = false;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
-            // panel5
+            // dataGridViewAtletas
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel5.Location = new System.Drawing.Point(4, 451);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(37, 3);
-            this.panel5.TabIndex = 5;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel6.Location = new System.Drawing.Point(47, 451);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(37, 3);
-            this.panel6.TabIndex = 6;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel8.Location = new System.Drawing.Point(90, 451);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(37, 3);
-            this.panel8.TabIndex = 7;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel9.Location = new System.Drawing.Point(133, 451);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(37, 3);
-            this.panel9.TabIndex = 8;
+            this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAtletas.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewAtletas.Name = "dataGridViewAtletas";
+            this.dataGridViewAtletas.Size = new System.Drawing.Size(843, 402);
+            this.dataGridViewAtletas.TabIndex = 0;
+            this.dataGridViewAtletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAtletas_CellContentClick);
             // 
             // FormMenu
             // 
