@@ -13,7 +13,7 @@ namespace InterfazProyecto1
 {
     public partial class FormMenu : Form
     {
-        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
+        string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
         bool menuExpandido = true;
         bool dataGridViewExpandido;
 
@@ -161,8 +161,8 @@ namespace InterfazProyecto1
 
         private void btnBorarAtleta_Click(object sender, EventArgs e)
         {
-            //FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this);
-            //formBajaAtleta.Show();
+            FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this);
+            formBajaAtleta.Show();
         }
 
         private void btnEditarAtleta_Click(object sender, EventArgs e)
