@@ -161,8 +161,8 @@ namespace InterfazProyecto1
 
         private void btnBorarAtleta_Click(object sender, EventArgs e)
         {
-            FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this);
-            formBajaAtleta.Show();
+            //FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this);
+            //formBajaAtleta.Show();
         }
 
         private void btnEditarAtleta_Click(object sender, EventArgs e)
