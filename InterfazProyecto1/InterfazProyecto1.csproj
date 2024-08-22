@@ -104,12 +104,6 @@
     <Compile Include="FormConfiguracion.Designer.cs">
       <DependentUpon>FormConfiguracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBajaAtleta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBajaAtleta.Designer.cs">
-      <DependentUpon>FormBajaAtleta.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEdicionAtleta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +144,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormConfiguracion.resx">
       <DependentUpon>FormConfiguracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormBajaAtleta.resx">
-      <DependentUpon>FormBajaAtleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEdicionAtleta.resx">
       <DependentUpon>FormEdicionAtleta.cs</DependentUpon>
