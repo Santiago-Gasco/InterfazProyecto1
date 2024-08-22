@@ -42,12 +42,12 @@ namespace InterfazProyecto1
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +69,7 @@ namespace InterfazProyecto1
             this.panel2.Controls.Add(this.btnIniciarSesion);
             this.panel2.Location = new System.Drawing.Point(-1, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(339, 332);
+            this.panel2.Size = new System.Drawing.Size(339, 319);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -89,26 +89,30 @@ namespace InterfazProyecto1
             this.tbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNombre.ForeColor = System.Drawing.Color.Black;
+            this.tbNombre.ForeColor = System.Drawing.Color.Gray;
             this.tbNombre.Location = new System.Drawing.Point(62, 158);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tbNombre.Size = new System.Drawing.Size(204, 19);
-            this.tbNombre.TabIndex = 0;
+            this.tbNombre.TabIndex = 19;
             this.tbNombre.Text = "Nombre";
             this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
+            this.tbNombre.Enter += new System.EventHandler(this.tbNombre_Enter);
+            this.tbNombre.Leave += new System.EventHandler(this.tbNombre_Leave);
             // 
             // tbContraseña
             // 
             this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContraseña.ForeColor = System.Drawing.Color.Black;
+            this.tbContraseña.ForeColor = System.Drawing.Color.Gray;
             this.tbContraseña.Location = new System.Drawing.Point(62, 201);
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(204, 19);
             this.tbContraseña.TabIndex = 0;
             this.tbContraseña.Text = "Contraseña";
+            this.tbContraseña.Enter += new System.EventHandler(this.tbContraseña_Enter);
+            this.tbContraseña.Leave += new System.EventHandler(this.tbContraseña_Leave);
             // 
             // pictureBox1
             // 
@@ -183,6 +187,22 @@ namespace InterfazProyecto1
             this.panel7.Size = new System.Drawing.Size(342, 37);
             this.panel7.TabIndex = 6;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(1, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 10);
+            this.panel1.TabIndex = 11;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel4.Location = new System.Drawing.Point(265, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(74, 10);
+            this.panel4.TabIndex = 12;
+            // 
             // btnMinimizarVentana
             // 
             this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
@@ -227,22 +247,6 @@ namespace InterfazProyecto1
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel4.Location = new System.Drawing.Point(265, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(74, 10);
-            this.panel4.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel1.Location = new System.Drawing.Point(1, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 10);
-            this.panel1.TabIndex = 11;
             // 
             // FormLogin
             // 

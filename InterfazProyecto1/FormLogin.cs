@@ -76,7 +76,11 @@ namespace InterfazProyecto1
 
         private void tbNombre_TextChanged(object sender, EventArgs e)
         {
-
+            if (tbNombre.Text == "")
+            {
+                //tbNombre.Text = "Nombre";
+                tbNombre.ForeColor = Color.Gray;
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -97,6 +101,42 @@ namespace InterfazProyecto1
         private void button1_Click_2(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void tbNombre_Enter(object sender, EventArgs e)
+        {
+            if (tbNombre.ForeColor == Color.Gray)
+            {
+                tbNombre.Text = "";
+                tbNombre.ForeColor = Color.Black;
+            }
+        }
+
+        private void tbNombre_Leave(object sender, EventArgs e)
+        {
+            if (tbNombre.Text == "")
+            {
+                tbNombre.Text = "Nombre";
+                tbNombre.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tbContraseña_Enter(object sender, EventArgs e)
+        {
+            if (tbContraseña.ForeColor == Color.Gray)
+            {
+                tbContraseña.Text = "";
+                tbContraseña.ForeColor = Color.Black;
+            }
+        }
+
+        private void tbContraseña_Leave(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text == "")
+            {
+                tbContraseña.Text = "Contraseña";
+                tbContraseña.ForeColor = Color.Gray;
+            }
         }
     }
 }
