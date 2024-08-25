@@ -29,8 +29,8 @@ namespace InterfazProyecto1
             if (panel1.Width >= 801)
             {
                 timer1.Stop();
-                FormLogin login = new FormLogin();
-                login.Show();
+                FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro();
+                formEleccionLoginRegistro.Show();
                 this.Hide();
             }
         }

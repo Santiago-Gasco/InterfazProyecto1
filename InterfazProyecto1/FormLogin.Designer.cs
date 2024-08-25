@@ -29,7 +29,6 @@ namespace InterfazProyecto1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -47,7 +46,6 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +67,7 @@ namespace InterfazProyecto1
             this.panel2.Controls.Add(this.btnIniciarSesion);
             this.panel2.Location = new System.Drawing.Point(-1, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(339, 319);
+            this.panel2.Size = new System.Drawing.Size(339, 332);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -242,12 +240,6 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,7 +275,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbContraseña;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnMinimizarVentana;

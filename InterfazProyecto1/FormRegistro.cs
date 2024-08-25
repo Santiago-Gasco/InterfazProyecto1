@@ -22,41 +22,61 @@ namespace InterfazProyecto1
 
         public void CrearUsuario()
         {
-            string query = "INSERT INTO tb_usuario (Nombre, Contraseña, Rol) VALUES (@nombre, @contraseña, @rol)";
-
-            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
+            if (tbNombreRegistro.Text != "" && tbContraseñaRegistro.Text != "" && tbNombreRegistro.Text != "Nombre" && tbContraseñaRegistro.Text != "Contraseña")
             {
-                try
+                string checkQuery = "SELECT COUNT(*) FROM tb_usuario WHERE Nombre = @nombre AND Contraseña = @contraseña";
+
+                using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
                 {
-                    databaseConnection.Open(); // Abre la conexión
-                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
+                    try
                     {
-                        commandDatabase.CommandTimeout = 60;
-
-                        // Reemplaza los valores de ejemplo con los datos deseados
-                        commandDatabase.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
-                        commandDatabase.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
-                        commandDatabase.Parameters.AddWithValue("@rol", "Super Admin"); // Asegúrate de tener un campo para Rol en tu formulario
-
-                        int rowsAffected = commandDatabase.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        databaseConnection.Open();
+                        using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, databaseConnection))
                         {
-                            MessageBox.Show("Usuario creado exitosamente!");
-                            FormLogin formLogin = new FormLogin();
-                            formLogin.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se pudo crear el usuario. Inténtelo de nuevo.");
+                            checkCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
+                            checkCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
+
+                            int userExists = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                            if (userExists > 0)
+                            {
+                                MessageBox.Show("El usuario ya existe, ingrese otros valores");
+                            }
+                            else
+                            {
+                                string insertQuery = "INSERT INTO tb_usuario (Nombre, Contraseña, Rol) VALUES (@nombre, @contraseña, @rol)";
+                                using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, databaseConnection))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
+                                    insertCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
+                                    insertCommand.Parameters.AddWithValue("@rol", "Super Admin");
+
+                                    int rowsAffected = insertCommand.ExecuteNonQuery();
+
+                                    if (rowsAffected > 0)
+                                    {
+                                        MessageBox.Show("Usuario creado exitosamente!");
+                                        FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro();
+                                        formEleccionLoginRegistro.Show();
+                                        this.Hide();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No se pudo crear el usuario. Inténtelo de nuevo.");
+                                    }
+                                }
+                            }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error inesperado: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error inesperado: " + ex.Message);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Nombre o contraseña incorrectos");
             }
         }
 
@@ -78,6 +98,58 @@ namespace InterfazProyecto1
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             CrearUsuario();
+        }
+
+        private void tbNombreRegistro_TextChanged(object sender, EventArgs e)
+        {
+            if (tbNombreRegistro.Text == "")
+            {
+                tbNombreRegistro.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tbNombreRegistro_Enter(object sender, EventArgs e)
+        {
+            if (tbNombreRegistro.ForeColor == Color.Gray)
+            {
+                tbNombreRegistro.Text = "";
+                tbNombreRegistro.ForeColor = Color.Black;
+            }
+        }
+
+        private void tbNombreRegistro_Leave(object sender, EventArgs e)
+        {
+            if (tbNombreRegistro.Text == "")
+            {
+                tbNombreRegistro.Text = "Nombre";
+                tbNombreRegistro.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tbContraseñaRegistro_Enter(object sender, EventArgs e)
+        {
+            if (tbContraseñaRegistro.ForeColor == Color.Gray)
+            {
+                tbContraseñaRegistro.Text = "";
+                tbContraseñaRegistro.ForeColor = Color.Black;
+            }
+        }
+
+        private void tbContraseñaRegistro_Leave(object sender, EventArgs e)
+        {
+            if (tbContraseñaRegistro.Text == "")
+            {
+                tbContraseñaRegistro.Text = "Nombre";
+                tbContraseñaRegistro.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tbContraseñaRegistro_TextChanged(object sender, EventArgs e)
+        {
+            if (tbContraseñaRegistro.Text == "")
+            {
+                tbContraseñaRegistro.ForeColor = Color.Gray;
+            }
         }
     }
 }

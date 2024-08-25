@@ -78,7 +78,6 @@ namespace InterfazProyecto1
         {
             if (tbNombre.Text == "")
             {
-                //tbNombre.Text = "Nombre";
                 tbNombre.ForeColor = Color.Gray;
             }
         }

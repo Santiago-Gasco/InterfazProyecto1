@@ -32,6 +32,7 @@ namespace InterfazProyecto1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnListarAtleta = new System.Windows.Forms.Button();
             this.btnEditarAtleta = new System.Windows.Forms.Button();
             this.btnBorarAtleta = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,6 +75,24 @@ namespace InterfazProyecto1
             this.panel3.Size = new System.Drawing.Size(189, 361);
             this.panel3.TabIndex = 7;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
+            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracion.Location = new System.Drawing.Point(9, 303);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(161, 46);
+            this.btnConfiguracion.TabIndex = 5;
+            this.btnConfiguracion.Text = "           Configuracion";
+            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracion.UseVisualStyleBackColor = false;
             // 
             // btnListarAtleta
             // 
@@ -276,7 +294,7 @@ namespace InterfazProyecto1
             this.Ventana.Controls.Add(this.btnAgregarAtleta);
             this.Ventana.Controls.Add(this.btnBorarAtleta);
             this.Ventana.Controls.Add(this.dataGridViewAtletas);
-            this.Ventana.Location = new System.Drawing.Point(195, 46);
+            this.Ventana.Location = new System.Drawing.Point(195, 43);
             this.Ventana.MaximumSize = new System.Drawing.Size(992, 460);
             this.Ventana.MinimumSize = new System.Drawing.Size(847, 460);
             this.Ventana.Name = "Ventana";
@@ -346,41 +364,22 @@ namespace InterfazProyecto1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(908, 176);
+            this.label2.Location = new System.Drawing.Point(925, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 96);
+            this.label2.Size = new System.Drawing.Size(116, 96);
             this.label2.TabIndex = 10;
-            this.label2.Text = "           Creado por:\r\n\r\n       Santiago Gasco\r\n         Lucas Mujica\r\n         " +
-    " Tomas Peña\r\n      Nahuel Rodriguez";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(921, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(928, 49);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 118);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
-            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(12, 303);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(161, 46);
-            this.btnConfiguracion.TabIndex = 5;
-            this.btnConfiguracion.Text = "           Configuracion";
-            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.UseVisualStyleBackColor = false;
             // 
             // FormMenu
             // 

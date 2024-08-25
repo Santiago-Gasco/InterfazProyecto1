@@ -33,6 +33,8 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -44,8 +46,6 @@ namespace InterfazProyecto1
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRegistrarse = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -91,6 +91,22 @@ namespace InterfazProyecto1
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(342, 37);
             this.panel7.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel4.Location = new System.Drawing.Point(265, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(74, 10);
+            this.panel4.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(1, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 10);
+            this.panel1.TabIndex = 5;
             // 
             // label1
             // 
@@ -138,25 +154,31 @@ namespace InterfazProyecto1
             this.tbNombreRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbNombreRegistro.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbNombreRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNombreRegistro.ForeColor = System.Drawing.Color.Black;
+            this.tbNombreRegistro.ForeColor = System.Drawing.Color.Gray;
             this.tbNombreRegistro.Location = new System.Drawing.Point(62, 158);
             this.tbNombreRegistro.Name = "tbNombreRegistro";
             this.tbNombreRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tbNombreRegistro.Size = new System.Drawing.Size(204, 19);
             this.tbNombreRegistro.TabIndex = 0;
             this.tbNombreRegistro.Text = "Nombre";
+            this.tbNombreRegistro.TextChanged += new System.EventHandler(this.tbNombreRegistro_TextChanged);
+            this.tbNombreRegistro.Enter += new System.EventHandler(this.tbNombreRegistro_Enter);
+            this.tbNombreRegistro.Leave += new System.EventHandler(this.tbNombreRegistro_Leave);
             // 
             // tbContraseñaRegistro
             // 
             this.tbContraseñaRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContraseñaRegistro.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbContraseñaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContraseñaRegistro.ForeColor = System.Drawing.Color.Black;
+            this.tbContraseñaRegistro.ForeColor = System.Drawing.Color.Gray;
             this.tbContraseñaRegistro.Location = new System.Drawing.Point(62, 201);
             this.tbContraseñaRegistro.Name = "tbContraseñaRegistro";
             this.tbContraseñaRegistro.Size = new System.Drawing.Size(204, 19);
             this.tbContraseñaRegistro.TabIndex = 0;
             this.tbContraseñaRegistro.Text = "Contraseña";
+            this.tbContraseñaRegistro.TextChanged += new System.EventHandler(this.tbContraseñaRegistro_TextChanged);
+            this.tbContraseñaRegistro.Enter += new System.EventHandler(this.tbContraseñaRegistro_Enter);
+            this.tbContraseñaRegistro.Leave += new System.EventHandler(this.tbContraseñaRegistro_Leave);
             // 
             // pictureBox1
             // 
@@ -213,25 +235,9 @@ namespace InterfazProyecto1
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(274, 39);
             this.btnRegistrarse.TabIndex = 5;
-            this.btnRegistrarse.Text = "Iniciar sesion";
+            this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel4.Location = new System.Drawing.Point(265, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(74, 10);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel1.Location = new System.Drawing.Point(1, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 10);
-            this.panel1.TabIndex = 5;
             // 
             // FormRegistro
             // 
