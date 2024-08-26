@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -13,56 +7,58 @@ namespace InterfazProyecto1
 {
     public partial class FormRegistro : Form
     {
+        public Point mouseLocation;
+
         public FormRegistro()
         {
             InitializeComponent();
         }
 
-        private string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
+        private string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
 
         public void CrearUsuario()
         {
-            if (tbNombreRegistro.Text != "" && tbContraseñaRegistro.Text != "" && tbNombreRegistro.Text != "Nombre" && tbContraseñaRegistro.Text != "Contraseña") //if que comprueba que todos los campos no esten vacios ni sean "Nombre" y "Contraseña"
+            if (tbNombreRegistro.Text != "" && tbContraseñaRegistro.Text != "" && tbNombreRegistro.Text != "Nombre" && tbContraseñaRegistro.Text != "Contraseña")
             {
-                string checkQuery = "SELECT COUNT(*) FROM tb_usuario WHERE Nombre = @nombre AND Contraseña = @contraseña"; //variable de tipo string que contiene el comando para contar los usuarios existentes en la base de datos donde los campos de Nombre y Contraseña sean iguales a los de los parametros @nombre y @contraseña
+                string checkQuery = "SELECT COUNT(*) FROM tb_usuario WHERE Nombre = @nombre AND Contraseña = @contraseña";
 
-                using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //crea una conexión con la base de datos
+                using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
                 {
                     try
                     {
-                        databaseConnection.Open(); //abre la conexión de la base de datos
-                        using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, databaseConnection)) //instancia de la clase MySqlCommand llamada checkCommand que se usara para contar los usuarios exientes en la base de datos
+                        databaseConnection.Open();
+                        using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, databaseConnection))
                         {
-                            checkCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text); //agrega un parametro al comando checkCommand en base al contenido de tbNombreRegistro.Text
-                            checkCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text); //agrega un parametro al comando checkCommand en base al contenido de tbContraseñaRegistro.Text
+                            checkCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
+                            checkCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
 
-                            int userExists = Convert.ToInt32(checkCommand.ExecuteScalar()); //variable de tipo int que expresa de forma numerica si existe un usuario que cumpla con las condiciones de checkCommand
+                            int userExists = Convert.ToInt32(checkCommand.ExecuteScalar());
 
-                            if (userExists > 0) //Si la variable userExists es mayor a cero pasa lo siguiente
+                            if (userExists > 0)
                             {
-                                MessageBox.Show("El usuario ya existe, ingrese otros valores"); //Muestra una caja de mensaje que indica que ya existe un usuario con esos valores y pida que se ingresen valores distintos
+                                MessageBox.Show("El usuario ya existe, ingrese otros valores");
                             }
-                            else //Si la condición no es cumplida, es decir userExists es igual o menor a cero pasa lo siguiente
+                            else
                             {
-                                string insertQuery = "INSERT INTO tb_usuario (Nombre, Contraseña, Rol) VALUES (@nombre, @contraseña, @rol)"; //variable de tipo string que contiene el comando para ingresar un nuevo usuario en la base de datos
-                                using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, databaseConnection)) //instancia de la clase MySqlCommand llamada insertCommand que se usara para insertar un nuevo usuario en la tabla de datos
+                                string insertQuery = "INSERT INTO tb_usuario (Nombre, Contraseña, Rol) VALUES (@nombre, @contraseña, @rol)";
+                                using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, databaseConnection))
                                 {
-                                    insertCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text); //agrega un parametro al comando insertCommand en base al contenido de tbNombreRegistro.Text
-                                    insertCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text); //agrega un parametro al comando insertCommand en base al contenido de tbNombreRegistro.Text
-                                    insertCommand.Parameters.AddWithValue("@rol", "Super Admin"); //agrega un parametro al comando insertCommand predeterminado, en este caso el rol de "Super Admin"
+                                    insertCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
+                                    insertCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
+                                    insertCommand.Parameters.AddWithValue("@rol", "Super Admin");
 
-                                    int rowsAffected = insertCommand.ExecuteNonQuery(); //variable de tipo int que cuenta la cantidad de filas afectadas 
+                                    int rowsAffected = insertCommand.ExecuteNonQuery();
 
-                                    if (rowsAffected > 0) //Si la variable rowsAffected es mayor a cero pasa lo siguiente
+                                    if (rowsAffected > 0)
                                     {
-                                        MessageBox.Show("Usuario creado exitosamente!"); //se muestra una caja de mensaje informando la creación exitosa del usuario.
-                                        FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro(); 
+                                        MessageBox.Show("Usuario creado exitosamente!");
+                                        FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro();
                                         formEleccionLoginRegistro.Show();
                                         this.Hide();
                                     }
-                                    else //si la condicion no es cumplida, es decir rowsAffected es menor o igual a cero pasa lo siguiente
+                                    else
                                     {
-                                        MessageBox.Show("No se pudo crear el usuario. Inténtelo de nuevo."); //se muestra una caja de mensaje que informa que falló la creación del usuario y que se intente de nuevo
+                                        MessageBox.Show("No se pudo crear el usuario. Inténtelo de nuevo.");
                                     }
                                 }
                             }
@@ -70,13 +66,13 @@ namespace InterfazProyecto1
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error inesperado: " + ex.Message); //Muestra un mensaje de error
+                        MessageBox.Show("Error inesperado: " + ex.Message);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Nombre o contraseña incorrectos"); //Muestra una caja de mensaje que avisa que el nombre o la contraseña no cumplen alguna de las condiciones
+                MessageBox.Show("Nombre o contraseña incorrectos");
             }
         }
 
@@ -149,6 +145,21 @@ namespace InterfazProyecto1
             if (tbContraseñaRegistro.Text == "")
             {
                 tbContraseñaRegistro.ForeColor = Color.Gray;
+            }
+        }
+
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
             }
         }
     }

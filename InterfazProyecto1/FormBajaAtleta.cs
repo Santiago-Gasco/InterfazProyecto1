@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Drawing;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
     public partial class FormBajaAtleta : Form
     {
         FormMenu formMenu;
-
+        public Point mouseLocation;
         public FormBajaAtleta(FormMenu menu)
         {
             InitializeComponent();
@@ -74,6 +75,21 @@ namespace InterfazProyecto1
                 {
                     MessageBox.Show("Error inesperado: " + ex.Message);
                 }
+            }
+        }
+
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
             }
         }
     }

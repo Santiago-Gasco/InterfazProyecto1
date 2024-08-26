@@ -51,6 +51,7 @@ namespace InterfazProyecto1
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbCedula = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@ namespace InterfazProyecto1
             this.tbEscuela = new System.Windows.Forms.TextBox();
             this.btnAltaAtleta = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.numEdad = new System.Windows.Forms.NumericUpDown();
             this.numFederado = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -82,6 +82,8 @@ namespace InterfazProyecto1
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(342, 37);
             this.panel7.TabIndex = 7;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
             // 
             // panel1
             // 
@@ -293,6 +295,18 @@ namespace InterfazProyecto1
             this.panel11.Size = new System.Drawing.Size(171, 293);
             this.panel11.TabIndex = 16;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.label8.Location = new System.Drawing.Point(14, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Edad";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -375,18 +389,6 @@ namespace InterfazProyecto1
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(147, 3);
             this.panel13.TabIndex = 26;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label8.Location = new System.Drawing.Point(14, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Edad";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // numEdad
             // 

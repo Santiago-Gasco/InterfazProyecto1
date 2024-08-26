@@ -59,6 +59,8 @@ namespace InterfazProyecto1
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(342, 37);
             this.panel7.TabIndex = 7;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
             // 
             // panel1
             // 

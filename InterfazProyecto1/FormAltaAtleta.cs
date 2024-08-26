@@ -1,13 +1,20 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
     public partial class FormAltaAtleta : Form
     {
         FormMenu formMenu;
-
+        public Point mouseLocation;
         public FormAltaAtleta(FormMenu menu)
         {
             InitializeComponent();
@@ -83,6 +90,21 @@ namespace InterfazProyecto1
                 {
                     MessageBox.Show("Error inesperado: " + ex.Message);
                 }
+            }
+        }
+
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
             }
         }
     }

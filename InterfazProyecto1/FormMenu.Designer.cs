@@ -216,13 +216,14 @@ namespace InterfazProyecto1
             this.panel7.Controls.Add(this.panel4);
             this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.btnMinimizarVentana);
-            this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.btnCerrarVentana);
+            this.panel7.Controls.Add(this.label1);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1054, 40);
             this.panel7.TabIndex = 9;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
             // 
             // panel4
             // 
@@ -258,7 +259,7 @@ namespace InterfazProyecto1
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(49, 20);

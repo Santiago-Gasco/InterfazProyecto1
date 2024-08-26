@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
@@ -13,6 +8,7 @@ namespace InterfazProyecto1
 {
     public partial class FormMenu : Form
     {
+        public Point mouseLocation;
         string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
         bool menuExpandido = true; //esta variable de tipo bool determina el estado del menu, es decir si se muestra de forma parcial o de forma total
         bool dataGridViewExpandido; //esta variable de tipo bool determina el tamaño que debe de tener la cuadricula donde se listan los atletas ingresados en la base de datos
@@ -81,11 +77,11 @@ namespace InterfazProyecto1
         {
             string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
-            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //crea una conexión con la base de datos
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
                 try
                 {
-                    databaseConnection.Open(); //abre la base de datos
+                    databaseConnection.Open();
                     using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection)) //instancia de la clase MySqlCommand llamada commandDatabase que se usara para ejecutar una consulta en la base de datos
                     {
                         commandDatabase.CommandTimeout = 60; //Crea un tiempo de espera antes de terminar el intento de ejecución de error
@@ -181,9 +177,19 @@ namespace InterfazProyecto1
             ListarAtletas(); //ejecuta el metodo para listar los atletas
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
         {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
 
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
+            }
         }
     }
 }
