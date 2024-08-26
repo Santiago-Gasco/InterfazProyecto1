@@ -81,11 +81,11 @@ namespace InterfazProyecto1
         {
             string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
-            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //crea una conexión con la base de datos
             {
                 try
                 {
-                    databaseConnection.Open();
+                    databaseConnection.Open(); //abre la base de datos
                     using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection)) //instancia de la clase MySqlCommand llamada commandDatabase que se usara para ejecutar una consulta en la base de datos
                     {
                         commandDatabase.CommandTimeout = 60; //Crea un tiempo de espera antes de terminar el intento de ejecución de error
@@ -179,6 +179,11 @@ namespace InterfazProyecto1
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             ListarAtletas(); //ejecuta el metodo para listar los atletas
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

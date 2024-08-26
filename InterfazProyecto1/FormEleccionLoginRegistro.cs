@@ -27,14 +27,14 @@ namespace InterfazProyecto1
             this.Close();
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        private void btnIniciarSesion_Click(object sender, EventArgs e) //este botón abre la ventana para iniciar sesión
         {
             FormLogin login = new FormLogin();
             login.Show();
             this.Hide();
         }
 
-        private void btnRegistrarse_Click(object sender, EventArgs e)
+        private void btnRegistrarse_Click(object sender, EventArgs e) //este botón abre la ventana para registrarte
         {
             FormRegistro registro = new FormRegistro();
             registro.Show();

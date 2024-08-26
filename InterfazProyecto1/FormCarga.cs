@@ -24,15 +24,20 @@ namespace InterfazProyecto1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panel1.Width += 3;
+            panel1.Width += 3; //aumenta el ancho del panel1 con cada tick del timer
 
-            if (panel1.Width >= 801)
+            if (panel1.Width >= 801) //If en el que cuando el ancho del panel1 alcanza el valor 801, osea el final de la barra de carga, el timer se detiene y se abre el formELeccionLoginRegistro
             {
                 timer1.Stop();
                 FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro();
                 formEleccionLoginRegistro.Show();
                 this.Hide();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

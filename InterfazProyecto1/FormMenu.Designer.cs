@@ -222,6 +222,7 @@ namespace InterfazProyecto1
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1054, 40);
             this.panel7.TabIndex = 9;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel4
             // 
