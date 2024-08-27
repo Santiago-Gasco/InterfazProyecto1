@@ -9,7 +9,7 @@ namespace InterfazProyecto1
     public partial class FormMenu : Form
     {
         public Point mouseLocation;
-        string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
+        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
         bool menuExpandido = true; //esta variable de tipo bool determina el estado del menu, es decir si se muestra de forma parcial o de forma total
         bool dataGridViewExpandido; //esta variable de tipo bool determina el tamaño que debe de tener la cuadricula donde se listan los atletas ingresados en la base de datos
 

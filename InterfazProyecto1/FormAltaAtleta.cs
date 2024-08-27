@@ -36,7 +36,7 @@ namespace InterfazProyecto1
 
         }
 
-        private string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;";
+        private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
 
         private void btnAltaAtleta_Click(object sender, EventArgs e)
         {
