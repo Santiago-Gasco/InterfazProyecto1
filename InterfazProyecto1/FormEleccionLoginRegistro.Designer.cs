@@ -184,6 +184,7 @@ namespace InterfazProyecto1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEleccionLoginRegistro";
             this.Text = "FormEleccionLoginRegistro";
+            this.Load += new System.EventHandler(this.FormEleccionLoginRegistro_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

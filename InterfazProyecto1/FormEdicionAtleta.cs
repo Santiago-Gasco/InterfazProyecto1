@@ -37,17 +37,17 @@ namespace InterfazProyecto1
         {
             string query;
 
-            if (cbTipoBusqueda.SelectedIndex == 0)
+            if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
             {
-                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE ID_atleta = " + tbValorBusqueda.Text;
+                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
             }
-            else if (cbTipoBusqueda.SelectedIndex == 1)
+            else if (cbTipoBusqueda.SelectedIndex == 1) //Verifica la posicion del combobox
             {
-                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Cedula = " + tbValorBusqueda.Text;
+                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
             }
-            else
+            else //Verifica la posicion del combobox
             {
-                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Federado = " + tbValorBusqueda.Text;
+                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
             }
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
@@ -109,17 +109,17 @@ namespace InterfazProyecto1
             {
                 string query;
 
-                if (cbTipoBusqueda.SelectedIndex == 0)
+                if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
                 {
-                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE ID_atleta = " + tbValorBusqueda.Text;
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
                 }
-                else if (cbTipoBusqueda.SelectedIndex == 1)
+                else if (cbTipoBusqueda.SelectedIndex == 1) //Verifica la posicion del combobox
                 {
-                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Cedula = " + tbValorBusqueda.Text;
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
                 }
-                else
+                else //Verifica la posicion del combobox
                 {
-                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Federado = " + tbValorBusqueda.Text;
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
                 }
 
                 using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
@@ -175,11 +175,11 @@ namespace InterfazProyecto1
 
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
-                Point mousePose = Control.MousePosition;
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
-                Location = mousePose;
+                Point mousePose = Control.MousePosition; // Obtiene la posición actual del mouse en la pantalla
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
+                Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
         }
     }

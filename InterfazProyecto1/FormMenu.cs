@@ -9,7 +9,7 @@ namespace InterfazProyecto1
     public partial class FormMenu : Form
     {
         public Point mouseLocation;
-        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
+        string connectionString = "datasource=127.0.0.1;port=3305;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
         bool menuExpandido = true; //esta variable de tipo bool determina el estado del menu, es decir si se muestra de forma parcial o de forma total
         bool dataGridViewExpandido; //esta variable de tipo bool determina el tamaño que debe de tener la cuadricula donde se listan los atletas ingresados en la base de datos
 
@@ -79,9 +79,59 @@ namespace InterfazProyecto1
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
+                databaseConnection.Open();
+
                 try
                 {
-                    databaseConnection.Open();
+                    // Crear una tabla temporal y copiar los datos
+                    string createTempTableQuery = @"
+                        CREATE TEMPORARY TABLE tb_atleta_temp AS
+                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
+                        FROM tb_atleta
+                        ORDER BY Id_atleta;";
+                    using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
+                    {
+                        createTempTableCommand.ExecuteNonQuery();
+                    }
+
+                    // Agregar una columna de IDs secuenciales
+                    string addTempIdColumnQuery = "ALTER TABLE tb_atleta_temp ADD COLUMN new_id INT AUTO_INCREMENT PRIMARY KEY;";
+                    using (var addTempIdColumnCommand = new MySqlCommand(addTempIdColumnQuery, databaseConnection))
+                    {
+                        addTempIdColumnCommand.ExecuteNonQuery();
+                    }
+
+                    // Actualizar los IDs en la tabla original
+                    string updateOriginalTableQuery = @"
+                        UPDATE tb_atleta a
+                        JOIN tb_atleta_temp t ON a.Id_atleta = t.Id_atleta
+                        SET a.Id_atleta = t.new_id;";
+                    using (var updateOriginalTableCommand = new MySqlCommand(updateOriginalTableQuery, databaseConnection))
+                    {
+                        updateOriginalTableCommand.ExecuteNonQuery();
+                    }
+
+                    // Restablecer AUTO_INCREMENT
+                    string resetAutoIncrementQuery = "ALTER TABLE tb_atleta AUTO_INCREMENT = 1;";
+                    using (var resetAutoIncrementCommand = new MySqlCommand(resetAutoIncrementQuery, databaseConnection))
+                    {
+                        resetAutoIncrementCommand.ExecuteNonQuery();
+                    }
+
+                    // Eliminar la tabla temporal
+                    string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_temp;";
+                    using (var dropTempTableCommand = new MySqlCommand(dropTempTableQuery, databaseConnection))
+                    {
+                        dropTempTableCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
+                try
+                {
                     using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection)) //instancia de la clase MySqlCommand llamada commandDatabase que se usara para ejecutar una consulta en la base de datos
                     {
                         commandDatabase.CommandTimeout = 60; //Crea un tiempo de espera antes de terminar el intento de ejecución de error
@@ -184,11 +234,11 @@ namespace InterfazProyecto1
 
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
-                Point mousePose = Control.MousePosition;
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
-                Location = mousePose;
+                Point mousePose = Control.MousePosition; // Obtiene la posición actual del mouse en la pantalla
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
+                Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
         }
     }

@@ -155,11 +155,11 @@ namespace InterfazProyecto1
 
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
-                Point mousePose = Control.MousePosition;
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
-                Location = mousePose;
+                Point mousePose = Control.MousePosition; // Obtiene la posición actual del mouse en la pantalla
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
+                Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
         }
     }
