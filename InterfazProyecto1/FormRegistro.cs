@@ -83,7 +83,9 @@ namespace InterfazProyecto1
 
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormEleccionLoginRegistro formEleccion = new FormEleccionLoginRegistro();
+            formEleccion.Show();
+            this.Hide();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
