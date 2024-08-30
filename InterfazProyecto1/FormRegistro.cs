@@ -16,18 +16,18 @@ namespace InterfazProyecto1
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
 
-        public void CrearUsuario()
+        public void AltaUsuario()
         {
-            if (tbNombreRegistro.Text != "" && tbContraseñaRegistro.Text != "" && tbNombreRegistro.Text != "Nombre" && tbContraseñaRegistro.Text != "Contraseña")
+            if (tbNombreRegistro.Text != "" && tbContraseñaRegistro.Text != "" && tbNombreRegistro.Text != "Nombre" && tbContraseñaRegistro.Text != "Contraseña") // Si los textbox no son vacios y no tienen el valor por defecto se ejecuta el void
             {
-                string checkQuery = "SELECT COUNT(*) FROM tb_usuario WHERE Nombre = @nombre AND Contraseña = @contraseña";
+                string query = "SELECT COUNT(*) FROM tb_usuario WHERE Nombre = @nombre AND Contraseña = @contraseña";
 
                 using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
                 {
                     try
                     {
                         databaseConnection.Open();
-                        using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, databaseConnection))
+                        using (MySqlCommand checkCommand = new MySqlCommand(query, databaseConnection))
                         {
                             checkCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
                             checkCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
@@ -93,20 +93,16 @@ namespace InterfazProyecto1
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            CrearUsuario();
+            AltaUsuario();
         }
 
         private void tbNombreRegistro_TextChanged(object sender, EventArgs e)
         {
-            if (tbNombreRegistro.Text == "")
-            {
-                tbNombreRegistro.ForeColor = Color.Gray;
-            }
         }
 
         private void tbNombreRegistro_Enter(object sender, EventArgs e)
         {
-            if (tbNombreRegistro.ForeColor == Color.Gray)
+            if (tbNombreRegistro.ForeColor == Color.Gray) // Si el color de el textbox es gris deja el texto nulo y el color en negro
             {
                 tbNombreRegistro.Text = "";
                 tbNombreRegistro.ForeColor = Color.Black;
@@ -115,7 +111,7 @@ namespace InterfazProyecto1
 
         private void tbNombreRegistro_Leave(object sender, EventArgs e)
         {
-            if (tbNombreRegistro.Text == "")
+            if (tbNombreRegistro.Text == "") // Si el textbox esta vacio iguala el texto a "Nombre" y deja el color en gris
             {
                 tbNombreRegistro.Text = "Nombre";
                 tbNombreRegistro.ForeColor = Color.Gray;
@@ -124,7 +120,7 @@ namespace InterfazProyecto1
 
         private void tbContraseñaRegistro_Enter(object sender, EventArgs e)
         {
-            if (tbContraseñaRegistro.ForeColor == Color.Gray)
+            if (tbContraseñaRegistro.ForeColor == Color.Gray) // Si el color de el textbox es gris deja el texto nulo y el color en negro
             {
                 tbContraseñaRegistro.Text = "";
                 tbContraseñaRegistro.ForeColor = Color.Black;
@@ -133,7 +129,7 @@ namespace InterfazProyecto1
 
         private void tbContraseñaRegistro_Leave(object sender, EventArgs e)
         {
-            if (tbContraseñaRegistro.Text == "")
+            if (tbContraseñaRegistro.Text == "") // Si el textbox esta vacio iguala el texto a "Contraseña" y deja el color en gris
             {
                 tbContraseñaRegistro.Text = "Nombre";
                 tbContraseñaRegistro.ForeColor = Color.Gray;
@@ -142,10 +138,6 @@ namespace InterfazProyecto1
 
         private void tbContraseñaRegistro_TextChanged(object sender, EventArgs e)
         {
-            if (tbContraseñaRegistro.Text == "")
-            {
-                tbContraseñaRegistro.ForeColor = Color.Gray;
-            }
         }
 
         private void panel7_MouseDown(object sender, MouseEventArgs e)

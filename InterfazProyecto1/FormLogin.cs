@@ -71,10 +71,7 @@ namespace InterfazProyecto1
 
         private void tbNombre_TextChanged(object sender, EventArgs e)
         {
-            if (tbNombre.Text == "")
-            {
-                tbNombre.ForeColor = Color.Gray;
-            }
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -99,14 +96,14 @@ namespace InterfazProyecto1
 
         private void tbNombre_Enter(object sender, EventArgs e)
         {
-            if (tbNombre.ForeColor == Color.Gray)
+            if (tbNombre.ForeColor == Color.Gray) // Si el color de el textbox es gris deja el texto nulo y el color en negro
             {
                 tbNombre.Text = "";
                 tbNombre.ForeColor = Color.Black;
             }
         }
 
-        private void tbNombre_Leave(object sender, EventArgs e)
+        private void tbNombre_Leave(object sender, EventArgs e) // Si el textbox esta vacio iguala el texto a "Nombre" y deja el color en gris
         {
             if (tbNombre.Text == "")
             {
@@ -117,7 +114,7 @@ namespace InterfazProyecto1
 
         private void tbContraseña_Enter(object sender, EventArgs e)
         {
-            if (tbContraseña.ForeColor == Color.Gray)
+            if (tbContraseña.ForeColor == Color.Gray) // Si el color de el textbox es gris deja el texto nulo y el color en negro
             {
                 tbContraseña.Text = "";
                 tbContraseña.ForeColor = Color.Black;
@@ -126,7 +123,7 @@ namespace InterfazProyecto1
 
         private void tbContraseña_Leave(object sender, EventArgs e)
         {
-            if (tbContraseña.Text == "")
+            if (tbContraseña.Text == "") // Si el textbox esta vacio iguala el texto a "Contraseña" y deja el color en gris
             {
                 tbContraseña.Text = "Contraseña";
                 tbContraseña.ForeColor = Color.Gray;

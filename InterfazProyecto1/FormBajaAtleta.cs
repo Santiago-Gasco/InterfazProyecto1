@@ -9,6 +9,7 @@ namespace InterfazProyecto1
     {
         FormMenu formMenu;
         public Point mouseLocation;
+        string query;
         public FormBajaAtleta(FormMenu menu)
         {
             InitializeComponent();
@@ -34,8 +35,6 @@ namespace InterfazProyecto1
 
         private void btnBajaAtleta_Click(object sender, EventArgs e)
         {
-            string query;
-
             if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
             {
                 query = "DELETE FROM tb_atleta WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
@@ -49,6 +48,11 @@ namespace InterfazProyecto1
                 query = "DELETE FROM tb_atleta WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
             }
 
+            BajaAtleta();
+        }
+
+        private void BajaAtleta()
+        {
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
                 try

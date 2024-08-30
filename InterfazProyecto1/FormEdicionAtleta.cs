@@ -2,6 +2,7 @@
 using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace InterfazProyecto1
 {
@@ -9,6 +10,7 @@ namespace InterfazProyecto1
     {
         FormMenu formMenu;
         public Point mouseLocation;
+        string query;
 
         public FormEdicionAtleta(FormMenu menu)
         {
@@ -35,8 +37,6 @@ namespace InterfazProyecto1
 
         private void btnEditarAtleta_Click(object sender, EventArgs e)
         {
-            string query;
-
             if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
             {
                 query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
@@ -50,6 +50,11 @@ namespace InterfazProyecto1
                 query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
             }
 
+            EditarAtleta();
+        }
+
+        private void EditarAtleta()
+        {
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
                 try
@@ -103,7 +108,7 @@ namespace InterfazProyecto1
             }
         }
 
-        private void buscarAtleta()
+        private void BuscarAtleta() //Busca el atleta y lo agrega a los editores de texto
         {
             if (tbValorBusqueda.Text != "")
             {
@@ -160,12 +165,12 @@ namespace InterfazProyecto1
 
         private void tbValorBusqueda_Leave(object sender, EventArgs e)
         {
-            buscarAtleta();
+            BuscarAtleta();
         }
 
         private void cbTipoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            buscarAtleta();
+            BuscarAtleta();
         }
 
         private void panel7_MouseDown(object sender, MouseEventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace InterfazProyecto1
 {
@@ -15,6 +16,8 @@ namespace InterfazProyecto1
     {
         FormMenu formMenu;
         public Point mouseLocation;
+        string query;
+
         public FormAltaAtleta(FormMenu menu)
         {
             InitializeComponent();
@@ -40,8 +43,13 @@ namespace InterfazProyecto1
 
         private void btnAltaAtleta_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela)";
+            query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela)";
 
+            AltaAtleta();
+        }
+
+        private void AltaAtleta()
+        {
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
                 try
