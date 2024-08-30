@@ -32,7 +32,7 @@ namespace InterfazProyecto1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEleccionLoginRegistro));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelSuperiorVentana = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@ namespace InterfazProyecto1
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnRegistrarse = new System.Windows.Forms.Button();
-            this.panel7.SuspendLayout();
+            this.panelSuperiorVentana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,20 +61,20 @@ namespace InterfazProyecto1
             this.panel1.Size = new System.Drawing.Size(463, 10);
             this.panel1.TabIndex = 5;
             // 
-            // panel7
+            // panelSuperiorVentana
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel7.Controls.Add(this.panel4);
-            this.panel7.Controls.Add(this.panel1);
-            this.panel7.Controls.Add(this.btnMinimizarVentana);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.btnCerrarVentana);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(529, 37);
-            this.panel7.TabIndex = 8;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelSuperiorVentana.Controls.Add(this.panel4);
+            this.panelSuperiorVentana.Controls.Add(this.panel1);
+            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
+            this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorVentana.Name = "panelSuperiorVentana";
+            this.panelSuperiorVentana.Size = new System.Drawing.Size(529, 37);
+            this.panelSuperiorVentana.TabIndex = 8;
+            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
+            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
             // btnMinimizarVentana
             // 
@@ -180,13 +180,12 @@ namespace InterfazProyecto1
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEleccionLoginRegistro";
             this.Text = "FormEleccionLoginRegistro";
-            this.Load += new System.EventHandler(this.FormEleccionLoginRegistro_Load);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelSuperiorVentana.ResumeLayout(false);
+            this.panelSuperiorVentana.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -196,7 +195,7 @@ namespace InterfazProyecto1
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarVentana;

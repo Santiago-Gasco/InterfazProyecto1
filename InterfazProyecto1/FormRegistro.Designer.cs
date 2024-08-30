@@ -32,7 +32,7 @@ namespace InterfazProyecto1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelSuperiorVentana = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace InterfazProyecto1
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRegistrarse = new System.Windows.Forms.Button();
-            this.panel7.SuspendLayout();
+            this.panelSuperiorVentana.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,20 +79,20 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
-            // panel7
+            // panelSuperiorVentana
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel7.Controls.Add(this.panel4);
-            this.panel7.Controls.Add(this.panel1);
-            this.panel7.Controls.Add(this.btnMinimizarVentana);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.btnCerrarVentana);
-            this.panel7.Location = new System.Drawing.Point(-1, -1);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(342, 37);
-            this.panel7.TabIndex = 7;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelSuperiorVentana.Controls.Add(this.panel4);
+            this.panelSuperiorVentana.Controls.Add(this.panel1);
+            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
+            this.panelSuperiorVentana.Location = new System.Drawing.Point(-1, -1);
+            this.panelSuperiorVentana.Name = "panelSuperiorVentana";
+            this.panelSuperiorVentana.Size = new System.Drawing.Size(342, 37);
+            this.panelSuperiorVentana.TabIndex = 7;
+            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
+            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
             // panel4
             // 
@@ -138,7 +138,6 @@ namespace InterfazProyecto1
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(339, 332);
             this.panel2.TabIndex = 8;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox4
             // 
@@ -163,7 +162,6 @@ namespace InterfazProyecto1
             this.tbNombreRegistro.Size = new System.Drawing.Size(204, 19);
             this.tbNombreRegistro.TabIndex = 0;
             this.tbNombreRegistro.Text = "Nombre";
-            this.tbNombreRegistro.TextChanged += new System.EventHandler(this.tbNombreRegistro_TextChanged);
             this.tbNombreRegistro.Enter += new System.EventHandler(this.tbNombreRegistro_Enter);
             this.tbNombreRegistro.Leave += new System.EventHandler(this.tbNombreRegistro_Leave);
             // 
@@ -178,7 +176,6 @@ namespace InterfazProyecto1
             this.tbContraseñaRegistro.Size = new System.Drawing.Size(204, 19);
             this.tbContraseñaRegistro.TabIndex = 0;
             this.tbContraseñaRegistro.Text = "Contraseña";
-            this.tbContraseñaRegistro.TextChanged += new System.EventHandler(this.tbContraseñaRegistro_TextChanged);
             this.tbContraseñaRegistro.Enter += new System.EventHandler(this.tbContraseñaRegistro_Enter);
             this.tbContraseñaRegistro.Leave += new System.EventHandler(this.tbContraseñaRegistro_Leave);
             // 
@@ -246,15 +243,15 @@ namespace InterfazProyecto1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 363);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panelSuperiorVentana);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistro";
             this.Text = "FormRegistro";
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelSuperiorVentana.ResumeLayout(false);
+            this.panelSuperiorVentana.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -268,7 +265,7 @@ namespace InterfazProyecto1
 
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;

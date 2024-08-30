@@ -88,18 +88,9 @@ namespace InterfazProyecto1
             this.Hide();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             AltaUsuario();
-        }
-
-        private void tbNombreRegistro_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void tbNombreRegistro_Enter(object sender, EventArgs e)
@@ -138,16 +129,12 @@ namespace InterfazProyecto1
             }
         }
 
-        private void tbContraseñaRegistro_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
             mouseLocation = new Point(-e.X, -e.Y);
         }
 
-        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {

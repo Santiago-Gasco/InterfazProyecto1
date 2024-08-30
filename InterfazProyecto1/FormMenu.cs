@@ -164,26 +164,6 @@ namespace InterfazProyecto1
             timerDataGridView.Start();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
             this.Close(); //hace que se cierre la ventana
@@ -192,11 +172,6 @@ namespace InterfazProyecto1
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized; //minimiza la ventana
-        }
-
-        private void dataGridViewAtletas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnAgregarAtleta_Click(object sender, EventArgs e)
@@ -227,12 +202,12 @@ namespace InterfazProyecto1
             ListarAtletas(); //ejecuta el metodo para listar los atletas
         }
 
-        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
             mouseLocation = new Point(-e.X, -e.Y);
         }
 
-        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {

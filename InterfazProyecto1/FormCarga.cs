@@ -17,18 +17,13 @@ namespace InterfazProyecto1
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerCarga_Tick(object sender, EventArgs e)
         {
             panel1.Width += 3;
 
             if (panel1.Width >= 801)
             {
-                timer1.Stop();
+                timerCarga.Stop();
                 FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro();
                 formEleccionLoginRegistro.Show();
                 this.Hide();

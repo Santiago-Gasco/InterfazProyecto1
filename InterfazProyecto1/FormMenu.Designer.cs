@@ -41,12 +41,12 @@ namespace InterfazProyecto1
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelSuperiorVentana = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.Ventana = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -60,7 +60,7 @@ namespace InterfazProyecto1
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panelSuperiorVentana.SuspendLayout();
             this.Ventana.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,7 +74,6 @@ namespace InterfazProyecto1
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(189, 361);
             this.panel3.TabIndex = 7;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnConfiguracion
             // 
@@ -175,9 +174,7 @@ namespace InterfazProyecto1
             this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(63, 470);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 470);
-            this.flowLayoutPanel1.TabIndex = 8;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
+            this.flowLayoutPanel1.TabIndex = 8;            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnMenu);
@@ -210,20 +207,20 @@ namespace InterfazProyecto1
             this.timerMenu.Interval = 10;
             this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
             // 
-            // panel7
+            // panelSuperiorVentana
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel7.Controls.Add(this.panel4);
-            this.panel7.Controls.Add(this.panel2);
-            this.panel7.Controls.Add(this.btnMinimizarVentana);
-            this.panel7.Controls.Add(this.btnCerrarVentana);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1054, 40);
-            this.panel7.TabIndex = 9;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelSuperiorVentana.Controls.Add(this.panel4);
+            this.panelSuperiorVentana.Controls.Add(this.panel2);
+            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorVentana.Name = "panelSuperiorVentana";
+            this.panelSuperiorVentana.Size = new System.Drawing.Size(1054, 40);
+            this.panelSuperiorVentana.TabIndex = 9;
+            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
+            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
             // panel4
             // 
@@ -254,18 +251,6 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana.UseVisualStyleBackColor = false;
             this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(49, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Menu";
-            // 
             // btnCerrarVentana
             // 
             this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
@@ -278,6 +263,18 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.TabIndex = 0;
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Menu";
             // 
             // timerDataGridView
             // 
@@ -302,7 +299,6 @@ namespace InterfazProyecto1
             this.Ventana.Name = "Ventana";
             this.Ventana.Size = new System.Drawing.Size(849, 460);
             this.Ventana.TabIndex = 1;
-            this.Ventana.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel9
             // 
@@ -360,7 +356,6 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas.Name = "dataGridViewAtletas";
             this.dataGridViewAtletas.Size = new System.Drawing.Size(843, 402);
             this.dataGridViewAtletas.TabIndex = 0;
-            this.dataGridViewAtletas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAtletas_CellContentClick);
             // 
             // label2
             // 
@@ -368,7 +363,7 @@ namespace InterfazProyecto1
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(925, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 96);
+            this.label2.Size = new System.Drawing.Size(115, 96);
             this.label2.TabIndex = 10;
             this.label2.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,7 +384,7 @@ namespace InterfazProyecto1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 510);
             this.Controls.Add(this.Ventana);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panelSuperiorVentana);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -401,8 +396,8 @@ namespace InterfazProyecto1
             this.panel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelSuperiorVentana.ResumeLayout(false);
+            this.panelSuperiorVentana.PerformLayout();
             this.Ventana.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -422,7 +417,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Timer timerMenu;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarVentana;

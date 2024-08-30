@@ -30,7 +30,7 @@ namespace InterfazProyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAltaAtleta));
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelSuperiorVentana = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
@@ -64,27 +64,27 @@ namespace InterfazProyecto1
             this.numFederado = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
             this.numCedula = new System.Windows.Forms.NumericUpDown();
-            this.panel7.SuspendLayout();
+            this.panelSuperiorVentana.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel7
+            // panelSuperiorVentana
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel7.Controls.Add(this.panel1);
-            this.panel7.Controls.Add(this.panel4);
-            this.panel7.Controls.Add(this.btnMinimizarVentana);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.btnCerrarVentana);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(342, 37);
-            this.panel7.TabIndex = 7;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelSuperiorVentana.Controls.Add(this.panel1);
+            this.panelSuperiorVentana.Controls.Add(this.panel4);
+            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
+            this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorVentana.Name = "panelSuperiorVentana";
+            this.panelSuperiorVentana.Size = new System.Drawing.Size(342, 37);
+            this.panelSuperiorVentana.TabIndex = 7;
+            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
+            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
             // panel1
             // 
@@ -469,14 +469,13 @@ namespace InterfazProyecto1
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAltaAtleta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAltaAtleta";
-            this.Load += new System.EventHandler(this.FormAltaAtleta_Load);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelSuperiorVentana.ResumeLayout(false);
+            this.panelSuperiorVentana.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
@@ -489,7 +488,7 @@ namespace InterfazProyecto1
 
         #endregion
 
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnMinimizarVentana;

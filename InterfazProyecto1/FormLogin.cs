@@ -54,44 +54,19 @@ namespace InterfazProyecto1
             }
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void button1_Click(object sender, EventArgs e)
+        private async void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             Login();
         }
 
-        private void tbNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
             FormEleccionLoginRegistro formEleccion = new FormEleccionLoginRegistro();
             formEleccion.Show();
             this.Hide();
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -132,12 +107,12 @@ namespace InterfazProyecto1
             }
         }
 
-        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
             mouseLocation = new Point(-e.X, -e.Y);
         }
 
-        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {

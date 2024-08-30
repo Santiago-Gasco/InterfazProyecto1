@@ -26,11 +26,6 @@ namespace InterfazProyecto1
             this.Close();
         }
 
-        private void FormAltaAtleta_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
 
         private void btnBajaAtleta_Click(object sender, EventArgs e)
@@ -82,12 +77,12 @@ namespace InterfazProyecto1
             }
         }
 
-        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
             mouseLocation = new Point(-e.X, -e.Y);
         }
 
-        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
