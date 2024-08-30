@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="InterfazProyecto1.FormAltaAtleta" Collapsed="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -11,28 +11,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormBajaAtleta" Collapsed="true">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="11.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EgAAAAAAQCAAABgAIQiAAQACAACAAAAEACAIAQLIAAQ=</HashCode>
       <FileName>FormBajaAtleta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormCarga" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACCAAAAAAAACAAAACAAAAAAEAAAAAAQBAAAA=</HashCode>
       <FileName>FormCarga.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormEdicionAtleta" Collapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EoAQAAAAQiAAARgAYYiAAAACAQGABCQEgAAIAQL/xAQ=</HashCode>
       <FileName>FormEdicionAtleta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormEleccionLoginRegistro" Collapsed="true">
-    <Position X="2.5" Y="1.5" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -42,41 +42,50 @@
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormLogin" Collapsed="true">
-    <Position X="4.25" Y="1.5" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AgAAAgAAQCAAABhAIAighAICAACAAAAEAAAQAQJHgAA=</HashCode>
       <FileName>FormLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormMenu" Collapsed="true">
-    <Position X="6" Y="1.5" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>IgCgAAAEQCECABiAJAiAIQACAYGAAAAEAAQAAYZEQBI=</HashCode>
       <FileName>FormMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.FormRegistro" Collapsed="true">
-    <Position X="7.75" Y="1.5" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AgAAAgAAQCAAABoAIhiAABACAACAIAAEAQAABQJHEAA=</HashCode>
       <FileName>FormRegistro.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.Program" Collapsed="true">
-    <Position X="2.5" Y="2.5" Width="1.5" />
+    <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.Properties.Resources" Collapsed="true">
-    <Position X="4.25" Y="2.5" Width="1.5" />
+    <Position X="2.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="InterfazProyecto1.Properties.Settings" Collapsed="true">
-    <Position X="6" Y="2.5" Width="1.5" />
+    <Position X="4" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
