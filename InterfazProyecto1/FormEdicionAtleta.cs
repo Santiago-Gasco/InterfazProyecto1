@@ -65,7 +65,7 @@ namespace InterfazProyecto1
                         commandDatabase.CommandTimeout = 60;
 
                         // Reemplaza los valores de ejemplo con los datos deseados
-                        commandDatabase.Parameters.AddWithValue("@Cedula", tbCedula.Text);
+                        commandDatabase.Parameters.AddWithValue("@Cedula", Convert.ToInt32(numCedula.Value));
                         commandDatabase.Parameters.AddWithValue("@Nombre", tbNombre.Text);
                         commandDatabase.Parameters.AddWithValue("@Apellido", tbApellido.Text);
                         commandDatabase.Parameters.AddWithValue("@Edad", Convert.ToInt32(numEdad.Value));
@@ -79,7 +79,7 @@ namespace InterfazProyecto1
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Atleta actualizado exitosamente!");
-                            tbCedula.Text = string.Empty;
+                            numCedula.Value = 0;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
                             numEdad.Value = 1;
@@ -139,7 +139,7 @@ namespace InterfazProyecto1
                                 if (reader.Read())
                                 {
                                     // Asigna los valores obtenidos a los controles del formulario
-                                    tbCedula.Text = reader["Cedula"].ToString();
+                                    numCedula.Value = Convert.ToInt32(reader["Cedula"]);
                                     tbNombre.Text = reader["Nombre"].ToString();
                                     tbApellido.Text = reader["Apellido"].ToString();
                                     numEdad.Value = Convert.ToInt32(reader["Edad"]);
@@ -186,6 +186,11 @@ namespace InterfazProyecto1
                 mousePose.Offset(mouseLocation.X, mouseLocation.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
                 Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
+        }
+
+        private void tbCedula_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

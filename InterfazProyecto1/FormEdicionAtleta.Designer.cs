@@ -54,7 +54,6 @@ namespace InterfazProyecto1
             this.label8 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbCedula = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
             this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -71,10 +70,12 @@ namespace InterfazProyecto1
             this.tbValorBusqueda = new System.Windows.Forms.TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.numCedula = new System.Windows.Forms.NumericUpDown();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCedula)).BeginInit();
             this.SuspendLayout();
             // 
             // panel7
@@ -330,14 +331,6 @@ namespace InterfazProyecto1
             this.panel2.Size = new System.Drawing.Size(127, 3);
             this.panel2.TabIndex = 12;
             // 
-            // tbCedula
-            // 
-            this.tbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCedula.Location = new System.Drawing.Point(186, 152);
-            this.tbCedula.Name = "tbCedula";
-            this.tbCedula.Size = new System.Drawing.Size(127, 24);
-            this.tbCedula.TabIndex = 19;
-            // 
             // tbNombre
             // 
             this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -511,12 +504,27 @@ namespace InterfazProyecto1
             this.label10.TabIndex = 29;
             this.label10.Text = "Valor";
             // 
+            // numCedula
+            // 
+            this.numCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numCedula.Location = new System.Drawing.Point(186, 152);
+            this.numCedula.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.numCedula.Name = "numCedula";
+            this.numCedula.Size = new System.Drawing.Size(127, 24);
+            this.numCedula.TabIndex = 30;
+            // 
             // FormEdicionAtleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(342, 507);
+            this.Controls.Add(this.numCedula);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbValorBusqueda);
             this.Controls.Add(this.panel17);
@@ -533,7 +541,6 @@ namespace InterfazProyecto1
             this.Controls.Add(this.dateFechaNacimiento);
             this.Controls.Add(this.tbApellido);
             this.Controls.Add(this.tbNombre);
-            this.Controls.Add(this.tbCedula);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
@@ -556,6 +563,7 @@ namespace InterfazProyecto1
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCedula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,7 +594,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tbCedula;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbApellido;
         private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
@@ -604,5 +611,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.TextBox tbValorBusqueda;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numCedula;
     }
 }

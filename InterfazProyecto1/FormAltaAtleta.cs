@@ -60,7 +60,7 @@ namespace InterfazProyecto1
                         commandDatabase.CommandTimeout = 60;
 
                         // Reemplaza los valores de ejemplo con los datos deseados
-                        commandDatabase.Parameters.AddWithValue("@Cedula", tbCedula.Text);
+                        commandDatabase.Parameters.AddWithValue("@Cedula", Convert.ToInt32(numCedula.Value));
                         commandDatabase.Parameters.AddWithValue("@Nombre", tbNombre.Text);
                         commandDatabase.Parameters.AddWithValue("@Apellido", tbApellido.Text);
                         commandDatabase.Parameters.AddWithValue("@Edad", Convert.ToInt32(numEdad.Value));
@@ -74,7 +74,7 @@ namespace InterfazProyecto1
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Atleta creado exitosamente!");
-                            tbCedula.Text = string.Empty;
+                            numCedula.Value = 0;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
                             numEdad.Value = 1;
