@@ -152,7 +152,7 @@
         YII=
 </value>
   </data>
-  <data name="btnBorarAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBajaAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAZFJREFUSEvdlEtOAkEURQkEJspG0D2IGzBoiFsgGBV1EYa4DEXdh6zATxR/m0AH
@@ -165,7 +165,7 @@
         cqTWAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnAgregarAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAltaAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAaFJREFUSEvdlFtOAkEURAkEfkQXgu5B3IABQ9wCwaioiyDEZSjqenxE8bUIgx/6
@@ -224,7 +224,7 @@
         1Ge8wWNcwdr/45x/TKHwDfsY04Oe7PlOAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="imagenKarate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAqIAAAKqCAYAAADhUjyeAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
         nQeAJEXZ/nvz7uSwOd7u5TuOnI94gEr6QEQRc8C/OafPnDChIiDxODiimFA/s6IoiJgVkJzD5ds0Oe/z
@@ -6153,7 +6153,7 @@
         CEx+1RPus8/pdl7JPggOD1uImpH0/JvnUqBwjlFvRL23ApM3qv6AzFi6A0bbG1E9q2yPzFt1RB7YcEIL
         to89+6J8/LkXZPqybXp8Hvx8EKLy4ZpauR+Cc9byl3CPHTK7apfMgcCZV7Vf5iJPqIHHe5mFQvLeyv0q
         QvNXsT/rVnmgfIs8vHSDfG7xWnnhcrtcbhXp7OyUaLs3Ij+Mf42QoZdb6uTfv/vfkjEsRwYMGy2ZI8ZD
-        lN7uzR8KAeeJSV+IGmFphKbZZ4RoouNsQrcEogpGu2m9t8dtHEKUzzWK/UIhsDPybpW89/2aZAzJlu88
+        lN7uzR8KAeeJSV+IGmFphKbZZ4RoouNsQrcEogpGq2m+18dtHEKUzzWK/UIhsDPybpW89/2aZAzJlu88
         vUiutLRKW3untIQ4PEmkPtKm02txgYDS187J55ZUyoKyF2XaSryHkp0yH3E/t3ifLCjeL/dzvtAV21WI
         cgGB/KptASF6qF+IKu77pkq8eEo1/lx+poMRlF3x4e1P9i7sOOwNyey7fdyFy8+0YBnl20nz0W4EKfcl
         I/g+0gVxeaB/9aT+TbdZ5Qc/iETRGkwkqeBM3BZ25nXh8jMdXAbLzqj2/usBhRzv31MhasKf7DnMs5jz
@@ -6779,7 +6779,7 @@
         kwJR7hPKksdPT0nDwxufQo+/D8HhALp6zmEEg+gbDOK1YEjU0j7e+Qru27gN2U89g5LtHVhdUY9byupQ
         sPW48n7oXUaRLk6pWktxPJbs8cEu3TVV6eKsKh18qlKhU6cCji8xpKslleL4osKZDBP1/tSw0kn1r5PO
         jyo5MC+a+B5lulC7EfE2kQY059TJfl9XCkT5HmJJpm/+LfMEee+U5p8uqm5aFMmGjRkzZswYZdCfIfg8
-        ygWAnL5JzVR1UgstnW4vrcVqAgcetMQZv70w0PlRxYU5QyyLIGKYJwAAL/xJREFUa1dV8TZdoTNVqfc1
+        ygWAnL5JzVR1UgstnW4vrcVqAgcetMQZv70w0PlRxYU5QyyLXJ+6SAAAL/xJREFUa1dV8TZdoTNVqfc1
         WlBp7kkn1R//1h2jky5MVUlIlYDK4t+8jUfFr9naIpRVZX0kFLvasd7B6kSJsxNF7iMoqj4u1qnOqyaQ
         K6tBfjVd23EY9zr24VDfoFje86X+XgQwjL5gF/r63kA40IXBYC++8MX7kZpOkDkjHgtXvFuA6LTkdCQu
         ITidl4Y5S1Zh1uKVAjAZOEdhNCIBneTycXKCez6OfyevvB6tzx3Dhb7z8Pl7IxPn94ml458LDuIouV+r

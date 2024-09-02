@@ -7,7 +7,7 @@ namespace InterfazProyecto1
 {
     public partial class FormRegistro : Form
     {
-        public Point mouseLocation;
+        public Point mousePos;
 
         public FormRegistro()
         {
@@ -131,7 +131,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseLocation = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y);
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
@@ -139,7 +139,7 @@ namespace InterfazProyecto1
             if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
                 Point mousePose = Control.MousePosition; // Obtiene la posición actual del mouse en la pantalla
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
+                mousePose.Offset(mousePos.X, mousePos.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
                 Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
         }

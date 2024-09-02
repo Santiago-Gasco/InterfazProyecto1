@@ -19,9 +19,9 @@ namespace InterfazProyecto1
 
         private void TimerCarga_Tick(object sender, EventArgs e)
         {
-            panel1.Width += 3;
+            panelCarga.Width += 3;
 
-            if (panel1.Width >= 801)
+            if (panelCarga.Width >= 801)
             {
                 timerCarga.Stop();
                 FormEleccionLoginRegistro formEleccionLoginRegistro = new FormEleccionLoginRegistro();

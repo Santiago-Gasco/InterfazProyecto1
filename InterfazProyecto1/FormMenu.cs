@@ -8,7 +8,7 @@ namespace InterfazProyecto1
 {
     public partial class FormMenu : Form
     {
-        public Point mouseLocation;
+        public Point mousePos;
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
         bool menuExpandido = true; //esta variable de tipo bool determina el estado del menu, es decir si se muestra de forma parcial o de forma total
         bool dataGridViewExpandido; //esta variable de tipo bool determina el tamaño que debe de tener la cuadricula donde se listan los atletas ingresados en la base de datos
@@ -27,9 +27,9 @@ namespace InterfazProyecto1
         {
             if (menuExpandido) //if en la que dependiendo del estado de la variable menuExpandido el grosor del panel 1 aumenta o disminuye
             {
-                flowLayoutPanel1.Width -= 10;
+                panelPrincipalOpciones.Width -= 10;
 
-                if (flowLayoutPanel1.Width == flowLayoutPanel1.MinimumSize.Width)
+                if (panelPrincipalOpciones.Width == panelPrincipalOpciones.MinimumSize.Width)
                 {
                     menuExpandido = false;
                     timerMenu.Stop();
@@ -37,9 +37,9 @@ namespace InterfazProyecto1
             }
             else
             {
-                flowLayoutPanel1.Width += 10;
+                panelPrincipalOpciones.Width += 10;
 
-                if (flowLayoutPanel1.Width == flowLayoutPanel1.MaximumSize.Width)
+                if (panelPrincipalOpciones.Width == panelPrincipalOpciones.MaximumSize.Width)
                 {
                     menuExpandido = true;
                     timerMenu.Stop();
@@ -51,8 +51,8 @@ namespace InterfazProyecto1
         {
             if (dataGridViewExpandido) //if en el que dependiendo del estado de la variable dataGridViewExpandido se cambia la posición de la Ventana
             {
-                int posX = Ventana.Location.X + 10;
-                Ventana.Location = new Point(posX, 46);
+                int posX = panelListaAtletas.Location.X + 10;
+                panelListaAtletas.Location = new Point(posX, 46);
 
                 if (posX >= 195)
                 {
@@ -62,8 +62,8 @@ namespace InterfazProyecto1
             }
             else
             {
-                int posX = Ventana.Location.X - 10;
-                Ventana.Location = new Point(posX, 46);
+                int posX = panelListaAtletas.Location.X - 10;
+                panelListaAtletas.Location = new Point(posX, 46);
 
                 if (posX <= 69)
                 {
@@ -204,7 +204,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseLocation = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y);
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
@@ -212,7 +212,7 @@ namespace InterfazProyecto1
             if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
                 Point mousePose = Control.MousePosition; // Obtiene la posición actual del mouse en la pantalla
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
+                mousePose.Offset(mousePos.X, mousePos.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
                 Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
         }

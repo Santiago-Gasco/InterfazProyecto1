@@ -30,44 +30,44 @@ namespace InterfazProyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEleccionLoginRegistro));
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelAzulVentana = new System.Windows.Forms.Panel();
+            this.panelAmarilloVentana = new System.Windows.Forms.Panel();
             this.panelSuperiorVentana = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombreVentana = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.imgKarate = new System.Windows.Forms.PictureBox();
+            this.panelAzulBtnIniciarSesion = new System.Windows.Forms.Panel();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAzulBtnRegistrarse = new System.Windows.Forms.Panel();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.panelSuperiorVentana.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKarate)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel4
+            // panelAzulVentana
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel4.Location = new System.Drawing.Point(455, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(74, 10);
-            this.panel4.TabIndex = 6;
+            this.panelAzulVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulVentana.Location = new System.Drawing.Point(455, 33);
+            this.panelAzulVentana.Name = "panelAzulVentana";
+            this.panelAzulVentana.Size = new System.Drawing.Size(74, 10);
+            this.panelAzulVentana.TabIndex = 6;
             // 
-            // panel1
+            // panelAmarilloVentana
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel1.Location = new System.Drawing.Point(-6, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 10);
-            this.panel1.TabIndex = 5;
+            this.panelAmarilloVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloVentana.Location = new System.Drawing.Point(-6, 33);
+            this.panelAmarilloVentana.Name = "panelAmarilloVentana";
+            this.panelAmarilloVentana.Size = new System.Drawing.Size(463, 10);
+            this.panelAmarilloVentana.TabIndex = 5;
             // 
             // panelSuperiorVentana
             // 
             this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panelSuperiorVentana.Controls.Add(this.panel4);
-            this.panelSuperiorVentana.Controls.Add(this.panel1);
+            this.panelSuperiorVentana.Controls.Add(this.panelAzulVentana);
+            this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
-            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Controls.Add(this.lblNombreVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
             this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
             this.panelSuperiorVentana.Name = "panelSuperiorVentana";
@@ -89,17 +89,17 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana.UseVisualStyleBackColor = false;
             this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
             // 
-            // label1
+            // lblNombreVentana
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(93, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Menu Inicial";
+            this.lblNombreVentana.AutoSize = true;
+            this.lblNombreVentana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreVentana.ForeColor = System.Drawing.Color.White;
+            this.lblNombreVentana.Location = new System.Drawing.Point(3, 10);
+            this.lblNombreVentana.Name = "lblNombreVentana";
+            this.lblNombreVentana.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblNombreVentana.Size = new System.Drawing.Size(93, 20);
+            this.lblNombreVentana.TabIndex = 1;
+            this.lblNombreVentana.Text = "Menu Inicial";
             // 
             // btnCerrarVentana
             // 
@@ -114,23 +114,23 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
-            // pictureBox1
+            // imgKarate
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(131, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 209);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.imgKarate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgKarate.BackgroundImage")));
+            this.imgKarate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgKarate.Location = new System.Drawing.Point(131, 73);
+            this.imgKarate.Name = "imgKarate";
+            this.imgKarate.Size = new System.Drawing.Size(274, 209);
+            this.imgKarate.TabIndex = 9;
+            this.imgKarate.TabStop = false;
             // 
-            // panel10
+            // panelAzulBtnIniciarSesion
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel10.Location = new System.Drawing.Point(131, 353);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(274, 3);
-            this.panel10.TabIndex = 11;
+            this.panelAzulBtnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnIniciarSesion.Location = new System.Drawing.Point(131, 353);
+            this.panelAzulBtnIniciarSesion.Name = "panelAzulBtnIniciarSesion";
+            this.panelAzulBtnIniciarSesion.Size = new System.Drawing.Size(274, 3);
+            this.panelAzulBtnIniciarSesion.TabIndex = 11;
             // 
             // btnIniciarSesion
             // 
@@ -147,13 +147,13 @@ namespace InterfazProyecto1
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // panel2
+            // panelAzulBtnRegistrarse
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel2.Location = new System.Drawing.Point(131, 400);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 3);
-            this.panel2.TabIndex = 13;
+            this.panelAzulBtnRegistrarse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnRegistrarse.Location = new System.Drawing.Point(131, 400);
+            this.panelAzulBtnRegistrarse.Name = "panelAzulBtnRegistrarse";
+            this.panelAzulBtnRegistrarse.Size = new System.Drawing.Size(274, 3);
+            this.panelAzulBtnRegistrarse.TabIndex = 13;
             // 
             // btnRegistrarse
             // 
@@ -175,34 +175,34 @@ namespace InterfazProyecto1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 436);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAzulBtnRegistrarse);
             this.Controls.Add(this.btnRegistrarse);
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panelAzulBtnIniciarSesion);
             this.Controls.Add(this.btnIniciarSesion);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgKarate);
             this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEleccionLoginRegistro";
-            this.Text = "FormEleccionLoginRegistro";
+            this.Text = "5";
             this.panelSuperiorVentana.ResumeLayout(false);
             this.panelSuperiorVentana.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgKarate)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelAzulVentana;
+        private System.Windows.Forms.Panel panelAmarilloVentana;
         private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Button btnMinimizarVentana;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombreVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.PictureBox imgKarate;
+        private System.Windows.Forms.Panel panelAzulBtnIniciarSesion;
         private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelAzulBtnRegistrarse;
         private System.Windows.Forms.Button btnRegistrarse;
     }
 }

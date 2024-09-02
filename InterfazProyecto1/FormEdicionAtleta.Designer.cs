@@ -31,48 +31,48 @@ namespace InterfazProyecto1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEdicionAtleta));
             this.panelSuperiorVentana = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelAmarilloVentana = new System.Windows.Forms.Panel();
+            this.panelAzulVentana = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombreVentana = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelAmarilloTbNombre = new System.Windows.Forms.Panel();
+            this.panelAmarilloTbApellido = new System.Windows.Forms.Panel();
+            this.panelAmarilloCbGenero = new System.Windows.Forms.Panel();
             this.cbGenero = new System.Windows.Forms.ComboBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAmarilloDateFechaNacimiento = new System.Windows.Forms.Panel();
+            this.panelAmarilloNumFederado = new System.Windows.Forms.Panel();
+            this.panelAmarilloTbEscuela = new System.Windows.Forms.Panel();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblFederado = new System.Windows.Forms.Label();
+            this.lblCedula = new System.Windows.Forms.Label();
+            this.lblEscuela = new System.Windows.Forms.Label();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.panelOpciones = new System.Windows.Forms.Panel();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.panelDivisorVertical = new System.Windows.Forms.Panel();
+            this.panelAmarilloNumCedula = new System.Windows.Forms.Panel();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
             this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.tbEscuela = new System.Windows.Forms.TextBox();
             this.btnEditarAtleta = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.panelAzulBtnConfirmar = new System.Windows.Forms.Panel();
             this.numEdad = new System.Windows.Forms.NumericUpDown();
             this.numFederado = new System.Windows.Forms.NumericUpDown();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.panelAmarilloNumEdad = new System.Windows.Forms.Panel();
+            this.panelDivisorHorizontal = new System.Windows.Forms.Panel();
+            this.panelAmarilloCbBusqueda = new System.Windows.Forms.Panel();
             this.cbTipoBusqueda = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTipoValorBusqueda = new System.Windows.Forms.Label();
             this.tbValorBusqueda = new System.Windows.Forms.TextBox();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.panelAmarilloTbBusqueda = new System.Windows.Forms.Panel();
+            this.lblValorBusqueda = new System.Windows.Forms.Label();
             this.numCedula = new System.Windows.Forms.NumericUpDown();
             this.panelSuperiorVentana.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).BeginInit();
@@ -81,10 +81,10 @@ namespace InterfazProyecto1
             // panelSuperiorVentana
             // 
             this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panelSuperiorVentana.Controls.Add(this.panel1);
-            this.panelSuperiorVentana.Controls.Add(this.panel4);
+            this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
+            this.panelSuperiorVentana.Controls.Add(this.panelAzulVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
-            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Controls.Add(this.lblNombreVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
             this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
             this.panelSuperiorVentana.Name = "panelSuperiorVentana";
@@ -93,21 +93,21 @@ namespace InterfazProyecto1
             this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
             this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
-            // panel1
+            // panelAmarilloVentana
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel1.Location = new System.Drawing.Point(-6, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 10);
-            this.panel1.TabIndex = 11;
+            this.panelAmarilloVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloVentana.Location = new System.Drawing.Point(-6, 33);
+            this.panelAmarilloVentana.Name = "panelAmarilloVentana";
+            this.panelAmarilloVentana.Size = new System.Drawing.Size(272, 10);
+            this.panelAmarilloVentana.TabIndex = 11;
             // 
-            // panel4
+            // panelAzulVentana
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel4.Location = new System.Drawing.Point(265, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(83, 10);
-            this.panel4.TabIndex = 12;
+            this.panelAzulVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulVentana.Location = new System.Drawing.Point(265, 33);
+            this.panelAzulVentana.Name = "panelAzulVentana";
+            this.panelAzulVentana.Size = new System.Drawing.Size(83, 10);
+            this.panelAzulVentana.TabIndex = 12;
             // 
             // btnMinimizarVentana
             // 
@@ -122,17 +122,17 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana.UseVisualStyleBackColor = false;
             this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
             // 
-            // label1
+            // lblNombreVentana
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(107, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Edicion Atleta";
+            this.lblNombreVentana.AutoSize = true;
+            this.lblNombreVentana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreVentana.ForeColor = System.Drawing.Color.White;
+            this.lblNombreVentana.Location = new System.Drawing.Point(3, 10);
+            this.lblNombreVentana.Name = "lblNombreVentana";
+            this.lblNombreVentana.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblNombreVentana.Size = new System.Drawing.Size(107, 20);
+            this.lblNombreVentana.TabIndex = 1;
+            this.lblNombreVentana.Text = "Edicion Atleta";
             // 
             // btnCerrarVentana
             // 
@@ -147,29 +147,29 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
-            // panel3
+            // panelAmarilloTbNombre
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel3.Location = new System.Drawing.Point(186, 215);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(127, 3);
-            this.panel3.TabIndex = 15;
+            this.panelAmarilloTbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloTbNombre.Location = new System.Drawing.Point(186, 215);
+            this.panelAmarilloTbNombre.Name = "panelAmarilloTbNombre";
+            this.panelAmarilloTbNombre.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloTbNombre.TabIndex = 15;
             // 
-            // panel5
+            // panelAmarilloTbApellido
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel5.Location = new System.Drawing.Point(186, 249);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(127, 3);
-            this.panel5.TabIndex = 15;
+            this.panelAmarilloTbApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloTbApellido.Location = new System.Drawing.Point(186, 249);
+            this.panelAmarilloTbApellido.Name = "panelAmarilloTbApellido";
+            this.panelAmarilloTbApellido.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloTbApellido.TabIndex = 15;
             // 
-            // panel6
+            // panelAmarilloCbGenero
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel6.Location = new System.Drawing.Point(186, 315);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(127, 3);
-            this.panel6.TabIndex = 15;
+            this.panelAmarilloCbGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloCbGenero.Location = new System.Drawing.Point(186, 315);
+            this.panelAmarilloCbGenero.Name = "panelAmarilloCbGenero";
+            this.panelAmarilloCbGenero.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloCbGenero.TabIndex = 15;
             // 
             // cbGenero
             // 
@@ -187,149 +187,149 @@ namespace InterfazProyecto1
             this.cbGenero.Size = new System.Drawing.Size(127, 26);
             this.cbGenero.TabIndex = 14;
             // 
-            // panel8
+            // panelAmarilloDateFechaNacimiento
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel8.Location = new System.Drawing.Point(186, 350);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(127, 3);
-            this.panel8.TabIndex = 15;
+            this.panelAmarilloDateFechaNacimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloDateFechaNacimiento.Location = new System.Drawing.Point(186, 350);
+            this.panelAmarilloDateFechaNacimiento.Name = "panelAmarilloDateFechaNacimiento";
+            this.panelAmarilloDateFechaNacimiento.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloDateFechaNacimiento.TabIndex = 15;
             // 
-            // panel9
+            // panelAmarilloNumFederado
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel9.Location = new System.Drawing.Point(186, 385);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(127, 3);
-            this.panel9.TabIndex = 15;
+            this.panelAmarilloNumFederado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloNumFederado.Location = new System.Drawing.Point(186, 385);
+            this.panelAmarilloNumFederado.Name = "panelAmarilloNumFederado";
+            this.panelAmarilloNumFederado.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloNumFederado.TabIndex = 15;
             // 
-            // panel10
+            // panelAmarilloTbEscuela
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel10.Location = new System.Drawing.Point(186, 422);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(127, 3);
-            this.panel10.TabIndex = 15;
+            this.panelAmarilloTbEscuela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloTbEscuela.Location = new System.Drawing.Point(186, 422);
+            this.panelAmarilloTbEscuela.Name = "panelAmarilloTbEscuela";
+            this.panelAmarilloTbEscuela.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloTbEscuela.TabIndex = 15;
             // 
-            // label4
+            // lblGenero
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label4.Location = new System.Drawing.Point(14, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Genero";
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblGenero.Location = new System.Drawing.Point(14, 152);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(63, 20);
+            this.lblGenero.TabIndex = 13;
+            this.lblGenero.Text = "Genero";
             // 
-            // label3
+            // lblApellido
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label3.Location = new System.Drawing.Point(14, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Apellido";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblApellido.Location = new System.Drawing.Point(14, 84);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(65, 20);
+            this.lblApellido.TabIndex = 13;
+            this.lblApellido.Text = "Apellido";
             // 
-            // label2
+            // lblNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label2.Location = new System.Drawing.Point(14, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblNombre.Location = new System.Drawing.Point(14, 50);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(65, 20);
+            this.lblNombre.TabIndex = 13;
+            this.lblNombre.Text = "Nombre";
             // 
-            // label6
+            // lblFederado
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label6.Location = new System.Drawing.Point(14, 222);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Numero de federado";
+            this.lblFederado.AutoSize = true;
+            this.lblFederado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFederado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblFederado.Location = new System.Drawing.Point(14, 222);
+            this.lblFederado.Name = "lblFederado";
+            this.lblFederado.Size = new System.Drawing.Size(155, 20);
+            this.lblFederado.TabIndex = 13;
+            this.lblFederado.Text = "Numero de federado";
             // 
-            // labelNombre
+            // lblCedula
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.labelNombre.Location = new System.Drawing.Point(14, 13);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(59, 20);
-            this.labelNombre.TabIndex = 0;
-            this.labelNombre.Text = "Cedula";
+            this.lblCedula.AutoSize = true;
+            this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblCedula.Location = new System.Drawing.Point(14, 13);
+            this.lblCedula.Name = "lblCedula";
+            this.lblCedula.Size = new System.Drawing.Size(59, 20);
+            this.lblCedula.TabIndex = 0;
+            this.lblCedula.Text = "Cedula";
             // 
-            // label7
+            // lblEscuela
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label7.Location = new System.Drawing.Point(14, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 20);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Escuela";
+            this.lblEscuela.AutoSize = true;
+            this.lblEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEscuela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblEscuela.Location = new System.Drawing.Point(14, 259);
+            this.lblEscuela.Name = "lblEscuela";
+            this.lblEscuela.Size = new System.Drawing.Size(66, 20);
+            this.lblEscuela.TabIndex = 13;
+            this.lblEscuela.Text = "Escuela";
             // 
-            // label5
+            // lblFechaNacimiento
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label5.Location = new System.Drawing.Point(14, 187);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Fecha de nacimiento";
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaNacimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(14, 187);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(157, 20);
+            this.lblFechaNacimiento.TabIndex = 13;
+            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
             // 
-            // panel11
+            // panelOpciones
             // 
-            this.panel11.Controls.Add(this.label8);
-            this.panel11.Controls.Add(this.label5);
-            this.panel11.Controls.Add(this.label7);
-            this.panel11.Controls.Add(this.labelNombre);
-            this.panel11.Controls.Add(this.label6);
-            this.panel11.Controls.Add(this.label2);
-            this.panel11.Controls.Add(this.label3);
-            this.panel11.Controls.Add(this.label4);
-            this.panel11.Location = new System.Drawing.Point(3, 143);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(171, 293);
-            this.panel11.TabIndex = 16;
+            this.panelOpciones.Controls.Add(this.lblEdad);
+            this.panelOpciones.Controls.Add(this.lblFechaNacimiento);
+            this.panelOpciones.Controls.Add(this.lblEscuela);
+            this.panelOpciones.Controls.Add(this.lblCedula);
+            this.panelOpciones.Controls.Add(this.lblFederado);
+            this.panelOpciones.Controls.Add(this.lblNombre);
+            this.panelOpciones.Controls.Add(this.lblApellido);
+            this.panelOpciones.Controls.Add(this.lblGenero);
+            this.panelOpciones.Location = new System.Drawing.Point(3, 143);
+            this.panelOpciones.Name = "panelOpciones";
+            this.panelOpciones.Size = new System.Drawing.Size(171, 293);
+            this.panelOpciones.TabIndex = 16;
             // 
-            // label8
+            // lblEdad
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label8.Location = new System.Drawing.Point(14, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Edad";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblEdad.Location = new System.Drawing.Point(14, 119);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(47, 20);
+            this.lblEdad.TabIndex = 14;
+            this.lblEdad.Text = "Edad";
+            this.lblEdad.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // panel12
+            // panelDivisorVertical
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel12.Location = new System.Drawing.Point(176, 130);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(3, 303);
-            this.panel12.TabIndex = 17;
+            this.panelDivisorVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelDivisorVertical.Location = new System.Drawing.Point(176, 130);
+            this.panelDivisorVertical.Name = "panelDivisorVertical";
+            this.panelDivisorVertical.Size = new System.Drawing.Size(3, 303);
+            this.panelDivisorVertical.TabIndex = 17;
             // 
-            // panel2
+            // panelAmarilloNumCedula
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel2.Location = new System.Drawing.Point(186, 176);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(127, 3);
-            this.panel2.TabIndex = 12;
+            this.panelAmarilloNumCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloNumCedula.Location = new System.Drawing.Point(186, 176);
+            this.panelAmarilloNumCedula.Name = "panelAmarilloNumCedula";
+            this.panelAmarilloNumCedula.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloNumCedula.TabIndex = 12;
             // 
             // tbNombre
             // 
@@ -382,13 +382,13 @@ namespace InterfazProyecto1
             this.btnEditarAtleta.UseVisualStyleBackColor = false;
             this.btnEditarAtleta.Click += new System.EventHandler(this.btnEditarAtleta_Click);
             // 
-            // panel13
+            // panelAzulBtnConfirmar
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel13.Location = new System.Drawing.Point(89, 482);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(177, 3);
-            this.panel13.TabIndex = 26;
+            this.panelAzulBtnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnConfirmar.Location = new System.Drawing.Point(89, 482);
+            this.panelAzulBtnConfirmar.Name = "panelAzulBtnConfirmar";
+            this.panelAzulBtnConfirmar.Size = new System.Drawing.Size(177, 3);
+            this.panelAzulBtnConfirmar.TabIndex = 26;
             // 
             // numEdad
             // 
@@ -423,29 +423,29 @@ namespace InterfazProyecto1
             this.numFederado.Size = new System.Drawing.Size(127, 24);
             this.numFederado.TabIndex = 28;
             // 
-            // panel14
+            // panelAmarilloNumEdad
             // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel14.Location = new System.Drawing.Point(186, 280);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(127, 3);
-            this.panel14.TabIndex = 16;
+            this.panelAmarilloNumEdad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloNumEdad.Location = new System.Drawing.Point(186, 280);
+            this.panelAmarilloNumEdad.Name = "panelAmarilloNumEdad";
+            this.panelAmarilloNumEdad.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloNumEdad.TabIndex = 16;
             // 
-            // panel15
+            // panelDivisorHorizontal
             // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel15.Location = new System.Drawing.Point(0, 127);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(343, 3);
-            this.panel15.TabIndex = 18;
+            this.panelDivisorHorizontal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelDivisorHorizontal.Location = new System.Drawing.Point(0, 127);
+            this.panelDivisorHorizontal.Name = "panelDivisorHorizontal";
+            this.panelDivisorHorizontal.Size = new System.Drawing.Size(343, 3);
+            this.panelDivisorHorizontal.TabIndex = 18;
             // 
-            // panel16
+            // panelAmarilloCbBusqueda
             // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel16.Location = new System.Drawing.Point(21, 104);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(134, 3);
-            this.panel16.TabIndex = 17;
+            this.panelAmarilloCbBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloCbBusqueda.Location = new System.Drawing.Point(21, 104);
+            this.panelAmarilloCbBusqueda.Name = "panelAmarilloCbBusqueda";
+            this.panelAmarilloCbBusqueda.Size = new System.Drawing.Size(134, 3);
+            this.panelAmarilloCbBusqueda.TabIndex = 17;
             // 
             // cbTipoBusqueda
             // 
@@ -465,16 +465,16 @@ namespace InterfazProyecto1
             this.cbTipoBusqueda.TabIndex = 16;
             this.cbTipoBusqueda.SelectedIndexChanged += new System.EventHandler(this.cbTipoBusqueda_SelectedIndexChanged);
             // 
-            // label9
+            // lblTipoValorBusqueda
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label9.Location = new System.Drawing.Point(12, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 20);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Valor de busqueda";
+            this.lblTipoValorBusqueda.AutoSize = true;
+            this.lblTipoValorBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoValorBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblTipoValorBusqueda.Location = new System.Drawing.Point(17, 57);
+            this.lblTipoValorBusqueda.Name = "lblTipoValorBusqueda";
+            this.lblTipoValorBusqueda.Size = new System.Drawing.Size(143, 20);
+            this.lblTipoValorBusqueda.TabIndex = 15;
+            this.lblTipoValorBusqueda.Text = "Valor de busqueda";
             // 
             // tbValorBusqueda
             // 
@@ -485,24 +485,24 @@ namespace InterfazProyecto1
             this.tbValorBusqueda.TabIndex = 21;
             this.tbValorBusqueda.Leave += new System.EventHandler(this.tbValorBusqueda_Leave);
             // 
-            // panel17
+            // panelAmarilloTbBusqueda
             // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel17.Location = new System.Drawing.Point(186, 104);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(127, 3);
-            this.panel17.TabIndex = 20;
+            this.panelAmarilloTbBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloTbBusqueda.Location = new System.Drawing.Point(186, 104);
+            this.panelAmarilloTbBusqueda.Name = "panelAmarilloTbBusqueda";
+            this.panelAmarilloTbBusqueda.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloTbBusqueda.TabIndex = 20;
             // 
-            // label10
+            // lblValorBusqueda
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label10.Location = new System.Drawing.Point(230, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 20);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Valor";
+            this.lblValorBusqueda.AutoSize = true;
+            this.lblValorBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblValorBusqueda.Location = new System.Drawing.Point(229, 57);
+            this.lblValorBusqueda.Name = "lblValorBusqueda";
+            this.lblValorBusqueda.Size = new System.Drawing.Size(46, 20);
+            this.lblValorBusqueda.TabIndex = 29;
+            this.lblValorBusqueda.Text = "Valor";
             // 
             // numCedula
             // 
@@ -525,32 +525,32 @@ namespace InterfazProyecto1
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(342, 507);
             this.Controls.Add(this.numCedula);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblValorBusqueda);
             this.Controls.Add(this.tbValorBusqueda);
-            this.Controls.Add(this.panel17);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.panel16);
+            this.Controls.Add(this.panelAmarilloTbBusqueda);
+            this.Controls.Add(this.lblTipoValorBusqueda);
+            this.Controls.Add(this.panelAmarilloCbBusqueda);
             this.Controls.Add(this.cbTipoBusqueda);
-            this.Controls.Add(this.panel15);
-            this.Controls.Add(this.panel14);
+            this.Controls.Add(this.panelDivisorHorizontal);
+            this.Controls.Add(this.panelAmarilloNumEdad);
             this.Controls.Add(this.numFederado);
             this.Controls.Add(this.numEdad);
-            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panelAzulBtnConfirmar);
             this.Controls.Add(this.btnEditarAtleta);
             this.Controls.Add(this.tbEscuela);
             this.Controls.Add(this.dateFechaNacimiento);
             this.Controls.Add(this.tbApellido);
             this.Controls.Add(this.tbNombre);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panelDivisorVertical);
+            this.Controls.Add(this.panelOpciones);
+            this.Controls.Add(this.panelAmarilloTbEscuela);
+            this.Controls.Add(this.panelAmarilloNumFederado);
+            this.Controls.Add(this.panelAmarilloDateFechaNacimiento);
+            this.Controls.Add(this.panelAmarilloCbGenero);
             this.Controls.Add(this.cbGenero);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAmarilloTbApellido);
+            this.Controls.Add(this.panelAmarilloTbNombre);
+            this.Controls.Add(this.panelAmarilloNumCedula);
             this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEdicionAtleta";
@@ -558,8 +558,8 @@ namespace InterfazProyecto1
             this.Text = "FormAltaAtleta";
             this.panelSuperiorVentana.ResumeLayout(false);
             this.panelSuperiorVentana.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.panelOpciones.ResumeLayout(false);
+            this.panelOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).EndInit();
@@ -571,45 +571,45 @@ namespace InterfazProyecto1
         #endregion
 
         private System.Windows.Forms.Panel panelSuperiorVentana;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelAmarilloVentana;
+        private System.Windows.Forms.Panel panelAzulVentana;
         private System.Windows.Forms.Button btnMinimizarVentana;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombreVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelAmarilloTbNombre;
+        private System.Windows.Forms.Panel panelAmarilloTbApellido;
+        private System.Windows.Forms.Panel panelAmarilloCbGenero;
         private System.Windows.Forms.ComboBox cbGenero;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelAmarilloDateFechaNacimiento;
+        private System.Windows.Forms.Panel panelAmarilloNumFederado;
+        private System.Windows.Forms.Panel panelAmarilloTbEscuela;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblFederado;
+        private System.Windows.Forms.Label lblCedula;
+        private System.Windows.Forms.Label lblEscuela;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.Panel panelOpciones;
+        private System.Windows.Forms.Panel panelDivisorVertical;
+        private System.Windows.Forms.Panel panelAmarilloNumCedula;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbApellido;
         private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
         private System.Windows.Forms.TextBox tbEscuela;
         private System.Windows.Forms.Button btnEditarAtleta;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panelAzulBtnConfirmar;
+        private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.NumericUpDown numEdad;
         private System.Windows.Forms.NumericUpDown numFederado;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panelAmarilloNumEdad;
+        private System.Windows.Forms.Panel panelDivisorHorizontal;
+        private System.Windows.Forms.Panel panelAmarilloCbBusqueda;
         private System.Windows.Forms.ComboBox cbTipoBusqueda;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTipoValorBusqueda;
         private System.Windows.Forms.TextBox tbValorBusqueda;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panelAmarilloTbBusqueda;
+        private System.Windows.Forms.Label lblValorBusqueda;
         private System.Windows.Forms.NumericUpDown numCedula;
     }
 }

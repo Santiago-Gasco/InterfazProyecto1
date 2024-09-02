@@ -31,49 +31,49 @@ namespace InterfazProyecto1
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelOpciones = new System.Windows.Forms.Panel();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnListarAtleta = new System.Windows.Forms.Button();
             this.btnEditarAtleta = new System.Windows.Forms.Button();
-            this.btnBorarAtleta = new System.Windows.Forms.Button();
-            this.btnAgregarAtleta = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBajaAtleta = new System.Windows.Forms.Button();
+            this.btnAltaAtleta = new System.Windows.Forms.Button();
+            this.panelPrincipalOpciones = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelBtnMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.panelSuperiorVentana = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAzulVentana = new System.Windows.Forms.Panel();
+            this.panelAmarilloVentana = new System.Windows.Forms.Panel();
             this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
-            this.Ventana = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelListaAtletas = new System.Windows.Forms.Panel();
+            this.panelAzulBtnEditarAtleta = new System.Windows.Forms.Panel();
+            this.panelAzulBtnBajaAtleta = new System.Windows.Forms.Panel();
+            this.panelAzulBtnAltaAtleta = new System.Windows.Forms.Panel();
+            this.panelAzulBtnRefrescar = new System.Windows.Forms.Panel();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.lblCreditos = new System.Windows.Forms.Label();
+            this.imagenKarate = new System.Windows.Forms.PictureBox();
+            this.panelOpciones.SuspendLayout();
+            this.panelPrincipalOpciones.SuspendLayout();
+            this.panelBtnMenu.SuspendLayout();
             this.panelSuperiorVentana.SuspendLayout();
-            this.Ventana.SuspendLayout();
+            this.panelListaAtletas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenKarate)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
+            // panelOpciones
             // 
-            this.panel3.Controls.Add(this.btnConfiguracion);
-            this.panel3.Controls.Add(this.btnListarAtleta);
-            this.panel3.Location = new System.Drawing.Point(3, 109);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 361);
-            this.panel3.TabIndex = 7;
+            this.panelOpciones.Controls.Add(this.btnConfiguracion);
+            this.panelOpciones.Controls.Add(this.btnListarAtleta);
+            this.panelOpciones.Location = new System.Drawing.Point(3, 109);
+            this.panelOpciones.Name = "panelOpciones";
+            this.panelOpciones.Size = new System.Drawing.Size(189, 361);
+            this.panelOpciones.TabIndex = 7;
             // 
             // btnConfiguracion
             // 
@@ -129,59 +129,60 @@ namespace InterfazProyecto1
             this.btnEditarAtleta.UseVisualStyleBackColor = false;
             this.btnEditarAtleta.Click += new System.EventHandler(this.btnEditarAtleta_Click);
             // 
-            // btnBorarAtleta
+            // btnBajaAtleta
             // 
-            this.btnBorarAtleta.BackColor = System.Drawing.Color.DimGray;
-            this.btnBorarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBorarAtleta.FlatAppearance.BorderSize = 0;
-            this.btnBorarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorarAtleta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBorarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnBorarAtleta.Image")));
-            this.btnBorarAtleta.Location = new System.Drawing.Point(90, 411);
-            this.btnBorarAtleta.Name = "btnBorarAtleta";
-            this.btnBorarAtleta.Size = new System.Drawing.Size(37, 43);
-            this.btnBorarAtleta.TabIndex = 2;
-            this.btnBorarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorarAtleta.UseVisualStyleBackColor = false;
-            this.btnBorarAtleta.Click += new System.EventHandler(this.btnBorarAtleta_Click);
+            this.btnBajaAtleta.BackColor = System.Drawing.Color.DimGray;
+            this.btnBajaAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBajaAtleta.FlatAppearance.BorderSize = 0;
+            this.btnBajaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBajaAtleta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBajaAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnBajaAtleta.Image")));
+            this.btnBajaAtleta.Location = new System.Drawing.Point(90, 411);
+            this.btnBajaAtleta.Name = "btnBajaAtleta";
+            this.btnBajaAtleta.Size = new System.Drawing.Size(37, 43);
+            this.btnBajaAtleta.TabIndex = 2;
+            this.btnBajaAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBajaAtleta.UseVisualStyleBackColor = false;
+            this.btnBajaAtleta.Click += new System.EventHandler(this.btnBorarAtleta_Click);
             // 
-            // btnAgregarAtleta
+            // btnAltaAtleta
             // 
-            this.btnAgregarAtleta.BackColor = System.Drawing.Color.DimGray;
-            this.btnAgregarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAgregarAtleta.FlatAppearance.BorderSize = 0;
-            this.btnAgregarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarAtleta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAgregarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAtleta.Image")));
-            this.btnAgregarAtleta.Location = new System.Drawing.Point(47, 411);
-            this.btnAgregarAtleta.Name = "btnAgregarAtleta";
-            this.btnAgregarAtleta.Size = new System.Drawing.Size(37, 43);
-            this.btnAgregarAtleta.TabIndex = 1;
-            this.btnAgregarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarAtleta.UseVisualStyleBackColor = false;
-            this.btnAgregarAtleta.Click += new System.EventHandler(this.btnAgregarAtleta_Click);
+            this.btnAltaAtleta.BackColor = System.Drawing.Color.DimGray;
+            this.btnAltaAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAltaAtleta.FlatAppearance.BorderSize = 0;
+            this.btnAltaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaAtleta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAltaAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnAltaAtleta.Image")));
+            this.btnAltaAtleta.Location = new System.Drawing.Point(47, 411);
+            this.btnAltaAtleta.Name = "btnAltaAtleta";
+            this.btnAltaAtleta.Size = new System.Drawing.Size(37, 43);
+            this.btnAltaAtleta.TabIndex = 1;
+            this.btnAltaAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAltaAtleta.UseVisualStyleBackColor = false;
+            this.btnAltaAtleta.Click += new System.EventHandler(this.btnAgregarAtleta_Click);
             // 
-            // flowLayoutPanel1
+            // panelPrincipalOpciones
             // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 40);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(192, 470);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(63, 470);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 470);
-            this.flowLayoutPanel1.TabIndex = 8;            // 
-            // panel1
+            this.panelPrincipalOpciones.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panelPrincipalOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelPrincipalOpciones.Controls.Add(this.panelBtnMenu);
+            this.panelPrincipalOpciones.Controls.Add(this.panelOpciones);
+            this.panelPrincipalOpciones.Location = new System.Drawing.Point(0, 40);
+            this.panelPrincipalOpciones.MaximumSize = new System.Drawing.Size(192, 470);
+            this.panelPrincipalOpciones.MinimumSize = new System.Drawing.Size(63, 470);
+            this.panelPrincipalOpciones.Name = "panelPrincipalOpciones";
+            this.panelPrincipalOpciones.Size = new System.Drawing.Size(192, 470);
+            this.panelPrincipalOpciones.TabIndex = 8;
             // 
-            this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 100);
-            this.panel1.TabIndex = 0;
+            // panelBtnMenu
+            // 
+            this.panelBtnMenu.Controls.Add(this.btnMenu);
+            this.panelBtnMenu.Location = new System.Drawing.Point(3, 3);
+            this.panelBtnMenu.Name = "panelBtnMenu";
+            this.panelBtnMenu.Size = new System.Drawing.Size(189, 100);
+            this.panelBtnMenu.TabIndex = 0;
             // 
             // btnMenu
             // 
@@ -210,11 +211,11 @@ namespace InterfazProyecto1
             // panelSuperiorVentana
             // 
             this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panelSuperiorVentana.Controls.Add(this.panel4);
-            this.panelSuperiorVentana.Controls.Add(this.panel2);
+            this.panelSuperiorVentana.Controls.Add(this.panelAzulVentana);
+            this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
-            this.panelSuperiorVentana.Controls.Add(this.label1);
+            this.panelSuperiorVentana.Controls.Add(this.lblNombreVentana);
             this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
             this.panelSuperiorVentana.Name = "panelSuperiorVentana";
             this.panelSuperiorVentana.Size = new System.Drawing.Size(1054, 40);
@@ -222,21 +223,21 @@ namespace InterfazProyecto1
             this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
             this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
-            // panel4
+            // panelAzulVentana
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel4.Location = new System.Drawing.Point(977, 37);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(74, 10);
-            this.panel4.TabIndex = 4;
+            this.panelAzulVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulVentana.Location = new System.Drawing.Point(977, 37);
+            this.panelAzulVentana.Name = "panelAzulVentana";
+            this.panelAzulVentana.Size = new System.Drawing.Size(74, 10);
+            this.panelAzulVentana.TabIndex = 4;
             // 
-            // panel2
+            // panelAmarilloVentana
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panel2.Location = new System.Drawing.Point(0, 37);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(977, 10);
-            this.panel2.TabIndex = 3;
+            this.panelAmarilloVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloVentana.Location = new System.Drawing.Point(0, 37);
+            this.panelAmarilloVentana.Name = "panelAmarilloVentana";
+            this.panelAmarilloVentana.Size = new System.Drawing.Size(977, 10);
+            this.panelAmarilloVentana.TabIndex = 3;
             // 
             // btnMinimizarVentana
             // 
@@ -264,73 +265,73 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.UseVisualStyleBackColor = false;
             this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
-            // label1
+            // lblNombreVentana
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(49, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Menu";
+            this.lblNombreVentana.AutoSize = true;
+            this.lblNombreVentana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreVentana.ForeColor = System.Drawing.Color.White;
+            this.lblNombreVentana.Location = new System.Drawing.Point(3, 9);
+            this.lblNombreVentana.Name = "lblNombreVentana";
+            this.lblNombreVentana.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblNombreVentana.Size = new System.Drawing.Size(49, 20);
+            this.lblNombreVentana.TabIndex = 1;
+            this.lblNombreVentana.Text = "Menu";
             // 
             // timerDataGridView
             // 
             this.timerDataGridView.Interval = 10;
             this.timerDataGridView.Tick += new System.EventHandler(this.timerDataGridView_Tick);
             // 
-            // Ventana
+            // panelListaAtletas
             // 
-            this.Ventana.BackColor = System.Drawing.Color.White;
-            this.Ventana.Controls.Add(this.panel9);
-            this.Ventana.Controls.Add(this.panel8);
-            this.Ventana.Controls.Add(this.panel6);
-            this.Ventana.Controls.Add(this.panel5);
-            this.Ventana.Controls.Add(this.btnRefrescar);
-            this.Ventana.Controls.Add(this.btnEditarAtleta);
-            this.Ventana.Controls.Add(this.btnAgregarAtleta);
-            this.Ventana.Controls.Add(this.btnBorarAtleta);
-            this.Ventana.Controls.Add(this.dataGridViewAtletas);
-            this.Ventana.Location = new System.Drawing.Point(195, 43);
-            this.Ventana.MaximumSize = new System.Drawing.Size(992, 460);
-            this.Ventana.MinimumSize = new System.Drawing.Size(847, 460);
-            this.Ventana.Name = "Ventana";
-            this.Ventana.Size = new System.Drawing.Size(849, 460);
-            this.Ventana.TabIndex = 1;
+            this.panelListaAtletas.BackColor = System.Drawing.Color.White;
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnEditarAtleta);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnBajaAtleta);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnAltaAtleta);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnRefrescar);
+            this.panelListaAtletas.Controls.Add(this.btnRefrescar);
+            this.panelListaAtletas.Controls.Add(this.btnEditarAtleta);
+            this.panelListaAtletas.Controls.Add(this.btnAltaAtleta);
+            this.panelListaAtletas.Controls.Add(this.btnBajaAtleta);
+            this.panelListaAtletas.Controls.Add(this.dataGridViewAtletas);
+            this.panelListaAtletas.Location = new System.Drawing.Point(195, 43);
+            this.panelListaAtletas.MaximumSize = new System.Drawing.Size(992, 460);
+            this.panelListaAtletas.MinimumSize = new System.Drawing.Size(847, 460);
+            this.panelListaAtletas.Name = "panelListaAtletas";
+            this.panelListaAtletas.Size = new System.Drawing.Size(849, 460);
+            this.panelListaAtletas.TabIndex = 1;
             // 
-            // panel9
+            // panelAzulBtnEditarAtleta
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel9.Location = new System.Drawing.Point(133, 451);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(37, 3);
-            this.panel9.TabIndex = 8;
+            this.panelAzulBtnEditarAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnEditarAtleta.Location = new System.Drawing.Point(133, 451);
+            this.panelAzulBtnEditarAtleta.Name = "panelAzulBtnEditarAtleta";
+            this.panelAzulBtnEditarAtleta.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnEditarAtleta.TabIndex = 8;
             // 
-            // panel8
+            // panelAzulBtnBajaAtleta
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel8.Location = new System.Drawing.Point(90, 451);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(37, 3);
-            this.panel8.TabIndex = 7;
+            this.panelAzulBtnBajaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnBajaAtleta.Location = new System.Drawing.Point(90, 451);
+            this.panelAzulBtnBajaAtleta.Name = "panelAzulBtnBajaAtleta";
+            this.panelAzulBtnBajaAtleta.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnBajaAtleta.TabIndex = 7;
             // 
-            // panel6
+            // panelAzulBtnAltaAtleta
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel6.Location = new System.Drawing.Point(47, 451);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(37, 3);
-            this.panel6.TabIndex = 6;
+            this.panelAzulBtnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(47, 451);
+            this.panelAzulBtnAltaAtleta.Name = "panelAzulBtnAltaAtleta";
+            this.panelAzulBtnAltaAtleta.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnAltaAtleta.TabIndex = 6;
             // 
-            // panel5
+            // panelAzulBtnRefrescar
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel5.Location = new System.Drawing.Point(4, 451);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(37, 3);
-            this.panel5.TabIndex = 5;
+            this.panelAzulBtnRefrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnRefrescar.Location = new System.Drawing.Point(4, 451);
+            this.panelAzulBtnRefrescar.Name = "panelAzulBtnRefrescar";
+            this.panelAzulBtnRefrescar.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnRefrescar.TabIndex = 5;
             // 
             // btnRefrescar
             // 
@@ -357,50 +358,50 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas.Size = new System.Drawing.Size(843, 402);
             this.dataGridViewAtletas.TabIndex = 0;
             // 
-            // label2
+            // lblCreditos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(925, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 96);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCreditos.AutoSize = true;
+            this.lblCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreditos.Location = new System.Drawing.Point(925, 170);
+            this.lblCreditos.Name = "lblCreditos";
+            this.lblCreditos.Size = new System.Drawing.Size(116, 96);
+            this.lblCreditos.TabIndex = 10;
+            this.lblCreditos.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
+            this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // imagenKarate
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(928, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 118);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.imagenKarate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenKarate.BackgroundImage")));
+            this.imagenKarate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imagenKarate.Location = new System.Drawing.Point(928, 49);
+            this.imagenKarate.Name = "imagenKarate";
+            this.imagenKarate.Size = new System.Drawing.Size(113, 118);
+            this.imagenKarate.TabIndex = 11;
+            this.imagenKarate.TabStop = false;
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 510);
-            this.Controls.Add(this.Ventana);
+            this.Controls.Add(this.panelListaAtletas);
             this.Controls.Add(this.panelSuperiorVentana);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelPrincipalOpciones);
+            this.Controls.Add(this.lblCreditos);
+            this.Controls.Add(this.imagenKarate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMenu";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.FormMenu_Load);
-            this.panel3.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelOpciones.ResumeLayout(false);
+            this.panelPrincipalOpciones.ResumeLayout(false);
+            this.panelBtnMenu.ResumeLayout(false);
             this.panelSuperiorVentana.ResumeLayout(false);
             this.panelSuperiorVentana.PerformLayout();
-            this.Ventana.ResumeLayout(false);
+            this.panelListaAtletas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenKarate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,31 +409,31 @@ namespace InterfazProyecto1
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelOpciones;
         private System.Windows.Forms.Button btnListarAtleta;
         private System.Windows.Forms.Button btnEditarAtleta;
-        private System.Windows.Forms.Button btnBorarAtleta;
-        private System.Windows.Forms.Button btnAgregarAtleta;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBajaAtleta;
+        private System.Windows.Forms.Button btnAltaAtleta;
+        private System.Windows.Forms.FlowLayoutPanel panelPrincipalOpciones;
+        private System.Windows.Forms.Panel panelBtnMenu;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Timer timerMenu;
         private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Button btnMinimizarVentana;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombreVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelAmarilloVentana;
+        private System.Windows.Forms.Panel panelAzulVentana;
         private System.Windows.Forms.Timer timerDataGridView;
-        private System.Windows.Forms.Panel Ventana;
+        private System.Windows.Forms.Panel panelListaAtletas;
         private System.Windows.Forms.DataGridView dataGridViewAtletas;
         private System.Windows.Forms.Button btnRefrescar;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelAzulBtnRefrescar;
+        private System.Windows.Forms.Panel panelAzulBtnEditarAtleta;
+        private System.Windows.Forms.Panel panelAzulBtnBajaAtleta;
+        private System.Windows.Forms.Panel panelAzulBtnAltaAtleta;
+        private System.Windows.Forms.Label lblCreditos;
+        private System.Windows.Forms.PictureBox imagenKarate;
         private System.Windows.Forms.Button btnConfiguracion;
     }
 }
