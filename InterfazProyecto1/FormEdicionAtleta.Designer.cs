@@ -506,7 +506,9 @@ namespace InterfazProyecto1
             // 
             // numCedula
             // 
+            this.numCedula.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.numCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numCedula.Enabled = false;
             this.numCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numCedula.Location = new System.Drawing.Point(186, 152);
             this.numCedula.Maximum = new decimal(new int[] {

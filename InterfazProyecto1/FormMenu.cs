@@ -29,6 +29,10 @@ namespace InterfazProyecto1
             {
                 panelPrincipalOpciones.Width -= 10;
 
+                btnMenu.Size = btnMenu.MinimumSize;
+                btnListarAtleta.Size = btnListarAtleta.MinimumSize;
+                btnConfiguracion.Size = btnConfiguracion.MinimumSize;
+
                 if (panelPrincipalOpciones.Width == panelPrincipalOpciones.MinimumSize.Width)
                 {
                     menuExpandido = false;
@@ -38,6 +42,10 @@ namespace InterfazProyecto1
             else
             {
                 panelPrincipalOpciones.Width += 10;
+
+                btnMenu.Size = btnMenu.MaximumSize;
+                btnListarAtleta.Size = btnListarAtleta.MaximumSize;
+                btnConfiguracion.Size = btnConfiguracion.MaximumSize;
 
                 if (panelPrincipalOpciones.Width == panelPrincipalOpciones.MaximumSize.Width)
                 {
@@ -75,7 +83,7 @@ namespace InterfazProyecto1
 
         public void ListarAtletas() //Método encargado de listar los atletas
         {
-            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
@@ -88,7 +96,7 @@ namespace InterfazProyecto1
                         CREATE TEMPORARY TABLE tb_atleta_temp AS
                         SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
                         FROM tb_atleta
-                        ORDER BY Id_atleta;";
+                        ORDER BY Id_atleta;"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
                     using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
                     {
                         createTempTableCommand.ExecuteNonQuery();
@@ -105,7 +113,7 @@ namespace InterfazProyecto1
                     string updateOriginalTableQuery = @"
                         UPDATE tb_atleta a
                         JOIN tb_atleta_temp t ON a.Id_atleta = t.Id_atleta
-                        SET a.Id_atleta = t.new_id;";
+                        SET a.Id_atleta = t.new_id;"; // Une las tablas y cambia los id de la tabla atleta a la nueva
                     using (var updateOriginalTableCommand = new MySqlCommand(updateOriginalTableQuery, databaseConnection))
                     {
                         updateOriginalTableCommand.ExecuteNonQuery();
