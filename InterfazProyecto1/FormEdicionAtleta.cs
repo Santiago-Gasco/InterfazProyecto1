@@ -2,7 +2,6 @@
 using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace InterfazProyecto1
 {
@@ -15,17 +14,17 @@ namespace InterfazProyecto1
         public FormEdicionAtleta(FormMenu menu)
         {
             InitializeComponent();
-            this.formMenu = menu;
+            this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
         }
 
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized; // Iguala el estado de la ventana actual a minimizado
         }
 
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Cierra la ventana actual
         }
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
@@ -59,7 +58,7 @@ namespace InterfazProyecto1
                     {
                         commandDatabase.CommandTimeout = 60;
 
-                        // Reemplaza los valores de ejemplo con los datos deseados
+                        // Cambia los valores del atleta a los valores de TextBox, ComboBox, NumericUpDown y DateTimePicker
                         commandDatabase.Parameters.AddWithValue("@Cedula", Convert.ToInt32(numCedula.Value));
                         commandDatabase.Parameters.AddWithValue("@Nombre", tbNombre.Text);
                         commandDatabase.Parameters.AddWithValue("@Apellido", tbApellido.Text);
@@ -74,7 +73,8 @@ namespace InterfazProyecto1
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Atleta actualizado exitosamente!");
-                            numCedula.Value = 0;
+                            // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a nulos o valor por defecto
+                            numCedula.Value = 1;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
                             numEdad.Value = 1;
@@ -83,11 +83,7 @@ namespace InterfazProyecto1
                             numFederado.Value = 0;
                             tbEscuela.Text = string.Empty;
 
-                            if (formMenu != null)
-                            {
-                                formMenu.ListarAtletas();
-                            }
-
+                            formMenu.ListarAtletas();
                             this.Hide();
                         }
                         else
@@ -133,7 +129,7 @@ namespace InterfazProyecto1
                             {
                                 if (reader.Read())
                                 {
-                                    // Asigna los valores obtenidos a los controles del formulario
+                                    // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a los valores del atleta
                                     numCedula.Value = Convert.ToInt32(reader["Cedula"]);
                                     tbNombre.Text = reader["Nombre"].ToString();
                                     tbApellido.Text = reader["Apellido"].ToString();
@@ -170,7 +166,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePos = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)

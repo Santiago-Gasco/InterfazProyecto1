@@ -27,12 +27,15 @@ namespace InterfazProyecto1
         {
             if (menuExpandido) //if en la que dependiendo del estado de la variable menuExpandido el grosor del panel 1 aumenta o disminuye
             {
+                // Resta 10 al tamaño del panel cada vez que el timer se ejecuta
                 panelPrincipalOpciones.Width -= 10;
 
+                //Cambia el tamaño de los botones a el tamaño minimo
                 btnMenu.Size = btnMenu.MinimumSize;
                 btnListarAtleta.Size = btnListarAtleta.MinimumSize;
                 btnConfiguracion.Size = btnConfiguracion.MinimumSize;
 
+                // Si el tamaño del panel es igual a el tamaño maximo cambia el valor de la variable menuExpandido y termina el timer
                 if (panelPrincipalOpciones.Width == panelPrincipalOpciones.MinimumSize.Width)
                 {
                     menuExpandido = false;
@@ -41,12 +44,15 @@ namespace InterfazProyecto1
             }
             else
             {
+                // Suma 10 al tamaño del panel cada vez que el timer se ejecuta
                 panelPrincipalOpciones.Width += 10;
 
+                //Cambia el tamaño de los botones a el tamaño maximo
                 btnMenu.Size = btnMenu.MaximumSize;
                 btnListarAtleta.Size = btnListarAtleta.MaximumSize;
                 btnConfiguracion.Size = btnConfiguracion.MaximumSize;
 
+                // Si el tamaño del panel es igual a el tamaño maximo cambia el valor de la variable menuExpandido y termina el timer
                 if (panelPrincipalOpciones.Width == panelPrincipalOpciones.MaximumSize.Width)
                 {
                     menuExpandido = true;
@@ -59,7 +65,9 @@ namespace InterfazProyecto1
         {
             if (dataGridViewExpandido) //if en el que dependiendo del estado de la variable dataGridViewExpandido se cambia la posición de la Ventana
             {
+                // Suma 10 a la posicion x del panel cada vez que el timer se ejecuta
                 int posX = panelListaAtletas.Location.X + 10;
+
                 panelListaAtletas.Location = new Point(posX, 46);
 
                 if (posX >= 195)
@@ -70,6 +78,7 @@ namespace InterfazProyecto1
             }
             else
             {
+                // Resta 10 a la posicion x del panel cada vez que el timer se ejecuta
                 int posX = panelListaAtletas.Location.X - 10;
                 panelListaAtletas.Location = new Point(posX, 46);
 
@@ -81,7 +90,7 @@ namespace InterfazProyecto1
             }
         }
 
-        public void ListarAtletas() //Método encargado de listar los atletas
+        public void ListarAtletas()
         {
             string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
@@ -91,7 +100,7 @@ namespace InterfazProyecto1
 
                 try
                 {
-                    // Crear una tabla temporal y copiar los datos
+                    // Crea una tabla temporal y copia los datos de la tabla original
                     string createTempTableQuery = @"
                         CREATE TEMPORARY TABLE tb_atleta_temp AS
                         SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
@@ -102,31 +111,31 @@ namespace InterfazProyecto1
                         createTempTableCommand.ExecuteNonQuery();
                     }
 
-                    // Agregar una columna de IDs secuenciales
+                    // Agrega la columna id a la tabla temporal y los ordena
                     string addTempIdColumnQuery = "ALTER TABLE tb_atleta_temp ADD COLUMN new_id INT AUTO_INCREMENT PRIMARY KEY;";
                     using (var addTempIdColumnCommand = new MySqlCommand(addTempIdColumnQuery, databaseConnection))
                     {
                         addTempIdColumnCommand.ExecuteNonQuery();
                     }
 
-                    // Actualizar los IDs en la tabla original
+                    // Actualiza los id a la tabla original
                     string updateOriginalTableQuery = @"
                         UPDATE tb_atleta a
                         JOIN tb_atleta_temp t ON a.Id_atleta = t.Id_atleta
-                        SET a.Id_atleta = t.new_id;"; // Une las tablas y cambia los id de la tabla atleta a la nueva
+                        SET a.Id_atleta = t.new_id;";
                     using (var updateOriginalTableCommand = new MySqlCommand(updateOriginalTableQuery, databaseConnection))
                     {
                         updateOriginalTableCommand.ExecuteNonQuery();
                     }
 
-                    // Restablecer AUTO_INCREMENT
+                    // Restablece AUTO_INCREMENT
                     string resetAutoIncrementQuery = "ALTER TABLE tb_atleta AUTO_INCREMENT = 1;";
                     using (var resetAutoIncrementCommand = new MySqlCommand(resetAutoIncrementQuery, databaseConnection))
                     {
                         resetAutoIncrementCommand.ExecuteNonQuery();
                     }
 
-                    // Eliminar la tabla temporal
+                    // Elimina la tabla temporal
                     string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_temp;";
                     using (var dropTempTableCommand = new MySqlCommand(dropTempTableQuery, databaseConnection))
                     {
@@ -174,12 +183,12 @@ namespace InterfazProyecto1
 
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
-            this.Close(); //hace que se cierre la ventana
+            this.Close(); // Cierra la ventana actual
         }
 
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized; //minimiza la ventana
+            this.WindowState = FormWindowState.Minimized; // Iguala el estado de la ventana actual a minimizado
         }
 
         private void btnAgregarAtleta_Click(object sender, EventArgs e)
@@ -212,7 +221,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePos = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)

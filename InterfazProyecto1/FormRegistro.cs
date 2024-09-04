@@ -27,12 +27,13 @@ namespace InterfazProyecto1
                     try
                     {
                         databaseConnection.Open();
-                        using (MySqlCommand checkCommand = new MySqlCommand(query, databaseConnection))
+                        using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
                         {
-                            checkCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
-                            checkCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
+                            // Añade los parametros nombre y contraseña al comando
+                            commandDatabase.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
+                            commandDatabase.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
 
-                            int userExists = Convert.ToInt32(checkCommand.ExecuteScalar());
+                            int userExists = Convert.ToInt32(commandDatabase.ExecuteScalar());
 
                             if (userExists > 0)
                             {
@@ -41,13 +42,15 @@ namespace InterfazProyecto1
                             else
                             {
                                 string insertQuery = "INSERT INTO tb_usuario (Nombre, Contraseña, Rol) VALUES (@nombre, @contraseña, @rol)";
-                                using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, databaseConnection))
-                                {
-                                    insertCommand.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
-                                    insertCommand.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
-                                    insertCommand.Parameters.AddWithValue("@rol", "Super Admin");
 
-                                    int rowsAffected = insertCommand.ExecuteNonQuery();
+                                using (MySqlCommand commandDatabase2 = new MySqlCommand(insertQuery, databaseConnection))
+                                {
+                                    // Añade los parametros nombre y contraseña a el comando a ejecutar
+                                    commandDatabase2.Parameters.AddWithValue("@nombre", tbNombreRegistro.Text);
+                                    commandDatabase2.Parameters.AddWithValue("@contraseña", tbContraseñaRegistro.Text);
+                                    commandDatabase2.Parameters.AddWithValue("@rol", "Super Admin");
+
+                                    int rowsAffected = commandDatabase2.ExecuteNonQuery();
 
                                     if (rowsAffected > 0)
                                     {
@@ -78,11 +81,12 @@ namespace InterfazProyecto1
 
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized; // Iguala el estado de la ventana actual a minimizado
         }
 
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
+            //
             FormEleccionLoginRegistro formEleccion = new FormEleccionLoginRegistro();
             formEleccion.Show();
             this.Hide();
@@ -131,7 +135,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePos = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)

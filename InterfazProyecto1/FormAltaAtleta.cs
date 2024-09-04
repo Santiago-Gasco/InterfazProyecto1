@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Collections;
+using Google.Protobuf.WellKnownTypes;
 
 namespace InterfazProyecto1
 {
@@ -21,17 +15,17 @@ namespace InterfazProyecto1
         public FormAltaAtleta(FormMenu menu)
         {
             InitializeComponent();
-            this.formMenu = menu;
+            this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
         }
 
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized; // Iguala el estado de la ventana actual a minimizado
         }
 
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Cierra la ventana actual
         }
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
@@ -40,7 +34,15 @@ namespace InterfazProyecto1
         {
             query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela)";
 
-            AltaAtleta();
+            // Si los valores cumple los requisitos se ejecuta el metodo AltaAtleta
+            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && numFederado.Value != 0 && tbEscuela.Text != "" && tbEscuela.Text != string.Empty)
+            {
+                AltaAtleta();
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos, porfavor verifique y ingrese los datos faltantes");
+            }
         }
 
         private void AltaAtleta()
@@ -54,7 +56,7 @@ namespace InterfazProyecto1
                     {
                         commandDatabase.CommandTimeout = 60;
 
-                        // Reemplaza los valores de ejemplo con los datos deseados
+                        // Cambia los valores del atleta a los valores de TextBox, ComboBox, NumericUpDown y DateTimePicker
                         commandDatabase.Parameters.AddWithValue("@Cedula", Convert.ToInt32(numCedula.Value));
                         commandDatabase.Parameters.AddWithValue("@Nombre", tbNombre.Text);
                         commandDatabase.Parameters.AddWithValue("@Apellido", tbApellido.Text);
@@ -69,6 +71,8 @@ namespace InterfazProyecto1
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Atleta creado exitosamente!");
+
+                            // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a nulos o valor por defecto
                             numCedula.Value = 0;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
@@ -98,7 +102,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePos = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)

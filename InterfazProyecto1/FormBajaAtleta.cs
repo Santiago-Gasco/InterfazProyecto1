@@ -10,20 +10,21 @@ namespace InterfazProyecto1
         FormMenu formMenu;
         public Point mousePos;
         string query;
+
         public FormBajaAtleta(FormMenu menu)
         {
             InitializeComponent();
-            this.formMenu = menu;
+            this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
         }
 
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized; // Iguala el estado de la ventana actual a minimizado
         }
 
         private void btnCerrarVentana_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Cierra la ventana actual
         }
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
@@ -62,7 +63,7 @@ namespace InterfazProyecto1
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Atleta eliminado exitosamente!");
-                            formMenu?.ListarAtletas();
+                            formMenu.ListarAtletas(); // Llama al metodo de formMenu que lista los atletas (actualiza)
                         }
                         else
                         {
@@ -79,7 +80,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePos = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)

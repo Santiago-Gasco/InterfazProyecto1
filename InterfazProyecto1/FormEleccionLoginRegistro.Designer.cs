@@ -182,6 +182,7 @@ namespace InterfazProyecto1
             this.Controls.Add(this.imgKarate);
             this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEleccionLoginRegistro";
             this.Text = "5";
             this.panelSuperiorVentana.ResumeLayout(false);

@@ -519,6 +519,11 @@ namespace InterfazProyecto1
             this.numCedula.Name = "numCedula";
             this.numCedula.Size = new System.Drawing.Size(127, 24);
             this.numCedula.TabIndex = 30;
+            this.numCedula.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // FormEdicionAtleta
             // 

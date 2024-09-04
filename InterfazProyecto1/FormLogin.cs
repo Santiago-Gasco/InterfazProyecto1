@@ -28,6 +28,8 @@ namespace InterfazProyecto1
                     using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
                     {
                         commandDatabase.CommandTimeout = 60;
+
+                        // Añade los parametros nombre y contraseña a el comando a ejecutar
                         commandDatabase.Parameters.AddWithValue("@nombre", tbNombre.Text);
                         commandDatabase.Parameters.AddWithValue("@contraseña", tbContraseña.Text);
 
@@ -68,7 +70,7 @@ namespace InterfazProyecto1
 
         private void btnMinimizarVentana_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;  // Iguala el estado de la ventana actual a minimizado
         }
 
         private void tbNombre_Enter(object sender, EventArgs e)
@@ -109,7 +111,7 @@ namespace InterfazProyecto1
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            mousePos = new Point(-e.X, -e.Y);
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
         }
 
         private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
