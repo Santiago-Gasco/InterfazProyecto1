@@ -118,16 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnListarArbitro.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAASVJREFUSEvtlDtOw0AURb0H6BK2gFgDnyJik8AaEL+WsAhANIQySFBAa84dXydj
+        P8CxXcKRrjT3fW2P5OKfXpRleYxe0FAWaOZxEReM5dnjIi4YjcdFnB+Nx0WcH43HRZz/uaADt/+lBRxf
+        0dK29m3yfMI24ny+YCnZ1r7N8AV9ofUNvdtG0nSw7Q2tu2jPNpKmg6184w5Gk6aDrXzjDmqIHaEz9IQ+
+        LZ1P0aHLIiQTtgFS2+gmFf3OFdpy25oq9/0CwjvoMRWsOUcTNEUXCmQ8oKnbKwi0f9d3Tik3r0INVgM4
+        6wHazJ2uIDBD+ZJbp4YuWPV3QrE+g147R59FcQ2/VCDjHk3cvhk06JKv1d2BlsVL3hSaD9AJ0qV/WHo7
+        xfZdBkXxBXJdv0jHntujAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnConfiguracion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFHSURBVEhL5ZVBSgMxGIWnXdtK9Rb1AKU30F2h6NJ6gl5G
-        3VqXHsmdoAgeoLrT8XuZv+mkSWohFgQ/eBDyXt6UJDOt/gd1XZ+hJVqh8anZ5VB272pDFmaXQdEJenKV
-        IZobWmw3WNBFN+gBXaBb9IVyyFNGWa3R2q7VxWBeoVJmVheCcYBeXaSMN9S32jVMzp2d5hlNUc80QY8o
-        x9xq1zA5Ru/ODlH5kcU8zA3M20QdY4uFYIzQh1ItpmZH4J03EY/WjsxOQ6D9QomeWRF4/SbiWZqVR6Em
-        69n2gMMm4tn+AAKpLZqYHYGn+98mv0UYuUPWbRlYzMPcMXpRYIP0ITP50zXVgWrPJf3yVPmK5DXd74sm
-        MGYuUsal1cVgdlD7Y6fxJ8oh7xpp+7RG447V7QYLhuh3Ptc5KFq4ypA7s8uhbL9/mX+YqvoGN9r3HMMK
-        9IcAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAUdJREFUSEvllUFKAzEYhadd20r1FvUApTfQXaHo0nqCXkbdWpceyZ2gCB6gutPx
+        e5m/6aRJaiEWBD94EPJe3pQkM63+B3Vdn6ElWqHxqdnlUHbvakMWZpdB0Ql6cpUhmhtabDdY0EU36AFd
+        oFv0hXLIU0ZZrdHartXFYF6hUmZWF4JxgF5dpIw31LfaNUzOnZ3mGU1RzzRBjyjH3GrXMDlG784OUfmR
+        xTzMDczbRB1ji4VgjNCHUi2mZkfgnTcRj9aOzE5DoP1CiZ5ZEXj9JuJZmpVHoSbr2faAwybi2f4AAqkt
+        mpgdgaf73ya/RRi5Q9ZtGVjMw9wxelFgg/QhM/nTNdWBas8l/fJU+YrkNd3viyYwZi5SxqXVxWB2UPtj
+        p/EnyiHvGmn7tEbjjtXtBguG6Hc+1zkoWrjKkDuzy6Fsv3+Zf5iq+gY32vccwwr0hwAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnListarAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -212,7 +223,7 @@
   <data name="btnRefrescar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAaZJREFUWEftlksrBWEch89RChsLt3KJXLKy8T1OklJYsBJZWJzExuLsfAAlWVmQ
+        DQAACw0B7QfALAAAAaZJREFUWEftlksrBWEch89RChsLt3KJXLKy8T1OklJYsBJZWJzExuLsfAAlWVmQ
         UjZuS74Ea2UnFhSRy+v5z/ubbMyZd+psaJ56MvOf32/MzLm9hZycLDjnenANT/EWX/AJrzRbxHbFawcn
         7cZ9/MA0LLODrapbP0K72aA3gXaXxivu4ST2YSM24wjO4BnGF/mAYzpHRHTCLNBZwq+o7dwhdulQImQG
         8dIK8I5zfjPjBZAfx0+5rHEQ5OuwgkZ8A+EXQLYD76OWc2WNM0N3w5/Co3E6ZLd8xZ1oFIx6v6JIdcjV

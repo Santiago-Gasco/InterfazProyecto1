@@ -32,6 +32,7 @@ namespace InterfazProyecto1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.btnListarArbitro = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnListarAtleta = new System.Windows.Forms.Button();
             this.btnEditarAtleta = new System.Windows.Forms.Button();
@@ -68,12 +69,34 @@ namespace InterfazProyecto1
             // 
             // panelOpciones
             // 
+            this.panelOpciones.Controls.Add(this.btnListarArbitro);
             this.panelOpciones.Controls.Add(this.btnConfiguracion);
             this.panelOpciones.Controls.Add(this.btnListarAtleta);
             this.panelOpciones.Location = new System.Drawing.Point(3, 109);
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(189, 361);
             this.panelOpciones.TabIndex = 7;
+            // 
+            // btnListarArbitro
+            // 
+            this.btnListarArbitro.BackColor = System.Drawing.Color.Transparent;
+            this.btnListarArbitro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnListarArbitro.FlatAppearance.BorderSize = 0;
+            this.btnListarArbitro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarArbitro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarArbitro.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnListarArbitro.Image = ((System.Drawing.Image)(resources.GetObject("btnListarArbitro.Image")));
+            this.btnListarArbitro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarArbitro.Location = new System.Drawing.Point(12, 68);
+            this.btnListarArbitro.MaximumSize = new System.Drawing.Size(158, 46);
+            this.btnListarArbitro.MinimumSize = new System.Drawing.Size(33, 46);
+            this.btnListarArbitro.Name = "btnListarArbitro";
+            this.btnListarArbitro.Size = new System.Drawing.Size(158, 46);
+            this.btnListarArbitro.TabIndex = 6;
+            this.btnListarArbitro.Text = "           Arbitros";
+            this.btnListarArbitro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarArbitro.UseVisualStyleBackColor = false;
+            this.btnListarArbitro.Click += new System.EventHandler(this.btnListarArbitro_Click);
             // 
             // btnConfiguracion
             // 
@@ -111,7 +134,7 @@ namespace InterfazProyecto1
             this.btnListarAtleta.Name = "btnListarAtleta";
             this.btnListarAtleta.Size = new System.Drawing.Size(158, 46);
             this.btnListarAtleta.TabIndex = 4;
-            this.btnListarAtleta.Text = "           Listar Atleta";
+            this.btnListarAtleta.Text = "           Atletas";
             this.btnListarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnListarAtleta.UseVisualStyleBackColor = false;
             this.btnListarAtleta.Click += new System.EventHandler(this.btnListarAtleta_Click);
@@ -443,5 +466,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Label lblCreditos;
         private System.Windows.Forms.PictureBox imagenKarate;
         private System.Windows.Forms.Button btnConfiguracion;
+        private System.Windows.Forms.Button btnListarArbitro;
     }
 }

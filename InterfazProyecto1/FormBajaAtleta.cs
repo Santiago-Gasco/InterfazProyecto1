@@ -27,7 +27,7 @@ namespace InterfazProyecto1
             this.Close(); // Cierra la ventana actual
         }
 
-        private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_atleta;";
+        private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_qubeware;";
 
         private void btnBajaAtleta_Click(object sender, EventArgs e)
         {
