@@ -344,6 +344,7 @@ namespace InterfazProyecto1
             this.btnAltaArbitro.TabIndex = 40;
             this.btnAltaArbitro.Text = "Crear Arbitro";
             this.btnAltaArbitro.UseVisualStyleBackColor = false;
+            this.btnAltaArbitro.Click += new System.EventHandler(this.btnAltaArbitro_Click);
             // 
             // FormAltaArbitro
             // 
