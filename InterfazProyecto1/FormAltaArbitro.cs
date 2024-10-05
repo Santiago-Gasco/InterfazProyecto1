@@ -13,13 +13,13 @@ namespace InterfazProyecto1
 {
     public partial class FormAltaArbitro : Form
     {
-
         FormMenu formMenu;
         public Point mousePos;
 
-        public FormAltaArbitro()
+        public FormAltaArbitro(FormMenu menu)
         {
             InitializeComponent();
+            this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
         }
 
         private void Form1_Load(object sender, EventArgs e)

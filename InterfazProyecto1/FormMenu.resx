@@ -132,7 +132,7 @@
   <data name="btnConfiguracion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAUdJREFUSEvllUFKAzEYhadd20r1FvUApTfQXaHo0nqCXkbdWpceyZ2gCB6gutPx
+        DwAACw8BkvkDpQAAAUdJREFUSEvllUFKAzEYhadd20r1FvUApTfQXaHo0nqCXkbdWpceyZ2gCB6gutPx
         e5m/6aRJaiEWBD94EPJe3pQkM63+B3Vdn6ElWqHxqdnlUHbvakMWZpdB0Ql6cpUhmhtabDdY0EU36AFd
         oFv0hXLIU0ZZrdHartXFYF6hUmZWF4JxgF5dpIw31LfaNUzOnZ3mGU1RzzRBjyjH3GrXMDlG784OUfmR
         xTzMDczbRB1ji4VgjNCHUi2mZkfgnTcRj9aOzE5DoP1CiZ5ZEXj9JuJZmpVHoSbr2faAwybi2f4AAqkt
@@ -152,7 +152,7 @@
         xfZdBkXxBXJdv0jHntujAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnEditarAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAJRJREFUSEvtjtsNgCAMRVnAmXQV4yDy6QzMpiMYR8BLcjGmlhgen5zkJkDbU0wn
@@ -161,7 +161,7 @@
         YII=
 </value>
   </data>
-  <data name="btnBajaAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBaja.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAZFJREFUSEvdlEtOAkEURQkEJspG0D2IGzBoiFsgGBV1EYa4DEXdh6zATxR/m0AH
@@ -174,7 +174,7 @@
         cqTWAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnAltaAtleta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAlta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAaFJREFUSEvdlFtOAkEURAkEfkQXgu5B3IABQ9wCwaioiyDEZSjqenxE8bUIgx/6
@@ -223,7 +223,7 @@
   <data name="btnRefrescar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAaZJREFUWEftlksrBWEch89RChsLt3KJXLKy8T1OklJYsBJZWJzExuLsfAAlWVmQ
+        DAAACwwBP0AiyAAAAaZJREFUWEftlksrBWEch89RChsLt3KJXLKy8T1OklJYsBJZWJzExuLsfAAlWVmQ
         UjZuS74Ea2UnFhSRy+v5z/ubbMyZd+psaJ56MvOf32/MzLm9hZycLDjnenANT/EWX/AJrzRbxHbFawcn
         7cZ9/MA0LLODrapbP0K72aA3gXaXxivu4ST2YSM24wjO4BnGF/mAYzpHRHTCLNBZwq+o7dwhdulQImQG
         8dIK8I5zfjPjBZAfx0+5rHEQ5OuwgkZ8A+EXQLYD76OWc2WNM0N3w5/Co3E6ZLd8xZ1oFIx6v6JIdcjV
@@ -6997,7 +6997,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>32</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -35,9 +35,9 @@ namespace InterfazProyecto1
             this.btnListarArbitro = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnListarAtleta = new System.Windows.Forms.Button();
-            this.btnEditarAtleta = new System.Windows.Forms.Button();
-            this.btnBajaAtleta = new System.Windows.Forms.Button();
-            this.btnAltaAtleta = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.btnAlta = new System.Windows.Forms.Button();
             this.panelPrincipalOpciones = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBtnMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -139,56 +139,56 @@ namespace InterfazProyecto1
             this.btnListarAtleta.UseVisualStyleBackColor = false;
             this.btnListarAtleta.Click += new System.EventHandler(this.btnListarAtleta_Click);
             // 
-            // btnEditarAtleta
+            // btnEditar
             // 
-            this.btnEditarAtleta.BackColor = System.Drawing.Color.DimGray;
-            this.btnEditarAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEditarAtleta.FlatAppearance.BorderSize = 0;
-            this.btnEditarAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarAtleta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEditarAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarAtleta.Image")));
-            this.btnEditarAtleta.Location = new System.Drawing.Point(133, 411);
-            this.btnEditarAtleta.Name = "btnEditarAtleta";
-            this.btnEditarAtleta.Size = new System.Drawing.Size(37, 43);
-            this.btnEditarAtleta.TabIndex = 3;
-            this.btnEditarAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarAtleta.UseVisualStyleBackColor = false;
-            this.btnEditarAtleta.Click += new System.EventHandler(this.btnEditarAtleta_Click);
+            this.btnEditar.BackColor = System.Drawing.Color.DimGray;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(133, 411);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(37, 43);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnBajaAtleta
+            // btnBaja
             // 
-            this.btnBajaAtleta.BackColor = System.Drawing.Color.DimGray;
-            this.btnBajaAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBajaAtleta.FlatAppearance.BorderSize = 0;
-            this.btnBajaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBajaAtleta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBajaAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnBajaAtleta.Image")));
-            this.btnBajaAtleta.Location = new System.Drawing.Point(90, 411);
-            this.btnBajaAtleta.Name = "btnBajaAtleta";
-            this.btnBajaAtleta.Size = new System.Drawing.Size(37, 43);
-            this.btnBajaAtleta.TabIndex = 2;
-            this.btnBajaAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBajaAtleta.UseVisualStyleBackColor = false;
-            this.btnBajaAtleta.Click += new System.EventHandler(this.btnBorarAtleta_Click);
+            this.btnBaja.BackColor = System.Drawing.Color.DimGray;
+            this.btnBaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBaja.FlatAppearance.BorderSize = 0;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaja.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaja.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnBaja.Image")));
+            this.btnBaja.Location = new System.Drawing.Point(90, 411);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(37, 43);
+            this.btnBaja.TabIndex = 2;
+            this.btnBaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // btnAltaAtleta
+            // btnAlta
             // 
-            this.btnAltaAtleta.BackColor = System.Drawing.Color.DimGray;
-            this.btnAltaAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAltaAtleta.FlatAppearance.BorderSize = 0;
-            this.btnAltaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaAtleta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaAtleta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAltaAtleta.Image = ((System.Drawing.Image)(resources.GetObject("btnAltaAtleta.Image")));
-            this.btnAltaAtleta.Location = new System.Drawing.Point(47, 411);
-            this.btnAltaAtleta.Name = "btnAltaAtleta";
-            this.btnAltaAtleta.Size = new System.Drawing.Size(37, 43);
-            this.btnAltaAtleta.TabIndex = 1;
-            this.btnAltaAtleta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAltaAtleta.UseVisualStyleBackColor = false;
-            this.btnAltaAtleta.Click += new System.EventHandler(this.btnAgregarAtleta_Click);
+            this.btnAlta.BackColor = System.Drawing.Color.DimGray;
+            this.btnAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAlta.FlatAppearance.BorderSize = 0;
+            this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAlta.Image = ((System.Drawing.Image)(resources.GetObject("btnAlta.Image")));
+            this.btnAlta.Location = new System.Drawing.Point(47, 411);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(37, 43);
+            this.btnAlta.TabIndex = 1;
+            this.btnAlta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlta.UseVisualStyleBackColor = false;
+            this.btnAlta.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // panelPrincipalOpciones
             // 
@@ -321,9 +321,9 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnAltaAtleta);
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnRefrescar);
             this.panelListaAtletas.Controls.Add(this.btnRefrescar);
-            this.panelListaAtletas.Controls.Add(this.btnEditarAtleta);
-            this.panelListaAtletas.Controls.Add(this.btnAltaAtleta);
-            this.panelListaAtletas.Controls.Add(this.btnBajaAtleta);
+            this.panelListaAtletas.Controls.Add(this.btnEditar);
+            this.panelListaAtletas.Controls.Add(this.btnAlta);
+            this.panelListaAtletas.Controls.Add(this.btnBaja);
             this.panelListaAtletas.Controls.Add(this.dataGridViewAtletas);
             this.panelListaAtletas.Location = new System.Drawing.Point(195, 43);
             this.panelListaAtletas.MaximumSize = new System.Drawing.Size(992, 460);
@@ -442,9 +442,9 @@ namespace InterfazProyecto1
 
         private System.Windows.Forms.Panel panelOpciones;
         private System.Windows.Forms.Button btnListarAtleta;
-        private System.Windows.Forms.Button btnEditarAtleta;
-        private System.Windows.Forms.Button btnBajaAtleta;
-        private System.Windows.Forms.Button btnAltaAtleta;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnBaja;
+        private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.FlowLayoutPanel panelPrincipalOpciones;
         private System.Windows.Forms.Panel panelBtnMenu;
         private System.Windows.Forms.Button btnMenu;

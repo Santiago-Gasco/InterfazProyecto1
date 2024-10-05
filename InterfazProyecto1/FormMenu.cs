@@ -276,22 +276,56 @@ namespace InterfazProyecto1
             this.WindowState = FormWindowState.Minimized; // Iguala el estado de la ventana actual a minimizado
         }
 
-        private void btnAgregarAtleta_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FormAltaAtleta formAltaAtleta = new FormAltaAtleta(this); //crea una nueva instancia del formulario para el alta de los atletas
-            formAltaAtleta.Show(); //muestra el formulario para el atla de los atletas
+            switch (panelAbierto)
+            {
+                case 0:
+                    FormAltaAtleta formAltaAtleta = new FormAltaAtleta(this); //crea una nueva instancia del formulario para el alta de los atletas
+                    formAltaAtleta.Show(); //muestra el formulario para el atla de los atletas
+                    break;
+                case 1:
+                    FormAltaArbitro formAltaArbitro = new FormAltaArbitro(this);
+                    formAltaArbitro.Show();
+                    break;
+                case 2:
+
+                    break;
+            }
         }
 
-        private void btnBorarAtleta_Click(object sender, EventArgs e)
+        private void btnBorrar_Click(object sender, EventArgs e)
         {
-            FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this); //crea una nueva instancia del formulario para la baja de los atletas
-            formBajaAtleta.Show(); //muestra el formulario para la baja de atletas
+            switch (panelAbierto)
+            {
+                case 0:
+                    FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this); //crea una nueva instancia del formulario para la baja de los atletas
+                    formBajaAtleta.Show(); //muestra el formulario para la baja de atletas
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+            }
         }
 
-        private void btnEditarAtleta_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            FormEdicionAtleta formEdicionAtleta = new FormEdicionAtleta(this); //crea una nueva instancia del formulario para la edición de los atletas
-            formEdicionAtleta.Show(); //muestra el formulario para la edición de los atletas.
+            switch (panelAbierto)
+            {
+                case 0:
+                    FormEdicionAtleta formEdicionAtleta = new FormEdicionAtleta(this); //crea una nueva instancia del formulario para la edición de los atletas
+                    formEdicionAtleta.Show(); //muestra el formulario para la edición de los atletas.
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+            }
         }
         
         private void btnListarAtleta_Click(object sender, EventArgs e)
