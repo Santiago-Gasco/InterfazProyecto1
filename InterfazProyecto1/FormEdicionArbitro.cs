@@ -146,16 +146,6 @@ namespace InterfazProyecto1
             }
         }
 
-        private void tbValorBusqueda_Leave(object sender, EventArgs e)
-        {
-            BuscarArbitro();
-        }
-
-        private void cbTipoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BuscarArbitro();
-        }
-
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
             mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
@@ -169,6 +159,16 @@ namespace InterfazProyecto1
                 mousePose.Offset(mousePos.X, mousePos.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
                 Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
+        }
+
+        private void cbTipoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BuscarArbitro();
+        }
+
+        private void tbValorBusqueda_Leave(object sender, EventArgs e)
+        {
+            BuscarArbitro();
         }
     }
 }

@@ -206,7 +206,7 @@ namespace InterfazProyecto1
             this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
             this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
-            this.btnMinimizarVentana.Location = new System.Drawing.Point(269, 3);
+            this.btnMinimizarVentana.Location = new System.Drawing.Point(275, 3);
             this.btnMinimizarVentana.Name = "btnMinimizarVentana";
             this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
             this.btnMinimizarVentana.TabIndex = 2;
@@ -231,7 +231,7 @@ namespace InterfazProyecto1
             this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
             this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
-            this.btnCerrarVentana.Location = new System.Drawing.Point(299, 3);
+            this.btnCerrarVentana.Location = new System.Drawing.Point(305, 3);
             this.btnCerrarVentana.Name = "btnCerrarVentana";
             this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
             this.btnCerrarVentana.TabIndex = 0;
