@@ -15,6 +15,7 @@ namespace InterfazProyecto1
     {
         FormMenu formMenu;
         public Point mousePos;
+        string query;
 
         public FormAltaArbitro(FormMenu menu)
         {
@@ -39,7 +40,20 @@ namespace InterfazProyecto1
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_qubeware;";
 
-        string query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoría FROM tb_arbitro"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+        private void btnAltaArbitro_Click(object sender, EventArgs e)
+        {
+            query = "INSERT INTO tb_arbitro (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Rango, @Categoria)";
+
+            // Si los valores cumple los requisitos se ejecuta el metodo AltaAtleta
+            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && cbGenero.SelectedIndex != -1 && cbCategoria.SelectedIndex != -1)
+            {
+                AltaArbitro();
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos, porfavor verifique y ingrese los datos faltantes");
+            }
+        }
 
         private void AltaArbitro()
         {
@@ -52,7 +66,7 @@ namespace InterfazProyecto1
                     {
                         commandDatabase.CommandTimeout = 60;
 
-                        // Cambia los valores del atleta a los valores de TextBox, ComboBox, NumericUpDown y DateTimePicker
+                        // Cambia los valores del arbitro a los valores de TextBox, ComboBox, NumericUpDown y DateTimePicker
                         commandDatabase.Parameters.AddWithValue("@Cedula", Convert.ToInt32(numCedula.Value));
                         commandDatabase.Parameters.AddWithValue("@Nombre", tbNombre.Text);
                         commandDatabase.Parameters.AddWithValue("@Apellido", tbApellido.Text);
@@ -66,7 +80,7 @@ namespace InterfazProyecto1
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Atleta creado exitosamente!");
+                            MessageBox.Show("Arbitro creado exitosamente!");
 
                             // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a nulos o valor por defecto
                             numCedula.Value = 0;
@@ -80,11 +94,12 @@ namespace InterfazProyecto1
 
                             this.formMenu = formMenu;
 
+                            formMenu.ListarArbitros();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo crear el atleta. Inténtelo de nuevo.");
+                            MessageBox.Show("No se pudo crear el arbitro. Inténtelo de nuevo.");
                         }
                     }
                 }
@@ -96,16 +111,18 @@ namespace InterfazProyecto1
 
         }
 
-        private void btnAltaArbitro_Click(object sender, EventArgs e)
+        private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)
         {
-            // Si los valores cumple los requisitos se ejecuta el metodo AltaAtleta
-            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && cbGenero.SelectedIndex != -1 && cbCategoria.SelectedIndex != -1)
+            mousePos = new Point(-e.X, -e.Y); // Iguala la variable mousePos a un nuevo punto en la pantalla con las coordenadas x e y del MouseEvent del panel superior de la ventana
+        }
+
+        private void panelSuperiorVentana_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) // Verifica si se presiono el click izquierdo
             {
-                AltaArbitro();
-            }
-            else
-            {
-                MessageBox.Show("Faltan datos, porfavor verifique y ingrese los datos faltantes");
+                Point mousePose = Control.MousePosition; // Obtiene la posición actual del mouse en la pantalla
+                mousePose.Offset(mousePos.X, mousePos.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
+                Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
         }
     }

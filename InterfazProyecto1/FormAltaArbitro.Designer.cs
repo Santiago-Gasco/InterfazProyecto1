@@ -54,6 +54,15 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.btnAltaArbitro = new System.Windows.Forms.Button();
+            this.panelAmarilloNumCedula = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelAzulBtnAltaAtleta = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             this.panelSuperiorVentana.SuspendLayout();
@@ -64,7 +73,7 @@ namespace InterfazProyecto1
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblEdad.Location = new System.Drawing.Point(11, 180);
+            this.lblEdad.Location = new System.Drawing.Point(16, 165);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(47, 20);
             this.lblEdad.TabIndex = 20;
@@ -76,7 +85,7 @@ namespace InterfazProyecto1
             this.lblFechaNacimiento.AutoSize = true;
             this.lblFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaNacimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(11, 248);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(16, 233);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(157, 20);
             this.lblFechaNacimiento.TabIndex = 16;
@@ -87,7 +96,7 @@ namespace InterfazProyecto1
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblCedula.Location = new System.Drawing.Point(12, 78);
+            this.lblCedula.Location = new System.Drawing.Point(17, 63);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(59, 20);
             this.lblCedula.TabIndex = 15;
@@ -98,7 +107,7 @@ namespace InterfazProyecto1
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblNombre.Location = new System.Drawing.Point(11, 113);
+            this.lblNombre.Location = new System.Drawing.Point(16, 98);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 20);
             this.lblNombre.TabIndex = 17;
@@ -109,7 +118,7 @@ namespace InterfazProyecto1
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblApellido.Location = new System.Drawing.Point(11, 147);
+            this.lblApellido.Location = new System.Drawing.Point(16, 132);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(65, 20);
             this.lblApellido.TabIndex = 18;
@@ -120,7 +129,7 @@ namespace InterfazProyecto1
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblGenero.Location = new System.Drawing.Point(11, 211);
+            this.lblGenero.Location = new System.Drawing.Point(16, 196);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(63, 20);
             this.lblGenero.TabIndex = 19;
@@ -131,7 +140,7 @@ namespace InterfazProyecto1
             this.lblRango.AutoSize = true;
             this.lblRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRango.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblRango.Location = new System.Drawing.Point(11, 282);
+            this.lblRango.Location = new System.Drawing.Point(16, 267);
             this.lblRango.Name = "lblRango";
             this.lblRango.Size = new System.Drawing.Size(57, 20);
             this.lblRango.TabIndex = 21;
@@ -142,7 +151,7 @@ namespace InterfazProyecto1
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.lblCategoria.Location = new System.Drawing.Point(11, 316);
+            this.lblCategoria.Location = new System.Drawing.Point(16, 301);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(78, 20);
             this.lblCategoria.TabIndex = 22;
@@ -152,7 +161,7 @@ namespace InterfazProyecto1
             // 
             this.numCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numCedula.Location = new System.Drawing.Point(200, 74);
+            this.numCedula.Location = new System.Drawing.Point(184, 61);
             this.numCedula.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -171,7 +180,7 @@ namespace InterfazProyecto1
             // 
             this.numEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numEdad.Location = new System.Drawing.Point(200, 180);
+            this.numEdad.Location = new System.Drawing.Point(184, 161);
             this.numEdad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -192,7 +201,7 @@ namespace InterfazProyecto1
             this.dateFechaNacimiento.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(200, 248);
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(184, 233);
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Size = new System.Drawing.Size(127, 24);
             this.dateFechaNacimiento.TabIndex = 33;
@@ -200,7 +209,7 @@ namespace InterfazProyecto1
             // tbApellido
             // 
             this.tbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbApellido.Location = new System.Drawing.Point(200, 147);
+            this.tbApellido.Location = new System.Drawing.Point(184, 128);
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(127, 24);
             this.tbApellido.TabIndex = 32;
@@ -208,7 +217,7 @@ namespace InterfazProyecto1
             // tbNombre
             // 
             this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNombre.Location = new System.Drawing.Point(200, 113);
+            this.tbNombre.Location = new System.Drawing.Point(184, 97);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(127, 24);
             this.tbNombre.TabIndex = 31;
@@ -224,7 +233,7 @@ namespace InterfazProyecto1
             this.cbGenero.Items.AddRange(new object[] {
             "Hombre",
             "Mujer"});
-            this.cbGenero.Location = new System.Drawing.Point(200, 211);
+            this.cbGenero.Location = new System.Drawing.Point(184, 192);
             this.cbGenero.Name = "cbGenero";
             this.cbGenero.Size = new System.Drawing.Size(127, 26);
             this.cbGenero.TabIndex = 30;
@@ -232,13 +241,14 @@ namespace InterfazProyecto1
             // panelDivisor
             // 
             this.panelDivisor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelDivisor.Location = new System.Drawing.Point(174, 63);
+            this.panelDivisor.Location = new System.Drawing.Point(176, 49);
             this.panelDivisor.Name = "panelDivisor";
             this.panelDivisor.Size = new System.Drawing.Size(4, 290);
             this.panelDivisor.TabIndex = 36;
             // 
             // cbRango
             // 
+            this.cbRango.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRango.FormattingEnabled = true;
             this.cbRango.Items.AddRange(new object[] {
@@ -246,19 +256,20 @@ namespace InterfazProyecto1
             "BA",
             "B",
             "C"});
-            this.cbRango.Location = new System.Drawing.Point(200, 284);
+            this.cbRango.Location = new System.Drawing.Point(184, 263);
             this.cbRango.Name = "cbRango";
             this.cbRango.Size = new System.Drawing.Size(127, 26);
-            this.cbRango.TabIndex = 37;
+            this.cbRango.TabIndex = 30;
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Items.AddRange(new object[] {
             "Kata",
             "Kumite"});
-            this.cbCategoria.Location = new System.Drawing.Point(200, 318);
+            this.cbCategoria.Location = new System.Drawing.Point(184, 299);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(127, 26);
             this.cbCategoria.TabIndex = 38;
@@ -275,6 +286,8 @@ namespace InterfazProyecto1
             this.panelSuperiorVentana.Name = "panelSuperiorVentana";
             this.panelSuperiorVentana.Size = new System.Drawing.Size(342, 37);
             this.panelSuperiorVentana.TabIndex = 39;
+            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
+            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
             // panelAmarilloVentana
             // 
@@ -338,7 +351,7 @@ namespace InterfazProyecto1
             this.btnAltaArbitro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaArbitro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaArbitro.ForeColor = System.Drawing.Color.White;
-            this.btnAltaArbitro.Location = new System.Drawing.Point(98, 361);
+            this.btnAltaArbitro.Location = new System.Drawing.Point(104, 348);
             this.btnAltaArbitro.Name = "btnAltaArbitro";
             this.btnAltaArbitro.Size = new System.Drawing.Size(147, 33);
             this.btnAltaArbitro.TabIndex = 40;
@@ -346,11 +359,92 @@ namespace InterfazProyecto1
             this.btnAltaArbitro.UseVisualStyleBackColor = false;
             this.btnAltaArbitro.Click += new System.EventHandler(this.btnAltaArbitro_Click);
             // 
+            // panelAmarilloNumCedula
+            // 
+            this.panelAmarilloNumCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloNumCedula.Location = new System.Drawing.Point(184, 82);
+            this.panelAmarilloNumCedula.Name = "panelAmarilloNumCedula";
+            this.panelAmarilloNumCedula.Size = new System.Drawing.Size(127, 3);
+            this.panelAmarilloNumCedula.TabIndex = 41;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(184, 118);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(127, 3);
+            this.panel1.TabIndex = 42;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel2.Location = new System.Drawing.Point(184, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(127, 3);
+            this.panel2.TabIndex = 42;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel3.Location = new System.Drawing.Point(184, 185);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(127, 3);
+            this.panel3.TabIndex = 42;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel4.Location = new System.Drawing.Point(184, 218);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(127, 3);
+            this.panel4.TabIndex = 42;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel5.Location = new System.Drawing.Point(184, 254);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(127, 3);
+            this.panel5.TabIndex = 42;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel6.Location = new System.Drawing.Point(184, 288);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(127, 3);
+            this.panel6.TabIndex = 42;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel7.Location = new System.Drawing.Point(184, 322);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(127, 3);
+            this.panel7.TabIndex = 42;
+            // 
+            // panelAzulBtnAltaAtleta
+            // 
+            this.panelAzulBtnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(104, 378);
+            this.panelAzulBtnAltaAtleta.Name = "panelAzulBtnAltaAtleta";
+            this.panelAzulBtnAltaAtleta.Size = new System.Drawing.Size(147, 3);
+            this.panelAzulBtnAltaAtleta.TabIndex = 43;
+            // 
             // FormAltaArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 403);
+            this.Controls.Add(this.panelAzulBtnAltaAtleta);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelAmarilloNumCedula);
             this.Controls.Add(this.btnAltaArbitro);
             this.Controls.Add(this.panelSuperiorVentana);
             this.Controls.Add(this.cbCategoria);
@@ -409,5 +503,14 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Label lblNombreVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
         private System.Windows.Forms.Button btnAltaArbitro;
+        private System.Windows.Forms.Panel panelAmarilloNumCedula;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelAzulBtnAltaAtleta;
     }
 }

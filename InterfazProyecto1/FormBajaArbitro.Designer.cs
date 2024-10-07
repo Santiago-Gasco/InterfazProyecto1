@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazProyecto1
 {
-    partial class FormBajaAtleta
+    partial class FormBajaArbitro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,14 @@ namespace InterfazProyecto1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBajaAtleta));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBajaArbitro));
             this.panelSuperiorVentana = new System.Windows.Forms.Panel();
+            this.btnMinimizarVentana = new System.Windows.Forms.Button();
+            this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.panelAmarilloVentana = new System.Windows.Forms.Panel();
             this.panelAzulVentana = new System.Windows.Forms.Panel();
-            this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.lblNombreVentana = new System.Windows.Forms.Label();
-            this.btnCerrarVentana = new System.Windows.Forms.Button();
-            this.btnBajaAtleta = new System.Windows.Forms.Button();
+            this.btnBajaArbitro = new System.Windows.Forms.Button();
             this.panelAzulBtnBajaAtleta = new System.Windows.Forms.Panel();
             this.panelAmarilloCbBusqueda = new System.Windows.Forms.Panel();
             this.cbTipoBusqueda = new System.Windows.Forms.ComboBox();
@@ -50,17 +50,43 @@ namespace InterfazProyecto1
             // panelSuperiorVentana
             // 
             this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
             this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
             this.panelSuperiorVentana.Controls.Add(this.panelAzulVentana);
-            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
             this.panelSuperiorVentana.Controls.Add(this.lblNombreVentana);
-            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
             this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
             this.panelSuperiorVentana.Name = "panelSuperiorVentana";
             this.panelSuperiorVentana.Size = new System.Drawing.Size(342, 37);
             this.panelSuperiorVentana.TabIndex = 7;
-            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
-            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
+            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown_1);
+            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove_1);
+            // 
+            // btnMinimizarVentana
+            // 
+            this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
+            this.btnMinimizarVentana.Location = new System.Drawing.Point(278, 3);
+            this.btnMinimizarVentana.Name = "btnMinimizarVentana";
+            this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
+            this.btnMinimizarVentana.TabIndex = 14;
+            this.btnMinimizarVentana.UseVisualStyleBackColor = false;
+            this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
+            // 
+            // btnCerrarVentana
+            // 
+            this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
+            this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
+            this.btnCerrarVentana.Location = new System.Drawing.Point(308, 3);
+            this.btnCerrarVentana.Name = "btnCerrarVentana";
+            this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
+            this.btnCerrarVentana.TabIndex = 13;
+            this.btnCerrarVentana.UseVisualStyleBackColor = false;
+            this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
             // 
             // panelAmarilloVentana
             // 
@@ -78,19 +104,6 @@ namespace InterfazProyecto1
             this.panelAzulVentana.Size = new System.Drawing.Size(83, 10);
             this.panelAzulVentana.TabIndex = 12;
             // 
-            // btnMinimizarVentana
-            // 
-            this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
-            this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
-            this.btnMinimizarVentana.Location = new System.Drawing.Point(278, 3);
-            this.btnMinimizarVentana.Name = "btnMinimizarVentana";
-            this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
-            this.btnMinimizarVentana.TabIndex = 2;
-            this.btnMinimizarVentana.UseVisualStyleBackColor = false;
-            this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
-            // 
             // lblNombreVentana
             // 
             this.lblNombreVentana.AutoSize = true;
@@ -99,38 +112,25 @@ namespace InterfazProyecto1
             this.lblNombreVentana.Location = new System.Drawing.Point(3, 10);
             this.lblNombreVentana.Name = "lblNombreVentana";
             this.lblNombreVentana.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNombreVentana.Size = new System.Drawing.Size(87, 20);
+            this.lblNombreVentana.Size = new System.Drawing.Size(92, 20);
             this.lblNombreVentana.TabIndex = 1;
-            this.lblNombreVentana.Text = "Baja Atleta";
+            this.lblNombreVentana.Text = "Baja Arbitro";
             // 
-            // btnCerrarVentana
+            // btnBajaArbitro
             // 
-            this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
-            this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
-            this.btnCerrarVentana.Location = new System.Drawing.Point(308, 3);
-            this.btnCerrarVentana.Name = "btnCerrarVentana";
-            this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
-            this.btnCerrarVentana.TabIndex = 0;
-            this.btnCerrarVentana.UseVisualStyleBackColor = false;
-            this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
-            // 
-            // btnBajaAtleta
-            // 
-            this.btnBajaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnBajaAtleta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBajaAtleta.FlatAppearance.BorderSize = 0;
-            this.btnBajaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaAtleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBajaAtleta.ForeColor = System.Drawing.Color.White;
-            this.btnBajaAtleta.Location = new System.Drawing.Point(80, 142);
-            this.btnBajaAtleta.Name = "btnBajaAtleta";
-            this.btnBajaAtleta.Size = new System.Drawing.Size(177, 33);
-            this.btnBajaAtleta.TabIndex = 25;
-            this.btnBajaAtleta.Text = "Borrar Atleta";
-            this.btnBajaAtleta.UseVisualStyleBackColor = false;
-            this.btnBajaAtleta.Click += new System.EventHandler(this.btnBajaAtleta_Click);
+            this.btnBajaArbitro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnBajaArbitro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBajaArbitro.FlatAppearance.BorderSize = 0;
+            this.btnBajaArbitro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaArbitro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBajaArbitro.ForeColor = System.Drawing.Color.White;
+            this.btnBajaArbitro.Location = new System.Drawing.Point(80, 142);
+            this.btnBajaArbitro.Name = "btnBajaArbitro";
+            this.btnBajaArbitro.Size = new System.Drawing.Size(177, 33);
+            this.btnBajaArbitro.TabIndex = 25;
+            this.btnBajaArbitro.Text = "Borrar Arbitro";
+            this.btnBajaArbitro.UseVisualStyleBackColor = false;
+            this.btnBajaArbitro.Click += new System.EventHandler(this.btnBajaArbitro_Click);
             // 
             // panelAzulBtnBajaAtleta
             // 
@@ -203,7 +203,7 @@ namespace InterfazProyecto1
             this.lblValorBusqueda.TabIndex = 29;
             this.lblValorBusqueda.Text = "Valor";
             // 
-            // FormBajaAtleta
+            // FormBajaArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,10 +215,10 @@ namespace InterfazProyecto1
             this.Controls.Add(this.panelAmarilloCbBusqueda);
             this.Controls.Add(this.cbTipoBusqueda);
             this.Controls.Add(this.panelAzulBtnBajaAtleta);
-            this.Controls.Add(this.btnBajaAtleta);
+            this.Controls.Add(this.btnBajaArbitro);
             this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormBajaAtleta";
+            this.Name = "FormBajaArbitro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAltaAtleta";
             this.panelSuperiorVentana.ResumeLayout(false);
@@ -233,10 +233,8 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Panel panelAmarilloVentana;
         private System.Windows.Forms.Panel panelAzulVentana;
-        private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label lblNombreVentana;
-        private System.Windows.Forms.Button btnCerrarVentana;
-        private System.Windows.Forms.Button btnBajaAtleta;
+        private System.Windows.Forms.Button btnBajaArbitro;
         private System.Windows.Forms.Panel panelAzulBtnBajaAtleta;
         private System.Windows.Forms.Panel panelAmarilloCbBusqueda;
         private System.Windows.Forms.ComboBox cbTipoBusqueda;
@@ -244,5 +242,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.TextBox tbValorBusqueda;
         private System.Windows.Forms.Panel panelAmarilloTbBusqueda;
         private System.Windows.Forms.Label lblValorBusqueda;
+        private System.Windows.Forms.Button btnMinimizarVentana;
+        private System.Windows.Forms.Button btnCerrarVentana;
     }
 }

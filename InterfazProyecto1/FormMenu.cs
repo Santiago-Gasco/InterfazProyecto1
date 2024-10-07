@@ -281,12 +281,12 @@ namespace InterfazProyecto1
             switch (panelAbierto)
             {
                 case 0:
-                    FormAltaAtleta formAltaAtleta = new FormAltaAtleta(this); //crea una nueva instancia del formulario para el alta de los atletas
-                    formAltaAtleta.Show(); //muestra el formulario para el atla de los atletas
+                    FormAltaAtleta formAltaAtleta = new FormAltaAtleta(this); // Crea una nueva instancia del formulario para el alta de los atletas
+                    formAltaAtleta.Show(); // Muestra el formulario para el atla de los atletas
                     break;
                 case 1:
-                    FormAltaArbitro formAltaArbitro = new FormAltaArbitro(this);
-                    formAltaArbitro.Show();
+                    FormAltaArbitro formAltaArbitro = new FormAltaArbitro(this); // Crea una nueva instancia del formulario para el alta de los arbitros
+                    formAltaArbitro.Show(); // Muestra el formulario para el atla de los arbitros
                     break;
                 case 2:
 
@@ -299,11 +299,12 @@ namespace InterfazProyecto1
             switch (panelAbierto)
             {
                 case 0:
-                    FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this); //crea una nueva instancia del formulario para la baja de los atletas
-                    formBajaAtleta.Show(); //muestra el formulario para la baja de atletas
+                    FormBajaAtleta formBajaAtleta = new FormBajaAtleta(this); // Crea una nueva instancia del formulario para la baja de los atletas
+                    formBajaAtleta.Show(); // Muestra el formulario para la baja de atletas
                     break;
                 case 1:
-
+                    FormBajaArbitro formBajaArbitro = new FormBajaArbitro(this); // Crea una nueva instancia del formulario para la baja de los arbitros
+                    formBajaArbitro.Show(); // Muestra el formulario para la baja de arbitros
                     break;
                 case 2:
 
@@ -316,11 +317,12 @@ namespace InterfazProyecto1
             switch (panelAbierto)
             {
                 case 0:
-                    FormEdicionAtleta formEdicionAtleta = new FormEdicionAtleta(this); //crea una nueva instancia del formulario para la edición de los atletas
-                    formEdicionAtleta.Show(); //muestra el formulario para la edición de los atletas.
+                    FormEdicionAtleta formEdicionAtleta = new FormEdicionAtleta(this); // Crea una nueva instancia del formulario para la edición de los atletas
+                    formEdicionAtleta.Show(); // Muestra el formulario para la edición de los atletas
                     break;
                 case 1:
-
+                    FormEdicionArbitro formeEdicionArbitro = new FormEdicionArbitro(this); // Crea una nueva instancia del formulario para la edición de los arbitros
+                    formeEdicionArbitro.Show(); // Muestra el formulario para la edición de los arbitros
                     break;
                 case 2:
 

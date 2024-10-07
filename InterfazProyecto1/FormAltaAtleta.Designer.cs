@@ -367,7 +367,7 @@ namespace InterfazProyecto1
             this.btnAltaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaAtleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaAtleta.ForeColor = System.Drawing.Color.White;
-            this.btnAltaAtleta.Location = new System.Drawing.Point(101, 348);
+            this.btnAltaAtleta.Location = new System.Drawing.Point(104, 348);
             this.btnAltaAtleta.Name = "btnAltaAtleta";
             this.btnAltaAtleta.Size = new System.Drawing.Size(147, 33);
             this.btnAltaAtleta.TabIndex = 25;
@@ -378,7 +378,7 @@ namespace InterfazProyecto1
             // panelAzulBtnAltaAtleta
             // 
             this.panelAzulBtnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(101, 378);
+            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(104, 378);
             this.panelAzulBtnAltaAtleta.Name = "panelAzulBtnAltaAtleta";
             this.panelAzulBtnAltaAtleta.Size = new System.Drawing.Size(147, 3);
             this.panelAzulBtnAltaAtleta.TabIndex = 26;

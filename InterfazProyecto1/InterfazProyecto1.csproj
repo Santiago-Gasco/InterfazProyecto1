@@ -104,11 +104,23 @@
     <Compile Include="FormAltaArbitro.Designer.cs">
       <DependentUpon>FormAltaArbitro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBajaArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBajaArbitro.Designer.cs">
+      <DependentUpon>FormBajaArbitro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBajaAtleta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBajaAtleta.Designer.cs">
       <DependentUpon>FormBajaAtleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdicionArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdicionArbitro.Designer.cs">
+      <DependentUpon>FormEdicionArbitro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEdicionAtleta.cs">
       <SubType>Form</SubType>
@@ -157,8 +169,14 @@
     <EmbeddedResource Include="FormAltaArbitro.resx">
       <DependentUpon>FormAltaArbitro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBajaArbitro.resx">
+      <DependentUpon>FormBajaArbitro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBajaAtleta.resx">
       <DependentUpon>FormBajaAtleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdicionArbitro.resx">
+      <DependentUpon>FormEdicionArbitro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEdicionAtleta.resx">
       <DependentUpon>FormEdicionAtleta.cs</DependentUpon>

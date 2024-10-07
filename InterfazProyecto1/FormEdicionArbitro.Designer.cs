@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazProyecto1
 {
-    partial class FormEdicionAtleta
+    partial class FormEdicionArbitro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,16 @@ namespace InterfazProyecto1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEdicionAtleta));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEdicionArbitro));
             this.panelSuperiorVentana = new System.Windows.Forms.Panel();
             this.panelAmarilloVentana = new System.Windows.Forms.Panel();
             this.panelAzulVentana = new System.Windows.Forms.Panel();
-            this.btnMinimizarVentana = new System.Windows.Forms.Button();
             this.lblNombreVentana = new System.Windows.Forms.Label();
-            this.btnCerrarVentana = new System.Windows.Forms.Button();
             this.panelAmarilloTbNombre = new System.Windows.Forms.Panel();
             this.panelAmarilloTbApellido = new System.Windows.Forms.Panel();
             this.panelAmarilloCbGenero = new System.Windows.Forms.Panel();
             this.cbGenero = new System.Windows.Forms.ComboBox();
             this.panelAmarilloDateFechaNacimiento = new System.Windows.Forms.Panel();
-            this.panelAmarilloNumFederado = new System.Windows.Forms.Panel();
             this.panelAmarilloTbEscuela = new System.Windows.Forms.Panel();
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -57,11 +54,9 @@ namespace InterfazProyecto1
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
             this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.tbEscuela = new System.Windows.Forms.TextBox();
             this.btnEditarAtleta = new System.Windows.Forms.Button();
             this.panelAzulBtnConfirmar = new System.Windows.Forms.Panel();
             this.numEdad = new System.Windows.Forms.NumericUpDown();
-            this.numFederado = new System.Windows.Forms.NumericUpDown();
             this.panelAmarilloNumEdad = new System.Windows.Forms.Panel();
             this.panelDivisorHorizontal = new System.Windows.Forms.Panel();
             this.panelAmarilloCbBusqueda = new System.Windows.Forms.Panel();
@@ -71,27 +66,29 @@ namespace InterfazProyecto1
             this.panelAmarilloTbBusqueda = new System.Windows.Forms.Panel();
             this.lblValorBusqueda = new System.Windows.Forms.Label();
             this.numCedula = new System.Windows.Forms.NumericUpDown();
+            this.btnMinimizarVentana = new System.Windows.Forms.Button();
+            this.btnCerrarVentana = new System.Windows.Forms.Button();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbRango = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelSuperiorVentana.SuspendLayout();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numFederado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperiorVentana
             // 
             this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
+            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
             this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
             this.panelSuperiorVentana.Controls.Add(this.panelAzulVentana);
-            this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
             this.panelSuperiorVentana.Controls.Add(this.lblNombreVentana);
-            this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);
             this.panelSuperiorVentana.Location = new System.Drawing.Point(0, 0);
             this.panelSuperiorVentana.Name = "panelSuperiorVentana";
             this.panelSuperiorVentana.Size = new System.Drawing.Size(342, 37);
             this.panelSuperiorVentana.TabIndex = 7;
-            this.panelSuperiorVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseDown);
-            this.panelSuperiorVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSuperiorVentana_MouseMove);
             // 
             // panelAmarilloVentana
             // 
@@ -109,19 +106,6 @@ namespace InterfazProyecto1
             this.panelAzulVentana.Size = new System.Drawing.Size(83, 10);
             this.panelAzulVentana.TabIndex = 12;
             // 
-            // btnMinimizarVentana
-            // 
-            this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
-            this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
-            this.btnMinimizarVentana.Location = new System.Drawing.Point(278, 3);
-            this.btnMinimizarVentana.Name = "btnMinimizarVentana";
-            this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
-            this.btnMinimizarVentana.TabIndex = 2;
-            this.btnMinimizarVentana.UseVisualStyleBackColor = false;
-            this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
-            // 
             // lblNombreVentana
             // 
             this.lblNombreVentana.AutoSize = true;
@@ -130,22 +114,9 @@ namespace InterfazProyecto1
             this.lblNombreVentana.Location = new System.Drawing.Point(3, 10);
             this.lblNombreVentana.Name = "lblNombreVentana";
             this.lblNombreVentana.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNombreVentana.Size = new System.Drawing.Size(107, 20);
+            this.lblNombreVentana.Size = new System.Drawing.Size(112, 20);
             this.lblNombreVentana.TabIndex = 1;
-            this.lblNombreVentana.Text = "Edicion Atleta";
-            // 
-            // btnCerrarVentana
-            // 
-            this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
-            this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
-            this.btnCerrarVentana.Location = new System.Drawing.Point(308, 3);
-            this.btnCerrarVentana.Name = "btnCerrarVentana";
-            this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
-            this.btnCerrarVentana.TabIndex = 0;
-            this.btnCerrarVentana.UseVisualStyleBackColor = false;
-            this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
+            this.lblNombreVentana.Text = "Edicion Arbitro";
             // 
             // panelAmarilloTbNombre
             // 
@@ -195,14 +166,6 @@ namespace InterfazProyecto1
             this.panelAmarilloDateFechaNacimiento.Size = new System.Drawing.Size(127, 3);
             this.panelAmarilloDateFechaNacimiento.TabIndex = 15;
             // 
-            // panelAmarilloNumFederado
-            // 
-            this.panelAmarilloNumFederado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panelAmarilloNumFederado.Location = new System.Drawing.Point(186, 385);
-            this.panelAmarilloNumFederado.Name = "panelAmarilloNumFederado";
-            this.panelAmarilloNumFederado.Size = new System.Drawing.Size(127, 3);
-            this.panelAmarilloNumFederado.TabIndex = 15;
-            // 
             // panelAmarilloTbEscuela
             // 
             this.panelAmarilloTbEscuela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
@@ -251,9 +214,9 @@ namespace InterfazProyecto1
             this.lblFederado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.lblFederado.Location = new System.Drawing.Point(14, 222);
             this.lblFederado.Name = "lblFederado";
-            this.lblFederado.Size = new System.Drawing.Size(155, 20);
+            this.lblFederado.Size = new System.Drawing.Size(57, 20);
             this.lblFederado.TabIndex = 13;
-            this.lblFederado.Text = "Numero de federado";
+            this.lblFederado.Text = "Rango";
             // 
             // lblCedula
             // 
@@ -273,9 +236,9 @@ namespace InterfazProyecto1
             this.lblEscuela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.lblEscuela.Location = new System.Drawing.Point(14, 259);
             this.lblEscuela.Name = "lblEscuela";
-            this.lblEscuela.Size = new System.Drawing.Size(66, 20);
+            this.lblEscuela.Size = new System.Drawing.Size(78, 20);
             this.lblEscuela.TabIndex = 13;
-            this.lblEscuela.Text = "Escuela";
+            this.lblEscuela.Text = "Categoria";
             // 
             // lblFechaNacimiento
             // 
@@ -358,14 +321,6 @@ namespace InterfazProyecto1
             this.dateFechaNacimiento.Size = new System.Drawing.Size(127, 24);
             this.dateFechaNacimiento.TabIndex = 22;
             // 
-            // tbEscuela
-            // 
-            this.tbEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEscuela.Location = new System.Drawing.Point(186, 398);
-            this.tbEscuela.Name = "tbEscuela";
-            this.tbEscuela.Size = new System.Drawing.Size(127, 24);
-            this.tbEscuela.TabIndex = 24;
-            // 
             // btnEditarAtleta
             // 
             this.btnEditarAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
@@ -380,7 +335,6 @@ namespace InterfazProyecto1
             this.btnEditarAtleta.TabIndex = 25;
             this.btnEditarAtleta.Text = "Confirmar edicion";
             this.btnEditarAtleta.UseVisualStyleBackColor = false;
-            this.btnEditarAtleta.Click += new System.EventHandler(this.btnEditarAtleta_Click);
             // 
             // panelAzulBtnConfirmar
             // 
@@ -408,20 +362,6 @@ namespace InterfazProyecto1
             0,
             0,
             0});
-            // 
-            // numFederado
-            // 
-            this.numFederado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numFederado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numFederado.Location = new System.Drawing.Point(186, 361);
-            this.numFederado.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.numFederado.Name = "numFederado";
-            this.numFederado.Size = new System.Drawing.Size(127, 24);
-            this.numFederado.TabIndex = 28;
             // 
             // panelAmarilloNumEdad
             // 
@@ -463,7 +403,6 @@ namespace InterfazProyecto1
             this.cbTipoBusqueda.Name = "cbTipoBusqueda";
             this.cbTipoBusqueda.Size = new System.Drawing.Size(134, 26);
             this.cbTipoBusqueda.TabIndex = 16;
-            this.cbTipoBusqueda.SelectedIndexChanged += new System.EventHandler(this.cbTipoBusqueda_SelectedIndexChanged);
             // 
             // lblTipoValorBusqueda
             // 
@@ -483,7 +422,6 @@ namespace InterfazProyecto1
             this.tbValorBusqueda.Name = "tbValorBusqueda";
             this.tbValorBusqueda.Size = new System.Drawing.Size(127, 24);
             this.tbValorBusqueda.TabIndex = 21;
-            this.tbValorBusqueda.Leave += new System.EventHandler(this.tbValorBusqueda_Leave);
             // 
             // panelAmarilloTbBusqueda
             // 
@@ -525,12 +463,75 @@ namespace InterfazProyecto1
             0,
             0});
             // 
-            // FormEdicionAtleta
+            // btnMinimizarVentana
+            // 
+            this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
+            this.btnMinimizarVentana.Location = new System.Drawing.Point(278, 3);
+            this.btnMinimizarVentana.Name = "btnMinimizarVentana";
+            this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
+            this.btnMinimizarVentana.TabIndex = 14;
+            this.btnMinimizarVentana.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrarVentana
+            // 
+            this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
+            this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
+            this.btnCerrarVentana.Location = new System.Drawing.Point(308, 3);
+            this.btnCerrarVentana.Name = "btnCerrarVentana";
+            this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
+            this.btnCerrarVentana.TabIndex = 13;
+            this.btnCerrarVentana.UseVisualStyleBackColor = false;
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
+            "Kata",
+            "Kumite"});
+            this.cbCategoria.Location = new System.Drawing.Point(185, 396);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(127, 26);
+            this.cbCategoria.TabIndex = 40;
+            // 
+            // cbRango
+            // 
+            this.cbRango.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRango.FormattingEnabled = true;
+            this.cbRango.Items.AddRange(new object[] {
+            "A",
+            "BA",
+            "B",
+            "C"});
+            this.cbRango.Location = new System.Drawing.Point(185, 360);
+            this.cbRango.Name = "cbRango";
+            this.cbRango.Size = new System.Drawing.Size(127, 26);
+            this.cbRango.TabIndex = 39;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(186, 383);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(127, 3);
+            this.panel1.TabIndex = 16;
+            // 
+            // FormEdicionArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(342, 507);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.cbRango);
             this.Controls.Add(this.numCedula);
             this.Controls.Add(this.lblValorBusqueda);
             this.Controls.Add(this.tbValorBusqueda);
@@ -540,18 +541,15 @@ namespace InterfazProyecto1
             this.Controls.Add(this.cbTipoBusqueda);
             this.Controls.Add(this.panelDivisorHorizontal);
             this.Controls.Add(this.panelAmarilloNumEdad);
-            this.Controls.Add(this.numFederado);
             this.Controls.Add(this.numEdad);
             this.Controls.Add(this.panelAzulBtnConfirmar);
             this.Controls.Add(this.btnEditarAtleta);
-            this.Controls.Add(this.tbEscuela);
             this.Controls.Add(this.dateFechaNacimiento);
             this.Controls.Add(this.tbApellido);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.panelDivisorVertical);
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panelAmarilloTbEscuela);
-            this.Controls.Add(this.panelAmarilloNumFederado);
             this.Controls.Add(this.panelAmarilloDateFechaNacimiento);
             this.Controls.Add(this.panelAmarilloCbGenero);
             this.Controls.Add(this.cbGenero);
@@ -560,7 +558,7 @@ namespace InterfazProyecto1
             this.Controls.Add(this.panelAmarilloNumCedula);
             this.Controls.Add(this.panelSuperiorVentana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormEdicionAtleta";
+            this.Name = "FormEdicionArbitro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAltaAtleta";
             this.panelSuperiorVentana.ResumeLayout(false);
@@ -568,7 +566,6 @@ namespace InterfazProyecto1
             this.panelOpciones.ResumeLayout(false);
             this.panelOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numFederado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -580,15 +577,12 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panelSuperiorVentana;
         private System.Windows.Forms.Panel panelAmarilloVentana;
         private System.Windows.Forms.Panel panelAzulVentana;
-        private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Label lblNombreVentana;
-        private System.Windows.Forms.Button btnCerrarVentana;
         private System.Windows.Forms.Panel panelAmarilloTbNombre;
         private System.Windows.Forms.Panel panelAmarilloTbApellido;
         private System.Windows.Forms.Panel panelAmarilloCbGenero;
         private System.Windows.Forms.ComboBox cbGenero;
         private System.Windows.Forms.Panel panelAmarilloDateFechaNacimiento;
-        private System.Windows.Forms.Panel panelAmarilloNumFederado;
         private System.Windows.Forms.Panel panelAmarilloTbEscuela;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.Label lblApellido;
@@ -603,12 +597,10 @@ namespace InterfazProyecto1
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbApellido;
         private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
-        private System.Windows.Forms.TextBox tbEscuela;
         private System.Windows.Forms.Button btnEditarAtleta;
         private System.Windows.Forms.Panel panelAzulBtnConfirmar;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.NumericUpDown numEdad;
-        private System.Windows.Forms.NumericUpDown numFederado;
         private System.Windows.Forms.Panel panelAmarilloNumEdad;
         private System.Windows.Forms.Panel panelDivisorHorizontal;
         private System.Windows.Forms.Panel panelAmarilloCbBusqueda;
@@ -618,5 +610,10 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panelAmarilloTbBusqueda;
         private System.Windows.Forms.Label lblValorBusqueda;
         private System.Windows.Forms.NumericUpDown numCedula;
+        private System.Windows.Forms.Button btnMinimizarVentana;
+        private System.Windows.Forms.Button btnCerrarVentana;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbRango;
+        private System.Windows.Forms.Panel panel1;
     }
 }
