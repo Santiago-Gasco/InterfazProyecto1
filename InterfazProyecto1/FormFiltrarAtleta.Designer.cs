@@ -31,8 +31,10 @@ namespace InterfazProyecto1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFiltrarAtleta));
             this.panelSuperiorVentana = new System.Windows.Forms.Panel();
-            this.panelAmarilloVentana = new System.Windows.Forms.Panel();
             this.panelAzulVentana = new System.Windows.Forms.Panel();
+            this.btnMinimizarVentana = new System.Windows.Forms.Button();
+            this.btnCerrarVentana = new System.Windows.Forms.Button();
+            this.panelAmarilloVentana = new System.Windows.Forms.Panel();
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.btnFiltroAtleta = new System.Windows.Forms.Button();
             this.panelAzulBtnBajaAtleta = new System.Windows.Forms.Panel();
@@ -42,9 +44,11 @@ namespace InterfazProyecto1
             this.tbValorBusqueda = new System.Windows.Forms.TextBox();
             this.panelAmarilloTbBusqueda = new System.Windows.Forms.Panel();
             this.lblValorBusqueda = new System.Windows.Forms.Label();
-            this.btnMinimizarVentana = new System.Windows.Forms.Button();
-            this.btnCerrarVentana = new System.Windows.Forms.Button();
+            this.cbGenero = new System.Windows.Forms.ComboBox();
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.num = new System.Windows.Forms.NumericUpDown();
             this.panelSuperiorVentana.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperiorVentana
@@ -60,14 +64,6 @@ namespace InterfazProyecto1
             this.panelSuperiorVentana.Size = new System.Drawing.Size(342, 37);
             this.panelSuperiorVentana.TabIndex = 7;
             // 
-            // panelAmarilloVentana
-            // 
-            this.panelAmarilloVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
-            this.panelAmarilloVentana.Location = new System.Drawing.Point(-6, 33);
-            this.panelAmarilloVentana.Name = "panelAmarilloVentana";
-            this.panelAmarilloVentana.Size = new System.Drawing.Size(272, 10);
-            this.panelAmarilloVentana.TabIndex = 11;
-            // 
             // panelAzulVentana
             // 
             this.panelAzulVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -75,6 +71,40 @@ namespace InterfazProyecto1
             this.panelAzulVentana.Name = "panelAzulVentana";
             this.panelAzulVentana.Size = new System.Drawing.Size(83, 10);
             this.panelAzulVentana.TabIndex = 12;
+            // 
+            // btnMinimizarVentana
+            // 
+            this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
+            this.btnMinimizarVentana.Location = new System.Drawing.Point(278, 3);
+            this.btnMinimizarVentana.Name = "btnMinimizarVentana";
+            this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
+            this.btnMinimizarVentana.TabIndex = 14;
+            this.btnMinimizarVentana.UseVisualStyleBackColor = false;
+            this.btnMinimizarVentana.Click += new System.EventHandler(this.btnMinimizarVentana_Click);
+            // 
+            // btnCerrarVentana
+            // 
+            this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
+            this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
+            this.btnCerrarVentana.Location = new System.Drawing.Point(308, 3);
+            this.btnCerrarVentana.Name = "btnCerrarVentana";
+            this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
+            this.btnCerrarVentana.TabIndex = 13;
+            this.btnCerrarVentana.UseVisualStyleBackColor = false;
+            this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
+            // 
+            // panelAmarilloVentana
+            // 
+            this.panelAmarilloVentana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panelAmarilloVentana.Location = new System.Drawing.Point(-6, 33);
+            this.panelAmarilloVentana.Name = "panelAmarilloVentana";
+            this.panelAmarilloVentana.Size = new System.Drawing.Size(272, 10);
+            this.panelAmarilloVentana.TabIndex = 11;
             // 
             // lblNombreVentana
             // 
@@ -102,6 +132,7 @@ namespace InterfazProyecto1
             this.btnFiltroAtleta.TabIndex = 25;
             this.btnFiltroAtleta.Text = "Filtrar Atleta";
             this.btnFiltroAtleta.UseVisualStyleBackColor = false;
+            this.btnFiltroAtleta.Click += new System.EventHandler(this.btnFiltroAtleta_Click);
             // 
             // panelAzulBtnBajaAtleta
             // 
@@ -141,6 +172,7 @@ namespace InterfazProyecto1
             this.cbTipoBusqueda.Name = "cbTipoBusqueda";
             this.cbTipoBusqueda.Size = new System.Drawing.Size(134, 26);
             this.cbTipoBusqueda.TabIndex = 16;
+            this.cbTipoBusqueda.SelectedIndexChanged += new System.EventHandler(this.cbTipoBusqueda_SelectedIndexChanged);
             // 
             // lblTipoValorBusqueda
             // 
@@ -180,36 +212,63 @@ namespace InterfazProyecto1
             this.lblValorBusqueda.TabIndex = 29;
             this.lblValorBusqueda.Text = "Valor";
             // 
-            // btnMinimizarVentana
+            // cbGenero
             // 
-            this.btnMinimizarVentana.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizarVentana.FlatAppearance.BorderSize = 0;
-            this.btnMinimizarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarVentana.Image")));
-            this.btnMinimizarVentana.Location = new System.Drawing.Point(278, 3);
-            this.btnMinimizarVentana.Name = "btnMinimizarVentana";
-            this.btnMinimizarVentana.Size = new System.Drawing.Size(24, 31);
-            this.btnMinimizarVentana.TabIndex = 14;
-            this.btnMinimizarVentana.UseVisualStyleBackColor = false;
+            this.cbGenero.AutoCompleteCustomSource.AddRange(new string[] {
+            "Hombre",
+            "Mujer"});
+            this.cbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGenero.FormattingEnabled = true;
+            this.cbGenero.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
+            this.cbGenero.Location = new System.Drawing.Point(186, 78);
+            this.cbGenero.Name = "cbGenero";
+            this.cbGenero.Size = new System.Drawing.Size(127, 26);
+            this.cbGenero.TabIndex = 30;
+            this.cbGenero.Visible = false;
             // 
-            // btnCerrarVentana
+            // dateFechaNacimiento
             // 
-            this.btnCerrarVentana.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarVentana.FlatAppearance.BorderSize = 0;
-            this.btnCerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarVentana.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarVentana.Image")));
-            this.btnCerrarVentana.Location = new System.Drawing.Point(308, 3);
-            this.btnCerrarVentana.Name = "btnCerrarVentana";
-            this.btnCerrarVentana.Size = new System.Drawing.Size(31, 31);
-            this.btnCerrarVentana.TabIndex = 13;
-            this.btnCerrarVentana.UseVisualStyleBackColor = false;
-            this.btnCerrarVentana.Click += new System.EventHandler(this.btnCerrarVentana_Click);
+            this.dateFechaNacimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFechaNacimiento.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(186, 80);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(127, 24);
+            this.dateFechaNacimiento.TabIndex = 31;
+            this.dateFechaNacimiento.Visible = false;
+            // 
+            // num
+            // 
+            this.num.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.num.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num.Location = new System.Drawing.Point(186, 80);
+            this.num.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.num.Name = "num";
+            this.num.Size = new System.Drawing.Size(127, 24);
+            this.num.TabIndex = 32;
+            this.num.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num.Visible = false;
             // 
             // FormFiltrarAtleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 204);
+            this.Controls.Add(this.num);
+            this.Controls.Add(this.dateFechaNacimiento);
+            this.Controls.Add(this.cbGenero);
             this.Controls.Add(this.lblValorBusqueda);
             this.Controls.Add(this.tbValorBusqueda);
             this.Controls.Add(this.panelAmarilloTbBusqueda);
@@ -225,6 +284,7 @@ namespace InterfazProyecto1
             this.Text = "FormAltaAtleta";
             this.panelSuperiorVentana.ResumeLayout(false);
             this.panelSuperiorVentana.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +306,8 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Label lblValorBusqueda;
         private System.Windows.Forms.Button btnMinimizarVentana;
         private System.Windows.Forms.Button btnCerrarVentana;
+        private System.Windows.Forms.ComboBox cbGenero;
+        private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
+        private System.Windows.Forms.NumericUpDown num;
     }
 }

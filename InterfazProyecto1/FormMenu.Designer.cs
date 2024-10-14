@@ -32,6 +32,7 @@ namespace InterfazProyecto1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.btnListarProfesor = new System.Windows.Forms.Button();
             this.btnListarArbitro = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnListarAtleta = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.panelListaAtletas = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.panelAzulBtnEditarAtleta = new System.Windows.Forms.Panel();
             this.panelAzulBtnBajaAtleta = new System.Windows.Forms.Panel();
             this.panelAzulBtnAltaAtleta = new System.Windows.Forms.Panel();
@@ -58,9 +61,6 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
-            this.btnListarProfesor = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -80,6 +80,27 @@ namespace InterfazProyecto1
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(189, 361);
             this.panelOpciones.TabIndex = 7;
+            // 
+            // btnListarProfesor
+            // 
+            this.btnListarProfesor.BackColor = System.Drawing.Color.Transparent;
+            this.btnListarProfesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnListarProfesor.FlatAppearance.BorderSize = 0;
+            this.btnListarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarProfesor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarProfesor.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnListarProfesor.Image = ((System.Drawing.Image)(resources.GetObject("btnListarProfesor.Image")));
+            this.btnListarProfesor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarProfesor.Location = new System.Drawing.Point(5, 123);
+            this.btnListarProfesor.MaximumSize = new System.Drawing.Size(158, 46);
+            this.btnListarProfesor.MinimumSize = new System.Drawing.Size(47, 46);
+            this.btnListarProfesor.Name = "btnListarProfesor";
+            this.btnListarProfesor.Size = new System.Drawing.Size(158, 46);
+            this.btnListarProfesor.TabIndex = 7;
+            this.btnListarProfesor.Text = "           Profesores";
+            this.btnListarProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarProfesor.UseVisualStyleBackColor = false;
+            this.btnListarProfesor.Click += new System.EventHandler(this.btnListarProfesor_Click);
             // 
             // btnListarArbitro
             // 
@@ -338,6 +359,31 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Size = new System.Drawing.Size(950, 460);
             this.panelListaAtletas.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panel1.Location = new System.Drawing.Point(176, 451);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(37, 3);
+            this.panel1.TabIndex = 10;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.DimGray;
+            this.btnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFiltrar.FlatAppearance.BorderSize = 0;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.Location = new System.Drawing.Point(176, 411);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(37, 43);
+            this.btnFiltrar.TabIndex = 9;
+            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
             // panelAzulBtnEditarAtleta
             // 
             this.panelAzulBtnEditarAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -401,7 +447,7 @@ namespace InterfazProyecto1
             this.lblCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditos.Location = new System.Drawing.Point(1029, 167);
             this.lblCreditos.Name = "lblCreditos";
-            this.lblCreditos.Size = new System.Drawing.Size(115, 96);
+            this.lblCreditos.Size = new System.Drawing.Size(116, 96);
             this.lblCreditos.TabIndex = 10;
             this.lblCreditos.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
             this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,52 +461,6 @@ namespace InterfazProyecto1
             this.imagenKarate.Size = new System.Drawing.Size(113, 118);
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
-            // 
-            // btnListarProfesor
-            // 
-            this.btnListarProfesor.BackColor = System.Drawing.Color.Transparent;
-            this.btnListarProfesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnListarProfesor.FlatAppearance.BorderSize = 0;
-            this.btnListarProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarProfesor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarProfesor.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnListarProfesor.Image = ((System.Drawing.Image)(resources.GetObject("btnListarProfesor.Image")));
-            this.btnListarProfesor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarProfesor.Location = new System.Drawing.Point(5, 123);
-            this.btnListarProfesor.MaximumSize = new System.Drawing.Size(158, 46);
-            this.btnListarProfesor.MinimumSize = new System.Drawing.Size(47, 46);
-            this.btnListarProfesor.Name = "btnListarProfesor";
-            this.btnListarProfesor.Size = new System.Drawing.Size(158, 46);
-            this.btnListarProfesor.TabIndex = 7;
-            this.btnListarProfesor.Text = "           Profesores";
-            this.btnListarProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarProfesor.UseVisualStyleBackColor = false;
-            this.btnListarProfesor.Click += new System.EventHandler(this.btnListarProfesor_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel1.Location = new System.Drawing.Point(176, 451);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(37, 3);
-            this.panel1.TabIndex = 10;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.DimGray;
-            this.btnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnFiltrar.FlatAppearance.BorderSize = 0;
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
-            this.btnFiltrar.Location = new System.Drawing.Point(176, 411);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(37, 43);
-            this.btnFiltrar.TabIndex = 9;
-            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // FormMenu
             // 
@@ -509,7 +509,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panelAzulVentana;
         private System.Windows.Forms.Timer timerDataGridView;
         private System.Windows.Forms.Panel panelListaAtletas;
-        private System.Windows.Forms.DataGridView dataGridViewAtletas;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.Panel panelAzulBtnRefrescar;
         private System.Windows.Forms.Panel panelAzulBtnEditarAtleta;
@@ -522,5 +521,6 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Button btnListarProfesor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFiltrar;
+        public System.Windows.Forms.DataGridView dataGridViewAtletas;
     }
 }

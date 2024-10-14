@@ -154,28 +154,28 @@ namespace InterfazProyecto1
 
                 try
                 {
-                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection)) //instancia de la clase MySqlCommand llamada commandDatabase que se usara para ejecutar una consulta en la base de datos
+                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection)) // Instancia de la clase MySqlCommand llamada commandDatabase que se usara para ejecutar una consulta en la base de datos
                     {
-                        commandDatabase.CommandTimeout = 60; //Crea un tiempo de espera antes de terminar el intento de ejecución de error
+                        commandDatabase.CommandTimeout = 60; // Crea un tiempo de espera antes de terminar el intento de ejecución de error
 
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(commandDatabase)) //instancia de la clase MySqlDataAdapter llamada adapter que se usara para llenar un conjunto de datos en memoria con los resultados de la consulta SQL
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(commandDatabase)) // Instancia de la clase MySqlDataAdapter llamada adapter que se usara para llenar un conjunto de datos en memoria con los resultados de la consulta SQL
                         {
-                            DataTable table = new DataTable(); //instancia de la clase DataTable llamada table que se usara para crear una tabla de datos
+                            DataTable table = new DataTable(); // Instancia de la clase DataTable llamada table que se usara para crear una tabla de datos
 
-                            // Convertir la columna de fecha a string si es necesario
-                            foreach (DataRow row in table.Rows) //recorre todas las filas de la tabla
+                            // Convierte la columna de fecha a string si es necesario
+                            foreach (DataRow row in table.Rows) // Recorre todas las filas de la tabla
                             {
-                                row["Fecha_nacimiento"] = Convert.ToDateTime(row["Fecha_nacimiento"]).ToString("yyyy-MM-dd"); //convierte los datos de la Fecha de nacimiento en una variable tipo DateTime y después los convierte de nuevo en una variable de tipo string
+                                row["Fecha_nacimiento"] = Convert.ToDateTime(row["Fecha_nacimiento"]).ToString("yyyy-MM-dd"); // Convierte los datos de la Fecha de nacimiento en una variable tipo DateTime y después los convierte de nuevo en una variable de tipo string
                             }
 
-                            dataGridViewAtletas.DataSource = table; //asigna la instancia table como la fuente de los datos para dataGridViewAtletas
-                            adapter.Fill(table); //llena la instancia table con los datos de la base de datos
+                            dataGridViewAtletas.DataSource = table; // Asigna la instancia table como la fuente de los datos para dataGridViewAtletas
+                            adapter.Fill(table); // Llena la instancia table con los datos de la base de datos
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar datos: " + ex.Message); //Muestra un cuadro de mensaje con el error
+                    MessageBox.Show("Error al cargar datos: " + ex.Message); // Muestra un cuadro de mensaje con el error
                 }
             }
         }
@@ -420,7 +420,22 @@ namespace InterfazProyecto1
                     break;
             }
         }
-        
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            switch (panelAbierto)
+            {
+                case 0:
+                    FormFiltrarAtleta formFiltrarAtleta = new FormFiltrarAtleta(this); // Crea una nueva instancia del formulario para la edición de los atletas
+                    formFiltrarAtleta.Show(); // Muestra el formulario para la edición de los atletas
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+        }
+
         private void btnListarAtleta_Click(object sender, EventArgs e)
         {
             panelAbierto = 0;
@@ -471,11 +486,6 @@ namespace InterfazProyecto1
             panelAbierto = 2;
             ListarProfesores(); // Ejecuta el metodo para listar los arbitros
             dataGridViewAtletas.Show();
-        }
-
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
