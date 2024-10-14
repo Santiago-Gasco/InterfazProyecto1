@@ -98,11 +98,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBajaProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBajaProfesor.Designer.cs">
+      <DependentUpon>FormBajaProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAltaArbitro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAltaArbitro.Designer.cs">
       <DependentUpon>FormAltaArbitro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAltaProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAltaProfesor.Designer.cs">
+      <DependentUpon>FormAltaProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBajaArbitro.cs">
       <SubType>Form</SubType>
@@ -140,11 +152,23 @@
     <Compile Include="FormCarga.Designer.cs">
       <DependentUpon>FormCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEdicionProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdicionProfesor.Designer.cs">
+      <DependentUpon>FormEdicionProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEleccionLoginRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEleccionLoginRegistro.Designer.cs">
       <DependentUpon>FormEleccionLoginRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFiltrarAtleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFiltrarAtleta.Designer.cs">
+      <DependentUpon>FormFiltrarAtleta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
@@ -166,8 +190,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBajaProfesor.resx">
+      <DependentUpon>FormBajaProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAltaArbitro.resx">
       <DependentUpon>FormAltaArbitro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAltaProfesor.resx">
+      <DependentUpon>FormAltaProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBajaArbitro.resx">
       <DependentUpon>FormBajaArbitro.cs</DependentUpon>
@@ -187,8 +217,14 @@
     <EmbeddedResource Include="FormCarga.resx">
       <DependentUpon>FormCarga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEdicionProfesor.resx">
+      <DependentUpon>FormEdicionProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEleccionLoginRegistro.resx">
       <DependentUpon>FormEleccionLoginRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFiltrarAtleta.resx">
+      <DependentUpon>FormFiltrarAtleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>

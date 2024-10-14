@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
-    public partial class FormAltaAtleta : Form
+    public partial class FormEdicionProfesor : Form
     {
         FormMenu formMenu;
         public Point mousePos;
         string query;
 
-        public FormAltaAtleta(FormMenu menu)
+        public FormEdicionProfesor(FormMenu menu)
         {
             InitializeComponent();
             this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
@@ -29,22 +29,21 @@ namespace InterfazProyecto1
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_qubeware;";
 
-        private void btnAltaAtleta_Click(object sender, EventArgs e)
+        private void btnEditarProfesor_Click(object sender, EventArgs e)
         {
-            query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela)";
-
-            // Si los valores cumple los requisitos se ejecuta el metodo AltaAtleta
-            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && numFederado.Value != 0 && tbEscuela.Text != "" && tbEscuela.Text != string.Empty)
+            if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
             {
-                AltaAtleta();
+                query = "UPDATE tb_profesor SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Escuela = @Escuela WHERE ID_profesor = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
             }
             else
             {
-                MessageBox.Show("Faltan datos, porfavor verifique y ingrese los datos faltantes");
+                query = "UPDATE tb_profesor SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Escuela = @Escuela WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
             }
+
+            EditarProfesor();
         }
 
-        private void AltaAtleta()
+        private void EditarProfesor()
         {
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
@@ -62,33 +61,28 @@ namespace InterfazProyecto1
                         commandDatabase.Parameters.AddWithValue("@Edad", Convert.ToInt32(numEdad.Value));
                         commandDatabase.Parameters.AddWithValue("@Sexo", cbGenero.SelectedItem?.ToString() ?? (object)DBNull.Value);
                         commandDatabase.Parameters.AddWithValue("@Fecha_nacimiento", dateFechaNacimiento.Value.ToString("yyyy-MM-dd"));
-                        commandDatabase.Parameters.AddWithValue("@Federado", Convert.ToInt32(numFederado.Value));
                         commandDatabase.Parameters.AddWithValue("@Escuela", tbEscuela.Text);
 
                         int rowsAffected = commandDatabase.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Atleta creado exitosamente!");
-
+                            MessageBox.Show("Profesor actualizado exitosamente!");
                             // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a nulos o valor por defecto
-                            numCedula.Value = 0;
+                            numCedula.Value = 1;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
                             numEdad.Value = 1;
                             cbGenero.SelectedIndex = -1;
                             dateFechaNacimiento.Value = DateTime.Now;
-                            numFederado.Value = 0;
                             tbEscuela.Text = string.Empty;
 
-                            this.formMenu = formMenu;
-
-                            formMenu.ListarAtletas();
+                            formMenu.ListarProfesores();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo crear el atleta. Inténtelo de nuevo.");
+                            MessageBox.Show("No se pudo actualizar el profesor. Inténtelo de nuevo.");
                         }
                     }
                 }
@@ -97,6 +91,66 @@ namespace InterfazProyecto1
                     MessageBox.Show("Error inesperado: " + ex.Message);
                 }
             }
+        }
+
+        private void BuscarProfesor() //Busca el atleta y lo agrega a los editores de texto
+        {
+            if (tbValorBusqueda.Text != "")
+            {
+                string query;
+
+                if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
+                {
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Escuela FROM tb_profesor WHERE ID_profesor = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
+                }
+                else
+                {
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Escuela FROM tb_profesor WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
+                }
+
+                using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        databaseConnection.Open(); // Abre la conexión
+                        using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
+                        {
+                            using (MySqlDataReader reader = commandDatabase.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a los valores del profesor
+                                    numCedula.Value = Convert.ToInt32(reader["Cedula"]);
+                                    tbNombre.Text = reader["Nombre"].ToString();
+                                    tbApellido.Text = reader["Apellido"].ToString();
+                                    numEdad.Value = Convert.ToInt32(reader["Edad"]);
+                                    cbGenero.SelectedItem = reader["Sexo"].ToString();
+                                    dateFechaNacimiento.Value = Convert.ToDateTime(reader["Fecha_nacimiento"]);
+                                    tbEscuela.Text = reader["Escuela"].ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el profesor con valor proporcionado.");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cargar los datos del profesor: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void tbValorBusqueda_Leave(object sender, EventArgs e)
+        {
+            BuscarProfesor();
+        }
+
+        private void cbTipoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BuscarProfesor();
         }
 
         private void panelSuperiorVentana_MouseDown(object sender, MouseEventArgs e)

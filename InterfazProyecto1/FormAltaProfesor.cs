@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
-    public partial class FormAltaAtleta : Form
+    public partial class FormAltaProfesor : Form
     {
         FormMenu formMenu;
         public Point mousePos;
         string query;
 
-        public FormAltaAtleta(FormMenu menu)
+        public FormAltaProfesor(FormMenu menu)
         {
             InitializeComponent();
             this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
@@ -29,14 +29,14 @@ namespace InterfazProyecto1
 
         private string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_qubeware;";
 
-        private void btnAltaAtleta_Click(object sender, EventArgs e)
+        private void btnAltaProfesor_Click(object sender, EventArgs e)
         {
-            query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela)";
+            query = "INSERT INTO tb_profesor (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Escuela)";
 
             // Si los valores cumple los requisitos se ejecuta el metodo AltaAtleta
-            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && numFederado.Value != 0 && tbEscuela.Text != "" && tbEscuela.Text != string.Empty)
+            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && tbEscuela.Text != "" && tbEscuela.Text != string.Empty)
             {
-                AltaAtleta();
+                AltaProfesor();
             }
             else
             {
@@ -44,7 +44,7 @@ namespace InterfazProyecto1
             }
         }
 
-        private void AltaAtleta()
+        private void AltaProfesor()
         {
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
@@ -62,14 +62,13 @@ namespace InterfazProyecto1
                         commandDatabase.Parameters.AddWithValue("@Edad", Convert.ToInt32(numEdad.Value));
                         commandDatabase.Parameters.AddWithValue("@Sexo", cbGenero.SelectedItem?.ToString() ?? (object)DBNull.Value);
                         commandDatabase.Parameters.AddWithValue("@Fecha_nacimiento", dateFechaNacimiento.Value.ToString("yyyy-MM-dd"));
-                        commandDatabase.Parameters.AddWithValue("@Federado", Convert.ToInt32(numFederado.Value));
                         commandDatabase.Parameters.AddWithValue("@Escuela", tbEscuela.Text);
 
                         int rowsAffected = commandDatabase.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Atleta creado exitosamente!");
+                            MessageBox.Show("Arbitro creado exitosamente!");
 
                             // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a nulos o valor por defecto
                             numCedula.Value = 0;
@@ -78,17 +77,16 @@ namespace InterfazProyecto1
                             numEdad.Value = 1;
                             cbGenero.SelectedIndex = -1;
                             dateFechaNacimiento.Value = DateTime.Now;
-                            numFederado.Value = 0;
                             tbEscuela.Text = string.Empty;
 
                             this.formMenu = formMenu;
 
-                            formMenu.ListarAtletas();
+                            formMenu.ListarProfesores();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo crear el atleta. Inténtelo de nuevo.");
+                            MessageBox.Show("No se pudo crear el arbitro. Inténtelo de nuevo.");
                         }
                     }
                 }
