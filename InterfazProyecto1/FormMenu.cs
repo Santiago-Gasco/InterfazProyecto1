@@ -13,6 +13,7 @@ namespace InterfazProyecto1
         bool menuExpandido = true; //esta variable de tipo bool determina el estado del menu, es decir si se muestra de forma parcial o de forma total
         bool dataGridViewExpandido; //esta variable de tipo bool determina el tamaño que debe de tener la cuadricula donde se listan los atletas ingresados en la base de datos
         int panelAbierto = 0;
+        string orden = "DESC";
 
         public FormMenu()
         {
@@ -184,7 +185,7 @@ namespace InterfazProyecto1
 
         public void ListarAtletasPorPuntos()
         {
-            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            string query = "SELECT ID_atleta, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta_puntos"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
@@ -192,39 +193,22 @@ namespace InterfazProyecto1
 
                 try
                 {
-                    // Crea una tabla temporal y copia los datos de la tabla original
-                    string createTempTableQuery = @"
-                        CREATE TEMPORARY TABLE tb_atleta_puntos AS
-                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos
-                        FROM tb_atleta
-                        ORDER BY Puntos;"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
-                    using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
-                    {
-                        createTempTableCommand.ExecuteNonQuery();
-                    }
-
-                    // Agrega la columna puntos a la tabla temporal y los ordena
-                    string addTempIdColumnQuery = "ALTER TABLE tb_atleta_puntos ADD COLUMN new_puntos INT;";
-                    using (var addTempIdColumnCommand = new MySqlCommand(addTempIdColumnQuery, databaseConnection))
-                    {
-                        addTempIdColumnCommand.ExecuteNonQuery();
-                    }
-
-                    // Actualiza los id a la tabla original
-                    string updateOriginalTableQuery = @"
-                        UPDATE tb_atleta a
-                        JOIN tb_atleta_puntos t ON a.Puntos = t.Puntos
-                        SET a.Puntos = t.new_puntos;";
-                    using (var updateOriginalTableCommand = new MySqlCommand(updateOriginalTableQuery, databaseConnection))
-                    {
-                        updateOriginalTableCommand.ExecuteNonQuery();
-                    }
-
-                    // Elimina la tabla temporal
+                    // Borra la tabla temporal ordenada por puntos si existe
                     string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_puntos;";
                     using (var dropTempTableCommand = new MySqlCommand(dropTempTableQuery, databaseConnection))
                     {
                         dropTempTableCommand.ExecuteNonQuery();
+                    }
+
+                    // Crea una tabla temporal y copia los datos de la tabla original
+                    string createTempTableQuery = $@"
+                        CREATE TEMPORARY TABLE IF NOT EXISTS tb_atleta_puntos AS
+                        SELECT ID_atleta, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
+                        FROM tb_atleta
+                        ORDER BY Puntos {orden};"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
+                    using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
+                    {
+                        createTempTableCommand.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)
@@ -530,9 +514,13 @@ namespace InterfazProyecto1
             {
                 ListarArbitros(); // Ejecuta el metodo para listar los arbitros
             }
-            else
+            else if (panelAbierto == 2)
             {
                 ListarProfesores(); // Ejecuta el metodo para listar los profesores
+            }
+            else
+            {
+                ListarAtletasPorPuntos(); // Ejecuta el metodo para listar los atletas por puntos
             }
         }
 
@@ -577,31 +565,48 @@ namespace InterfazProyecto1
 
         private void ListarUsuarios()
         {
-            btnRefrescar.Visible = true;
             btnAlta.Visible = true;
             btnBaja.Visible = true;
             btnEditar.Visible = true;
             btnFiltrar.Visible = true;
-            panelAzulBtnRefrescar.Visible = true;
+            btnOrden.Visible = false;
             panelAzulBtnAlta.Visible = true;
             panelAzulBtnBaja.Visible = true;
             panelAzulBtnEditar.Visible = true;
             panelAzulBtnFiltrar.Visible = true;
+            panelAzulBtnOrden.Visible = false;
         }
 
         private void btnRanking_Click(object sender, EventArgs e)
         {
+            panelAbierto = 3;
             ListarAtletasPorPuntos();
-            btnRefrescar.Visible = false;
             btnAlta.Visible = false;
             btnBaja.Visible = false;
             btnEditar.Visible = false;
             btnFiltrar.Visible = false;
-            panelAzulBtnRefrescar.Visible = false;
+            btnOrden.Visible = true;
             panelAzulBtnAlta.Visible = false;
             panelAzulBtnBaja.Visible = false;
             panelAzulBtnEditar.Visible = false;
             panelAzulBtnFiltrar.Visible = false;
+            panelAzulBtnOrden.Visible = true;
+        }
+
+        private void btnOrden_Click(object sender, EventArgs e)
+        {
+            if (orden == "DESC")
+            {
+                btnOrden.Image = Properties.Resources.icons8_reversed_numerical_sorting_30;
+                orden = "ASC";
+            }
+            else
+            {
+                btnOrden.Image = Properties.Resources.icons8_numeric_30;
+                orden = "DESC";
+            }
+
+            ListarAtletasPorPuntos();
         }
     }
 }

@@ -32,6 +32,7 @@ namespace InterfazProyecto1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.btnRanking = new System.Windows.Forms.Button();
             this.btnListarProfesor = new System.Windows.Forms.Button();
             this.btnListarArbitro = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
@@ -61,7 +62,8 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
-            this.btnRanking = new System.Windows.Forms.Button();
+            this.panelAzulBtnOrden = new System.Windows.Forms.Panel();
+            this.btnOrden = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -82,6 +84,27 @@ namespace InterfazProyecto1
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(189, 361);
             this.panelOpciones.TabIndex = 7;
+            // 
+            // btnRanking
+            // 
+            this.btnRanking.BackColor = System.Drawing.Color.Transparent;
+            this.btnRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRanking.FlatAppearance.BorderSize = 0;
+            this.btnRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRanking.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRanking.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRanking.Image = ((System.Drawing.Image)(resources.GetObject("btnRanking.Image")));
+            this.btnRanking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRanking.Location = new System.Drawing.Point(5, 178);
+            this.btnRanking.MaximumSize = new System.Drawing.Size(158, 46);
+            this.btnRanking.MinimumSize = new System.Drawing.Size(47, 46);
+            this.btnRanking.Name = "btnRanking";
+            this.btnRanking.Size = new System.Drawing.Size(158, 46);
+            this.btnRanking.TabIndex = 8;
+            this.btnRanking.Text = "           Ranking";
+            this.btnRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRanking.UseVisualStyleBackColor = false;
+            this.btnRanking.Click += new System.EventHandler(this.btnRanking_Click);
             // 
             // btnListarProfesor
             // 
@@ -343,6 +366,8 @@ namespace InterfazProyecto1
             // panelListaAtletas
             // 
             this.panelListaAtletas.BackColor = System.Drawing.Color.White;
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnOrden);
+            this.panelListaAtletas.Controls.Add(this.btnOrden);
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnFiltrar);
             this.panelListaAtletas.Controls.Add(this.btnFiltrar);
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnEditar);
@@ -464,26 +489,32 @@ namespace InterfazProyecto1
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
             // 
-            // btnRanking
+            // panelAzulBtnOrden
             // 
-            this.btnRanking.BackColor = System.Drawing.Color.Transparent;
-            this.btnRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRanking.FlatAppearance.BorderSize = 0;
-            this.btnRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRanking.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRanking.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRanking.Image = ((System.Drawing.Image)(resources.GetObject("btnRanking.Image")));
-            this.btnRanking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRanking.Location = new System.Drawing.Point(5, 178);
-            this.btnRanking.MaximumSize = new System.Drawing.Size(158, 46);
-            this.btnRanking.MinimumSize = new System.Drawing.Size(47, 46);
-            this.btnRanking.Name = "btnRanking";
-            this.btnRanking.Size = new System.Drawing.Size(158, 46);
-            this.btnRanking.TabIndex = 8;
-            this.btnRanking.Text = "           Ranking";
-            this.btnRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRanking.UseVisualStyleBackColor = false;
-            this.btnRanking.Click += new System.EventHandler(this.btnRanking_Click);
+            this.panelAzulBtnOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnOrden.Location = new System.Drawing.Point(47, 458);
+            this.panelAzulBtnOrden.Name = "panelAzulBtnOrden";
+            this.panelAzulBtnOrden.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnOrden.TabIndex = 12;
+            this.panelAzulBtnOrden.Visible = false;
+            // 
+            // btnOrden
+            // 
+            this.btnOrden.BackColor = System.Drawing.Color.DimGray;
+            this.btnOrden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnOrden.FlatAppearance.BorderSize = 0;
+            this.btnOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrden.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrden.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnOrden.Image = global::InterfazProyecto1.Properties.Resources.icons8_numeric_30;
+            this.btnOrden.Location = new System.Drawing.Point(47, 418);
+            this.btnOrden.Name = "btnOrden";
+            this.btnOrden.Size = new System.Drawing.Size(37, 40);
+            this.btnOrden.TabIndex = 11;
+            this.btnOrden.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrden.UseVisualStyleBackColor = false;
+            this.btnOrden.Visible = false;
+            this.btnOrden.Click += new System.EventHandler(this.btnOrden_Click);
             // 
             // FormMenu
             // 
@@ -546,5 +577,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Button btnFiltrar;
         public System.Windows.Forms.DataGridView dataGridViewAtletas;
         private System.Windows.Forms.Button btnRanking;
+        private System.Windows.Forms.Panel panelAzulBtnOrden;
+        private System.Windows.Forms.Button btnOrden;
     }
 }

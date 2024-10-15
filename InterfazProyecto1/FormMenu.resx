@@ -120,13 +120,13 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnRanking.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAE4SURBVFhH7ZhBSsRAEEUDzmYWymx1qzjKXMRx58LxNJ5B
-        PIAuvYgeYPQKCuoVFIyvur/CSLoTIZMS7AcPQvpX198mVaFQ+EPUdX2MD/gu73GuY18ocoYpFor5QIER
-        voYqzbzgSPHhYfleqJFnV/HhYfksdsgyU3x4bHnskKUUTGLLY4cs6yvI5RM8xxtpzxMd+xbk4ik+hRWr
-        POK+Mq4F7+L9jdwq41OQS3fi3Vm20a1gp8WyjVIwxT8vyOABnsipXgfsUmxjPQUZGON1GF3lCsfKuBa8
-        jHONXCjjU5DwFr6FsWbsbBPdCh7GmSyWcSvY62LZRimYohRM4Vqw02ci9prT+nYI24e2fUyneMYN7DWn
-        9d1gYIEfNv0De3eqWO+5X8HgHJf49bPHno90/A3ves0VCoXOVNUnpRMtAeNarqgAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAThJREFUWEftmEFKxEAQRQPOZhbKbHWrOMpcxHHnwvE0nkE8gC69iB5g9AoK6hUU
+        jK+6v8JIuhMhkxLsBw9C+lfX3yZVoVD4Q9R1fYwP+C7vca5jXyhyhikWivlAgRG+hirNvOBI8eFh+V6o
+        kWdX8eFh+Sx2yDJTfHhseeyQpRRMYstjhyzrK8jlEzzHG2nPEx37FuTiKT6FFas84r4yrgXv4v2N3Crj
+        U5BLd+LdWbbRrWCnxbKNUjDFPy/I4AGeyKleB+xSbGM9BRkY43UYXeUKx8q4FryMc41cKONTkPAWvoWx
+        ZuxsE90KHsaZLJZxK9jrYtlGKZiiFEzhWrDTZyL2mtP6dgjbh7Z9TKd4xg3sNaf13WBggR82/QN7d6pY
+        77lfweAcl/j1s8eej3T8De96zRUKhc5U1SelEy0B41quqAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnListarProfesor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
