@@ -164,11 +164,23 @@
     <Compile Include="FormEleccionLoginRegistro.Designer.cs">
       <DependentUpon>FormEleccionLoginRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFiltrarArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFiltrarArbitro.Designer.cs">
+      <DependentUpon>FormFiltrarArbitro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFiltrarAtleta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormFiltrarAtleta.Designer.cs">
       <DependentUpon>FormFiltrarAtleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFiltrarProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFiltrarProfesor.Designer.cs">
+      <DependentUpon>FormFiltrarProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
@@ -223,8 +235,14 @@
     <EmbeddedResource Include="FormEleccionLoginRegistro.resx">
       <DependentUpon>FormEleccionLoginRegistro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFiltrarArbitro.resx">
+      <DependentUpon>FormFiltrarArbitro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFiltrarAtleta.resx">
       <DependentUpon>FormFiltrarAtleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFiltrarProfesor.resx">
+      <DependentUpon>FormFiltrarProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>

@@ -426,21 +426,18 @@ namespace InterfazProyecto1
             switch (panelAbierto)
             {
                 case 0:
-                    FormFiltrarAtleta formFiltrarAtleta = new FormFiltrarAtleta(this); // Crea una nueva instancia del formulario para la edición de los atletas
-                    formFiltrarAtleta.Show(); // Muestra el formulario para la edición de los atletas
+                    FormFiltrarAtleta formFiltrarAtleta = new FormFiltrarAtleta(this); // Crea una nueva instancia del formulario para filtrar atletas
+                    formFiltrarAtleta.Show(); // Muestra el formulario para filtrar atletas
                     break;
                 case 1:
+                    FormFiltrarArbitro formFiltrarArbitro = new FormFiltrarArbitro(this); // Crea una nueva instancia del formulario para filtrar arbitros
+                    formFiltrarArbitro.Show(); // Muestra el formulario para filtrar arbitros
                     break;
                 case 2:
+                    FormFiltrarProfesor formFiltrarProfesor = new FormFiltrarProfesor(this); // Crea una nueva instancia del formulario para filtrar profesores
+                    formFiltrarProfesor.Show(); // Muestra el formulario para filtrar profesores
                     break;
             }
-        }
-
-        private void btnListarAtleta_Click(object sender, EventArgs e)
-        {
-            panelAbierto = 0;
-            ListarAtletas();  // Ejecuta el metodo para listar los atletas
-            dataGridViewAtletas.Show(); // Muestra la cuadricula de datos con los datos de los atletas
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
@@ -472,6 +469,13 @@ namespace InterfazProyecto1
                 mousePose.Offset(mousePos.X, mousePos.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
                 Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
+        }
+
+        private void btnListarAtleta_Click(object sender, EventArgs e)
+        {
+            panelAbierto = 0;
+            ListarAtletas();  // Ejecuta el metodo para listar los atletas
+            dataGridViewAtletas.Show(); // Muestra la cuadricula de datos con los datos de los atletas
         }
 
         private void btnListarArbitro_Click(object sender, EventArgs e)

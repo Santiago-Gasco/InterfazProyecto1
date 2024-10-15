@@ -81,8 +81,8 @@ namespace InterfazProyecto1
             // panelSuperiorVentana
             // 
             this.panelSuperiorVentana.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
             this.panelSuperiorVentana.Controls.Add(this.panelAzulVentana);
+            this.panelSuperiorVentana.Controls.Add(this.panelAmarilloVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnMinimizarVentana);
             this.panelSuperiorVentana.Controls.Add(this.lblNombreVentana);
             this.panelSuperiorVentana.Controls.Add(this.btnCerrarVentana);

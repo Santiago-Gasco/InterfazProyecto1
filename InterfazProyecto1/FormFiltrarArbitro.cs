@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace InterfazProyecto1
 {
-    public partial class FormFiltrarAtleta : Form
+    public partial class FormFiltrarArbitro : Form
     {
         FormMenu formMenu;
         public Point mousePos;
         string query;
 
-        public FormFiltrarAtleta(FormMenu menu)
+        public FormFiltrarArbitro(FormMenu menu)
         {
             InitializeComponent();
             this.formMenu = menu; // Iguala la variable formMenu a la variable menu que le paso el FormMenu al ser llamado
@@ -33,44 +33,41 @@ namespace InterfazProyecto1
 
         private void btnFiltroAtleta_Click(object sender, EventArgs e)
         {
-            switch(cbTipoBusqueda.SelectedIndex)
+            switch (cbTipoBusqueda.SelectedIndex)
             {
                 case 0:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE ID_atleta = '" + num.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE ID_arbitro = '" + num.Text + "'";
                     break;
                 case 1:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Cedula = '" + num.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Cedula = '" + num.Text + "'";
                     break;
                 case 2:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Nombre = '" + tbValorBusqueda.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Nombre = '" + tbValorBusqueda.Text + "'";
                     break;
                 case 3:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Apellido = '" + tbValorBusqueda.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Apellido = '" + tbValorBusqueda.Text + "'";
                     break;
                 case 4:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Edad = '" + num.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Edad = '" + num.Text + "'";
                     break;
                 case 5:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Sexo = '" + cbGenero.SelectedItem?.ToString() ?? (object)DBNull.Value + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Sexo = '" + cbValor.SelectedItem?.ToString() ?? (object)DBNull.Value + "'";
                     break;
                 case 6:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Fecha_nacimiento = '" + dateFechaNacimiento.Value.ToString("yyyy-MM-dd") + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Fecha_nacimiento = '" + dateFechaNacimiento.Value.ToString("yyyy-MM-dd") + "'";
                     break;
                 case 7:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Federado = '" + num.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Rango = '" + cbValor.SelectedItem?.ToString() ?? (object)DBNull.Value + "'";
                     break;
                 case 8:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Escuela = '" + tbValorBusqueda.Text + "'";
-                    break;
-                case 9:
-                    query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Puntos = '" + num.Text + "'";
+                    query = "SELECT ID_arbitro, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Rango, Categoria, Historial FROM tb_arbitro WHERE Categoria = '" + cbValor.SelectedItem?.ToString() ?? (object)DBNull.Value + "'";
                     break;
             }
 
-            FiltrarAtleta();
+            FiltrarArbitro();
         }
 
-        private void FiltrarAtleta()
+        private void FiltrarArbitro()
         {
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
@@ -123,29 +120,31 @@ namespace InterfazProyecto1
             switch (cbTipoBusqueda.SelectedIndex)
             {
                 case 0:
-                    // ID_atleta
+                    // ID_arbitro
                     tbValorBusqueda.Visible = false;
                     num.Visible = true;
                     num.Maximum = 99999999;
-                    cbGenero.Visible = false;
+                    cbValor.Visible = false;
                     dateFechaNacimiento.Visible = false;
 
                     break;
                 case 1:
                     // Cedula
+
                     tbValorBusqueda.Visible = false;
                     num.Visible = true;
                     num.Maximum = 99999999;
-                    cbGenero.Visible = false;
+                    cbValor.Visible = false;
                     dateFechaNacimiento.Visible = false;
 
                     break;
                 case 4:
                     // Edad
+
                     tbValorBusqueda.Visible = false;
                     num.Visible = true;
                     num.Maximum = 100;
-                    cbGenero.Visible = false;
+                    cbValor.Visible = false;
                     dateFechaNacimiento.Visible = false;
 
                     break;
@@ -154,7 +153,7 @@ namespace InterfazProyecto1
 
                     tbValorBusqueda.Visible = false;
                     num.Visible = false;
-                    cbGenero.Visible = true;
+                    cbValor.Visible = true;
                     dateFechaNacimiento.Visible = false;
 
                     break;
@@ -163,34 +162,41 @@ namespace InterfazProyecto1
 
                     tbValorBusqueda.Visible = false;
                     num.Visible = false;
-                    cbGenero.Visible = false;
+                    cbValor.Visible = false;
                     dateFechaNacimiento.Visible = true;
 
                     break;
                 case 7:
-                    // Federado
+                    // Rango
 
                     tbValorBusqueda.Visible = false;
-                    num.Visible = true;
-                    num.Maximum = 9999999999;
-                    cbGenero.Visible = false;
+                    num.Visible = false;
+                    cbValor.Visible = true;
+                    dateFechaNacimiento.Visible = false;
+
+                    break;
+                case 8:
+                    // Categoria
+
+                    tbValorBusqueda.Visible = false;
+                    num.Visible = false;
+                    cbValor.Visible = true;
                     dateFechaNacimiento.Visible = false;
 
                     break;
                 case 9:
-                    // Puntos
+                    //Historial
 
                     tbValorBusqueda.Visible = false;
-                    num.Visible = true;
-                    num.Maximum = 99999999;
-                    cbGenero.Visible = false;
+                    num.Visible = false;
+                    cbValor.Visible = true;
                     dateFechaNacimiento.Visible = false;
 
                     break;
                 default:
                     tbValorBusqueda.Visible = true;
                     num.Visible = false;
-                    cbGenero.Visible = false;
+                    cbValor.Visible = false;
                     dateFechaNacimiento.Visible = false;
 
                     break;

@@ -133,7 +133,7 @@ namespace InterfazProyecto1
             this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.Control;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(5, 303);
+            this.btnConfiguracion.Location = new System.Drawing.Point(9, 303);
             this.btnConfiguracion.MaximumSize = new System.Drawing.Size(158, 46);
             this.btnConfiguracion.MinimumSize = new System.Drawing.Size(47, 46);
             this.btnConfiguracion.Name = "btnConfiguracion";
@@ -173,7 +173,7 @@ namespace InterfazProyecto1
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(133, 411);
+            this.btnEditar.Location = new System.Drawing.Point(133, 418);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(37, 43);
             this.btnEditar.TabIndex = 3;
@@ -190,7 +190,7 @@ namespace InterfazProyecto1
             this.btnBaja.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaja.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnBaja.Image")));
-            this.btnBaja.Location = new System.Drawing.Point(90, 411);
+            this.btnBaja.Location = new System.Drawing.Point(90, 418);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(37, 43);
             this.btnBaja.TabIndex = 2;
@@ -207,7 +207,7 @@ namespace InterfazProyecto1
             this.btnAlta.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlta.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAlta.Image = ((System.Drawing.Image)(resources.GetObject("btnAlta.Image")));
-            this.btnAlta.Location = new System.Drawing.Point(47, 411);
+            this.btnAlta.Location = new System.Drawing.Point(47, 418);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(37, 43);
             this.btnAlta.TabIndex = 1;
@@ -248,7 +248,7 @@ namespace InterfazProyecto1
             this.btnMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(7, 22);
+            this.btnMenu.Location = new System.Drawing.Point(9, 21);
             this.btnMenu.MaximumSize = new System.Drawing.Size(158, 46);
             this.btnMenu.MinimumSize = new System.Drawing.Size(47, 46);
             this.btnMenu.Name = "btnMenu";
@@ -353,16 +353,16 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Controls.Add(this.btnBaja);
             this.panelListaAtletas.Controls.Add(this.dataGridViewAtletas);
             this.panelListaAtletas.Location = new System.Drawing.Point(195, 43);
-            this.panelListaAtletas.MaximumSize = new System.Drawing.Size(992, 460);
+            this.panelListaAtletas.MaximumSize = new System.Drawing.Size(992, 464);
             this.panelListaAtletas.MinimumSize = new System.Drawing.Size(847, 460);
             this.panelListaAtletas.Name = "panelListaAtletas";
-            this.panelListaAtletas.Size = new System.Drawing.Size(950, 460);
+            this.panelListaAtletas.Size = new System.Drawing.Size(950, 464);
             this.panelListaAtletas.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel1.Location = new System.Drawing.Point(176, 451);
+            this.panel1.Location = new System.Drawing.Point(176, 458);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(37, 3);
             this.panel1.TabIndex = 10;
@@ -376,7 +376,7 @@ namespace InterfazProyecto1
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
-            this.btnFiltrar.Location = new System.Drawing.Point(176, 411);
+            this.btnFiltrar.Location = new System.Drawing.Point(176, 418);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(37, 43);
             this.btnFiltrar.TabIndex = 9;
@@ -387,7 +387,7 @@ namespace InterfazProyecto1
             // panelAzulBtnEditarAtleta
             // 
             this.panelAzulBtnEditarAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnEditarAtleta.Location = new System.Drawing.Point(133, 451);
+            this.panelAzulBtnEditarAtleta.Location = new System.Drawing.Point(133, 458);
             this.panelAzulBtnEditarAtleta.Name = "panelAzulBtnEditarAtleta";
             this.panelAzulBtnEditarAtleta.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnEditarAtleta.TabIndex = 8;
@@ -395,7 +395,7 @@ namespace InterfazProyecto1
             // panelAzulBtnBajaAtleta
             // 
             this.panelAzulBtnBajaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnBajaAtleta.Location = new System.Drawing.Point(90, 451);
+            this.panelAzulBtnBajaAtleta.Location = new System.Drawing.Point(90, 458);
             this.panelAzulBtnBajaAtleta.Name = "panelAzulBtnBajaAtleta";
             this.panelAzulBtnBajaAtleta.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnBajaAtleta.TabIndex = 7;
@@ -403,7 +403,7 @@ namespace InterfazProyecto1
             // panelAzulBtnAltaAtleta
             // 
             this.panelAzulBtnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(47, 451);
+            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(47, 458);
             this.panelAzulBtnAltaAtleta.Name = "panelAzulBtnAltaAtleta";
             this.panelAzulBtnAltaAtleta.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnAltaAtleta.TabIndex = 6;
@@ -411,7 +411,7 @@ namespace InterfazProyecto1
             // panelAzulBtnRefrescar
             // 
             this.panelAzulBtnRefrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnRefrescar.Location = new System.Drawing.Point(4, 451);
+            this.panelAzulBtnRefrescar.Location = new System.Drawing.Point(4, 458);
             this.panelAzulBtnRefrescar.Name = "panelAzulBtnRefrescar";
             this.panelAzulBtnRefrescar.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnRefrescar.TabIndex = 5;
@@ -425,7 +425,7 @@ namespace InterfazProyecto1
             this.btnRefrescar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefrescar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
-            this.btnRefrescar.Location = new System.Drawing.Point(4, 411);
+            this.btnRefrescar.Location = new System.Drawing.Point(4, 418);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(37, 43);
             this.btnRefrescar.TabIndex = 4;
@@ -438,7 +438,7 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAtletas.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewAtletas.Name = "dataGridViewAtletas";
-            this.dataGridViewAtletas.Size = new System.Drawing.Size(944, 402);
+            this.dataGridViewAtletas.Size = new System.Drawing.Size(944, 409);
             this.dataGridViewAtletas.TabIndex = 0;
             // 
             // lblCreditos
