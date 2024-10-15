@@ -33,15 +33,15 @@ namespace InterfazProyecto1
         {
             if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
             {
-                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
+                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela, Puntos = @Puntos WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
             }
             else if (cbTipoBusqueda.SelectedIndex == 1) //Verifica la posicion del combobox
             {
-                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
+                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela, Puntos = @Puntos WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
             }
             else //Verifica la posicion del combobox
             {
-                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
+                query = "UPDATE tb_atleta SET Cedula = @Cedula, Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad, Sexo = @Sexo, Fecha_nacimiento = @Fecha_nacimiento, Federado = @Federado, Escuela = @Escuela, Puntos = @Puntos WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
             }
 
             EditarAtleta();
@@ -67,6 +67,7 @@ namespace InterfazProyecto1
                         commandDatabase.Parameters.AddWithValue("@Fecha_nacimiento", dateFechaNacimiento.Value.ToString("yyyy-MM-dd"));
                         commandDatabase.Parameters.AddWithValue("@Federado", Convert.ToInt32(numFederado.Value));
                         commandDatabase.Parameters.AddWithValue("@Escuela", tbEscuela.Text);
+                        commandDatabase.Parameters.AddWithValue("@Puntos", Convert.ToInt32(numPuntos.Value));
 
                         int rowsAffected = commandDatabase.ExecuteNonQuery();
 
@@ -74,14 +75,15 @@ namespace InterfazProyecto1
                         {
                             MessageBox.Show("Atleta actualizado exitosamente!");
                             // Cambia los valores de los TextBox, ComboBox, NumericUpDown y DateTimePicker a nulos o valor por defecto
-                            numCedula.Value = 1;
+                            numCedula.Value = 0;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
-                            numEdad.Value = 1;
+                            numEdad.Value = 9;
                             cbGenero.SelectedIndex = -1;
                             dateFechaNacimiento.Value = DateTime.Now;
                             numFederado.Value = 0;
                             tbEscuela.Text = string.Empty;
+                            numPuntos.Value = 0;
 
                             formMenu.ListarAtletas();
                             this.Hide();
@@ -107,15 +109,15 @@ namespace InterfazProyecto1
 
                 if (cbTipoBusqueda.SelectedIndex == 0) //Verifica la posicion del combobox
                 {
-                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta WHERE ID_atleta = " + tbValorBusqueda.Text; //Si el valor del combobox es 0 = Id_atleta
                 }
                 else if (cbTipoBusqueda.SelectedIndex == 1) //Verifica la posicion del combobox
                 {
-                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta WHERE Cedula = " + tbValorBusqueda.Text; //Si el valor del combobox es 1 = Cedula
                 }
                 else //Verifica la posicion del combobox
                 {
-                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
+                    query = "SELECT Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta WHERE Federado = " + tbValorBusqueda.Text; //Si el valor del combobox es 2 = Federado
                 }
 
                 using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
@@ -138,6 +140,7 @@ namespace InterfazProyecto1
                                     dateFechaNacimiento.Value = Convert.ToDateTime(reader["Fecha_nacimiento"]);
                                     numFederado.Value = Convert.ToInt32(reader["Federado"]);
                                     tbEscuela.Text = reader["Escuela"].ToString();
+                                    numPuntos.Value = Convert.ToInt32(reader["Puntos"]);
                                 }
                                 else
                                 {

@@ -99,7 +99,7 @@ namespace InterfazProyecto1
 
         public void ListarAtletas()
         {
-            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
@@ -110,7 +110,7 @@ namespace InterfazProyecto1
                     // Crea una tabla temporal y copia los datos de la tabla original
                     string createTempTableQuery = @"
                         CREATE TEMPORARY TABLE tb_atleta_temp AS
-                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
+                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos
                         FROM tb_atleta
                         ORDER BY Id_atleta;"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
                     using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
@@ -144,6 +144,84 @@ namespace InterfazProyecto1
 
                     // Elimina la tabla temporal
                     string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_temp;";
+                    using (var dropTempTableCommand = new MySqlCommand(dropTempTableQuery, databaseConnection))
+                    {
+                        dropTempTableCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
+                try
+                {
+                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection)) // Instancia de la clase MySqlCommand llamada commandDatabase que se usara para ejecutar una consulta en la base de datos
+                    {
+                        commandDatabase.CommandTimeout = 60; // Crea un tiempo de espera antes de terminar el intento de ejecución de error
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(commandDatabase)) // Instancia de la clase MySqlDataAdapter llamada adapter que se usara para llenar un conjunto de datos en memoria con los resultados de la consulta SQL
+                        {
+                            DataTable table = new DataTable(); // Instancia de la clase DataTable llamada table que se usara para crear una tabla de datos
+
+                            // Convierte la columna de fecha a string si es necesario
+                            foreach (DataRow row in table.Rows) // Recorre todas las filas de la tabla
+                            {
+                                row["Fecha_nacimiento"] = Convert.ToDateTime(row["Fecha_nacimiento"]).ToString("yyyy-MM-dd"); // Convierte los datos de la Fecha de nacimiento en una variable tipo DateTime y después los convierte de nuevo en una variable de tipo string
+                            }
+
+                            dataGridViewAtletas.DataSource = table; // Asigna la instancia table como la fuente de los datos para dataGridViewAtletas
+                            adapter.Fill(table); // Llena la instancia table con los datos de la base de datos
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar datos: " + ex.Message); // Muestra un cuadro de mensaje con el error
+                }
+            }
+        }
+
+        public void ListarAtletasPorPuntos()
+        {
+            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
+            {
+                databaseConnection.Open();
+
+                try
+                {
+                    // Crea una tabla temporal y copia los datos de la tabla original
+                    string createTempTableQuery = @"
+                        CREATE TEMPORARY TABLE tb_atleta_puntos AS
+                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos
+                        FROM tb_atleta
+                        ORDER BY Puntos;"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
+                    using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
+                    {
+                        createTempTableCommand.ExecuteNonQuery();
+                    }
+
+                    // Agrega la columna puntos a la tabla temporal y los ordena
+                    string addTempIdColumnQuery = "ALTER TABLE tb_atleta_puntos ADD COLUMN new_puntos INT;";
+                    using (var addTempIdColumnCommand = new MySqlCommand(addTempIdColumnQuery, databaseConnection))
+                    {
+                        addTempIdColumnCommand.ExecuteNonQuery();
+                    }
+
+                    // Actualiza los id a la tabla original
+                    string updateOriginalTableQuery = @"
+                        UPDATE tb_atleta a
+                        JOIN tb_atleta_puntos t ON a.Puntos = t.Puntos
+                        SET a.Puntos = t.new_puntos;";
+                    using (var updateOriginalTableCommand = new MySqlCommand(updateOriginalTableQuery, databaseConnection))
+                    {
+                        updateOriginalTableCommand.ExecuteNonQuery();
+                    }
+
+                    // Elimina la tabla temporal
+                    string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_puntos;";
                     using (var dropTempTableCommand = new MySqlCommand(dropTempTableQuery, databaseConnection))
                     {
                         dropTempTableCommand.ExecuteNonQuery();
@@ -513,6 +591,7 @@ namespace InterfazProyecto1
 
         private void btnRanking_Click(object sender, EventArgs e)
         {
+            ListarAtletasPorPuntos();
             btnRefrescar.Visible = false;
             btnAlta.Visible = false;
             btnBaja.Visible = false;

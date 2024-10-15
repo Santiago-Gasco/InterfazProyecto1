@@ -64,11 +64,15 @@ namespace InterfazProyecto1
             this.numFederado = new System.Windows.Forms.NumericUpDown();
             this.panelAmarilloNumEdad = new System.Windows.Forms.Panel();
             this.numCedula = new System.Windows.Forms.NumericUpDown();
+            this.lblPuntos = new System.Windows.Forms.Label();
+            this.numPuntos = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelSuperiorVentana.SuspendLayout();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPuntos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperiorVentana
@@ -313,7 +317,7 @@ namespace InterfazProyecto1
             this.panelDivisor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
             this.panelDivisor.Location = new System.Drawing.Point(176, 49);
             this.panelDivisor.Name = "panelDivisor";
-            this.panelDivisor.Size = new System.Drawing.Size(4, 290);
+            this.panelDivisor.Size = new System.Drawing.Size(4, 327);
             this.panelDivisor.TabIndex = 17;
             // 
             // panelAmarilloNumCedula
@@ -367,7 +371,7 @@ namespace InterfazProyecto1
             this.btnAltaAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaAtleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaAtleta.ForeColor = System.Drawing.Color.White;
-            this.btnAltaAtleta.Location = new System.Drawing.Point(104, 348);
+            this.btnAltaAtleta.Location = new System.Drawing.Point(99, 392);
             this.btnAltaAtleta.Name = "btnAltaAtleta";
             this.btnAltaAtleta.Size = new System.Drawing.Size(147, 33);
             this.btnAltaAtleta.TabIndex = 25;
@@ -378,10 +382,11 @@ namespace InterfazProyecto1
             // panelAzulBtnAltaAtleta
             // 
             this.panelAzulBtnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(104, 378);
+            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(99, 422);
             this.panelAzulBtnAltaAtleta.Name = "panelAzulBtnAltaAtleta";
             this.panelAzulBtnAltaAtleta.Size = new System.Drawing.Size(147, 3);
             this.panelAzulBtnAltaAtleta.TabIndex = 26;
+            this.panelAzulBtnAltaAtleta.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAzulBtnAltaAtleta_Paint);
             // 
             // numEdad
             // 
@@ -389,7 +394,7 @@ namespace InterfazProyecto1
             this.numEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numEdad.Location = new System.Drawing.Point(186, 164);
             this.numEdad.Minimum = new decimal(new int[] {
-            1,
+            9,
             0,
             0,
             0});
@@ -397,7 +402,7 @@ namespace InterfazProyecto1
             this.numEdad.Size = new System.Drawing.Size(127, 24);
             this.numEdad.TabIndex = 27;
             this.numEdad.Value = new decimal(new int[] {
-            1,
+            9,
             0,
             0,
             0});
@@ -437,20 +442,51 @@ namespace InterfazProyecto1
             this.numCedula.Name = "numCedula";
             this.numCedula.Size = new System.Drawing.Size(127, 24);
             this.numCedula.TabIndex = 29;
-            this.numCedula.Value = new decimal(new int[] {
-            1,
+            // 
+            // lblPuntos
+            // 
+            this.lblPuntos.AutoSize = true;
+            this.lblPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.lblPuntos.Location = new System.Drawing.Point(17, 346);
+            this.lblPuntos.Name = "lblPuntos";
+            this.lblPuntos.Size = new System.Drawing.Size(59, 20);
+            this.lblPuntos.TabIndex = 30;
+            this.lblPuntos.Text = "Puntos";
+            // 
+            // numPuntos
+            // 
+            this.numPuntos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPuntos.Location = new System.Drawing.Point(186, 345);
+            this.numPuntos.Maximum = new decimal(new int[] {
+            99999999,
             0,
             0,
             0});
+            this.numPuntos.Name = "numPuntos";
+            this.numPuntos.Size = new System.Drawing.Size(127, 24);
+            this.numPuntos.TabIndex = 32;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(15)))));
+            this.panel1.Location = new System.Drawing.Point(186, 369);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(127, 3);
+            this.panel1.TabIndex = 31;
             // 
             // FormAltaAtleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(342, 403);
+            this.ClientSize = new System.Drawing.Size(342, 445);
+            this.Controls.Add(this.lblPuntos);
             this.Controls.Add(this.numCedula);
+            this.Controls.Add(this.numPuntos);
             this.Controls.Add(this.panelAmarilloNumEdad);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.numFederado);
             this.Controls.Add(this.numEdad);
             this.Controls.Add(this.panelAzulBtnAltaAtleta);
@@ -481,6 +517,7 @@ namespace InterfazProyecto1
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFederado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCedula)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPuntos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,5 +559,8 @@ namespace InterfazProyecto1
         private System.Windows.Forms.NumericUpDown numFederado;
         private System.Windows.Forms.Panel panelAmarilloNumEdad;
         private System.Windows.Forms.NumericUpDown numCedula;
+        private System.Windows.Forms.Label lblPuntos;
+        private System.Windows.Forms.NumericUpDown numPuntos;
+        private System.Windows.Forms.Panel panel1;
     }
 }

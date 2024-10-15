@@ -169,7 +169,8 @@ namespace InterfazProyecto1
             "Sexo",
             "Fecha de Nacimiento",
             "Numero Federado",
-            "Escuela"});
+            "Escuela",
+            "Puntos"});
             this.cbTipoBusqueda.Location = new System.Drawing.Point(21, 80);
             this.cbTipoBusqueda.Name = "cbTipoBusqueda";
             this.cbTipoBusqueda.Size = new System.Drawing.Size(134, 26);

@@ -31,10 +31,10 @@ namespace InterfazProyecto1
 
         private void btnAltaAtleta_Click(object sender, EventArgs e)
         {
-            query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela)";
+            query = "INSERT INTO tb_atleta (Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Sexo, @Fecha_nacimiento, @Federado, @Escuela, @Puntos)";
 
             // Si los valores cumple los requisitos se ejecuta el metodo AltaAtleta
-            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 10 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && numFederado.Value != 0 && tbEscuela.Text != "" && tbEscuela.Text != string.Empty)
+            if (numCedula.Value > 9999999 && tbNombre.Text != "" && tbNombre.Text != string.Empty && tbApellido.Text != "" && tbApellido.Text != string.Empty && numEdad.Value >= 9 && cbGenero.SelectedIndex != -1 && dateFechaNacimiento.Value != DateTime.Now && numFederado.Value != 0 && tbEscuela.Text != "" && tbEscuela.Text != string.Empty)
             {
                 AltaAtleta();
             }
@@ -64,6 +64,7 @@ namespace InterfazProyecto1
                         commandDatabase.Parameters.AddWithValue("@Fecha_nacimiento", dateFechaNacimiento.Value.ToString("yyyy-MM-dd"));
                         commandDatabase.Parameters.AddWithValue("@Federado", Convert.ToInt32(numFederado.Value));
                         commandDatabase.Parameters.AddWithValue("@Escuela", tbEscuela.Text);
+                        commandDatabase.Parameters.AddWithValue("@Puntos", Convert.ToInt32(numPuntos.Value));
 
                         int rowsAffected = commandDatabase.ExecuteNonQuery();
 
@@ -75,11 +76,12 @@ namespace InterfazProyecto1
                             numCedula.Value = 0;
                             tbNombre.Text = string.Empty;
                             tbApellido.Text = string.Empty;
-                            numEdad.Value = 1;
+                            numEdad.Value = 9;
                             cbGenero.SelectedIndex = -1;
                             dateFechaNacimiento.Value = DateTime.Now;
                             numFederado.Value = 0;
                             tbEscuela.Text = string.Empty;
+                            numPuntos.Value = 0;
 
                             this.formMenu = formMenu;
 
@@ -112,6 +114,11 @@ namespace InterfazProyecto1
                 mousePose.Offset(mousePos.X, mousePos.Y); // Ajusta la posición del mouse sumando las coordenadas de `mouseLocation`.
                 Location = mousePose; // Iguala la posicion del panel a la del mouse
             }
+        }
+
+        private void panelAzulBtnAltaAtleta_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
