@@ -36,6 +36,7 @@ namespace InterfazProyecto1
                 btnListarAtleta.Size = btnListarAtleta.MinimumSize;
                 btnListarArbitro.Size = btnListarArbitro.MinimumSize;
                 btnListarProfesor.Size = btnListarProfesor.MinimumSize;
+                btnRanking.Size = btnRanking.MinimumSize;
                 btnConfiguracion.Size = btnConfiguracion.MinimumSize;
 
                 // Si el tamaño del panel es igual a el tamaño maximo cambia el valor de la variable menuExpandido y termina el timer
@@ -55,6 +56,7 @@ namespace InterfazProyecto1
                 btnListarAtleta.Size = btnListarAtleta.MaximumSize;
                 btnListarArbitro.Size = btnListarArbitro.MaximumSize;
                 btnListarProfesor.Size = btnListarProfesor.MaximumSize;
+                btnRanking.Size = btnRanking.MaximumSize;
                 btnConfiguracion.Size = btnConfiguracion.MaximumSize;
 
                 // Si el tamaño del panel es igual a el tamaño maximo cambia el valor de la variable menuExpandido y termina el timer
@@ -452,7 +454,7 @@ namespace InterfazProyecto1
             }
             else
             {
-                ListarProfesores();
+                ListarProfesores(); // Ejecuta el metodo para listar los profesores
             }
         }
 
@@ -475,7 +477,8 @@ namespace InterfazProyecto1
         {
             panelAbierto = 0;
             ListarAtletas();  // Ejecuta el metodo para listar los atletas
-            dataGridViewAtletas.Show(); // Muestra la cuadricula de datos con los datos de los atletas
+            dataGridViewAtletas.Show();
+            ListarUsuarios();
         }
 
         private void btnListarArbitro_Click(object sender, EventArgs e)
@@ -483,6 +486,7 @@ namespace InterfazProyecto1
             panelAbierto = 1;
             ListarArbitros(); // Ejecuta el metodo para listar los arbitros
             dataGridViewAtletas.Show();
+            ListarUsuarios();
         }
 
         private void btnListarProfesor_Click(object sender, EventArgs e)
@@ -490,6 +494,35 @@ namespace InterfazProyecto1
             panelAbierto = 2;
             ListarProfesores(); // Ejecuta el metodo para listar los arbitros
             dataGridViewAtletas.Show();
+            ListarUsuarios();
+        }
+
+        private void ListarUsuarios()
+        {
+            btnRefrescar.Visible = true;
+            btnAlta.Visible = true;
+            btnBaja.Visible = true;
+            btnEditar.Visible = true;
+            btnFiltrar.Visible = true;
+            panelAzulBtnRefrescar.Visible = true;
+            panelAzulBtnAlta.Visible = true;
+            panelAzulBtnBaja.Visible = true;
+            panelAzulBtnEditar.Visible = true;
+            panelAzulBtnFiltrar.Visible = true;
+        }
+
+        private void btnRanking_Click(object sender, EventArgs e)
+        {
+            btnRefrescar.Visible = false;
+            btnAlta.Visible = false;
+            btnBaja.Visible = false;
+            btnEditar.Visible = false;
+            btnFiltrar.Visible = false;
+            panelAzulBtnRefrescar.Visible = false;
+            panelAzulBtnAlta.Visible = false;
+            panelAzulBtnBaja.Visible = false;
+            panelAzulBtnEditar.Visible = false;
+            panelAzulBtnFiltrar.Visible = false;
         }
     }
 }

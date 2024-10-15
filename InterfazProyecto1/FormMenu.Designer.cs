@@ -51,16 +51,17 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.panelListaAtletas = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelAzulBtnFiltrar = new System.Windows.Forms.Panel();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.panelAzulBtnEditarAtleta = new System.Windows.Forms.Panel();
-            this.panelAzulBtnBajaAtleta = new System.Windows.Forms.Panel();
-            this.panelAzulBtnAltaAtleta = new System.Windows.Forms.Panel();
+            this.panelAzulBtnEditar = new System.Windows.Forms.Panel();
+            this.panelAzulBtnBaja = new System.Windows.Forms.Panel();
+            this.panelAzulBtnAlta = new System.Windows.Forms.Panel();
             this.panelAzulBtnRefrescar = new System.Windows.Forms.Panel();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
+            this.btnRanking = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -72,6 +73,7 @@ namespace InterfazProyecto1
             // 
             // panelOpciones
             // 
+            this.panelOpciones.Controls.Add(this.btnRanking);
             this.panelOpciones.Controls.Add(this.btnListarProfesor);
             this.panelOpciones.Controls.Add(this.btnListarArbitro);
             this.panelOpciones.Controls.Add(this.btnConfiguracion);
@@ -341,11 +343,11 @@ namespace InterfazProyecto1
             // panelListaAtletas
             // 
             this.panelListaAtletas.BackColor = System.Drawing.Color.White;
-            this.panelListaAtletas.Controls.Add(this.panel1);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnFiltrar);
             this.panelListaAtletas.Controls.Add(this.btnFiltrar);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnEditarAtleta);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnBajaAtleta);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnAltaAtleta);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnEditar);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnBaja);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnAlta);
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnRefrescar);
             this.panelListaAtletas.Controls.Add(this.btnRefrescar);
             this.panelListaAtletas.Controls.Add(this.btnEditar);
@@ -359,13 +361,13 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Size = new System.Drawing.Size(950, 464);
             this.panelListaAtletas.TabIndex = 1;
             // 
-            // panel1
+            // panelAzulBtnFiltrar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panel1.Location = new System.Drawing.Point(176, 458);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(37, 3);
-            this.panel1.TabIndex = 10;
+            this.panelAzulBtnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnFiltrar.Location = new System.Drawing.Point(176, 458);
+            this.panelAzulBtnFiltrar.Name = "panelAzulBtnFiltrar";
+            this.panelAzulBtnFiltrar.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnFiltrar.TabIndex = 10;
             // 
             // btnFiltrar
             // 
@@ -384,29 +386,29 @@ namespace InterfazProyecto1
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // panelAzulBtnEditarAtleta
+            // panelAzulBtnEditar
             // 
-            this.panelAzulBtnEditarAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnEditarAtleta.Location = new System.Drawing.Point(133, 458);
-            this.panelAzulBtnEditarAtleta.Name = "panelAzulBtnEditarAtleta";
-            this.panelAzulBtnEditarAtleta.Size = new System.Drawing.Size(37, 3);
-            this.panelAzulBtnEditarAtleta.TabIndex = 8;
+            this.panelAzulBtnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnEditar.Location = new System.Drawing.Point(133, 458);
+            this.panelAzulBtnEditar.Name = "panelAzulBtnEditar";
+            this.panelAzulBtnEditar.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnEditar.TabIndex = 8;
             // 
-            // panelAzulBtnBajaAtleta
+            // panelAzulBtnBaja
             // 
-            this.panelAzulBtnBajaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnBajaAtleta.Location = new System.Drawing.Point(90, 458);
-            this.panelAzulBtnBajaAtleta.Name = "panelAzulBtnBajaAtleta";
-            this.panelAzulBtnBajaAtleta.Size = new System.Drawing.Size(37, 3);
-            this.panelAzulBtnBajaAtleta.TabIndex = 7;
+            this.panelAzulBtnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnBaja.Location = new System.Drawing.Point(90, 458);
+            this.panelAzulBtnBaja.Name = "panelAzulBtnBaja";
+            this.panelAzulBtnBaja.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnBaja.TabIndex = 7;
             // 
-            // panelAzulBtnAltaAtleta
+            // panelAzulBtnAlta
             // 
-            this.panelAzulBtnAltaAtleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnAltaAtleta.Location = new System.Drawing.Point(47, 458);
-            this.panelAzulBtnAltaAtleta.Name = "panelAzulBtnAltaAtleta";
-            this.panelAzulBtnAltaAtleta.Size = new System.Drawing.Size(37, 3);
-            this.panelAzulBtnAltaAtleta.TabIndex = 6;
+            this.panelAzulBtnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnAlta.Location = new System.Drawing.Point(47, 458);
+            this.panelAzulBtnAlta.Name = "panelAzulBtnAlta";
+            this.panelAzulBtnAlta.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnAlta.TabIndex = 6;
             // 
             // panelAzulBtnRefrescar
             // 
@@ -462,6 +464,27 @@ namespace InterfazProyecto1
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
             // 
+            // btnRanking
+            // 
+            this.btnRanking.BackColor = System.Drawing.Color.Transparent;
+            this.btnRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRanking.FlatAppearance.BorderSize = 0;
+            this.btnRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRanking.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRanking.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRanking.Image = ((System.Drawing.Image)(resources.GetObject("btnRanking.Image")));
+            this.btnRanking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRanking.Location = new System.Drawing.Point(5, 178);
+            this.btnRanking.MaximumSize = new System.Drawing.Size(158, 46);
+            this.btnRanking.MinimumSize = new System.Drawing.Size(47, 46);
+            this.btnRanking.Name = "btnRanking";
+            this.btnRanking.Size = new System.Drawing.Size(158, 46);
+            this.btnRanking.TabIndex = 8;
+            this.btnRanking.Text = "           Ranking";
+            this.btnRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRanking.UseVisualStyleBackColor = false;
+            this.btnRanking.Click += new System.EventHandler(this.btnRanking_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,16 +534,17 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Panel panelListaAtletas;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.Panel panelAzulBtnRefrescar;
-        private System.Windows.Forms.Panel panelAzulBtnEditarAtleta;
-        private System.Windows.Forms.Panel panelAzulBtnBajaAtleta;
-        private System.Windows.Forms.Panel panelAzulBtnAltaAtleta;
+        private System.Windows.Forms.Panel panelAzulBtnEditar;
+        private System.Windows.Forms.Panel panelAzulBtnBaja;
+        private System.Windows.Forms.Panel panelAzulBtnAlta;
         private System.Windows.Forms.Label lblCreditos;
         private System.Windows.Forms.PictureBox imagenKarate;
         private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Button btnListarArbitro;
         private System.Windows.Forms.Button btnListarProfesor;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelAzulBtnFiltrar;
         private System.Windows.Forms.Button btnFiltrar;
         public System.Windows.Forms.DataGridView dataGridViewAtletas;
+        private System.Windows.Forms.Button btnRanking;
     }
 }

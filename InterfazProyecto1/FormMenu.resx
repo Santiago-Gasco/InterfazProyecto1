@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRanking.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAE4SURBVFhH7ZhBSsRAEEUDzmYWymx1qzjKXMRx58LxNJ5B
+        PIAuvYgeYPQKCuoVFIyvur/CSLoTIZMS7AcPQvpX198mVaFQ+EPUdX2MD/gu73GuY18ocoYpFor5QIER
+        voYqzbzgSPHhYfleqJFnV/HhYfksdsgyU3x4bHnskKUUTGLLY4cs6yvI5RM8xxtpzxMd+xbk4ik+hRWr
+        POK+Mq4F7+L9jdwq41OQS3fi3Vm20a1gp8WyjVIwxT8vyOABnsipXgfsUmxjPQUZGON1GF3lCsfKuBa8
+        jHONXCjjU5DwFr6FsWbsbBPdCh7GmSyWcSvY62LZRimYohRM4Vqw02ci9prT+nYI24e2fUyneMYN7DWn
+        9d1gYIEfNv0De3eqWO+5X8HgHJf49bPHno90/A3ves0VCoXOVNUnpRMtAeNarqgAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnListarProfesor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
