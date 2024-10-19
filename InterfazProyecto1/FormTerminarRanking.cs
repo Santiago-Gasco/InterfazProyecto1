@@ -71,7 +71,9 @@ namespace InterfazProyecto1
 
                             adapter.Fill(table); // Llena la instancia table con los datos de la base de datos
 
-                            formMenu.ListarAtletas();
+                            // Lo llama 2 veces para asegurarse de que el ranking este bien ordenado
+                            formMenu.ListarAtletasPorRanking();
+                            formMenu.ListarAtletasPorRanking();
                         }
                     }
                 }

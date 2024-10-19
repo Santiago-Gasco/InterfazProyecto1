@@ -52,6 +52,8 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.panelListaAtletas = new System.Windows.Forms.Panel();
+            this.panelAzulBtnTerminarRanking = new System.Windows.Forms.Panel();
+            this.btnTerminarRanking = new System.Windows.Forms.Button();
             this.panelAzulBtnOrden = new System.Windows.Forms.Panel();
             this.btnOrden = new System.Windows.Forms.Button();
             this.panelAzulBtnFiltrar = new System.Windows.Forms.Panel();
@@ -64,8 +66,6 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
-            this.panelAzulBtnTerminarRanking = new System.Windows.Forms.Panel();
-            this.btnTerminarRanking = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -390,6 +390,33 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Size = new System.Drawing.Size(950, 464);
             this.panelListaAtletas.TabIndex = 1;
             // 
+            // panelAzulBtnTerminarRanking
+            // 
+            this.panelAzulBtnTerminarRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnTerminarRanking.Location = new System.Drawing.Point(910, 458);
+            this.panelAzulBtnTerminarRanking.Name = "panelAzulBtnTerminarRanking";
+            this.panelAzulBtnTerminarRanking.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnTerminarRanking.TabIndex = 12;
+            this.panelAzulBtnTerminarRanking.Visible = false;
+            // 
+            // btnTerminarRanking
+            // 
+            this.btnTerminarRanking.BackColor = System.Drawing.Color.DimGray;
+            this.btnTerminarRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTerminarRanking.FlatAppearance.BorderSize = 0;
+            this.btnTerminarRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerminarRanking.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminarRanking.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTerminarRanking.Image = ((System.Drawing.Image)(resources.GetObject("btnTerminarRanking.Image")));
+            this.btnTerminarRanking.Location = new System.Drawing.Point(910, 418);
+            this.btnTerminarRanking.Name = "btnTerminarRanking";
+            this.btnTerminarRanking.Size = new System.Drawing.Size(37, 43);
+            this.btnTerminarRanking.TabIndex = 11;
+            this.btnTerminarRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTerminarRanking.UseVisualStyleBackColor = false;
+            this.btnTerminarRanking.Visible = false;
+            this.btnTerminarRanking.Click += new System.EventHandler(this.btnTerminarRanking_Click);
+            // 
             // panelAzulBtnOrden
             // 
             this.panelAzulBtnOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -505,7 +532,7 @@ namespace InterfazProyecto1
             this.lblCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditos.Location = new System.Drawing.Point(1029, 167);
             this.lblCreditos.Name = "lblCreditos";
-            this.lblCreditos.Size = new System.Drawing.Size(115, 96);
+            this.lblCreditos.Size = new System.Drawing.Size(116, 96);
             this.lblCreditos.TabIndex = 10;
             this.lblCreditos.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
             this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -519,33 +546,6 @@ namespace InterfazProyecto1
             this.imagenKarate.Size = new System.Drawing.Size(113, 118);
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
-            // 
-            // panelAzulBtnTerminarRanking
-            // 
-            this.panelAzulBtnTerminarRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnTerminarRanking.Location = new System.Drawing.Point(910, 458);
-            this.panelAzulBtnTerminarRanking.Name = "panelAzulBtnTerminarRanking";
-            this.panelAzulBtnTerminarRanking.Size = new System.Drawing.Size(37, 3);
-            this.panelAzulBtnTerminarRanking.TabIndex = 12;
-            this.panelAzulBtnTerminarRanking.Visible = false;
-            // 
-            // btnTerminarRanking
-            // 
-            this.btnTerminarRanking.BackColor = System.Drawing.Color.DimGray;
-            this.btnTerminarRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnTerminarRanking.FlatAppearance.BorderSize = 0;
-            this.btnTerminarRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerminarRanking.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminarRanking.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTerminarRanking.Image = ((System.Drawing.Image)(resources.GetObject("btnTerminarRanking.Image")));
-            this.btnTerminarRanking.Location = new System.Drawing.Point(910, 418);
-            this.btnTerminarRanking.Name = "btnTerminarRanking";
-            this.btnTerminarRanking.Size = new System.Drawing.Size(37, 43);
-            this.btnTerminarRanking.TabIndex = 11;
-            this.btnTerminarRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTerminarRanking.UseVisualStyleBackColor = false;
-            this.btnTerminarRanking.Visible = false;
-            this.btnTerminarRanking.Click += new System.EventHandler(this.btnTerminarRanking_Click);
             // 
             // FormMenu
             // 

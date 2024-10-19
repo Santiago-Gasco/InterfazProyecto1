@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace InterfazProyecto1
@@ -192,9 +193,9 @@ namespace InterfazProyecto1
             }
         }
 
-        public void ListarAtletasPorPuntos()
+        public void ListarAtletasPorRanking()
         {
-            string query = "SELECT ID_atleta, Ranking, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta_puntos"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            string query = "SELECT ID_atleta, Ranking, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta_ranking"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
@@ -203,7 +204,7 @@ namespace InterfazProyecto1
                 try
                 {
                     // Borra la tabla temporal ordenada por puntos si existe
-                    string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_puntos;";
+                    string dropTempTableQuery = "DROP TEMPORARY TABLE IF EXISTS tb_atleta_ranking;";
                     using (var dropTempTableCommand = new MySqlCommand(dropTempTableQuery, databaseConnection))
                     {
                         dropTempTableCommand.ExecuteNonQuery();
@@ -211,7 +212,7 @@ namespace InterfazProyecto1
 
                     // Crea una tabla temporal y copia los datos de la tabla original
                     string createTempTableQuery = $@"
-                        CREATE TEMPORARY TABLE IF NOT EXISTS tb_atleta_puntos AS
+                        CREATE TEMPORARY TABLE IF NOT EXISTS tb_atleta_ranking AS
                         SELECT ID_atleta, Ranking, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
                         FROM tb_atleta
                         ORDER BY Puntos {orden};"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
@@ -220,9 +221,12 @@ namespace InterfazProyecto1
                         createTempTableCommand.ExecuteNonQuery();
                     }
 
-                    int ranking = 1;
+                    int ranking;
+                    string operacionRanking = "";
+                    List<int> atletas = new List<int>();
 
-                    string orderRankingQuery = "SELECT ID_atleta FROM tb_atleta;";
+                    // Obtener los IDs de los atletas
+                    string orderRankingQuery = "SELECT ID_atleta FROM tb_atleta_ranking;";
                     using (var orderRankingCommand = new MySqlCommand(orderRankingQuery, databaseConnection))
                     {
                         using (MySqlDataReader reader = orderRankingCommand.ExecuteReader())
@@ -230,18 +234,33 @@ namespace InterfazProyecto1
                             while (reader.Read())
                             {
                                 int idAtleta = reader.GetInt32("ID_atleta");
-
-                                string updateRankingQuery = $"UPDATE tb_atleta SET Ranking = {ranking} WHERE id_atleta = {idAtleta};";
-                                using (var updateRankingCommand = new MySqlCommand(updateRankingQuery, databaseConnection))
-                                {
-                                    updateRankingCommand.ExecuteNonQuery();  // Ejecutar la actualización
-                                }
-
-                                ranking++;
+                                atletas.Add(idAtleta);
                             }
-
                             reader.Close();
                         }
+                    }
+
+                    if (orden == "DESC")
+                    {
+                        ranking = 1;
+                        operacionRanking = "++";
+                    }
+                    else
+                    {
+                        ranking = atletas.Count;
+                        operacionRanking = "--";
+                    }
+
+                    // Actualizar el ranking de los atletas
+                    foreach (int idAtleta in atletas)
+                    {
+                        string updateRankingQuery = $"UPDATE tb_atleta SET Ranking = {ranking} WHERE ID_atleta = {idAtleta};";
+                        using (var updateRankingCommand = new MySqlCommand(updateRankingQuery, databaseConnection))
+                        {
+                            updateRankingCommand.ExecuteNonQuery();
+                        }
+
+                        ranking = (operacionRanking == "++") ? ranking + 1 : (operacionRanking == "--") ? ranking - 1 : ranking;
                     }
                 }
                 catch (Exception ex)
@@ -553,7 +572,7 @@ namespace InterfazProyecto1
             }
             else
             {
-                ListarAtletasPorPuntos(); // Ejecuta el metodo para listar los atletas por puntos
+                ListarAtletasPorRanking(); // Ejecuta el metodo para listar los atletas por puntos
             }
         }
 
@@ -615,7 +634,7 @@ namespace InterfazProyecto1
         private void btnRanking_Click(object sender, EventArgs e)
         {
             panelAbierto = 3;
-            ListarAtletasPorPuntos();
+            ListarAtletasPorRanking();
             btnAlta.Visible = false;
             btnBaja.Visible = false;
             btnEditar.Visible = false;
@@ -632,18 +651,22 @@ namespace InterfazProyecto1
 
         private void btnOrden_Click(object sender, EventArgs e)
         {
+            // Cambia el orden del ranking segun sea, ascendente y descendente
             if (orden == "DESC")
             {
                 btnOrden.Image = Properties.Resources.icons8_reversed_numerical_sorting_30;
                 orden = "ASC";
+                ListarAtletasPorRanking();
             }
             else
             {
                 btnOrden.Image = Properties.Resources.icons8_numeric_30;
                 orden = "DESC";
+                ListarAtletasPorRanking();
             }
 
-            ListarAtletasPorPuntos();
+            // Se llama otra vez para ordenar los atlteas que tienen 0 puntos ya que su ranking queda desordenado
+            ListarAtletasPorRanking();
         }
 
         private void btnTerminarRanking_Click(object sender, EventArgs e)
