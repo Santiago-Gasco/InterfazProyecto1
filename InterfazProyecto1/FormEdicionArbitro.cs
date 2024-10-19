@@ -135,6 +135,8 @@ namespace InterfazProyecto1
                                 {
                                     MessageBox.Show("No se encontró el arbitro con valor proporcionado.");
                                 }
+
+                                reader.Close();
                             }
                         }
                     }

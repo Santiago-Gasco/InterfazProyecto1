@@ -46,6 +46,8 @@ namespace InterfazProyecto1
                             {
                                 MessageBox.Show("Usuario o contraseña incorrectos");
                             }
+
+                            reader.Close();
                         }
                     }
                 }

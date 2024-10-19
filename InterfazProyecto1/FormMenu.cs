@@ -100,9 +100,18 @@ namespace InterfazProyecto1
 
         public void ListarAtletas()
         {
-            string query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos FROM tb_atleta"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            string query;
 
-            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
+            if (panelAbierto > 2)
+            {
+                query = "SELECT ID_atleta, Ranking, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta"; // Variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            }
+            else
+            {
+                query = "SELECT ID_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Ranking, Puntos FROM tb_atleta"; // Variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            }
+
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) // Abre una conexión con la base de datos
             {
                 databaseConnection.Open();
 
@@ -111,7 +120,7 @@ namespace InterfazProyecto1
                     // Crea una tabla temporal y copia los datos de la tabla original
                     string createTempTableQuery = @"
                         CREATE TEMPORARY TABLE tb_atleta_temp AS
-                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Puntos
+                        SELECT Id_atleta, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela, Ranking, Puntos
                         FROM tb_atleta
                         ORDER BY Id_atleta;"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
                     using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
@@ -185,7 +194,7 @@ namespace InterfazProyecto1
 
         public void ListarAtletasPorPuntos()
         {
-            string query = "SELECT ID_atleta, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta_puntos"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
+            string query = "SELECT ID_atleta, Ranking, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela FROM tb_atleta_puntos"; //variable de tipo string que contiene el comando necesario para pedirle los datos a la base de datos
 
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString)) //abre una conexión con la base de datos
             {
@@ -203,12 +212,36 @@ namespace InterfazProyecto1
                     // Crea una tabla temporal y copia los datos de la tabla original
                     string createTempTableQuery = $@"
                         CREATE TEMPORARY TABLE IF NOT EXISTS tb_atleta_puntos AS
-                        SELECT ID_atleta, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
+                        SELECT ID_atleta, Ranking, Puntos, Cedula, Nombre, Apellido, Edad, Sexo, Fecha_nacimiento, Federado, Escuela
                         FROM tb_atleta
                         ORDER BY Puntos {orden};"; // Crea una tabla temporal, la iguala a la tabla atleta y la pone en orden
                     using (var createTempTableCommand = new MySqlCommand(createTempTableQuery, databaseConnection))
                     {
                         createTempTableCommand.ExecuteNonQuery();
+                    }
+
+                    int ranking = 1;
+
+                    string orderRankingQuery = "SELECT ID_atleta FROM tb_atleta;";
+                    using (var orderRankingCommand = new MySqlCommand(orderRankingQuery, databaseConnection))
+                    {
+                        using (MySqlDataReader reader = orderRankingCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int idAtleta = reader.GetInt32("ID_atleta");
+
+                                string updateRankingQuery = $"UPDATE tb_atleta SET Ranking = {ranking} WHERE id_atleta = {idAtleta};";
+                                using (var updateRankingCommand = new MySqlCommand(updateRankingQuery, databaseConnection))
+                                {
+                                    updateRankingCommand.ExecuteNonQuery();  // Ejecutar la actualización
+                                }
+
+                                ranking++;
+                            }
+
+                            reader.Close();
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -570,11 +603,13 @@ namespace InterfazProyecto1
             btnEditar.Visible = true;
             btnFiltrar.Visible = true;
             btnOrden.Visible = false;
+            btnTerminarRanking.Visible = false;
             panelAzulBtnAlta.Visible = true;
             panelAzulBtnBaja.Visible = true;
             panelAzulBtnEditar.Visible = true;
             panelAzulBtnFiltrar.Visible = true;
             panelAzulBtnOrden.Visible = false;
+            panelAzulBtnTerminarRanking.Visible = false;
         }
 
         private void btnRanking_Click(object sender, EventArgs e)
@@ -586,11 +621,13 @@ namespace InterfazProyecto1
             btnEditar.Visible = false;
             btnFiltrar.Visible = false;
             btnOrden.Visible = true;
+            btnTerminarRanking.Visible = true;
             panelAzulBtnAlta.Visible = false;
             panelAzulBtnBaja.Visible = false;
             panelAzulBtnEditar.Visible = false;
             panelAzulBtnFiltrar.Visible = false;
             panelAzulBtnOrden.Visible = true;
+            panelAzulBtnTerminarRanking.Visible = true;
         }
 
         private void btnOrden_Click(object sender, EventArgs e)
@@ -607,6 +644,12 @@ namespace InterfazProyecto1
             }
 
             ListarAtletasPorPuntos();
+        }
+
+        private void btnTerminarRanking_Click(object sender, EventArgs e)
+        {
+            FormTerminarRanking formTerminarRanking = new FormTerminarRanking(this); // Crea una nueva instancia del formulario para terminar el ranking de atletas
+            formTerminarRanking.Show(); // Muestra el formulario para terminar el ranking de atletas
         }
     }
 }

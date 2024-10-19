@@ -146,6 +146,8 @@ namespace InterfazProyecto1
                                 {
                                     MessageBox.Show("No se encontró el atleta con valor proporcionado.");
                                 }
+
+                                reader.Close();
                             }
                         }
                     }

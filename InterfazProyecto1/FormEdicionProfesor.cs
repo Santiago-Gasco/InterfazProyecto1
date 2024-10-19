@@ -132,6 +132,8 @@ namespace InterfazProyecto1
                                 {
                                     MessageBox.Show("No se encontró el profesor con valor proporcionado.");
                                 }
+
+                                reader.Close();
                             }
                         }
                     }

@@ -52,6 +52,8 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.panelListaAtletas = new System.Windows.Forms.Panel();
+            this.panelAzulBtnOrden = new System.Windows.Forms.Panel();
+            this.btnOrden = new System.Windows.Forms.Button();
             this.panelAzulBtnFiltrar = new System.Windows.Forms.Panel();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.panelAzulBtnEditar = new System.Windows.Forms.Panel();
@@ -62,8 +64,8 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
-            this.panelAzulBtnOrden = new System.Windows.Forms.Panel();
-            this.btnOrden = new System.Windows.Forms.Button();
+            this.panelAzulBtnTerminarRanking = new System.Windows.Forms.Panel();
+            this.btnTerminarRanking = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -366,6 +368,8 @@ namespace InterfazProyecto1
             // panelListaAtletas
             // 
             this.panelListaAtletas.BackColor = System.Drawing.Color.White;
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnTerminarRanking);
+            this.panelListaAtletas.Controls.Add(this.btnTerminarRanking);
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnOrden);
             this.panelListaAtletas.Controls.Add(this.btnOrden);
             this.panelListaAtletas.Controls.Add(this.panelAzulBtnFiltrar);
@@ -385,6 +389,33 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Name = "panelListaAtletas";
             this.panelListaAtletas.Size = new System.Drawing.Size(950, 464);
             this.panelListaAtletas.TabIndex = 1;
+            // 
+            // panelAzulBtnOrden
+            // 
+            this.panelAzulBtnOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnOrden.Location = new System.Drawing.Point(47, 458);
+            this.panelAzulBtnOrden.Name = "panelAzulBtnOrden";
+            this.panelAzulBtnOrden.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnOrden.TabIndex = 12;
+            this.panelAzulBtnOrden.Visible = false;
+            // 
+            // btnOrden
+            // 
+            this.btnOrden.BackColor = System.Drawing.Color.DimGray;
+            this.btnOrden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnOrden.FlatAppearance.BorderSize = 0;
+            this.btnOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrden.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrden.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnOrden.Image = global::InterfazProyecto1.Properties.Resources.icons8_numeric_30;
+            this.btnOrden.Location = new System.Drawing.Point(47, 418);
+            this.btnOrden.Name = "btnOrden";
+            this.btnOrden.Size = new System.Drawing.Size(37, 40);
+            this.btnOrden.TabIndex = 11;
+            this.btnOrden.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrden.UseVisualStyleBackColor = false;
+            this.btnOrden.Visible = false;
+            this.btnOrden.Click += new System.EventHandler(this.btnOrden_Click);
             // 
             // panelAzulBtnFiltrar
             // 
@@ -474,7 +505,7 @@ namespace InterfazProyecto1
             this.lblCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditos.Location = new System.Drawing.Point(1029, 167);
             this.lblCreditos.Name = "lblCreditos";
-            this.lblCreditos.Size = new System.Drawing.Size(116, 96);
+            this.lblCreditos.Size = new System.Drawing.Size(115, 96);
             this.lblCreditos.TabIndex = 10;
             this.lblCreditos.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
             this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -489,32 +520,32 @@ namespace InterfazProyecto1
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
             // 
-            // panelAzulBtnOrden
+            // panelAzulBtnTerminarRanking
             // 
-            this.panelAzulBtnOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
-            this.panelAzulBtnOrden.Location = new System.Drawing.Point(47, 458);
-            this.panelAzulBtnOrden.Name = "panelAzulBtnOrden";
-            this.panelAzulBtnOrden.Size = new System.Drawing.Size(37, 3);
-            this.panelAzulBtnOrden.TabIndex = 12;
-            this.panelAzulBtnOrden.Visible = false;
+            this.panelAzulBtnTerminarRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
+            this.panelAzulBtnTerminarRanking.Location = new System.Drawing.Point(910, 458);
+            this.panelAzulBtnTerminarRanking.Name = "panelAzulBtnTerminarRanking";
+            this.panelAzulBtnTerminarRanking.Size = new System.Drawing.Size(37, 3);
+            this.panelAzulBtnTerminarRanking.TabIndex = 12;
+            this.panelAzulBtnTerminarRanking.Visible = false;
             // 
-            // btnOrden
+            // btnTerminarRanking
             // 
-            this.btnOrden.BackColor = System.Drawing.Color.DimGray;
-            this.btnOrden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnOrden.FlatAppearance.BorderSize = 0;
-            this.btnOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrden.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrden.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnOrden.Image = global::InterfazProyecto1.Properties.Resources.icons8_numeric_30;
-            this.btnOrden.Location = new System.Drawing.Point(47, 418);
-            this.btnOrden.Name = "btnOrden";
-            this.btnOrden.Size = new System.Drawing.Size(37, 40);
-            this.btnOrden.TabIndex = 11;
-            this.btnOrden.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrden.UseVisualStyleBackColor = false;
-            this.btnOrden.Visible = false;
-            this.btnOrden.Click += new System.EventHandler(this.btnOrden_Click);
+            this.btnTerminarRanking.BackColor = System.Drawing.Color.DimGray;
+            this.btnTerminarRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTerminarRanking.FlatAppearance.BorderSize = 0;
+            this.btnTerminarRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerminarRanking.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminarRanking.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTerminarRanking.Image = ((System.Drawing.Image)(resources.GetObject("btnTerminarRanking.Image")));
+            this.btnTerminarRanking.Location = new System.Drawing.Point(910, 418);
+            this.btnTerminarRanking.Name = "btnTerminarRanking";
+            this.btnTerminarRanking.Size = new System.Drawing.Size(37, 43);
+            this.btnTerminarRanking.TabIndex = 11;
+            this.btnTerminarRanking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTerminarRanking.UseVisualStyleBackColor = false;
+            this.btnTerminarRanking.Visible = false;
+            this.btnTerminarRanking.Click += new System.EventHandler(this.btnTerminarRanking_Click);
             // 
             // FormMenu
             // 
@@ -579,5 +610,7 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Button btnRanking;
         private System.Windows.Forms.Panel panelAzulBtnOrden;
         private System.Windows.Forms.Button btnOrden;
+        private System.Windows.Forms.Panel panelAzulBtnTerminarRanking;
+        private System.Windows.Forms.Button btnTerminarRanking;
     }
 }
