@@ -1091,29 +1091,13 @@ namespace InterfazProyecto1
             if (cbAtletaSemis1.Checked == true)
             {
                 tbAtletaFinal1.Text = tbAtletaSemis1.Text;
-                cbAtletaSemis3.Enabled = false;
+                cbAtletaSemis2.Enabled = false;
             }
 
-            if (cbAtletaSemis1.Checked == false && cbAtletaSemis3.Checked == false)
+            if (cbAtletaSemis1.Checked == false && cbAtletaSemis2.Checked == false)
             {
                 cbAtletaSemis1.Enabled = true;
-                cbAtletaSemis3.Enabled = true;
-                tbAtletaFinal1.Text = "";
-            }
-        }
-
-        private void cbAtletaSemis3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbAtletaSemis3.Checked == true)
-            {
-                tbAtletaFinal1.Text = tbAtletaSemis3.Text;
-                cbAtletaSemis1.Enabled = false;
-            }
-
-            if (cbAtletaSemis1.Checked == false && cbAtletaSemis3.Checked == false)
-            {
-                cbAtletaSemis1.Enabled = true;
-                cbAtletaSemis3.Enabled = true;
+                cbAtletaSemis2.Enabled = true;
                 tbAtletaFinal1.Text = "";
             }
         }
@@ -1122,13 +1106,29 @@ namespace InterfazProyecto1
         {
             if (cbAtletaSemis2.Checked == true)
             {
-                tbAtletaFinal2.Text = tbAtletaSemis2.Text;
+                tbAtletaFinal1.Text = tbAtletaSemis2.Text;
+                cbAtletaSemis1.Enabled = false;
+            }
+
+            if (cbAtletaSemis1.Checked == false && cbAtletaSemis2.Checked == false)
+            {
+                cbAtletaSemis1.Enabled = true;
+                cbAtletaSemis2.Enabled = true;
+                tbAtletaFinal1.Text = "";
+            }
+        }
+
+        private void cbAtletaSemis3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAtletaSemis3.Checked == true)
+            {
+                tbAtletaFinal2.Text = tbAtletaSemis3.Text;
                 cbAtletaSemis4.Enabled = false;
             }
 
-            if (cbAtletaSemis2.Checked == false && cbAtletaSemis4.Checked == false)
+            if (cbAtletaSemis3.Checked == false && cbAtletaSemis4.Checked == false)
             {
-                cbAtletaSemis2.Enabled = true;
+                cbAtletaSemis3.Enabled = true;
                 cbAtletaSemis4.Enabled = true;
                 tbAtletaFinal2.Text = "";
             }
@@ -1139,12 +1139,12 @@ namespace InterfazProyecto1
             if (cbAtletaSemis4.Checked == true)
             {
                 tbAtletaFinal2.Text = tbAtletaSemis4.Text;
-                cbAtletaSemis2.Enabled = false;
+                cbAtletaSemis3.Enabled = false;
             }
 
-            if (cbAtletaSemis2.Checked == false && cbAtletaSemis4.Checked == false)
+            if (cbAtletaSemis3.Checked == false && cbAtletaSemis4.Checked == false)
             {
-                cbAtletaSemis2.Enabled = true;
+                cbAtletaSemis3.Enabled = true;
                 cbAtletaSemis4.Enabled = true;
                 tbAtletaFinal2.Text = "";
             }

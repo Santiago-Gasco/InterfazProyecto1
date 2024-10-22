@@ -32,6 +32,7 @@ namespace InterfazProyecto1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.btnFixture = new System.Windows.Forms.Button();
             this.btnRanking = new System.Windows.Forms.Button();
             this.btnListarProfesor = new System.Windows.Forms.Button();
             this.btnListarArbitro = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.panelListaAtletas = new System.Windows.Forms.Panel();
+            this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.cbAtletaFinal2 = new System.Windows.Forms.CheckBox();
             this.panelAzulBtnTerminarRanking = new System.Windows.Forms.Panel();
             this.cbAtletaFinal1 = new System.Windows.Forms.CheckBox();
@@ -78,7 +80,6 @@ namespace InterfazProyecto1
             this.tbAtletaCuartos7 = new System.Windows.Forms.TextBox();
             this.tbAtletaCuartos6 = new System.Windows.Forms.TextBox();
             this.tbAtletaCuartos5 = new System.Windows.Forms.TextBox();
-            this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
             this.cbAtleta16 = new System.Windows.Forms.CheckBox();
             this.tbAtletaSemis1 = new System.Windows.Forms.TextBox();
             this.cbAtleta15 = new System.Windows.Forms.CheckBox();
@@ -126,7 +127,6 @@ namespace InterfazProyecto1
             this.cbAtleta8 = new System.Windows.Forms.CheckBox();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
-            this.btnFixture = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -148,6 +148,27 @@ namespace InterfazProyecto1
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(189, 361);
             this.panelOpciones.TabIndex = 7;
+            // 
+            // btnFixture
+            // 
+            this.btnFixture.BackColor = System.Drawing.Color.Transparent;
+            this.btnFixture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFixture.FlatAppearance.BorderSize = 0;
+            this.btnFixture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFixture.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFixture.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFixture.Image = ((System.Drawing.Image)(resources.GetObject("btnFixture.Image")));
+            this.btnFixture.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFixture.Location = new System.Drawing.Point(5, 233);
+            this.btnFixture.MaximumSize = new System.Drawing.Size(158, 46);
+            this.btnFixture.MinimumSize = new System.Drawing.Size(47, 46);
+            this.btnFixture.Name = "btnFixture";
+            this.btnFixture.Size = new System.Drawing.Size(158, 46);
+            this.btnFixture.TabIndex = 9;
+            this.btnFixture.Text = "           Fixture";
+            this.btnFixture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFixture.UseVisualStyleBackColor = false;
+            this.btnFixture.Click += new System.EventHandler(this.btnFixture_Click);
             // 
             // btnRanking
             // 
@@ -512,6 +533,14 @@ namespace InterfazProyecto1
             this.panelListaAtletas.Size = new System.Drawing.Size(950, 464);
             this.panelListaAtletas.TabIndex = 1;
             // 
+            // dataGridViewAtletas
+            // 
+            this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAtletas.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewAtletas.Name = "dataGridViewAtletas";
+            this.dataGridViewAtletas.Size = new System.Drawing.Size(944, 409);
+            this.dataGridViewAtletas.TabIndex = 0;
+            // 
             // cbAtletaFinal2
             // 
             this.cbAtletaFinal2.AutoSize = true;
@@ -776,14 +805,6 @@ namespace InterfazProyecto1
             this.tbAtletaCuartos5.Name = "tbAtletaCuartos5";
             this.tbAtletaCuartos5.Size = new System.Drawing.Size(100, 29);
             this.tbAtletaCuartos5.TabIndex = 107;
-            // 
-            // dataGridViewAtletas
-            // 
-            this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAtletas.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewAtletas.Name = "dataGridViewAtletas";
-            this.dataGridViewAtletas.Size = new System.Drawing.Size(944, 409);
-            this.dataGridViewAtletas.TabIndex = 0;
             // 
             // cbAtleta16
             // 
@@ -1196,7 +1217,7 @@ namespace InterfazProyecto1
             this.lblCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditos.Location = new System.Drawing.Point(1029, 167);
             this.lblCreditos.Name = "lblCreditos";
-            this.lblCreditos.Size = new System.Drawing.Size(116, 96);
+            this.lblCreditos.Size = new System.Drawing.Size(115, 96);
             this.lblCreditos.TabIndex = 10;
             this.lblCreditos.Text = "Creado por:\r\n\r\nSantiago Gasco\r\nLucas Mujica\r\nTomas Peña\r\nNahuel Rodriguez";
             this.lblCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1211,27 +1232,6 @@ namespace InterfazProyecto1
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
             // 
-            // btnFixture
-            // 
-            this.btnFixture.BackColor = System.Drawing.Color.Transparent;
-            this.btnFixture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnFixture.FlatAppearance.BorderSize = 0;
-            this.btnFixture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFixture.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFixture.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFixture.Image = ((System.Drawing.Image)(resources.GetObject("btnFixture.Image")));
-            this.btnFixture.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFixture.Location = new System.Drawing.Point(5, 233);
-            this.btnFixture.MaximumSize = new System.Drawing.Size(158, 46);
-            this.btnFixture.MinimumSize = new System.Drawing.Size(47, 46);
-            this.btnFixture.Name = "btnFixture";
-            this.btnFixture.Size = new System.Drawing.Size(158, 46);
-            this.btnFixture.TabIndex = 9;
-            this.btnFixture.Text = "           Fixture";
-            this.btnFixture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFixture.UseVisualStyleBackColor = false;
-            this.btnFixture.Click += new System.EventHandler(this.btnFixture_Click);
-            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1245,7 +1245,7 @@ namespace InterfazProyecto1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMenu";
-            this.Text = "Form2";
+            this.Text = "d";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panelOpciones.ResumeLayout(false);
             this.panelPrincipalOpciones.ResumeLayout(false);
