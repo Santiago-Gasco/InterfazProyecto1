@@ -182,6 +182,12 @@
     <Compile Include="FormFiltrarProfesor.Designer.cs">
       <DependentUpon>FormFiltrarProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFixture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFixture.Designer.cs">
+      <DependentUpon>FormFixture.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFiltrarProfesor.resx">
       <DependentUpon>FormFiltrarProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFixture.resx">
+      <DependentUpon>FormFixture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>

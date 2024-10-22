@@ -52,20 +52,81 @@ namespace InterfazProyecto1
             this.lblNombreVentana = new System.Windows.Forms.Label();
             this.timerDataGridView = new System.Windows.Forms.Timer(this.components);
             this.panelListaAtletas = new System.Windows.Forms.Panel();
+            this.cbAtletaFinal2 = new System.Windows.Forms.CheckBox();
             this.panelAzulBtnTerminarRanking = new System.Windows.Forms.Panel();
+            this.cbAtletaFinal1 = new System.Windows.Forms.CheckBox();
             this.btnTerminarRanking = new System.Windows.Forms.Button();
+            this.tbAtletaFinal2 = new System.Windows.Forms.TextBox();
             this.panelAzulBtnOrden = new System.Windows.Forms.Panel();
+            this.cbAtletaSemis4 = new System.Windows.Forms.CheckBox();
             this.btnOrden = new System.Windows.Forms.Button();
+            this.cbAtletaSemis3 = new System.Windows.Forms.CheckBox();
             this.panelAzulBtnFiltrar = new System.Windows.Forms.Panel();
+            this.tbAtletaSemis4 = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.tbAtletaSemis3 = new System.Windows.Forms.TextBox();
             this.panelAzulBtnEditar = new System.Windows.Forms.Panel();
+            this.cbAtletaCuartos8 = new System.Windows.Forms.CheckBox();
             this.panelAzulBtnBaja = new System.Windows.Forms.Panel();
+            this.cbAtletaCuartos7 = new System.Windows.Forms.CheckBox();
             this.panelAzulBtnAlta = new System.Windows.Forms.Panel();
+            this.cbAtletaCuartos6 = new System.Windows.Forms.CheckBox();
             this.panelAzulBtnRefrescar = new System.Windows.Forms.Panel();
+            this.cbAtletaCuartos5 = new System.Windows.Forms.CheckBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
+            this.tbAtletaCuartos8 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos7 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos6 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos5 = new System.Windows.Forms.TextBox();
             this.dataGridViewAtletas = new System.Windows.Forms.DataGridView();
+            this.cbAtleta16 = new System.Windows.Forms.CheckBox();
+            this.tbAtletaSemis1 = new System.Windows.Forms.TextBox();
+            this.cbAtleta15 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta1 = new System.Windows.Forms.TextBox();
+            this.cbAtleta14 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta2 = new System.Windows.Forms.TextBox();
+            this.cbAtleta13 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta3 = new System.Windows.Forms.TextBox();
+            this.cbAtleta12 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta4 = new System.Windows.Forms.TextBox();
+            this.cbAtleta11 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta5 = new System.Windows.Forms.TextBox();
+            this.cbAtleta10 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta6 = new System.Windows.Forms.TextBox();
+            this.cbAtleta9 = new System.Windows.Forms.CheckBox();
+            this.tbAtleta7 = new System.Windows.Forms.TextBox();
+            this.tbAtleta16 = new System.Windows.Forms.TextBox();
+            this.tbAtleta8 = new System.Windows.Forms.TextBox();
+            this.tbAtleta15 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos1 = new System.Windows.Forms.TextBox();
+            this.tbAtleta14 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos2 = new System.Windows.Forms.TextBox();
+            this.tbAtleta13 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos3 = new System.Windows.Forms.TextBox();
+            this.tbAtleta12 = new System.Windows.Forms.TextBox();
+            this.tbAtletaCuartos4 = new System.Windows.Forms.TextBox();
+            this.tbAtleta11 = new System.Windows.Forms.TextBox();
+            this.tbAtletaSemis2 = new System.Windows.Forms.TextBox();
+            this.tbAtleta10 = new System.Windows.Forms.TextBox();
+            this.tbAtletaFinal1 = new System.Windows.Forms.TextBox();
+            this.tbAtleta9 = new System.Windows.Forms.TextBox();
+            this.cbAtleta1 = new System.Windows.Forms.CheckBox();
+            this.cbAtletaSemis2 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta2 = new System.Windows.Forms.CheckBox();
+            this.cbAtletaSemis1 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta3 = new System.Windows.Forms.CheckBox();
+            this.cbAtletaCuartos4 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta4 = new System.Windows.Forms.CheckBox();
+            this.cbAtletaCuartos3 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta5 = new System.Windows.Forms.CheckBox();
+            this.cbAtletaCuartos2 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta6 = new System.Windows.Forms.CheckBox();
+            this.cbAtletaCuartos1 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta7 = new System.Windows.Forms.CheckBox();
+            this.cbAtleta8 = new System.Windows.Forms.CheckBox();
             this.lblCreditos = new System.Windows.Forms.Label();
             this.imagenKarate = new System.Windows.Forms.PictureBox();
+            this.btnFixture = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.panelPrincipalOpciones.SuspendLayout();
             this.panelBtnMenu.SuspendLayout();
@@ -77,6 +138,7 @@ namespace InterfazProyecto1
             // 
             // panelOpciones
             // 
+            this.panelOpciones.Controls.Add(this.btnFixture);
             this.panelOpciones.Controls.Add(this.btnRanking);
             this.panelOpciones.Controls.Add(this.btnListarProfesor);
             this.panelOpciones.Controls.Add(this.btnListarArbitro);
@@ -368,27 +430,97 @@ namespace InterfazProyecto1
             // panelListaAtletas
             // 
             this.panelListaAtletas.BackColor = System.Drawing.Color.White;
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnTerminarRanking);
-            this.panelListaAtletas.Controls.Add(this.btnTerminarRanking);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnOrden);
-            this.panelListaAtletas.Controls.Add(this.btnOrden);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnFiltrar);
-            this.panelListaAtletas.Controls.Add(this.btnFiltrar);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnEditar);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnBaja);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnAlta);
-            this.panelListaAtletas.Controls.Add(this.panelAzulBtnRefrescar);
-            this.panelListaAtletas.Controls.Add(this.btnRefrescar);
-            this.panelListaAtletas.Controls.Add(this.btnEditar);
-            this.panelListaAtletas.Controls.Add(this.btnAlta);
-            this.panelListaAtletas.Controls.Add(this.btnBaja);
             this.panelListaAtletas.Controls.Add(this.dataGridViewAtletas);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaFinal2);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnTerminarRanking);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaFinal1);
+            this.panelListaAtletas.Controls.Add(this.btnTerminarRanking);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaFinal2);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnOrden);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaSemis4);
+            this.panelListaAtletas.Controls.Add(this.btnOrden);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaSemis3);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnFiltrar);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaSemis4);
+            this.panelListaAtletas.Controls.Add(this.btnFiltrar);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaSemis3);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnEditar);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos8);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnBaja);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos7);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnAlta);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos6);
+            this.panelListaAtletas.Controls.Add(this.panelAzulBtnRefrescar);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos5);
+            this.panelListaAtletas.Controls.Add(this.btnRefrescar);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos8);
+            this.panelListaAtletas.Controls.Add(this.btnEditar);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos7);
+            this.panelListaAtletas.Controls.Add(this.btnAlta);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos6);
+            this.panelListaAtletas.Controls.Add(this.btnBaja);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos5);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta16);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaSemis1);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta15);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta1);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta14);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta2);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta13);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta3);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta12);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta4);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta11);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta5);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta10);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta6);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta9);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta7);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta16);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta8);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta15);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos1);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta14);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos2);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta13);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos3);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta12);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaCuartos4);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta11);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaSemis2);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta10);
+            this.panelListaAtletas.Controls.Add(this.tbAtletaFinal1);
+            this.panelListaAtletas.Controls.Add(this.tbAtleta9);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta1);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaSemis2);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta2);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaSemis1);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta3);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos4);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta4);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos3);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta5);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos2);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta6);
+            this.panelListaAtletas.Controls.Add(this.cbAtletaCuartos1);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta7);
+            this.panelListaAtletas.Controls.Add(this.cbAtleta8);
             this.panelListaAtletas.Location = new System.Drawing.Point(195, 43);
             this.panelListaAtletas.MaximumSize = new System.Drawing.Size(992, 464);
             this.panelListaAtletas.MinimumSize = new System.Drawing.Size(847, 460);
             this.panelListaAtletas.Name = "panelListaAtletas";
             this.panelListaAtletas.Size = new System.Drawing.Size(950, 464);
             this.panelListaAtletas.TabIndex = 1;
+            // 
+            // cbAtletaFinal2
+            // 
+            this.cbAtletaFinal2.AutoSize = true;
+            this.cbAtletaFinal2.Location = new System.Drawing.Point(467, 208);
+            this.cbAtletaFinal2.Name = "cbAtletaFinal2";
+            this.cbAtletaFinal2.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaFinal2.TabIndex = 121;
+            this.cbAtletaFinal2.UseVisualStyleBackColor = true;
+            this.cbAtletaFinal2.CheckedChanged += new System.EventHandler(this.cbAtletaFinal2_CheckedChanged);
             // 
             // panelAzulBtnTerminarRanking
             // 
@@ -398,6 +530,16 @@ namespace InterfazProyecto1
             this.panelAzulBtnTerminarRanking.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnTerminarRanking.TabIndex = 12;
             this.panelAzulBtnTerminarRanking.Visible = false;
+            // 
+            // cbAtletaFinal1
+            // 
+            this.cbAtletaFinal1.AutoSize = true;
+            this.cbAtletaFinal1.Location = new System.Drawing.Point(467, 116);
+            this.cbAtletaFinal1.Name = "cbAtletaFinal1";
+            this.cbAtletaFinal1.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaFinal1.TabIndex = 120;
+            this.cbAtletaFinal1.UseVisualStyleBackColor = true;
+            this.cbAtletaFinal1.CheckedChanged += new System.EventHandler(this.cbAtletaFinal1_CheckedChanged);
             // 
             // btnTerminarRanking
             // 
@@ -417,6 +559,15 @@ namespace InterfazProyecto1
             this.btnTerminarRanking.Visible = false;
             this.btnTerminarRanking.Click += new System.EventHandler(this.btnTerminarRanking_Click);
             // 
+            // tbAtletaFinal2
+            // 
+            this.tbAtletaFinal2.BackColor = System.Drawing.Color.White;
+            this.tbAtletaFinal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaFinal2.Location = new System.Drawing.Point(425, 171);
+            this.tbAtletaFinal2.Name = "tbAtletaFinal2";
+            this.tbAtletaFinal2.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaFinal2.TabIndex = 119;
+            // 
             // panelAzulBtnOrden
             // 
             this.panelAzulBtnOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -425,6 +576,16 @@ namespace InterfazProyecto1
             this.panelAzulBtnOrden.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnOrden.TabIndex = 12;
             this.panelAzulBtnOrden.Visible = false;
+            // 
+            // cbAtletaSemis4
+            // 
+            this.cbAtletaSemis4.AutoSize = true;
+            this.cbAtletaSemis4.Location = new System.Drawing.Point(536, 242);
+            this.cbAtletaSemis4.Name = "cbAtletaSemis4";
+            this.cbAtletaSemis4.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaSemis4.TabIndex = 118;
+            this.cbAtletaSemis4.UseVisualStyleBackColor = true;
+            this.cbAtletaSemis4.CheckedChanged += new System.EventHandler(this.cbAtletaSemis4_CheckedChanged);
             // 
             // btnOrden
             // 
@@ -444,6 +605,16 @@ namespace InterfazProyecto1
             this.btnOrden.Visible = false;
             this.btnOrden.Click += new System.EventHandler(this.btnOrden_Click);
             // 
+            // cbAtletaSemis3
+            // 
+            this.cbAtletaSemis3.AutoSize = true;
+            this.cbAtletaSemis3.Location = new System.Drawing.Point(536, 82);
+            this.cbAtletaSemis3.Name = "cbAtletaSemis3";
+            this.cbAtletaSemis3.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaSemis3.TabIndex = 117;
+            this.cbAtletaSemis3.UseVisualStyleBackColor = true;
+            this.cbAtletaSemis3.CheckedChanged += new System.EventHandler(this.cbAtletaSemis3_CheckedChanged);
+            // 
             // panelAzulBtnFiltrar
             // 
             this.panelAzulBtnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -451,6 +622,14 @@ namespace InterfazProyecto1
             this.panelAzulBtnFiltrar.Name = "panelAzulBtnFiltrar";
             this.panelAzulBtnFiltrar.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnFiltrar.TabIndex = 10;
+            // 
+            // tbAtletaSemis4
+            // 
+            this.tbAtletaSemis4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaSemis4.Location = new System.Drawing.Point(557, 231);
+            this.tbAtletaSemis4.Name = "tbAtletaSemis4";
+            this.tbAtletaSemis4.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaSemis4.TabIndex = 116;
             // 
             // btnFiltrar
             // 
@@ -469,6 +648,14 @@ namespace InterfazProyecto1
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // tbAtletaSemis3
+            // 
+            this.tbAtletaSemis3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaSemis3.Location = new System.Drawing.Point(557, 71);
+            this.tbAtletaSemis3.Name = "tbAtletaSemis3";
+            this.tbAtletaSemis3.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaSemis3.TabIndex = 115;
+            // 
             // panelAzulBtnEditar
             // 
             this.panelAzulBtnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -476,6 +663,16 @@ namespace InterfazProyecto1
             this.panelAzulBtnEditar.Name = "panelAzulBtnEditar";
             this.panelAzulBtnEditar.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnEditar.TabIndex = 8;
+            // 
+            // cbAtletaCuartos8
+            // 
+            this.cbAtletaCuartos8.AutoSize = true;
+            this.cbAtletaCuartos8.Location = new System.Drawing.Point(683, 282);
+            this.cbAtletaCuartos8.Name = "cbAtletaCuartos8";
+            this.cbAtletaCuartos8.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos8.TabIndex = 114;
+            this.cbAtletaCuartos8.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos8.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos8_CheckedChanged);
             // 
             // panelAzulBtnBaja
             // 
@@ -485,6 +682,16 @@ namespace InterfazProyecto1
             this.panelAzulBtnBaja.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnBaja.TabIndex = 7;
             // 
+            // cbAtletaCuartos7
+            // 
+            this.cbAtletaCuartos7.AutoSize = true;
+            this.cbAtletaCuartos7.Location = new System.Drawing.Point(683, 200);
+            this.cbAtletaCuartos7.Name = "cbAtletaCuartos7";
+            this.cbAtletaCuartos7.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos7.TabIndex = 113;
+            this.cbAtletaCuartos7.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos7.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos7_CheckedChanged);
+            // 
             // panelAzulBtnAlta
             // 
             this.panelAzulBtnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -493,6 +700,16 @@ namespace InterfazProyecto1
             this.panelAzulBtnAlta.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnAlta.TabIndex = 6;
             // 
+            // cbAtletaCuartos6
+            // 
+            this.cbAtletaCuartos6.AutoSize = true;
+            this.cbAtletaCuartos6.Location = new System.Drawing.Point(683, 124);
+            this.cbAtletaCuartos6.Name = "cbAtletaCuartos6";
+            this.cbAtletaCuartos6.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos6.TabIndex = 112;
+            this.cbAtletaCuartos6.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos6.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos6_CheckedChanged);
+            // 
             // panelAzulBtnRefrescar
             // 
             this.panelAzulBtnRefrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(169)))));
@@ -500,6 +717,16 @@ namespace InterfazProyecto1
             this.panelAzulBtnRefrescar.Name = "panelAzulBtnRefrescar";
             this.panelAzulBtnRefrescar.Size = new System.Drawing.Size(37, 3);
             this.panelAzulBtnRefrescar.TabIndex = 5;
+            // 
+            // cbAtletaCuartos5
+            // 
+            this.cbAtletaCuartos5.AutoSize = true;
+            this.cbAtletaCuartos5.Location = new System.Drawing.Point(683, 40);
+            this.cbAtletaCuartos5.Name = "cbAtletaCuartos5";
+            this.cbAtletaCuartos5.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos5.TabIndex = 111;
+            this.cbAtletaCuartos5.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos5.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos5_CheckedChanged);
             // 
             // btnRefrescar
             // 
@@ -518,6 +745,38 @@ namespace InterfazProyecto1
             this.btnRefrescar.UseVisualStyleBackColor = false;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // tbAtletaCuartos8
+            // 
+            this.tbAtletaCuartos8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos8.Location = new System.Drawing.Point(704, 271);
+            this.tbAtletaCuartos8.Name = "tbAtletaCuartos8";
+            this.tbAtletaCuartos8.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos8.TabIndex = 110;
+            // 
+            // tbAtletaCuartos7
+            // 
+            this.tbAtletaCuartos7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos7.Location = new System.Drawing.Point(704, 189);
+            this.tbAtletaCuartos7.Name = "tbAtletaCuartos7";
+            this.tbAtletaCuartos7.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos7.TabIndex = 109;
+            // 
+            // tbAtletaCuartos6
+            // 
+            this.tbAtletaCuartos6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos6.Location = new System.Drawing.Point(704, 113);
+            this.tbAtletaCuartos6.Name = "tbAtletaCuartos6";
+            this.tbAtletaCuartos6.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos6.TabIndex = 108;
+            // 
+            // tbAtletaCuartos5
+            // 
+            this.tbAtletaCuartos5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos5.Location = new System.Drawing.Point(704, 29);
+            this.tbAtletaCuartos5.Name = "tbAtletaCuartos5";
+            this.tbAtletaCuartos5.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos5.TabIndex = 107;
+            // 
             // dataGridViewAtletas
             // 
             this.dataGridViewAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -525,6 +784,411 @@ namespace InterfazProyecto1
             this.dataGridViewAtletas.Name = "dataGridViewAtletas";
             this.dataGridViewAtletas.Size = new System.Drawing.Size(944, 409);
             this.dataGridViewAtletas.TabIndex = 0;
+            // 
+            // cbAtleta16
+            // 
+            this.cbAtleta16.AutoSize = true;
+            this.cbAtleta16.Location = new System.Drawing.Point(821, 299);
+            this.cbAtleta16.Name = "cbAtleta16";
+            this.cbAtleta16.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta16.TabIndex = 106;
+            this.cbAtleta16.UseVisualStyleBackColor = true;
+            this.cbAtleta16.CheckedChanged += new System.EventHandler(this.cbAtleta16_CheckedChanged);
+            // 
+            // tbAtletaSemis1
+            // 
+            this.tbAtletaSemis1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaSemis1.Location = new System.Drawing.Point(289, 71);
+            this.tbAtletaSemis1.Name = "tbAtletaSemis1";
+            this.tbAtletaSemis1.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaSemis1.TabIndex = 74;
+            // 
+            // cbAtleta15
+            // 
+            this.cbAtleta15.AutoSize = true;
+            this.cbAtleta15.Location = new System.Drawing.Point(821, 264);
+            this.cbAtleta15.Name = "cbAtleta15";
+            this.cbAtleta15.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta15.TabIndex = 105;
+            this.cbAtleta15.UseVisualStyleBackColor = true;
+            this.cbAtleta15.CheckedChanged += new System.EventHandler(this.cbAtleta15_CheckedChanged);
+            // 
+            // tbAtleta1
+            // 
+            this.tbAtleta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta1.Location = new System.Drawing.Point(8, 13);
+            this.tbAtleta1.Name = "tbAtleta1";
+            this.tbAtleta1.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta1.TabIndex = 62;
+            // 
+            // cbAtleta14
+            // 
+            this.cbAtleta14.AutoSize = true;
+            this.cbAtleta14.Location = new System.Drawing.Point(821, 219);
+            this.cbAtleta14.Name = "cbAtleta14";
+            this.cbAtleta14.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta14.TabIndex = 104;
+            this.cbAtleta14.UseVisualStyleBackColor = true;
+            this.cbAtleta14.CheckedChanged += new System.EventHandler(this.cbAtleta14_CheckedChanged);
+            // 
+            // tbAtleta2
+            // 
+            this.tbAtleta2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta2.Location = new System.Drawing.Point(8, 48);
+            this.tbAtleta2.Name = "tbAtleta2";
+            this.tbAtleta2.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta2.TabIndex = 63;
+            // 
+            // cbAtleta13
+            // 
+            this.cbAtleta13.AutoSize = true;
+            this.cbAtleta13.Location = new System.Drawing.Point(821, 184);
+            this.cbAtleta13.Name = "cbAtleta13";
+            this.cbAtleta13.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta13.TabIndex = 103;
+            this.cbAtleta13.UseVisualStyleBackColor = true;
+            this.cbAtleta13.CheckedChanged += new System.EventHandler(this.cbAtleta13_CheckedChanged);
+            // 
+            // tbAtleta3
+            // 
+            this.tbAtleta3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta3.Location = new System.Drawing.Point(8, 93);
+            this.tbAtleta3.Name = "tbAtleta3";
+            this.tbAtleta3.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta3.TabIndex = 64;
+            // 
+            // cbAtleta12
+            // 
+            this.cbAtleta12.AutoSize = true;
+            this.cbAtleta12.Location = new System.Drawing.Point(821, 140);
+            this.cbAtleta12.Name = "cbAtleta12";
+            this.cbAtleta12.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta12.TabIndex = 102;
+            this.cbAtleta12.UseVisualStyleBackColor = true;
+            this.cbAtleta12.CheckedChanged += new System.EventHandler(this.cbAtleta12_CheckedChanged);
+            // 
+            // tbAtleta4
+            // 
+            this.tbAtleta4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta4.Location = new System.Drawing.Point(8, 128);
+            this.tbAtleta4.Name = "tbAtleta4";
+            this.tbAtleta4.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta4.TabIndex = 65;
+            // 
+            // cbAtleta11
+            // 
+            this.cbAtleta11.AutoSize = true;
+            this.cbAtleta11.Location = new System.Drawing.Point(821, 105);
+            this.cbAtleta11.Name = "cbAtleta11";
+            this.cbAtleta11.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta11.TabIndex = 101;
+            this.cbAtleta11.UseVisualStyleBackColor = true;
+            this.cbAtleta11.CheckedChanged += new System.EventHandler(this.cbAtleta11_CheckedChanged);
+            // 
+            // tbAtleta5
+            // 
+            this.tbAtleta5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta5.Location = new System.Drawing.Point(8, 172);
+            this.tbAtleta5.Name = "tbAtleta5";
+            this.tbAtleta5.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta5.TabIndex = 66;
+            // 
+            // cbAtleta10
+            // 
+            this.cbAtleta10.AutoSize = true;
+            this.cbAtleta10.Location = new System.Drawing.Point(821, 60);
+            this.cbAtleta10.Name = "cbAtleta10";
+            this.cbAtleta10.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta10.TabIndex = 100;
+            this.cbAtleta10.UseVisualStyleBackColor = true;
+            this.cbAtleta10.CheckedChanged += new System.EventHandler(this.cbAtleta10_CheckedChanged);
+            // 
+            // tbAtleta6
+            // 
+            this.tbAtleta6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta6.Location = new System.Drawing.Point(8, 207);
+            this.tbAtleta6.Name = "tbAtleta6";
+            this.tbAtleta6.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta6.TabIndex = 67;
+            // 
+            // cbAtleta9
+            // 
+            this.cbAtleta9.AutoSize = true;
+            this.cbAtleta9.Location = new System.Drawing.Point(821, 25);
+            this.cbAtleta9.Name = "cbAtleta9";
+            this.cbAtleta9.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta9.TabIndex = 99;
+            this.cbAtleta9.UseVisualStyleBackColor = true;
+            this.cbAtleta9.CheckedChanged += new System.EventHandler(this.cbAtleta9_CheckedChanged);
+            // 
+            // tbAtleta7
+            // 
+            this.tbAtleta7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta7.Location = new System.Drawing.Point(8, 252);
+            this.tbAtleta7.Name = "tbAtleta7";
+            this.tbAtleta7.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta7.TabIndex = 68;
+            // 
+            // tbAtleta16
+            // 
+            this.tbAtleta16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta16.Location = new System.Drawing.Point(842, 288);
+            this.tbAtleta16.Name = "tbAtleta16";
+            this.tbAtleta16.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta16.TabIndex = 98;
+            // 
+            // tbAtleta8
+            // 
+            this.tbAtleta8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta8.Location = new System.Drawing.Point(8, 287);
+            this.tbAtleta8.Name = "tbAtleta8";
+            this.tbAtleta8.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta8.TabIndex = 69;
+            // 
+            // tbAtleta15
+            // 
+            this.tbAtleta15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta15.Location = new System.Drawing.Point(842, 253);
+            this.tbAtleta15.Name = "tbAtleta15";
+            this.tbAtleta15.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta15.TabIndex = 97;
+            // 
+            // tbAtletaCuartos1
+            // 
+            this.tbAtletaCuartos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos1.Location = new System.Drawing.Point(142, 29);
+            this.tbAtletaCuartos1.Name = "tbAtletaCuartos1";
+            this.tbAtletaCuartos1.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos1.TabIndex = 70;
+            // 
+            // tbAtleta14
+            // 
+            this.tbAtleta14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta14.Location = new System.Drawing.Point(842, 208);
+            this.tbAtleta14.Name = "tbAtleta14";
+            this.tbAtleta14.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta14.TabIndex = 96;
+            // 
+            // tbAtletaCuartos2
+            // 
+            this.tbAtletaCuartos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos2.Location = new System.Drawing.Point(142, 113);
+            this.tbAtletaCuartos2.Name = "tbAtletaCuartos2";
+            this.tbAtletaCuartos2.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos2.TabIndex = 71;
+            // 
+            // tbAtleta13
+            // 
+            this.tbAtleta13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta13.Location = new System.Drawing.Point(842, 173);
+            this.tbAtleta13.Name = "tbAtleta13";
+            this.tbAtleta13.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta13.TabIndex = 95;
+            // 
+            // tbAtletaCuartos3
+            // 
+            this.tbAtletaCuartos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos3.Location = new System.Drawing.Point(142, 189);
+            this.tbAtletaCuartos3.Name = "tbAtletaCuartos3";
+            this.tbAtletaCuartos3.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos3.TabIndex = 72;
+            // 
+            // tbAtleta12
+            // 
+            this.tbAtleta12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta12.Location = new System.Drawing.Point(842, 129);
+            this.tbAtleta12.Name = "tbAtleta12";
+            this.tbAtleta12.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta12.TabIndex = 94;
+            // 
+            // tbAtletaCuartos4
+            // 
+            this.tbAtletaCuartos4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaCuartos4.Location = new System.Drawing.Point(142, 271);
+            this.tbAtletaCuartos4.Name = "tbAtletaCuartos4";
+            this.tbAtletaCuartos4.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaCuartos4.TabIndex = 73;
+            // 
+            // tbAtleta11
+            // 
+            this.tbAtleta11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta11.Location = new System.Drawing.Point(842, 94);
+            this.tbAtleta11.Name = "tbAtleta11";
+            this.tbAtleta11.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta11.TabIndex = 93;
+            // 
+            // tbAtletaSemis2
+            // 
+            this.tbAtletaSemis2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaSemis2.Location = new System.Drawing.Point(289, 231);
+            this.tbAtletaSemis2.Name = "tbAtletaSemis2";
+            this.tbAtletaSemis2.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaSemis2.TabIndex = 75;
+            // 
+            // tbAtleta10
+            // 
+            this.tbAtleta10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta10.Location = new System.Drawing.Point(842, 49);
+            this.tbAtleta10.Name = "tbAtleta10";
+            this.tbAtleta10.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta10.TabIndex = 92;
+            // 
+            // tbAtletaFinal1
+            // 
+            this.tbAtletaFinal1.BackColor = System.Drawing.Color.White;
+            this.tbAtletaFinal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtletaFinal1.Location = new System.Drawing.Point(425, 136);
+            this.tbAtletaFinal1.Name = "tbAtletaFinal1";
+            this.tbAtletaFinal1.Size = new System.Drawing.Size(100, 29);
+            this.tbAtletaFinal1.TabIndex = 76;
+            // 
+            // tbAtleta9
+            // 
+            this.tbAtleta9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtleta9.Location = new System.Drawing.Point(842, 14);
+            this.tbAtleta9.Name = "tbAtleta9";
+            this.tbAtleta9.Size = new System.Drawing.Size(100, 29);
+            this.tbAtleta9.TabIndex = 91;
+            // 
+            // cbAtleta1
+            // 
+            this.cbAtleta1.AutoSize = true;
+            this.cbAtleta1.Location = new System.Drawing.Point(113, 24);
+            this.cbAtleta1.Name = "cbAtleta1";
+            this.cbAtleta1.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta1.TabIndex = 77;
+            this.cbAtleta1.UseVisualStyleBackColor = true;
+            this.cbAtleta1.CheckedChanged += new System.EventHandler(this.cbAtleta1_CheckedChanged);
+            // 
+            // cbAtletaSemis2
+            // 
+            this.cbAtletaSemis2.AutoSize = true;
+            this.cbAtletaSemis2.Location = new System.Drawing.Point(395, 242);
+            this.cbAtletaSemis2.Name = "cbAtletaSemis2";
+            this.cbAtletaSemis2.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaSemis2.TabIndex = 90;
+            this.cbAtletaSemis2.UseVisualStyleBackColor = true;
+            this.cbAtletaSemis2.CheckedChanged += new System.EventHandler(this.cbAtletaSemis2_CheckedChanged);
+            // 
+            // cbAtleta2
+            // 
+            this.cbAtleta2.AutoSize = true;
+            this.cbAtleta2.Location = new System.Drawing.Point(113, 59);
+            this.cbAtleta2.Name = "cbAtleta2";
+            this.cbAtleta2.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta2.TabIndex = 78;
+            this.cbAtleta2.UseVisualStyleBackColor = true;
+            this.cbAtleta2.CheckedChanged += new System.EventHandler(this.cbAtleta2_CheckedChanged);
+            // 
+            // cbAtletaSemis1
+            // 
+            this.cbAtletaSemis1.AutoSize = true;
+            this.cbAtletaSemis1.Location = new System.Drawing.Point(395, 82);
+            this.cbAtletaSemis1.Name = "cbAtletaSemis1";
+            this.cbAtletaSemis1.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaSemis1.TabIndex = 89;
+            this.cbAtletaSemis1.UseVisualStyleBackColor = true;
+            this.cbAtletaSemis1.CheckedChanged += new System.EventHandler(this.cbAtletaSemis1_CheckedChanged);
+            // 
+            // cbAtleta3
+            // 
+            this.cbAtleta3.AutoSize = true;
+            this.cbAtleta3.Location = new System.Drawing.Point(113, 104);
+            this.cbAtleta3.Name = "cbAtleta3";
+            this.cbAtleta3.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta3.TabIndex = 79;
+            this.cbAtleta3.UseVisualStyleBackColor = true;
+            this.cbAtleta3.CheckedChanged += new System.EventHandler(this.cbAtleta3_CheckedChanged);
+            // 
+            // cbAtletaCuartos4
+            // 
+            this.cbAtletaCuartos4.AutoSize = true;
+            this.cbAtletaCuartos4.Location = new System.Drawing.Point(248, 282);
+            this.cbAtletaCuartos4.Name = "cbAtletaCuartos4";
+            this.cbAtletaCuartos4.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos4.TabIndex = 88;
+            this.cbAtletaCuartos4.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos4.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos4_CheckedChanged);
+            // 
+            // cbAtleta4
+            // 
+            this.cbAtleta4.AutoSize = true;
+            this.cbAtleta4.Location = new System.Drawing.Point(113, 139);
+            this.cbAtleta4.Name = "cbAtleta4";
+            this.cbAtleta4.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta4.TabIndex = 80;
+            this.cbAtleta4.UseVisualStyleBackColor = true;
+            this.cbAtleta4.CheckedChanged += new System.EventHandler(this.cbAtleta4_CheckedChanged);
+            // 
+            // cbAtletaCuartos3
+            // 
+            this.cbAtletaCuartos3.AutoSize = true;
+            this.cbAtletaCuartos3.Location = new System.Drawing.Point(248, 200);
+            this.cbAtletaCuartos3.Name = "cbAtletaCuartos3";
+            this.cbAtletaCuartos3.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos3.TabIndex = 87;
+            this.cbAtletaCuartos3.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos3.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos3_CheckedChanged);
+            // 
+            // cbAtleta5
+            // 
+            this.cbAtleta5.AutoSize = true;
+            this.cbAtleta5.Location = new System.Drawing.Point(113, 183);
+            this.cbAtleta5.Name = "cbAtleta5";
+            this.cbAtleta5.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta5.TabIndex = 81;
+            this.cbAtleta5.UseVisualStyleBackColor = true;
+            this.cbAtleta5.CheckedChanged += new System.EventHandler(this.cbAtleta5_CheckedChanged);
+            // 
+            // cbAtletaCuartos2
+            // 
+            this.cbAtletaCuartos2.AutoSize = true;
+            this.cbAtletaCuartos2.Location = new System.Drawing.Point(248, 124);
+            this.cbAtletaCuartos2.Name = "cbAtletaCuartos2";
+            this.cbAtletaCuartos2.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos2.TabIndex = 86;
+            this.cbAtletaCuartos2.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos2.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos2_CheckedChanged);
+            // 
+            // cbAtleta6
+            // 
+            this.cbAtleta6.AutoSize = true;
+            this.cbAtleta6.Location = new System.Drawing.Point(113, 218);
+            this.cbAtleta6.Name = "cbAtleta6";
+            this.cbAtleta6.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta6.TabIndex = 82;
+            this.cbAtleta6.UseVisualStyleBackColor = true;
+            this.cbAtleta6.CheckedChanged += new System.EventHandler(this.cbAtleta6_CheckedChanged);
+            // 
+            // cbAtletaCuartos1
+            // 
+            this.cbAtletaCuartos1.AutoSize = true;
+            this.cbAtletaCuartos1.Location = new System.Drawing.Point(248, 40);
+            this.cbAtletaCuartos1.Name = "cbAtletaCuartos1";
+            this.cbAtletaCuartos1.Size = new System.Drawing.Size(15, 14);
+            this.cbAtletaCuartos1.TabIndex = 85;
+            this.cbAtletaCuartos1.UseVisualStyleBackColor = true;
+            this.cbAtletaCuartos1.CheckedChanged += new System.EventHandler(this.cbAtletaCuartos1_CheckedChanged);
+            // 
+            // cbAtleta7
+            // 
+            this.cbAtleta7.AutoSize = true;
+            this.cbAtleta7.Location = new System.Drawing.Point(113, 263);
+            this.cbAtleta7.Name = "cbAtleta7";
+            this.cbAtleta7.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta7.TabIndex = 83;
+            this.cbAtleta7.UseVisualStyleBackColor = true;
+            this.cbAtleta7.CheckedChanged += new System.EventHandler(this.cbAtleta7_CheckedChanged);
+            // 
+            // cbAtleta8
+            // 
+            this.cbAtleta8.AutoSize = true;
+            this.cbAtleta8.Location = new System.Drawing.Point(113, 298);
+            this.cbAtleta8.Name = "cbAtleta8";
+            this.cbAtleta8.Size = new System.Drawing.Size(15, 14);
+            this.cbAtleta8.TabIndex = 84;
+            this.cbAtleta8.UseVisualStyleBackColor = true;
+            this.cbAtleta8.CheckedChanged += new System.EventHandler(this.cbAtleta8_CheckedChanged);
             // 
             // lblCreditos
             // 
@@ -547,6 +1211,27 @@ namespace InterfazProyecto1
             this.imagenKarate.TabIndex = 11;
             this.imagenKarate.TabStop = false;
             // 
+            // btnFixture
+            // 
+            this.btnFixture.BackColor = System.Drawing.Color.Transparent;
+            this.btnFixture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFixture.FlatAppearance.BorderSize = 0;
+            this.btnFixture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFixture.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFixture.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFixture.Image = ((System.Drawing.Image)(resources.GetObject("btnFixture.Image")));
+            this.btnFixture.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFixture.Location = new System.Drawing.Point(5, 233);
+            this.btnFixture.MaximumSize = new System.Drawing.Size(158, 46);
+            this.btnFixture.MinimumSize = new System.Drawing.Size(47, 46);
+            this.btnFixture.Name = "btnFixture";
+            this.btnFixture.Size = new System.Drawing.Size(158, 46);
+            this.btnFixture.TabIndex = 9;
+            this.btnFixture.Text = "           Fixture";
+            this.btnFixture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFixture.UseVisualStyleBackColor = false;
+            this.btnFixture.Click += new System.EventHandler(this.btnFixture_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,6 +1253,7 @@ namespace InterfazProyecto1
             this.panelSuperiorVentana.ResumeLayout(false);
             this.panelSuperiorVentana.PerformLayout();
             this.panelListaAtletas.ResumeLayout(false);
+            this.panelListaAtletas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAtletas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenKarate)).EndInit();
             this.ResumeLayout(false);
@@ -612,5 +1298,66 @@ namespace InterfazProyecto1
         private System.Windows.Forms.Button btnOrden;
         private System.Windows.Forms.Panel panelAzulBtnTerminarRanking;
         private System.Windows.Forms.Button btnTerminarRanking;
+        private System.Windows.Forms.CheckBox cbAtletaFinal2;
+        private System.Windows.Forms.CheckBox cbAtletaFinal1;
+        private System.Windows.Forms.TextBox tbAtletaFinal2;
+        private System.Windows.Forms.CheckBox cbAtletaSemis4;
+        private System.Windows.Forms.CheckBox cbAtletaSemis3;
+        private System.Windows.Forms.TextBox tbAtletaSemis4;
+        private System.Windows.Forms.TextBox tbAtletaSemis3;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos8;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos7;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos6;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos5;
+        private System.Windows.Forms.TextBox tbAtletaCuartos8;
+        private System.Windows.Forms.TextBox tbAtletaCuartos7;
+        private System.Windows.Forms.TextBox tbAtletaCuartos6;
+        private System.Windows.Forms.TextBox tbAtletaCuartos5;
+        private System.Windows.Forms.CheckBox cbAtleta16;
+        private System.Windows.Forms.TextBox tbAtletaSemis1;
+        private System.Windows.Forms.CheckBox cbAtleta15;
+        private System.Windows.Forms.TextBox tbAtleta1;
+        private System.Windows.Forms.CheckBox cbAtleta14;
+        private System.Windows.Forms.TextBox tbAtleta2;
+        private System.Windows.Forms.CheckBox cbAtleta13;
+        private System.Windows.Forms.TextBox tbAtleta3;
+        private System.Windows.Forms.CheckBox cbAtleta12;
+        private System.Windows.Forms.TextBox tbAtleta4;
+        private System.Windows.Forms.CheckBox cbAtleta11;
+        private System.Windows.Forms.TextBox tbAtleta5;
+        private System.Windows.Forms.CheckBox cbAtleta10;
+        private System.Windows.Forms.TextBox tbAtleta6;
+        private System.Windows.Forms.CheckBox cbAtleta9;
+        private System.Windows.Forms.TextBox tbAtleta7;
+        private System.Windows.Forms.TextBox tbAtleta16;
+        private System.Windows.Forms.TextBox tbAtleta8;
+        private System.Windows.Forms.TextBox tbAtleta15;
+        private System.Windows.Forms.TextBox tbAtletaCuartos1;
+        private System.Windows.Forms.TextBox tbAtleta14;
+        private System.Windows.Forms.TextBox tbAtletaCuartos2;
+        private System.Windows.Forms.TextBox tbAtleta13;
+        private System.Windows.Forms.TextBox tbAtletaCuartos3;
+        private System.Windows.Forms.TextBox tbAtleta12;
+        private System.Windows.Forms.TextBox tbAtletaCuartos4;
+        private System.Windows.Forms.TextBox tbAtleta11;
+        private System.Windows.Forms.TextBox tbAtletaSemis2;
+        private System.Windows.Forms.TextBox tbAtleta10;
+        private System.Windows.Forms.TextBox tbAtletaFinal1;
+        private System.Windows.Forms.TextBox tbAtleta9;
+        private System.Windows.Forms.CheckBox cbAtleta1;
+        private System.Windows.Forms.CheckBox cbAtletaSemis2;
+        private System.Windows.Forms.CheckBox cbAtleta2;
+        private System.Windows.Forms.CheckBox cbAtletaSemis1;
+        private System.Windows.Forms.CheckBox cbAtleta3;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos4;
+        private System.Windows.Forms.CheckBox cbAtleta4;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos3;
+        private System.Windows.Forms.CheckBox cbAtleta5;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos2;
+        private System.Windows.Forms.CheckBox cbAtleta6;
+        private System.Windows.Forms.CheckBox cbAtletaCuartos1;
+        private System.Windows.Forms.CheckBox cbAtleta7;
+        private System.Windows.Forms.CheckBox cbAtleta8;
+        private System.Windows.Forms.Button btnFixture;
     }
 }
