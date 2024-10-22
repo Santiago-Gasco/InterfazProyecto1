@@ -4,11 +4,13 @@ using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace InterfazProyecto1
 {
     public partial class FormMenu : Form
     {
+        string query;
         public Point mousePos;
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=db_qubeware;"; //esta variable de tipo string contiene todo lo necesario para poder conectar el programa con la base de datos
         bool menuExpandido = true; //esta variable de tipo bool determina el estado del menu, es decir si se muestra de forma parcial o de forma total
@@ -627,12 +629,14 @@ namespace InterfazProyecto1
             btnFiltrar.Visible = true;
             btnOrden.Visible = false;
             btnTerminarRanking.Visible = false;
+            btnGuardar.Visible = false;
             panelAzulBtnRefrescar.Visible = true;
             panelAzulBtnAlta.Visible = true;
             panelAzulBtnBaja.Visible = true;
             panelAzulBtnEditar.Visible = true;
             panelAzulBtnFiltrar.Visible = true;
             panelAzulBtnOrden.Visible = false;
+            panelAzulBtnGuardar.Visible = false;
             panelAzulBtnTerminarRanking.Visible = false;
         }
 
@@ -647,6 +651,7 @@ namespace InterfazProyecto1
             btnFiltrar.Visible = false;
             btnOrden.Visible = true;
             btnTerminarRanking.Visible = true;
+            btnGuardar.Visible = false;
             panelAzulBtnRefrescar.Visible = true;
             panelAzulBtnAlta.Visible = false;
             panelAzulBtnBaja.Visible = false;
@@ -654,11 +659,13 @@ namespace InterfazProyecto1
             panelAzulBtnFiltrar.Visible = false;
             panelAzulBtnOrden.Visible = true;
             panelAzulBtnTerminarRanking.Visible = true;
+            panelAzulBtnGuardar.Visible = false;
             dataGridViewAtletas.Visible = true;
         }
 
         private void btnFixture_Click(object sender, EventArgs e)
         {
+            panelAbierto = 4;
             btnRefrescar.Visible = false;
             btnAlta.Visible = false;
             btnBaja.Visible = false;
@@ -666,6 +673,7 @@ namespace InterfazProyecto1
             btnFiltrar.Visible = false;
             btnOrden.Visible = false;
             btnTerminarRanking.Visible = false;
+            btnGuardar.Visible = true;
             panelAzulBtnRefrescar.Visible = false;
             panelAzulBtnAlta.Visible = false;
             panelAzulBtnBaja.Visible = false;
@@ -673,6 +681,7 @@ namespace InterfazProyecto1
             panelAzulBtnFiltrar.Visible = false;
             panelAzulBtnOrden.Visible = false;
             panelAzulBtnTerminarRanking.Visible = false;
+            panelAzulBtnGuardar.Visible = true;
             dataGridViewAtletas.Visible = false;
         }
 
@@ -700,6 +709,163 @@ namespace InterfazProyecto1
         {
             FormTerminarRanking formTerminarRanking = new FormTerminarRanking(this); // Crea una nueva instancia del formulario para terminar el ranking de atletas
             formTerminarRanking.Show(); // Muestra el formulario para terminar el ranking de atletas
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            query = "INSERT INTO tb_eventos (Nombre, Participantes, Cuartos, Semis, Final) VALUES (@Nombre, @Participantes, @Cuartos, @Semis, @Final)";
+
+            GuardarFixture();
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            query = "SELECT Nombre, Participantes, Cuartos, Semis, Final FROM tb_eventos WHERE Id_evento = 1";
+
+            CargarFixture();
+        }
+
+        private void GuardarFixture()
+        {
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    databaseConnection.Open(); // Abre la conexión
+                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
+                    {
+                        commandDatabase.CommandTimeout = 60;
+
+                        // Cambia los valores del atleta a los valores de TextBox
+                        string participantes = tbAtleta1.Text + "-" + tbAtleta2.Text + "-" + tbAtleta3.Text + "-" + tbAtleta4.Text + "-" + tbAtleta5.Text + "-" + tbAtleta6.Text + "-" + tbAtleta7.Text + "-" + tbAtleta8.Text + "-" + tbAtleta9.Text + "-" + tbAtleta10.Text + "-" + tbAtleta11.Text + "-" + tbAtleta12.Text + "-" + tbAtleta13.Text + "-" + tbAtleta14.Text + "-" + tbAtleta15.Text + "-" + tbAtleta16.Text;
+                        string cuartos = tbAtletaCuartos1.Text + "-" + tbAtletaCuartos2.Text + "-" + tbAtletaCuartos3.Text + "-" + tbAtletaCuartos4.Text + "-" + tbAtletaCuartos5.Text + "-" + tbAtletaCuartos6.Text + "-" + tbAtletaCuartos7.Text + "-" + tbAtletaCuartos8.Text;
+                        string semis = tbAtletaSemis1.Text + "-" + tbAtletaSemis2.Text + "-" + tbAtletaSemis3.Text + "-" + tbAtletaSemis4.Text;
+                        string final = tbAtletaFinal1.Text + "-" + tbAtletaFinal2.Text;
+                        commandDatabase.Parameters.AddWithValue("@Nombre", tbNombreFixture.Text);
+                        commandDatabase.Parameters.AddWithValue("@Participantes", participantes);
+                        commandDatabase.Parameters.AddWithValue("@Cuartos", cuartos);
+                        commandDatabase.Parameters.AddWithValue("@Semis", semis);
+                        commandDatabase.Parameters.AddWithValue("@Final", final);
+
+                        int rowsAffected = commandDatabase.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Fixture guardado exitosamente!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo crear el fixture. Inténtelo de nuevo.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inesperado: " + ex.Message);
+                }
+            }
+        }
+
+        private void CargarFixture()
+        {
+            using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    databaseConnection.Open(); // Abre la conexión
+                    using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
+                    {
+                        using (MySqlDataReader reader = commandDatabase.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                commandDatabase.CommandTimeout = 60;
+
+                                string participantes = reader["Participantes"].ToString();
+                                List<string> listaParticipantes = new List<string>();
+
+                                string atleta = "";
+                                int numAtleta = 0;
+
+                                for (int i = 0; i < participantes.Length; i++)
+                                {
+                                    char a = participantes[i];
+
+                                    if (a == '-')
+                                    {
+                                        switch(numAtleta)
+                                        {
+                                            case 0:
+                                                tbAtleta1.Text = atleta;
+                                                break;
+                                            case 1:
+                                                tbAtleta2.Text = atleta;
+                                                break;
+                                            case 2:
+                                                tbAtleta3.Text = atleta;
+                                                break;
+                                            case 3:
+                                                tbAtleta4.Text = atleta;
+                                                break;
+                                            case 4:
+                                                tbAtleta5.Text = atleta;
+                                                break;
+                                            case 5:
+                                                tbAtleta6.Text = atleta;
+                                                break;
+                                            case 6:
+                                                tbAtleta7.Text = atleta;
+                                                break;
+                                            case 7:
+                                                tbAtleta8.Text = atleta;
+                                                break;
+                                            case 8:
+                                                tbAtleta9.Text = atleta;
+                                                break;
+                                            case 9:
+                                                tbAtleta10.Text = atleta;
+                                                break;
+                                            case 10:
+                                                tbAtleta11.Text = atleta;
+                                                break;
+                                            case 11:
+                                                tbAtleta12.Text = atleta;
+                                                break;
+                                            case 12:
+                                                tbAtleta13.Text = atleta;
+                                                break;
+                                            case 13:
+                                                tbAtleta14.Text = atleta;
+                                                break;
+                                            case 14:
+                                                tbAtleta15.Text = atleta;
+                                                break;
+                                            case 15:
+                                                tbAtleta16.Text = atleta;
+                                                break;
+                                        }
+                                        atleta = "";
+                                        numAtleta++;
+                                    }
+                                    else
+                                    {
+                                        atleta += a;
+                                    }
+                                }
+
+                                for (int a = 0; a < listaParticipantes.Count; a++)
+                                {
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inesperado: " + ex.Message);
+                }
+            }
         }
 
         private void cbAtleta1_CheckedChanged(object sender, EventArgs e)
