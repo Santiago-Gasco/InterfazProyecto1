@@ -4,6 +4,7 @@ using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 using System.Collections;
 
 namespace InterfazProyecto1
@@ -713,17 +714,19 @@ namespace InterfazProyecto1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            query = "INSERT INTO tb_eventos (Nombre, Participantes, Cuartos, Semis, Final) VALUES (@Nombre, @Participantes, @Cuartos, @Semis, @Final)";
+            query = "INSERT INTO tb_eventos (Nombre, Participantes, Orden) VALUES (@Nombre, @Participantes, @Orden)";
 
             GuardarFixture();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            query = "SELECT Nombre, Participantes, Cuartos, Semis, Final FROM tb_eventos WHERE Id_evento = 1";
+            query = "SELECT Nombre, Participantes, Orden FROM tb_eventos WHERE Id_evento = 1";
 
             CargarFixture();
         }
+
+        int cbHabilitado;
 
         private void GuardarFixture()
         {
@@ -737,15 +740,33 @@ namespace InterfazProyecto1
                         commandDatabase.CommandTimeout = 60;
 
                         // Cambia los valores del atleta a los valores de TextBox
-                        string participantes = tbAtleta1.Text + "-" + tbAtleta2.Text + "-" + tbAtleta3.Text + "-" + tbAtleta4.Text + "-" + tbAtleta5.Text + "-" + tbAtleta6.Text + "-" + tbAtleta7.Text + "-" + tbAtleta8.Text + "-" + tbAtleta9.Text + "-" + tbAtleta10.Text + "-" + tbAtleta11.Text + "-" + tbAtleta12.Text + "-" + tbAtleta13.Text + "-" + tbAtleta14.Text + "-" + tbAtleta15.Text + "-" + tbAtleta16.Text;
-                        string cuartos = tbAtletaCuartos1.Text + "-" + tbAtletaCuartos2.Text + "-" + tbAtletaCuartos3.Text + "-" + tbAtletaCuartos4.Text + "-" + tbAtletaCuartos5.Text + "-" + tbAtletaCuartos6.Text + "-" + tbAtletaCuartos7.Text + "-" + tbAtletaCuartos8.Text;
-                        string semis = tbAtletaSemis1.Text + "-" + tbAtletaSemis2.Text + "-" + tbAtletaSemis3.Text + "-" + tbAtletaSemis4.Text;
-                        string final = tbAtletaFinal1.Text + "-" + tbAtletaFinal2.Text;
+
+                        int cbNum = 1;
+                        string cadenaValoresCheckBox = "";
+                        for (int i = 0; i <= 14; i++)
+                        {
+                            string cbNombre = "cbAtleta" + cbNum.ToString();
+                            CheckBox cb1 = this.Controls.Find(cbNombre, true).FirstOrDefault() as CheckBox;
+
+                            cbNum++;
+                            string cbNombre2 = "cbAtleta" + cbNum.ToString();
+                            CheckBox cb2 = this.Controls.Find(cbNombre2, true).FirstOrDefault() as CheckBox;
+
+                            // Verificar que los CheckBox no sean null antes de usarlos
+                            if (cb1 != null && cb2 != null)
+                            {
+                                VerificarCheckBoxHabilitado(cb1, cb2);
+                                cadenaValoresCheckBox += cbHabilitado.ToString() + "-";
+                            }
+
+                            cbNum++;
+                        }
+
+                        string participantes = tbAtleta1.Text + "-" + tbAtleta2.Text + "-" + tbAtleta3.Text + "-" + tbAtleta4.Text + "-" + tbAtleta5.Text + "-" + tbAtleta6.Text + "-" + tbAtleta7.Text + "-" + tbAtleta8.Text + "-" + tbAtleta9.Text + "-" + tbAtleta10.Text + "-" + tbAtleta11.Text + "-" + tbAtleta12.Text + "-" + tbAtleta13.Text + "-" + tbAtleta14.Text + "-" + tbAtleta15.Text + "-" + tbAtleta16.Text + "-";
+                        string orden = cadenaValoresCheckBox;
                         commandDatabase.Parameters.AddWithValue("@Nombre", tbNombreFixture.Text);
                         commandDatabase.Parameters.AddWithValue("@Participantes", participantes);
-                        commandDatabase.Parameters.AddWithValue("@Cuartos", cuartos);
-                        commandDatabase.Parameters.AddWithValue("@Semis", semis);
-                        commandDatabase.Parameters.AddWithValue("@Final", final);
+                        commandDatabase.Parameters.AddWithValue("@Orden", orden);
 
                         int rowsAffected = commandDatabase.ExecuteNonQuery();
 
@@ -782,6 +803,7 @@ namespace InterfazProyecto1
                                 commandDatabase.CommandTimeout = 60;
 
                                 string participantes = reader["Participantes"].ToString();
+                                string orden = reader["Orden"].ToString();
                                 List<string> listaParticipantes = new List<string>();
 
                                 string atleta = "";
@@ -793,7 +815,7 @@ namespace InterfazProyecto1
 
                                     if (a == '-')
                                     {
-                                        switch(numAtleta)
+                                        switch (numAtleta)
                                         {
                                             case 0:
                                                 tbAtleta1.Text = atleta;
@@ -853,9 +875,26 @@ namespace InterfazProyecto1
                                     }
                                 }
 
-                                for (int a = 0; a < listaParticipantes.Count; a++)
+                                int cbNum = 0;
+
+                                for (int a = 0; a < orden.Length; a++)
                                 {
-                                    
+                                    char o = orden[a];
+
+                                    if (o != '-')
+                                    {
+                                        string cbNombre = "cbAtleta" + cbNum.ToString();
+                                        CheckBox cb1 = this.Controls.Find(cbNombre, true).FirstOrDefault() as CheckBox;
+
+                                        cbNum++;
+                                        string cbNombre2 = "cbAtleta" + cbNum.ToString();
+                                        CheckBox cb2 = this.Controls.Find(cbNombre2, true).FirstOrDefault() as CheckBox;
+
+                                        if (cb1 != null && cb2 != null)
+                                        {
+                                            CambiarCheckBox(cb1, cb2);
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -868,488 +907,206 @@ namespace InterfazProyecto1
             }
         }
 
-        private void cbAtleta1_CheckedChanged(object sender, EventArgs e)
+        private void CambiarCheckBox(CheckBox cb1, CheckBox cb2, TextBox tb1, TextBox tb2)
         {
-            if (cbAtleta1.Checked == true)
+            if (cb1.Checked == true)
             {
-                tbAtletaCuartos1.Text = tbAtleta1.Text;
-                cbAtleta2.Enabled = false;
+                tb1.Text = tb2.Text;
+                cb2.Enabled = false;
             }
 
-            if (cbAtleta1.Checked == false && cbAtleta2.Checked == false)
+            if (cb1.Checked == false && cb2.Checked == false)
             {
-                cbAtleta1.Enabled = true;
-                cbAtleta2.Enabled = true;
-                tbAtletaCuartos1.Text = "";
+                cb1.Enabled = true;
+                cb2.Enabled = true;
+                tb1.Text = "";
             }
+        }
+
+        private void FinalCheckBox(CheckBox cb1, CheckBox cb2, TextBox tb1, TextBox tb2)
+        {
+            if (cb1.Checked == true)
+            {
+                tb1.BackColor = Color.Yellow;
+                tb2.BackColor = Color.Gray;
+                cb2.Enabled = false;
+            }
+
+            if (cb1.Checked == false && cb2.Checked == false)
+            {
+                cb1.Enabled = true;
+                cb2.Enabled = true;
+                tb1.BackColor = Color.White;
+                tb2.BackColor = Color.White;
+            }
+        }
+
+        private void VerificarCheckBoxHabilitado(CheckBox cb1, CheckBox cb2)
+        {
+            // Verifica que uno de los dos checkbox este activado, si ninguno esta activado
+
+            if (cb1.Checked == true)
+            {
+                cbHabilitado = 0;
+            }
+            else if (cb2.Checked == true)
+            {
+                cbHabilitado = 1;
+            }
+            else
+            {
+                cbHabilitado = 2;
+            }
+        }
+
+        private void cbAtleta1_CheckedChanged(object sender, EventArgs e)
+        {
+            CambiarCheckBox(cbAtleta1, cbAtleta2, tbAtleta17, tbAtleta1);
         }
 
         private void cbAtleta2_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta2.Checked == true)
-            {
-                tbAtletaCuartos1.Text = tbAtleta2.Text;
-                cbAtleta1.Enabled = false;
-            }
-
-            if (cbAtleta1.Checked == false && cbAtleta2.Checked == false)
-            {
-                cbAtleta1.Enabled = true;
-                cbAtleta2.Enabled = true;
-                tbAtletaCuartos1.Text = "";
-            }
+            CambiarCheckBox(cbAtleta2, cbAtleta1, tbAtleta17, tbAtleta2);
         }
 
         private void cbAtleta3_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta3.Checked == true)
-            {
-                tbAtletaCuartos2.Text = tbAtleta3.Text;
-                cbAtleta4.Enabled = false;
-            }
-
-            if (cbAtleta3.Checked == false && cbAtleta4.Checked == false)
-            {
-                cbAtleta3.Enabled = true;
-                cbAtleta4.Enabled = true;
-                tbAtletaCuartos2.Text = "";
-            }
+            CambiarCheckBox(cbAtleta3, cbAtleta4, tbAtletaCuartos2, tbAtleta3);
         }
 
         private void cbAtleta4_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta4.Checked == true)
-            {
-                tbAtletaCuartos2.Text = tbAtleta4.Text;
-                cbAtleta3.Enabled = false;
-            }
-
-            if (cbAtleta3.Checked == false && cbAtleta4.Checked == false)
-            {
-                cbAtleta3.Enabled = true;
-                cbAtleta4.Enabled = true;
-                tbAtletaCuartos2.Text = "";
-            }
+            CambiarCheckBox(cbAtleta4, cbAtleta3, tbAtletaCuartos2, tbAtleta4);
         }
 
         private void cbAtleta5_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta5.Checked == true)
-            {
-                tbAtletaCuartos3.Text = tbAtleta5.Text;
-                cbAtleta6.Enabled = false;
-            }
-
-            if (cbAtleta5.Checked == false && cbAtleta6.Checked == false)
-            {
-                cbAtleta5.Enabled = true;
-                cbAtleta6.Enabled = true;
-                tbAtletaCuartos3.Text = "";
-            }
+            CambiarCheckBox(cbAtleta5, cbAtleta6, tbAtletaCuartos3, tbAtleta5);
         }
 
         private void cbAtleta6_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta6.Checked == true)
-            {
-                tbAtletaCuartos3.Text = tbAtleta6.Text;
-                cbAtleta5.Enabled = false;
-            }
-
-            if (cbAtleta5.Checked == false && cbAtleta6.Checked == false)
-            {
-                cbAtleta5.Enabled = true;
-                cbAtleta6.Enabled = true;
-                tbAtletaCuartos3.Text = "";
-            }
+            CambiarCheckBox(cbAtleta6, cbAtleta5, tbAtletaCuartos3, tbAtleta6);
         }
 
         private void cbAtleta7_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta7.Checked == true)
-            {
-                tbAtletaCuartos4.Text = tbAtleta7.Text;
-                cbAtleta8.Enabled = false;
-            }
-
-            if (cbAtleta7.Checked == false && cbAtleta8.Checked == false)
-            {
-                cbAtleta7.Enabled = true;
-                cbAtleta8.Enabled = true;
-                tbAtletaCuartos4.Text = "";
-            }
+            CambiarCheckBox(cbAtleta7, cbAtleta8, tbAtletaCuartos4, tbAtleta7);
         }
 
         private void cbAtleta8_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta8.Checked == true)
-            {
-                tbAtletaCuartos4.Text = tbAtleta8.Text;
-                cbAtleta7.Enabled = false;
-            }
-
-            if (cbAtleta7.Checked == false && cbAtleta8.Checked == false)
-            {
-                cbAtleta7.Enabled = true;
-                cbAtleta8.Enabled = true;
-                tbAtletaCuartos4.Text = "";
-            }
+            CambiarCheckBox(cbAtleta8, cbAtleta7, tbAtletaCuartos4, tbAtleta8);
         }
 
         private void cbAtleta9_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta9.Checked == true)
-            {
-                tbAtletaCuartos5.Text = tbAtleta9.Text;
-                cbAtleta10.Enabled = false;
-            }
-
-            if (cbAtleta9.Checked == false && cbAtleta10.Checked == false)
-            {
-                cbAtleta9.Enabled = true;
-                cbAtleta10.Enabled = true;
-                tbAtletaCuartos5.Text = "";
-            }
+            CambiarCheckBox(cbAtleta9, cbAtleta10, tbAtletaCuartos5, tbAtleta9);
         }
 
         private void cbAtleta10_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta10.Checked == true)
-            {
-                tbAtletaCuartos5.Text = tbAtleta10.Text;
-                cbAtleta9.Enabled = false;
-            }
-
-            if (cbAtleta9.Checked == false && cbAtleta10.Checked == false)
-            {
-                cbAtleta9.Enabled = true;
-                cbAtleta10.Enabled = true;
-                tbAtletaCuartos5.Text = "";
-            }
+            CambiarCheckBox(cbAtleta10, cbAtleta9, tbAtletaCuartos5, tbAtleta10);
         }
 
         private void cbAtleta11_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta11.Checked == true)
-            {
-                tbAtletaCuartos6.Text = tbAtleta11.Text;
-                cbAtleta12.Enabled = false;
-            }
-
-            if (cbAtleta11.Checked == false && cbAtleta12.Checked == false)
-            {
-                cbAtleta11.Enabled = true;
-                cbAtleta12.Enabled = true;
-                tbAtletaCuartos6.Text = "";
-            }
+            CambiarCheckBox(cbAtleta11, cbAtleta12, tbAtletaCuartos6, tbAtleta11);
         }
 
         private void cbAtleta12_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta12.Checked == true)
-            {
-                tbAtletaCuartos6.Text = tbAtleta12.Text;
-                cbAtleta11.Enabled = false;
-            }
-
-            if (cbAtleta11.Checked == false && cbAtleta12.Checked == false)
-            {
-                cbAtleta11.Enabled = true;
-                cbAtleta12.Enabled = true;
-                tbAtletaCuartos6.Text = "";
-            }
+            CambiarCheckBox(cbAtleta12, cbAtleta11, tbAtletaCuartos6, tbAtleta12);
         }
 
         private void cbAtleta13_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta13.Checked == true)
-            {
-                tbAtletaCuartos7.Text = tbAtleta13.Text;
-                cbAtleta14.Enabled = false;
-            }
-
-            if (cbAtleta13.Checked == false && cbAtleta14.Checked == false)
-            {
-                cbAtleta13.Enabled = true;
-                cbAtleta14.Enabled = true;
-                tbAtletaCuartos7.Text = "";
-            }
+            CambiarCheckBox(cbAtleta13, cbAtleta14, tbAtletaCuartos7, tbAtleta13);
         }
 
         private void cbAtleta14_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta14.Checked == true)
-            {
-                tbAtletaCuartos7.Text = tbAtleta14.Text;
-                cbAtleta13.Enabled = false;
-            }
-
-            if (cbAtleta13.Checked == false && cbAtleta14.Checked == false)
-            {
-                cbAtleta13.Enabled = true;
-                cbAtleta14.Enabled = true;
-                tbAtletaCuartos7.Text = "";
-            }
+            CambiarCheckBox(cbAtleta14, cbAtleta13, tbAtletaCuartos7, tbAtleta14);
         }
 
         private void cbAtleta15_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta15.Checked == true)
-            {
-                tbAtletaCuartos8.Text = tbAtleta15.Text;
-                cbAtleta16.Enabled = false;
-            }
-
-            if (cbAtleta15.Checked == false && cbAtleta16.Checked == false)
-            {
-                cbAtleta15.Enabled = true;
-                cbAtleta16.Enabled = true;
-                tbAtletaCuartos8.Text = "";
-            }
+            CambiarCheckBox(cbAtleta15, cbAtleta16, tbAtletaCuartos8, tbAtleta15);
         }
 
         private void cbAtleta16_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtleta16.Checked == true)
-            {
-                tbAtletaCuartos8.Text = tbAtleta16.Text;
-                cbAtleta15.Enabled = false;
-            }
-
-            if (cbAtleta15.Checked == false && cbAtleta16.Checked == false)
-            {
-                cbAtleta15.Enabled = true;
-                cbAtleta16.Enabled = true;
-                tbAtletaCuartos8.Text = "";
-            }
+            CambiarCheckBox(cbAtleta16, cbAtleta15, tbAtletaCuartos8, tbAtleta16);
         }
 
         private void cbAtletaCuartos1_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos1.Checked == true)
-            {
-                tbAtletaSemis1.Text = tbAtletaCuartos1.Text;
-                cbAtletaCuartos2.Enabled = false;
-            }
-
-            if (cbAtletaCuartos1.Checked == false && cbAtletaCuartos2.Checked == false)
-            {
-                cbAtletaCuartos1.Enabled = true;
-                cbAtletaCuartos2.Enabled = true;
-                tbAtletaSemis1.Text = "";
-            }
+            CambiarCheckBox(cbAtleta17, cbAtleta18, tbAtletaSemis1, tbAtleta17);
         }
 
         private void cbAtletaCuartos2_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos2.Checked == true)
-            {
-                tbAtletaSemis1.Text = tbAtletaCuartos2.Text;
-                cbAtletaCuartos1.Enabled = false;
-            }
-
-            if (cbAtletaCuartos1.Checked == false && cbAtletaCuartos2.Checked == false)
-            {
-                cbAtletaCuartos1.Enabled = true;
-                cbAtletaCuartos2.Enabled = true;
-                tbAtletaSemis1.Text = "";
-            }
+            CambiarCheckBox(cbAtleta18, cbAtleta17, tbAtletaSemis1, tbAtletaCuartos2);
         }
 
         private void cbAtletaCuartos3_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos3.Checked == true)
-            {
-                tbAtletaSemis2.Text = tbAtletaCuartos3.Text;
-                cbAtletaCuartos4.Enabled = false;
-            }
-
-            if (cbAtletaCuartos3.Checked == false && cbAtletaCuartos4.Checked == false)
-            {
-                cbAtletaCuartos3.Enabled = true;
-                cbAtletaCuartos4.Enabled = true;
-                tbAtletaSemis2.Text = "";
-            }
+            CambiarCheckBox(cbAtleta19, cbAtleta20, tbAtletaSemis2, tbAtletaCuartos3);
         }
 
         private void cbAtletaCuartos4_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos4.Checked == true)
-            {
-                tbAtletaSemis2.Text = tbAtletaCuartos4.Text;
-                cbAtletaCuartos3.Enabled = false;
-            }
-
-            if (cbAtletaCuartos3.Checked == false && cbAtletaCuartos4.Checked == false)
-            {
-                cbAtletaCuartos3.Enabled = true;
-                cbAtletaCuartos4.Enabled = true;
-                tbAtletaSemis2.Text = "";
-            }
+            CambiarCheckBox(cbAtleta20, cbAtleta19, tbAtletaSemis2, tbAtletaCuartos4);
         }
 
         private void cbAtletaCuartos5_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos5.Checked == true)
-            {
-                tbAtletaSemis3.Text = tbAtletaCuartos5.Text;
-                cbAtletaCuartos6.Enabled = false;
-            }
-
-            if (cbAtletaCuartos5.Checked == false && cbAtletaCuartos6.Checked == false)
-            {
-                cbAtletaCuartos5.Enabled = true;
-                cbAtletaCuartos6.Enabled = true;
-                tbAtletaSemis3.Text = "";
-            }
+            CambiarCheckBox(cbAtleta21, cbAtleta22, tbAtletaSemis3, tbAtletaCuartos5);
         }
 
         private void cbAtletaCuartos6_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos6.Checked == true)
-            {
-                tbAtletaSemis3.Text = tbAtletaCuartos6.Text;
-                cbAtletaCuartos5.Enabled = false;
-            }
-
-            if (cbAtletaCuartos5.Checked == false && cbAtletaCuartos6.Checked == false)
-            {
-                cbAtletaCuartos5.Enabled = true;
-                cbAtletaCuartos6.Enabled = true;
-                tbAtletaSemis3.Text = "";
-            }
+            CambiarCheckBox(cbAtleta22, cbAtleta21, tbAtletaSemis3, tbAtletaCuartos6);
         }
 
         private void cbAtletaCuartos7_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos7.Checked == true)
-            {
-                tbAtletaSemis4.Text = tbAtletaCuartos7.Text;
-                cbAtletaCuartos8.Enabled = false;
-            }
-
-            if (cbAtletaCuartos7.Checked == false && cbAtletaCuartos8.Checked == false)
-            {
-                cbAtletaCuartos7.Enabled = true;
-                cbAtletaCuartos8.Enabled = true;
-                tbAtletaSemis4.Text = "";
-            }
+            CambiarCheckBox(cbAtleta23, cbAtleta24, tbAtletaSemis4, tbAtletaCuartos7);
         }
 
         private void cbAtletaCuartos8_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaCuartos8.Checked == true)
-            {
-                tbAtletaSemis4.Text = tbAtletaCuartos8.Text;
-                cbAtletaCuartos7.Enabled = false;
-            }
-
-            if (cbAtletaCuartos7.Checked == false && cbAtletaCuartos8.Checked == false)
-            {
-                cbAtletaCuartos7.Enabled = true;
-                cbAtletaCuartos8.Enabled = true;
-                tbAtletaSemis4.Text = "";
-            }
+            CambiarCheckBox(cbAtleta24, cbAtleta23, tbAtletaSemis4, tbAtletaCuartos8);
         }
 
         private void cbAtletaSemis1_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaSemis1.Checked == true)
-            {
-                tbAtletaFinal1.Text = tbAtletaSemis1.Text;
-                cbAtletaSemis2.Enabled = false;
-            }
-
-            if (cbAtletaSemis1.Checked == false && cbAtletaSemis2.Checked == false)
-            {
-                cbAtletaSemis1.Enabled = true;
-                cbAtletaSemis2.Enabled = true;
-                tbAtletaFinal1.Text = "";
-            }
+            CambiarCheckBox(cbAtleta25, cbAtleta26, tbAtletaFinal1, tbAtletaSemis1);
         }
 
         private void cbAtletaSemis2_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaSemis2.Checked == true)
-            {
-                tbAtletaFinal1.Text = tbAtletaSemis2.Text;
-                cbAtletaSemis1.Enabled = false;
-            }
-
-            if (cbAtletaSemis1.Checked == false && cbAtletaSemis2.Checked == false)
-            {
-                cbAtletaSemis1.Enabled = true;
-                cbAtletaSemis2.Enabled = true;
-                tbAtletaFinal1.Text = "";
-            }
+            CambiarCheckBox(cbAtleta26, cbAtleta25, tbAtletaFinal1, tbAtletaSemis2);
         }
 
         private void cbAtletaSemis3_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaSemis3.Checked == true)
-            {
-                tbAtletaFinal2.Text = tbAtletaSemis3.Text;
-                cbAtletaSemis4.Enabled = false;
-            }
-
-            if (cbAtletaSemis3.Checked == false && cbAtletaSemis4.Checked == false)
-            {
-                cbAtletaSemis3.Enabled = true;
-                cbAtletaSemis4.Enabled = true;
-                tbAtletaFinal2.Text = "";
-            }
+            CambiarCheckBox(cbAtleta27, cbAtleta28, tbAtletaFinal2, tbAtletaSemis3);
         }
 
         private void cbAtletaSemis4_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaSemis4.Checked == true)
-            {
-                tbAtletaFinal2.Text = tbAtletaSemis4.Text;
-                cbAtletaSemis3.Enabled = false;
-            }
-
-            if (cbAtletaSemis3.Checked == false && cbAtletaSemis4.Checked == false)
-            {
-                cbAtletaSemis3.Enabled = true;
-                cbAtletaSemis4.Enabled = true;
-                tbAtletaFinal2.Text = "";
-            }
+            CambiarCheckBox(cbAtleta28, cbAtleta27, tbAtletaFinal2, tbAtletaSemis4);
         }
 
         private void cbAtletaFinal1_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaFinal1.Checked == true)
-            {
-                tbAtletaFinal1.BackColor = Color.Yellow;
-                tbAtletaFinal2.BackColor = Color.Gray;
-                cbAtletaFinal2.Enabled = false;
-            }
-
-            if (cbAtletaFinal1.Checked == false && cbAtletaFinal2.Checked == false)
-            {
-                cbAtletaFinal1.Enabled = true;
-                cbAtletaFinal2.Enabled = true;
-                tbAtletaFinal1.BackColor = Color.White;
-                tbAtletaFinal2.BackColor = Color.White;
-            }
+            FinalCheckBox(cbAtleta29, cbAtleta30, tbAtletaFinal1, tbAtletaFinal2);
         }
 
         private void cbAtletaFinal2_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbAtletaFinal2.Checked == true)
-            {
-                tbAtletaFinal1.BackColor = Color.Gray;
-                tbAtletaFinal2.BackColor = Color.Yellow;
-                cbAtletaFinal1.Enabled = false;
-            }
-
-            if (cbAtletaFinal1.Checked == false && cbAtletaFinal2.Checked == false)
-            {
-                cbAtletaFinal1.Enabled = true;
-                cbAtletaFinal2.Enabled = true;
-                tbAtletaFinal1.BackColor = Color.White;
-                tbAtletaFinal2.BackColor = Color.White;
-            }
+            FinalCheckBox(cbAtleta30, cbAtleta29, tbAtletaFinal2, tbAtletaFinal1);
         }
     }
 }
