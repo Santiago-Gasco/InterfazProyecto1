@@ -631,6 +631,8 @@ namespace InterfazProyecto1
             btnOrden.Visible = false;
             btnTerminarRanking.Visible = false;
             btnGuardar.Visible = false;
+            btnCargar.Visible = false;
+            btnReset.Visible = false;
             panelAzulBtnRefrescar.Visible = true;
             panelAzulBtnAlta.Visible = true;
             panelAzulBtnBaja.Visible = true;
@@ -638,6 +640,8 @@ namespace InterfazProyecto1
             panelAzulBtnFiltrar.Visible = true;
             panelAzulBtnOrden.Visible = false;
             panelAzulBtnGuardar.Visible = false;
+            panelAzulBtnCargar.Visible = false;
+            panelAzulBtnReset.Visible = false;
             panelAzulBtnTerminarRanking.Visible = false;
         }
 
@@ -653,6 +657,8 @@ namespace InterfazProyecto1
             btnOrden.Visible = true;
             btnTerminarRanking.Visible = true;
             btnGuardar.Visible = false;
+            btnCargar.Visible = false;
+            btnReset.Visible = false;
             panelAzulBtnRefrescar.Visible = true;
             panelAzulBtnAlta.Visible = false;
             panelAzulBtnBaja.Visible = false;
@@ -661,6 +667,8 @@ namespace InterfazProyecto1
             panelAzulBtnOrden.Visible = true;
             panelAzulBtnTerminarRanking.Visible = true;
             panelAzulBtnGuardar.Visible = false;
+            panelAzulBtnCargar.Visible = false;
+            panelAzulBtnReset.Visible = false;
             dataGridViewAtletas.Visible = true;
         }
 
@@ -675,6 +683,8 @@ namespace InterfazProyecto1
             btnOrden.Visible = false;
             btnTerminarRanking.Visible = false;
             btnGuardar.Visible = true;
+            btnCargar.Visible = true;
+            btnReset.Visible = true;
             panelAzulBtnRefrescar.Visible = false;
             panelAzulBtnAlta.Visible = false;
             panelAzulBtnBaja.Visible = false;
@@ -683,6 +693,8 @@ namespace InterfazProyecto1
             panelAzulBtnOrden.Visible = false;
             panelAzulBtnTerminarRanking.Visible = false;
             panelAzulBtnGuardar.Visible = true;
+            panelAzulBtnCargar.Visible = true;
+            panelAzulBtnReset.Visible = true;
             dataGridViewAtletas.Visible = false;
         }
 
@@ -721,9 +733,8 @@ namespace InterfazProyecto1
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            query = "SELECT Nombre, Participantes, Orden FROM tb_eventos WHERE Id_evento = 1";
-
-            CargarFixture();
+            FormCargarFixture formCargarFixture = new FormCargarFixture(this); // Crea una nueva instancia del formulario para cargar un fixture
+            formCargarFixture.Show(); // Muestra el formulario para cargar un fixture
         }
 
         int cbHabilitado;
@@ -787,8 +798,12 @@ namespace InterfazProyecto1
             }
         }
 
-        private void CargarFixture()
+        public void CargarFixture(string nombreFixture)
         {
+            ResetCheckBoxTextBox();
+
+            query = "SELECT * FROM tb_eventos WHERE Nombre = @Nombre";
+
             using (MySqlConnection databaseConnection = new MySqlConnection(connectionString))
             {
                 try
@@ -796,6 +811,8 @@ namespace InterfazProyecto1
                     databaseConnection.Open(); // Abre la conexión
                     using (MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection))
                     {
+                        commandDatabase.Parameters.AddWithValue("@Nombre", nombreFixture);
+
                         using (MySqlDataReader reader = commandDatabase.ExecuteReader())
                         {
                             if (reader.Read())
@@ -875,7 +892,8 @@ namespace InterfazProyecto1
                                     }
                                 }
 
-                                int cbNum = 0;
+                                int cbNum = 1;
+                                int tbNum = 17;
 
                                 for (int a = 0; a < orden.Length; a++)
                                 {
@@ -890,9 +908,23 @@ namespace InterfazProyecto1
                                         string cbNombre2 = "cbAtleta" + cbNum.ToString();
                                         CheckBox cb2 = this.Controls.Find(cbNombre2, true).FirstOrDefault() as CheckBox;
 
+                                        string tbNombre = "tbAtleta" + tbNum.ToString();
+                                        TextBox tb1 = this.Controls.Find(tbNombre, true).FirstOrDefault() as TextBox;
+
+                                        cbNum++;
+                                        string tbNombre2 = "tbAtleta" + tbNum.ToString();
+                                        TextBox tb2 = this.Controls.Find(tbNombre2, true).FirstOrDefault() as TextBox;
+
                                         if (cb1 != null && cb2 != null)
                                         {
-                                            CambiarCheckBox(cb1, cb2);
+                                            if (o == 0)
+                                            {
+                                                cb1.Checked = true;
+                                            }
+                                            else
+                                            {
+                                                cb2.Checked = true;
+                                            }
                                         }
                                     }
                                 }
@@ -959,6 +991,39 @@ namespace InterfazProyecto1
             }
         }
 
+        private void ResetCheckBoxTextBox()
+        {
+            int cbNum = 1;
+            int tbNum = 1;
+
+            for (int i = 0; i <= 31; i++)
+            {
+                string cbNombre = "cbAtleta" + cbNum.ToString();
+                CheckBox cb1 = this.Controls.Find(cbNombre, true).FirstOrDefault() as CheckBox;
+
+                cbNum++;
+                string cbNombre2 = "cbAtleta" + cbNum.ToString();
+                CheckBox cb2 = this.Controls.Find(cbNombre2, true).FirstOrDefault() as CheckBox;
+
+                string tbNombre = "tbAtleta" + tbNum.ToString();
+                TextBox tb1 = this.Controls.Find(tbNombre, true).FirstOrDefault() as TextBox;
+
+                cbNum++;
+                string tbNombre2 = "tbAtleta" + tbNum.ToString();
+                TextBox tb2 = this.Controls.Find(tbNombre2, true).FirstOrDefault() as TextBox;
+
+                if (cb1 != null && cb2 != null && tb1 != null && tb2 != null)
+                {
+                    cb1.Checked = false;
+                    cb2.Checked = false;
+                    tb1.Text = "";
+                    tb2.Text = "";
+                    tb1.BackColor = Color.White;
+                    tb2.BackColor = Color.White;
+                }
+            }
+        }
+
         private void cbAtleta1_CheckedChanged(object sender, EventArgs e)
         {
             CambiarCheckBox(cbAtleta1, cbAtleta2, tbAtleta17, tbAtleta1);
@@ -971,142 +1036,147 @@ namespace InterfazProyecto1
 
         private void cbAtleta3_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta3, cbAtleta4, tbAtletaCuartos2, tbAtleta3);
+            CambiarCheckBox(cbAtleta3, cbAtleta4, tbAtleta18, tbAtleta3);
         }
 
         private void cbAtleta4_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta4, cbAtleta3, tbAtletaCuartos2, tbAtleta4);
+            CambiarCheckBox(cbAtleta4, cbAtleta3, tbAtleta18, tbAtleta4);
         }
 
         private void cbAtleta5_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta5, cbAtleta6, tbAtletaCuartos3, tbAtleta5);
+            CambiarCheckBox(cbAtleta5, cbAtleta6, tbAtleta19, tbAtleta5);
         }
 
         private void cbAtleta6_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta6, cbAtleta5, tbAtletaCuartos3, tbAtleta6);
+            CambiarCheckBox(cbAtleta6, cbAtleta5, tbAtleta19, tbAtleta6);
         }
 
         private void cbAtleta7_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta7, cbAtleta8, tbAtletaCuartos4, tbAtleta7);
+            CambiarCheckBox(cbAtleta7, cbAtleta8, tbAtleta20, tbAtleta7);
         }
 
         private void cbAtleta8_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta8, cbAtleta7, tbAtletaCuartos4, tbAtleta8);
+            CambiarCheckBox(cbAtleta8, cbAtleta7, tbAtleta20, tbAtleta8);
         }
 
         private void cbAtleta9_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta9, cbAtleta10, tbAtletaCuartos5, tbAtleta9);
+            CambiarCheckBox(cbAtleta9, cbAtleta10, tbAtleta21, tbAtleta9);
         }
 
         private void cbAtleta10_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta10, cbAtleta9, tbAtletaCuartos5, tbAtleta10);
+            CambiarCheckBox(cbAtleta10, cbAtleta9, tbAtleta21, tbAtleta10);
         }
 
         private void cbAtleta11_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta11, cbAtleta12, tbAtletaCuartos6, tbAtleta11);
+            CambiarCheckBox(cbAtleta11, cbAtleta12, tbAtleta22, tbAtleta11);
         }
 
         private void cbAtleta12_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta12, cbAtleta11, tbAtletaCuartos6, tbAtleta12);
+            CambiarCheckBox(cbAtleta12, cbAtleta11, tbAtleta22, tbAtleta12);
         }
 
         private void cbAtleta13_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta13, cbAtleta14, tbAtletaCuartos7, tbAtleta13);
+            CambiarCheckBox(cbAtleta13, cbAtleta14, tbAtleta23, tbAtleta13);
         }
 
         private void cbAtleta14_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta14, cbAtleta13, tbAtletaCuartos7, tbAtleta14);
+            CambiarCheckBox(cbAtleta14, cbAtleta13, tbAtleta23, tbAtleta14);
         }
 
         private void cbAtleta15_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta15, cbAtleta16, tbAtletaCuartos8, tbAtleta15);
+            CambiarCheckBox(cbAtleta15, cbAtleta16, tbAtleta24, tbAtleta15);
         }
 
         private void cbAtleta16_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta16, cbAtleta15, tbAtletaCuartos8, tbAtleta16);
+            CambiarCheckBox(cbAtleta16, cbAtleta15, tbAtleta24, tbAtleta16);
         }
 
         private void cbAtletaCuartos1_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta17, cbAtleta18, tbAtletaSemis1, tbAtleta17);
+            CambiarCheckBox(cbAtleta17, cbAtleta18, tbAtleta25, tbAtleta17);
         }
 
         private void cbAtletaCuartos2_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta18, cbAtleta17, tbAtletaSemis1, tbAtletaCuartos2);
+            CambiarCheckBox(cbAtleta18, cbAtleta17, tbAtleta25, tbAtleta18);
         }
 
         private void cbAtletaCuartos3_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta19, cbAtleta20, tbAtletaSemis2, tbAtletaCuartos3);
+            CambiarCheckBox(cbAtleta19, cbAtleta20, tbAtleta26, tbAtleta19);
         }
 
         private void cbAtletaCuartos4_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta20, cbAtleta19, tbAtletaSemis2, tbAtletaCuartos4);
+            CambiarCheckBox(cbAtleta20, cbAtleta19, tbAtleta26, tbAtleta20);
         }
 
         private void cbAtletaCuartos5_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta21, cbAtleta22, tbAtletaSemis3, tbAtletaCuartos5);
+            CambiarCheckBox(cbAtleta21, cbAtleta22, tbAtleta27, tbAtleta21);
         }
 
         private void cbAtletaCuartos6_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta22, cbAtleta21, tbAtletaSemis3, tbAtletaCuartos6);
+            CambiarCheckBox(cbAtleta22, cbAtleta21, tbAtleta27, tbAtleta22);
         }
 
         private void cbAtletaCuartos7_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta23, cbAtleta24, tbAtletaSemis4, tbAtletaCuartos7);
+            CambiarCheckBox(cbAtleta23, cbAtleta24, tbAtleta28, tbAtleta23);
         }
 
         private void cbAtletaCuartos8_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta24, cbAtleta23, tbAtletaSemis4, tbAtletaCuartos8);
+            CambiarCheckBox(cbAtleta24, cbAtleta23, tbAtleta28, tbAtleta24);
         }
 
         private void cbAtletaSemis1_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta25, cbAtleta26, tbAtletaFinal1, tbAtletaSemis1);
+            CambiarCheckBox(cbAtleta25, cbAtleta26, tbAtleta29, tbAtleta25);
         }
 
         private void cbAtletaSemis2_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta26, cbAtleta25, tbAtletaFinal1, tbAtletaSemis2);
+            CambiarCheckBox(cbAtleta26, cbAtleta25, tbAtleta29, tbAtleta26);
         }
 
         private void cbAtletaSemis3_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta27, cbAtleta28, tbAtletaFinal2, tbAtletaSemis3);
+            CambiarCheckBox(cbAtleta27, cbAtleta28, tbAtleta30, tbAtleta27);
         }
 
         private void cbAtletaSemis4_CheckedChanged(object sender, EventArgs e)
         {
-            CambiarCheckBox(cbAtleta28, cbAtleta27, tbAtletaFinal2, tbAtletaSemis4);
+            CambiarCheckBox(cbAtleta28, cbAtleta27, tbAtleta30, tbAtleta28);
         }
 
         private void cbAtletaFinal1_CheckedChanged(object sender, EventArgs e)
         {
-            FinalCheckBox(cbAtleta29, cbAtleta30, tbAtletaFinal1, tbAtletaFinal2);
+            FinalCheckBox(cbAtleta29, cbAtleta30, tbAtleta29, tbAtleta30);
         }
 
         private void cbAtletaFinal2_CheckedChanged(object sender, EventArgs e)
         {
-            FinalCheckBox(cbAtleta30, cbAtleta29, tbAtletaFinal2, tbAtletaFinal1);
+            FinalCheckBox(cbAtleta30, cbAtleta29, tbAtleta30, tbAtleta29);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ResetCheckBoxTextBox();
         }
     }
 }
